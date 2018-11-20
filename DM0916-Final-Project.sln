@@ -9,15 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkService.Console", "Work
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkService.Desktop", "WorkService\WorkService.Desktop\WorkService.Desktop.csproj", "{B861A477-5F83-4DB3-8C91-49322035D3FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.Crawler", "WorkService\Worker.Crawler\Worker.Crawler.csproj", "{DDC55467-8269-4FCF-85B8-33CDFA561770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.Crawler", "WorkService\Worker.Crawler\Worker.Crawler.csproj", "{DDC55467-8269-4FCF-85B8-33CDFA561770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.Scraper", "WorkService\Worker.Scraper\Worker.Scraper.csproj", "{115155E6-9884-466A-B56A-BBBF79943DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.Scraper", "WorkService\Worker.Scraper\Worker.Scraper.csproj", "{115155E6-9884-466A-B56A-BBBF79943DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.TFImageModel", "WorkService\Worker.TFImageModel\Worker.TFImageModel.csproj", "{B3AEE846-7825-44A7-A851-D8DC9F91F7EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.TFImageModel", "WorkService\Worker.TFImageModel\Worker.TFImageModel.csproj", "{B3AEE846-7825-44A7-A851-D8DC9F91F7EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.Fetcher", "WorkService\Worker.Fetcher\Worker.Fetcher.csproj", "{5A6A2CB2-CDBC-4916-ACE3-2F543661E3EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.Fetcher", "WorkService\Worker.Fetcher\Worker.Fetcher.csproj", "{5A6A2CB2-CDBC-4916-ACE3-2F543661E3EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker.WorkQueue", "WorkService\Worker.WorkQueue\Worker.WorkQueue.csproj", "{52F603B2-E5CF-422F-8488-8666EBD364E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker.WorkQueue", "WorkService\Worker.WorkQueue\Worker.WorkQueue.csproj", "{52F603B2-E5CF-422F-8488-8666EBD364E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSites", "WebSites", "{5E354381-CE6C-4E85-AEFC-8AA4324EACB1}"
 EndProject
@@ -66,6 +66,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{812C33C0-6E70-
 		WebSites\frontend\js\frontend.js = WebSites\frontend\js\frontend.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tensorflow", "Tensorflow", "{0848500B-0527-4710-9399-806A94A81639}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ModelCreator", "Tensorflow\ModelCreator\ModelCreator.pyproj", "{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,8 @@ Global
 		{52F603B2-E5CF-422F-8488-8666EBD364E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52F603B2-E5CF-422F-8488-8666EBD364E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52F603B2-E5CF-422F-8488-8666EBD364E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{2D69DF4A-22C8-47A9-BDCB-57E933135483} = {70027DCB-660E-49DA-9A11-8A303E8DD11D}
 		{FAD86754-23E7-4BC6-9C69-27D48F47BA0F} = {5B9AA81C-149A-4E2B-BD06-419C1C659120}
 		{812C33C0-6E70-4E10-8D28-E5D75803A992} = {5B9AA81C-149A-4E2B-BD06-419C1C659120}
+		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A} = {0848500B-0527-4710-9399-806A94A81639}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE771AEB-FA5E-420A-962D-9887DEB4C9F5}
