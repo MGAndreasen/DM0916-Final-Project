@@ -16,8 +16,8 @@ Used for both Console & Desktop clients/service.
 
 ### Worker.ImageDownloader
 
-### Worker.TFModelBuilder
+### Worker.ImageModelCreate
 
-### Worker.TFModelUser
+### Worker.ImageModelUse
 
 etc.
