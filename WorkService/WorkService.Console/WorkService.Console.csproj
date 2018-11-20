@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Worker.Crawler\Worker.Crawler.csproj" />
+    <ProjectReference Include="..\Worker.Fetcher\Worker.Fetcher.csproj" />
+    <ProjectReference Include="..\Worker.Scraper\Worker.Scraper.csproj" />
+    <ProjectReference Include="..\Worker.TFImageModel\Worker.TFImageModel.csproj" />
+    <ProjectReference Include="..\Worker.WorkQueue\Worker.WorkQueue.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -75,5 +75,27 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Worker.Crawler\Worker.Crawler.csproj">
+      <Project>{ddc55467-8269-4fcf-85b8-33cdfa561770}</Project>
+      <Name>Worker.Crawler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worker.Fetcher\Worker.Fetcher.csproj">
+      <Project>{5a6a2cb2-cdbc-4916-ace3-2f543661e3ef}</Project>
+      <Name>Worker.Fetcher</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worker.Scraper\Worker.Scraper.csproj">
+      <Project>{115155e6-9884-466a-b56a-bbbf79943da4}</Project>
+      <Name>Worker.Scraper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worker.TFImageModel\Worker.TFImageModel.csproj">
+      <Project>{b3aee846-7825-44a7-a851-d8dc9f91f7ef}</Project>
+      <Name>Worker.TFImageModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Worker.WorkQueue\Worker.WorkQueue.csproj">
+      <Project>{52f603b2-e5cf-422f-8488-8666ebd364e1}</Project>
+      <Name>Worker.WorkQueue</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
