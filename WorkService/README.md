@@ -11,13 +11,16 @@ The Desktop application used for running the workload on Windows only.
 Used for both Console & Desktop clients/service.
 
 ### Worker.Crawler
+Crawls an url, fetching the raw html.
 
 ### Worker.Scraper
+Scrapes html, for product attributes like, Price, Title, Product Image etc. and also for new urls the crawler to crawl.
 
-### Worker.ImageDownloader
+### Worker.Fetcher
+Gets product image data from websites, and maybe manipulate it for max size.
 
-### Worker.ImageModelCreate
+### Worker.ImageModel
+Creates or Uses an already created model for product image classification.
 
-### Worker.ImageModelUse
-
-etc.
+### Worker.WorkQueue
+Looks for more work from WebSite Api.
