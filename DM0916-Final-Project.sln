@@ -70,6 +70,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tensorflow", "Tensorflow", 
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ModelCreator", "Tensorflow\ModelCreator\ModelCreator.pyproj", "{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageClassifier", "Tensorflow\ImageClassifier\ImageClassifier.pyproj", "{B6852872-8A75-4072-BA39-0D7457533304}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageModifer", "Tensorflow\ImageModifer\ImageModifer.pyproj", "{D09242FF-0B3B-4DC8-A05A-98376F2BAAF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +110,10 @@ Global
 		{52F603B2-E5CF-422F-8488-8666EBD364E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6852872-8A75-4072-BA39-0D7457533304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6852872-8A75-4072-BA39-0D7457533304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09242FF-0B3B-4DC8-A05A-98376F2BAAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09242FF-0B3B-4DC8-A05A-98376F2BAAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +135,8 @@ Global
 		{FAD86754-23E7-4BC6-9C69-27D48F47BA0F} = {5B9AA81C-149A-4E2B-BD06-419C1C659120}
 		{812C33C0-6E70-4E10-8D28-E5D75803A992} = {5B9AA81C-149A-4E2B-BD06-419C1C659120}
 		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A} = {0848500B-0527-4710-9399-806A94A81639}
+		{B6852872-8A75-4072-BA39-0D7457533304} = {0848500B-0527-4710-9399-806A94A81639}
+		{D09242FF-0B3B-4DC8-A05A-98376F2BAAF6} = {0848500B-0527-4710-9399-806A94A81639}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE771AEB-FA5E-420A-962D-9887DEB4C9F5}
