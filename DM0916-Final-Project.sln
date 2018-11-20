@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSites", "WebSites", "{5E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{23D7237B-1811-42A9-995D-E703B918D438}"
 	ProjectSection(SolutionItems) = preProject
+		WebSites\api\config-example.php = WebSites\api\config-example.php
 		WebSites\api\index.php = WebSites\api\index.php
 	EndProjectSection
 EndProject
@@ -31,6 +32,38 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB Scripts", "DB Scripts", "{1D8547A8-5D89-425E-BBFB-8124B36F7937}"
 	ProjectSection(SolutionItems) = preProject
 		Setup\DB Scripts\DB-Structure.sql = Setup\DB Scripts\DB-Structure.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{5B9AA81C-149A-4E2B-BD06-419C1C659120}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\frontend\config-example.php = WebSites\frontend\config-example.php
+		WebSites\frontend\index.php = WebSites\frontend\index.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{70027DCB-660E-49DA-9A11-8A303E8DD11D}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\backend\config-example.php = WebSites\backend\config-example.php
+		WebSites\backend\index.php = WebSites\backend\index.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{F760D727-44B6-4F69-B33B-099C80B9A806}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\backend\css\backend.css = WebSites\backend\css\backend.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{2D69DF4A-22C8-47A9-BDCB-57E933135483}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\backend\js\backend.js = WebSites\backend\js\backend.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{FAD86754-23E7-4BC6-9C69-27D48F47BA0F}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\frontend\css\frontend.css = WebSites\frontend\css\frontend.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{812C33C0-6E70-4E10-8D28-E5D75803A992}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\frontend\js\frontend.js = WebSites\frontend\js\frontend.js
 	EndProjectSection
 EndProject
 Global
@@ -81,6 +114,12 @@ Global
 		{52F603B2-E5CF-422F-8488-8666EBD364E1} = {227390B4-2C6D-4BFE-94FC-A3C742ABD7FC}
 		{23D7237B-1811-42A9-995D-E703B918D438} = {5E354381-CE6C-4E85-AEFC-8AA4324EACB1}
 		{1D8547A8-5D89-425E-BBFB-8124B36F7937} = {F5743E6C-37D7-48BB-8A71-D8B1C0CA60E8}
+		{5B9AA81C-149A-4E2B-BD06-419C1C659120} = {5E354381-CE6C-4E85-AEFC-8AA4324EACB1}
+		{70027DCB-660E-49DA-9A11-8A303E8DD11D} = {5E354381-CE6C-4E85-AEFC-8AA4324EACB1}
+		{F760D727-44B6-4F69-B33B-099C80B9A806} = {70027DCB-660E-49DA-9A11-8A303E8DD11D}
+		{2D69DF4A-22C8-47A9-BDCB-57E933135483} = {70027DCB-660E-49DA-9A11-8A303E8DD11D}
+		{FAD86754-23E7-4BC6-9C69-27D48F47BA0F} = {5B9AA81C-149A-4E2B-BD06-419C1C659120}
+		{812C33C0-6E70-4E10-8D28-E5D75803A992} = {5B9AA81C-149A-4E2B-BD06-419C1C659120}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE771AEB-FA5E-420A-962D-9887DEB4C9F5}
