@@ -2,7 +2,7 @@
 //-------------------------------
 // REST API for our little system
 //-------------------------------
-$config = include('config.php');
+$config = include('../config.php');
 
 echo "{"Error": "Invalid data!"}";
 
