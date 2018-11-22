@@ -4,6 +4,6 @@
 //-------------------------------
 $config = include('../config.php');
 
-echo "{"Error": "Invalid data!"}";
+echo "{\"Error\": \"Invalid data!\"}";
 
 ?>
