@@ -13,13 +13,13 @@ if($_GET['cat'] != "" && $_GET['img'] != "")
 else
 {
 $out = "";
-foreach (new DirectoryIterator('../data/cykler/') as $fileInfo) {
+foreach (new DirectoryIterator('cykler/') as $fileInfo) {
     if($fileInfo->isDot()) { continue; }
 	
 	if($fileInfo->isDir())
 	{
 		$out .="\"".$fileInfo->getFilename()."\" : {\n";
-		foreach (new DirectoryIterator('../data/cykler/'.$fileInfo->getFilename().'/') as $category) {
+		foreach (new DirectoryIterator('cykler/'.$fileInfo->getFilename().'/') as $category) {
 			if($category->isDot()) { continue; }
 			
 			$out .= "\"url\": \"http://4pi.dk/playground/testjsondata/index.php?cat=".$fileInfo->getFilename()."&img=".$category->getFilename() . "\",\n";
