@@ -25,7 +25,7 @@ foreach (new DirectoryIterator('cykler/') as $fileInfo) {
 			$out .= "        {\"url\": \"http://4pi.dk/playground/testjsondata/index.php?cat=".$fileInfo->getFilename()."&img=".$category->getFilename() . "\"},\n";
 		}
 		$out = trim($out,",\n")."\n";
-		$out .= "    ]\n},\n";
+		$out .= "    ]\n    },\n";
 	}
 }
 $out = trim($out,",\n");
