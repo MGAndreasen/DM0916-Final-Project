@@ -25,12 +25,11 @@ foreach (new DirectoryIterator('cykler/') as $fileInfo) {
 			$out .= "{\"url\": \"http://4pi.dk/playground/testjsondata/index.php?cat=".$fileInfo->getFilename()."&img=".$category->getFilename() . "\"},\n";
 		}
 		$out = trim($out,",\n")."\n";
-		$out .= "]},\n";
+		$out .= "\n]\n},\n";
 	}
 }
 $out = trim($out,",\n");
 header('Content-Type: application/json');
-echo "{\n\"info\" : [\n{\"size\" : \"128x128\"}\n],\n";
-echo "\"categories\" : [\n".$out."\n]\n}";
+echo "{\n\"info\" : \n[\n{\"size\" : \"128x128\"}\n],\n\"categories\" : [\n".$out."\n]\n}";
 }
 ?>
