@@ -44,7 +44,7 @@ define('BRANCH', 'master');
  *
  * @var string Full path including the trailing slash
  */
-define('TARGET_DIR', '/tmp/DM0916-Final-Project/');
+define('TARGET_DIR', '/var/www/');
 
 /**
  * Whether to delete the files that are not in the repository but are on the
