@@ -28,7 +28,7 @@ define('SECRET_ACCESS_TOKEN', 'SomeLameAssTokenThatNoOneCanRememberOnTopOfThereH
  *
  * @var string
  */
-define('REMOTE_REPOSITORY', 'https://github.com/MGAndreasen/DM0916-Final-Project.git');
+define('REMOTE_REPOSITORY', 'git@github.com:MGAndreasen/DM0916-Final-Project.git');
 
 /**
  * The branch that's being deployed.
