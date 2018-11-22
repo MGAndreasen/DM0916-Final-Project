@@ -30,6 +30,8 @@ foreach (new DirectoryIterator('cykler/') as $fileInfo) {
 }
 $out = trim($out,",\n");
 header('Content-Type: application/json');
-echo "{\"info\" : {\"size\" => \"32x32\"}},{\"categories\" : [\n".$out."\n]}";
+echo "[\n";
+echo "{\n\"info\" : [\n{\"size\" => \"32x32\"}\n]\n},";
+echo "{\"categories\" : [\n".$out."\n]}]";
 }
 ?>
