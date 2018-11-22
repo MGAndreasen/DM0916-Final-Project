@@ -11,4 +11,4 @@
 
 ### GitHub WebHook deploy:
 #### url: http://4pi.dk/deploy/deploy.php?sat=SomeLameAssTokenThatNoOneCanRememberOnTopOfThereHeadOrSoIJustHopeTheyCantButInCaseTheyCanIWillJustAddThisLittleSign!AtTheEnd
-##### Remember to remove/change this lame token later!
+##### Remember to remove/change this lame token later!!
