@@ -22,7 +22,7 @@ foreach (new DirectoryIterator('cykler/') as $fileInfo) {
 		foreach (new DirectoryIterator('cykler/'.$fileInfo->getFilename().'/') as $category) {
 			if($category->isDot()) { continue; }
 			
-			$out .= "        {\"url\": \"http://4pi.dk/playground/testjsondata/index.php?cat=".$fileInfo->getFilename()."&img=".$category->getFilename() . "\"},\n";
+			$out .= "      {\"url\": \"http://4pi.dk/playground/testjsondata/index.php?cat=".$fileInfo->getFilename()."&img=".$category->getFilename() . "\"},\n";
 		}
 		$out = trim($out,",\n")."\n";
 		$out .= "    ]\n    },\n";
