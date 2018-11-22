@@ -120,8 +120,3 @@ def read_train_sets(train_path, image_size, classes, validation_size):
   return data_sets
 
 
-train_path=R"C:\modelCreatorData"
-image_size = 128
-classes = ['bike', 'component', 'cloth']
-
-load_train(train_path, image_size, classes);

@@ -11,46 +11,7 @@ import datetime
 #classes, num_classes, batch_sise, validation_size, img_size.. and so on.
 #A good idea might be to make it into a class, another idea might make it read a config file.
 
-#Adding Seed so that random initialization is consistent
-from numpy.random import seed
-seed(1)
-from tensorflow import set_random_seed
-set_random_seed(2)    
-
-#Prepare input data
-classes = ['bike', 'component', 'cloth']
-num_classes = len(classes)
-
-# 20% of the data will automatically be used for validation
-validation_size = 0.2
-train_path=R"C:\modelCreatorData";
-batch_size = 32
-img_size = 128
-num_channels = 3
-
-
-# loading all the training and validation images and labels into memory using openCV and use that during training
-data = loadData(train_path, img_size, classes, validation_size=validation_size);
-
-session = tf.Session()
-x = tf.placeholder(tf.float32, shape=[None, img_size,img_size,num_channels], name='x')
-
-## labels
-y_true = tf.placeholder(tf.float32, shape=[None, num_classes], name='y_true')
-y_true_cls = tf.argmax(y_true, dimension=1)
-
-##Network graph params
-filter_size_conv1 = 3 
-num_filters_conv1 = 32
-
-filter_size_conv2 = 3
-num_filters_conv2 = 32
-
-filter_size_conv3 = 3
-num_filters_conv3 = 64
-    
-fc_layer_size = 128
-
+total_iterations = 0
 
 def create_convolutional_layer(input,
                num_input_channels, 
@@ -116,47 +77,6 @@ def create_fc_layer(input,
 
     return layer
 
-layer_conv1 = create_convolutional_layer(input=x,
-            num_input_channels=num_channels,
-            conv_filter_size=filter_size_conv1,
-            num_filters=num_filters_conv1)
-layer_conv2 = create_convolutional_layer(input=layer_conv1,
-                   num_input_channels=num_filters_conv1,
-                   conv_filter_size=filter_size_conv2,
-                   num_filters=num_filters_conv2)
-layer_conv3= create_convolutional_layer(input=layer_conv2,
-                   num_input_channels=num_filters_conv2,
-                   conv_filter_size=filter_size_conv3,
-                   num_filters=num_filters_conv3)
-
-layer_flat = create_flatten_layer(layer_conv3)
-
-layer_fc1 = create_fc_layer(input=layer_flat,
-                         num_inputs=layer_flat.get_shape()[1:4].num_elements(),
-                         num_outputs=fc_layer_size,
-                         use_relu=True)
-layer_fc2 = create_fc_layer(input=layer_fc1,
-                         num_inputs=fc_layer_size,
-                         num_outputs=num_classes,
-                         use_relu=False) 
-
-y_pred = tf.nn.softmax(layer_fc2,name='y_pred')
-
-y_pred_cls = tf.argmax(y_pred, dimension=1)
-session.run(tf.global_variables_initializer())
-cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits=layer_fc2,
-                                                    labels=y_true)
-cost = tf.reduce_mean(cross_entropy)
-optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(cost)
-correct_prediction = tf.equal(y_pred_cls, y_true_cls)
-accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-session.run(tf.global_variables_initializer()) 
-
-    
-
-saver = tf.train.Saver()
-
 
 def show_progress(epoch, feed_dict_train, feed_dict_validate, val_loss):
     acc = session.run(accuracy, feed_dict=feed_dict_train)
@@ -164,7 +84,7 @@ def show_progress(epoch, feed_dict_train, feed_dict_validate, val_loss):
     msg = "Training Epoch {0} --- Training Accuracy: {1:>6.1%}, Validation Accuracy: {2:>6.1%},  Validation Loss: {3:.3f}"
     print(msg.format(epoch + 1, acc, val_acc, val_loss))
 
-def train(num_iteration):
+def train(batch_size, modelFolder, num_iteration):
     global total_iterations
     
     for i in range(total_iterations,
@@ -186,20 +106,11 @@ def train(num_iteration):
             epoch = int(i / int(data.train.num_examples/batch_size))    
             
             show_progress(epoch, feed_dict_tr, feed_dict_val, val_loss)
-            saver.save(session, R'C:\modelCreatorData\models\testing')
+            saver.save(session, modelFolder)
 
     total_iterations += num_iteration
 
-total_iterations = 0
-train(num_iteration=1000)
-
-
-# 20% of the data will automatically be used for validation
-validation_size = 0.2
-train_path=R"C:\modelCreatorData";
-
-
-def loadData(train_path, img_size, classes, validation_size=validation_size):
+def loadData(train_path, img_size, classes, validation_size):
     data = dataset.read_train_sets(train_path, img_size, classes, validation_size=validation_size)
 
     print("Complete reading input data. Will Now print a snippet of it")
@@ -207,3 +118,86 @@ def loadData(train_path, img_size, classes, validation_size=validation_size):
     print("Number of files in Validation-set:\t{}".format(len(data.valid.labels)))
 
     return data;
+
+def doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder):
+
+    #Adding Seed so that random initialization is consistent   
+    from numpy.random import seed  
+    seed(1)
+    from tensorflow import set_random_seed
+    set_random_seed(2)
+    
+    # loading all the training and validation images and labels into memory using openCV and use that during training
+    global data
+    data = loadData(train_path, img_size, classes, validation_size=validation_size)
+
+    global session
+    session = tf.Session()
+    
+    global x
+    x = tf.placeholder(tf.float32, shape=[None, img_size,img_size,num_channels], name='x')
+
+    num_classes = len(classes)
+
+    ## labels
+    global y_true
+    global y_true_cls
+    y_true = tf.placeholder(tf.float32, shape=[None, num_classes], name='y_true')
+    y_true_cls = tf.argmax(y_true, dimension=1)
+
+    ##Network graph params
+    filter_size_conv1 = 3 
+    num_filters_conv1 = 32
+
+    filter_size_conv2 = 3
+    num_filters_conv2 = 32
+
+    filter_size_conv3 = 3
+    num_filters_conv3 = 64
+    
+    fc_layer_size = 128
+
+    layer_conv1 = create_convolutional_layer(input=x,
+                num_input_channels=num_channels,
+                conv_filter_size=filter_size_conv1,
+                num_filters=num_filters_conv1)
+    layer_conv2 = create_convolutional_layer(input=layer_conv1,
+                       num_input_channels=num_filters_conv1,
+                       conv_filter_size=filter_size_conv2,
+                       num_filters=num_filters_conv2)
+    layer_conv3= create_convolutional_layer(input=layer_conv2,
+                       num_input_channels=num_filters_conv2,
+                       conv_filter_size=filter_size_conv3,
+                       num_filters=num_filters_conv3)
+
+    layer_flat = create_flatten_layer(layer_conv3)
+
+    layer_fc1 = create_fc_layer(input=layer_flat,
+                             num_inputs=layer_flat.get_shape()[1:4].num_elements(),
+                             num_outputs=fc_layer_size,
+                             use_relu=True)
+    layer_fc2 = create_fc_layer(input=layer_fc1,
+                             num_inputs=fc_layer_size,
+                             num_outputs=num_classes,
+                             use_relu=False) 
+
+    y_pred = tf.nn.softmax(layer_fc2,name='y_pred')
+
+    y_pred_cls = tf.argmax(y_pred, dimension=1)
+    session.run(tf.global_variables_initializer())
+    cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits=layer_fc2,
+                                                        labels=y_true)
+    global cost
+    cost = tf.reduce_mean(cross_entropy)
+    global optimizer
+    optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(cost)
+    correct_prediction = tf.equal(y_pred_cls, y_true_cls)
+    global accuracy
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+    session.run(tf.global_variables_initializer()) 
+
+    global saver
+    saver = tf.train.Saver()
+
+    train(batch_size, modelFolder, num_iteration=1000)

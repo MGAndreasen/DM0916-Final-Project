@@ -4,9 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>25acfb6a-d6ee-4fb1-873e-a9e40701ef1a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>train.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>modelCreatorCtr.py</StartupFile>
+    <SearchPath>..\ImageModifer</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>ModelCreator</Name>
@@ -21,10 +20,26 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataCollector.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="dataset.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="modelCreatorCtr.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="train.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageModifer\ImageModifer.pyproj">
+      <Name>ImageModifer</Name>
+      <Project>{d09242ff-0b3b-4dc8-a05a-98376f2baaf6}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

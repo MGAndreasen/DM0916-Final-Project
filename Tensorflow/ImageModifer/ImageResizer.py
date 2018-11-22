@@ -1,4 +1,4 @@
-import os,glob,cv2
+import os, glob, cv2
 import shutil
 from PIL import Image
 import numpy as np
@@ -8,11 +8,13 @@ import numpy as np
 #scale factor along the horizontal axis
 def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod, dst):
     #finds the file name in filepath
-    filePathSplitted = str(filePath).split('\\', -1)
-    lastSplit = filePath.count('\\')
-    orginalFileName = filePathSplitted[lastSplit] 
+    #filePathSplitted = str(filePath).split('/', -1)
+    #lastSplit = filePath.count('/')
+    #orginalFileName = filePathSplitted[lastSplit] 
+    orginalFileName = filePath.split('\\')[-1]
 
-    newFileName = '\\resized_'+ str(col) + '-' + str(row) + '_' + str(interpolationMethod) + orginalFileName
+
+    newFileName = '/resized_'+ str(col) + '-' + str(row) + '_' + str(interpolationMethod) + orginalFileName
     newFilePath = dst + newFileName;
     
     if interpolationMethod == cv2.INTER_LINEAR:
@@ -30,7 +32,22 @@ def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVert
         cv2.imwrite(newFilePath, newImage)
    
 
-#Testing Area.
-imagePath =  R"C:\Users\Chris\OneDrive\Skrivebord\e.jpg";
-dst =         "C:\\Users\\Chris\\OneDrive\\Skrivebord\\";
-resizeSingleImage(imagePath, 128, 128, 0, 0, cv2.INTER_LINEAR_EXACT, dst)
+
+def resizeImagesInFolder(folderPath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod):
+    folderPath = os.path.normpath(folderPath)
+    dst = folderPath
+
+    for the_file in os.listdir(folderPath):
+        
+        file_path = os.path.join(folderPath, the_file)
+        print(file_path)
+
+
+        try:
+            if os.path.isfile(file_path):
+                print("Resizing image: " + file_path)
+                resizeSingleImage(file_path, 128, 128, 0, 0, cv2.INTER_LINEAR_EXACT, dst)
+                os.remove(file_path) #deletes the orginalImage after it's resized
+        except Exception as e:
+            print("Exception in ResizeImagesInFolder")
+            print(e)
