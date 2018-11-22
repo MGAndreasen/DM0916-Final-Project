@@ -29,6 +29,7 @@ foreach (new DirectoryIterator('cykler/') as $fileInfo) {
 	}
 }
 $out = trim($out,",\n");
+header('Content-Type: application/json');
 echo "{\n".$out."\n}";
 }
 ?>
