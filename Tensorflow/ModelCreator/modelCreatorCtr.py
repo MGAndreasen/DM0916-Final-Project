@@ -79,8 +79,8 @@ def createModelFromJsonfileUrl(url, filePath):
 
     #Maybe delete all trainning images after it's done? Maybe this should only be done if asked for in the info section of the json.
 
-#Testing Area
+#Testing Area - Running the createModelFromJsonfileUrl with the testData.json file
 url = "http://4pi.dk/playground/testjsondata/index.php?fbclid=IwAR3NWUErkGsKorzr7omAkj33PcWqrjMFuyLZyUiMiv2A6H5PdATMvt7cH7c";
-filePath = os.path.normpath('C:/test/testData.json');
+filePath = os.path.normpath(os.getcwd() + '/../../Websites/playground/testjsondata/testData.json');
 
 createModelFromJsonfileUrl(0, filePath)

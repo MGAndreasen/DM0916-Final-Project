@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "bikes",
+    "img_size": "128",
+    "validation_size": "0.2",
+    "batch_size": "5",
+    "channels": "3",
+    "iterations": "2",
+    "filter_size_conv1": "3",
+    "num_filters_conv1": "32",
+    "filter_size_conv2": "3",
+    "num_filters_conv2": "32",
+    "filter_size_conv3": "3",
+    "num_filters_conv3": "64",
+    "fc_layer_size": "128"
+  },
+  "categories": {
+    "city": [
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=Specialized-Citybike-roll-81.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=micado-shopping-citybike-dame-7-gear-matsort_91217015X.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=helium-dame-red-2018-p.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=images (2).jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=imagenpral-92.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=viking-damen-cityrad-28-zoll-6-gang-valencia-tuerkis.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=pink-city-bike.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=images.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=images (1).jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=city&img=citybike-herren-condorino-28-zoll-6-gang-felgenbremse-blau.jpg"
+      }
+    ],
+    "bmx": [
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=gt-bmx-mach-one-expert-20.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=maxresdefault.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=CUDA_Dirt_Squirt_18_BMX_1511864776.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=backsmall_2048x2048.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=x-4u-bmx-for-den-vin-20-tomme-frihjul-flaske-gron-316275-11-l.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=3235_4900.w610.h610.backdrop.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=images.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=images (1).jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=2019-Haro-Downtown-18-Matte-Black_grande.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=bmx&img=gyGVazYyfrL_2n8apVLwBLKKI.jpg"
+      }
+    ],
+    "mtb": [
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=getImage.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=cube-access-wls-275-rod-dame-mtb-2017_C825001.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=cuda-impact-24-dh-xc-mtb-bike.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=download.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=819ZCLxo06L._SY355_.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=bal-mtb_1024x1024.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=showthumb.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=images.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=images (1).jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=p-743-mountainbike-baolujie-01_1024x1024.jpg"
+      },
+      {
+        "url": "http://4pi.dk/playground/testjsondata/index.php?cat=mtb&img=trek-fuel-ex-jr-junior-mountainbike-til-boern-p.jpeg"
+      }
+    ]
+  }
+}
