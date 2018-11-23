@@ -30,18 +30,13 @@ def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVert
         image = cv2.imread(newFilePath, 1)
         newImage = cv2.resize(image, (col, row), scaleFactorHorizontal, scaleFactorVertical, interpolationMethod)
         cv2.imwrite(newFilePath, newImage)
-   
-
 
 def resizeImagesInFolder(folderPath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod):
     folderPath = os.path.normpath(folderPath)
     dst = folderPath
 
     for the_file in os.listdir(folderPath):
-        
         file_path = os.path.join(folderPath, the_file)
-        print(file_path)
-
 
         try:
             if os.path.isfile(file_path):

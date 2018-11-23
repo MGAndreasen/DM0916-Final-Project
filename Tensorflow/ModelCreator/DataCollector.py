@@ -16,11 +16,7 @@ import urllib
 import ImageResizer
 
 
-#holds each object from json file. 
-filePath = os.path.normpath('C:/test/testData.json');
 
-url = "http://4pi.dk/playground/testjsondata/index.php?fbclid=IwAR3NWUErkGsKorzr7omAkj33PcWqrjMFuyLZyUiMiv2A6H5PdATMvt7cH7c";
-#url = filePath
 
 def readJsonFromUrl(url): 
     req = urllib.request.Request(url, headers={'User-Agent' : "CNNModelCreator"}) 
@@ -51,11 +47,19 @@ def getFileNameFromUrl(url):
     fileName = url.split('img=')[-1]
     return fileName
     
-def readJsonData(dataFolderPath):
-    #data = readJsonFromUrl(url)
-    data = loadJsonLocalFile(R'C:\test\testData.json')
+def readJsonData(dataFolderPath, url = 0, filePath = 0):
+
+    if url is not 0:
+        data = readJsonFromUrl(url)
+    else:
+        data = loadJsonLocalFile(filePath)
+    
+    #Getting data from info field in json.
     modelName = data["info"]["name"]
-    size = data["info"]["size"]
+    size = data["info"]["img_size"]
+
+
+
     data = data["categories"]
 
     for categorie in data.keys():

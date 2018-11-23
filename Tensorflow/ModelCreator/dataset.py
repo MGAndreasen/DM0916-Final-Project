@@ -26,7 +26,7 @@ def load_train(train_path, image_size, classes):
             print('Loading file: ', i, '/', len(files))
             image = cv2.imread(fl)
             #print('imageSize: ' + image)
-            image = cv2.resize(image, (image_size, image_size),0,0, cv2.INTER_LINEAR)
+            #image = cv2.resize(image, (image_size, image_size),0,0, cv2.INTER_LINEAR)
             image = image.astype(np.float32)
             image = np.multiply(image, 1.0 / 255.0)
             images.append(image)

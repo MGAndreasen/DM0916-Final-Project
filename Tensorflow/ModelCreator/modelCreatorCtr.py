@@ -18,31 +18,45 @@ def deleteAllFilesInFolderAndSubFolders(folder):
             print(e)
 
 
+#This is the main method for setting the whole ModelCreator project in motion.
+def createModelFromJsonfileUrl(url = 0, filePath = 0):
+    #Downloading and ressizing images
+    dataFolderPath = os.path.normpath('C:/CnnModelCreatorData')
+    deleteAllFilesInFolderAndSubFolders(dataFolderPath)
+
+    if url is not 0:
+        DataCollector.readJsonData(dataFolderPath, url, 0)
+    else:
+        DataCollector.readJsonData(dataFolderPath, 0, filePath)
+
+    #Collecting info on how the model should be created.
+    data = DataCollector.readJsonFromUrl(url)
+    data = DataCollector.loadJsonLocalFile(R'C:\test\testData.json')
+    validation_size =  data["info"]["validation_size"]
+    batch_size = data["info"]["batch_size"]
+    img_size = data["info"]["img_size"]
+    num_channels = data["info"]["channels"]
+    classes = []
+    for value in data["categories"].keys():
+        classes.append(value)
+    num_classes = len(classes)
+    num_iteration = data["info"]["iterations"]
+
+    #hardcorded value.
+    CnnModelFolder = R"C:\CnnModelCreatorData"
+    modelFolder = os.path.normpath(CnnModelFolder + '/' + data["info"]["name"]);
+    train_path = modelFolder
+
+    #loads the dataset for training 
+    dataset.load_train(train_path, img_size, classes);
+
+    #Creates the model and trains the model.
+    train.doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder)
+
+    #Maybe delete all trainning images after it's done? Maybe this should only be done if asked for in the info section of the json.
+
 #Testing Area
-dataFolderPath = os.path.normpath('C:/CnnModelCreatorData');
-deleteAllFilesInFolderAndSubFolders(dataFolderPath)
-DataCollector.readJsonData(dataFolderPath);
+url = "http://4pi.dk/playground/testjsondata/index.php?fbclid=IwAR3NWUErkGsKorzr7omAkj33PcWqrjMFuyLZyUiMiv2A6H5PdATMvt7cH7c";
+filePath = os.path.normpath('C:/test/testData.json');
 
-
-#Setting up for training with hardcorded values for now.
-
-# 20% of the data will automatically be used for validation
-validation_size = 0.2
-train_path=R"C:\modelCreatorData";
-batch_size = 5
-img_size = 128
-num_channels = 3
-
-#Prepare input data
-classes = ['bmx', 'city', 'mtb']
-num_classes = len(classes)
-num_iteration = 2
-
-modelFolder = R"C:\CnnModelCreatorData\bikes"
-
-train_path=R"C:\CnnModelCreatorData\bikes"
-image_size = 128
-classes = ['city', 'bmx', 'mtb']
-dataset.load_train(train_path, image_size, classes);
-
-train.doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder)
+createModelFromJsonfileUrl(0, filePath)
