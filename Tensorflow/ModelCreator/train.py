@@ -119,7 +119,7 @@ def loadData(train_path, img_size, classes, validation_size):
 
     return data;
 
-def doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder):
+def doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder, filter_size_conv1, num_filters_conv1, filter_size_conv2, num_filters_conv2, filter_size_conv3, num_filters_conv3, fc_layer_size):
 
     #Adding Seed so that random initialization is consistent   
     from numpy.random import seed  

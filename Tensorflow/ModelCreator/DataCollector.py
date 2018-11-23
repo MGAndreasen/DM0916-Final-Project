@@ -47,18 +47,16 @@ def getFileNameFromUrl(url):
     fileName = url.split('img=')[-1]
     return fileName
     
-def readJsonData(dataFolderPath, url = 0, filePath = 0):
+def readJsonData(dataFolderPath, url, filePath):
 
-    if url is not 0:
-        data = readJsonFromUrl(url)
-    else:
+    if url is 0:
         data = loadJsonLocalFile(filePath)
+    else:
+        data = readJsonFromUrl(url)
     
     #Getting data from info field in json.
     modelName = data["info"]["name"]
     size = data["info"]["img_size"]
-
-
 
     data = data["categories"]
 

@@ -19,39 +19,63 @@ def deleteAllFilesInFolderAndSubFolders(folder):
 
 
 #This is the main method for setting the whole ModelCreator project in motion.
-def createModelFromJsonfileUrl(url = 0, filePath = 0):
+def createModelFromJsonfileUrl(url, filePath):
     #Downloading and ressizing images
     dataFolderPath = os.path.normpath('C:/CnnModelCreatorData')
     deleteAllFilesInFolderAndSubFolders(dataFolderPath)
 
-    if url is not 0:
-        DataCollector.readJsonData(dataFolderPath, url, 0)
-    else:
+    if url is 0:
         DataCollector.readJsonData(dataFolderPath, 0, filePath)
+        data = DataCollector.loadJsonLocalFile(filePath)
+    else:
+        DataCollector.readJsonData(dataFolderPath, url, 0)
+        data = DataCollector.readJsonFromUrl(url)
+        
 
     #Collecting info on how the model should be created.
-    data = DataCollector.readJsonFromUrl(url)
-    data = DataCollector.loadJsonLocalFile(R'C:\test\testData.json')
     validation_size =  data["info"]["validation_size"]
+    validation_size = float(validation_size)
+
     batch_size = data["info"]["batch_size"]
+    batch_size = int(batch_size)
+
     img_size = data["info"]["img_size"]
+    img_size = float(img_size)
+
     num_channels = data["info"]["channels"]
+    num_channels = int(num_channels)
+
     classes = []
     for value in data["categories"].keys():
         classes.append(value)
     num_classes = len(classes)
+
     num_iteration = data["info"]["iterations"]
+    num_iteration = int(num_iteration)
 
     #hardcorded value.
     CnnModelFolder = R"C:\CnnModelCreatorData"
     modelFolder = os.path.normpath(CnnModelFolder + '/' + data["info"]["name"]);
     train_path = modelFolder
 
+
+    ##Network graph params
+    filter_size_conv1 = int(data["info"]["filter_size_conv1"])
+    num_filters_conv1 = int(data["info"]["num_filters_conv1"])
+
+    filter_size_conv2 = int(data["info"]["filter_size_conv2"])
+    num_filters_conv2 = int(data["info"]["num_filters_conv2"])
+
+    filter_size_conv3 = int(data["info"]["filter_size_conv3"])
+    num_filters_conv3 = int(data["info"]["num_filters_conv3"])
+
+    fc_layer_size = int(data["info"]["fc_layer_size"])
+
     #loads the dataset for training 
     dataset.load_train(train_path, img_size, classes);
 
     #Creates the model and trains the model.
-    train.doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder)
+    train.doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder, filter_size_conv1, num_filters_conv1, filter_size_conv2, num_filters_conv2, filter_size_conv3, num_filters_conv3, fc_layer_size)
 
     #Maybe delete all trainning images after it's done? Maybe this should only be done if asked for in the info section of the json.
 
