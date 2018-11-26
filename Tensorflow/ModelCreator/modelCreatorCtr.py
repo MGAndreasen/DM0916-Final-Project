@@ -20,10 +20,12 @@ def deleteAllFilesInFolderAndSubFolders(folder):
 
 #This is the main method for setting the whole ModelCreator project in motion.
 def createModelFromJsonfileUrl(url, filePath):
-    #Downloading and ressizing images
-    dataFolderPath = os.path.normpath('C:/CnnModelCreatorData')
+    #Making the main dir that data will be stored in.
+    dataFolderPath = os.path.normpath(os.getcwd() + '/CnnModelCreatorData')
+    DataCollector.createFolder(dataFolderPath)
     deleteAllFilesInFolderAndSubFolders(dataFolderPath)
 
+    #Downloading and ressizing images
     if url is 0:
         DataCollector.readJsonData(dataFolderPath, 0, filePath)
         data = DataCollector.loadJsonLocalFile(filePath)
@@ -54,10 +56,8 @@ def createModelFromJsonfileUrl(url, filePath):
     num_iteration = int(num_iteration)
 
     #hardcorded value.
-    CnnModelFolder = R"C:\CnnModelCreatorData"
-    modelFolder = os.path.normpath(CnnModelFolder + '/' + data["info"]["name"]);
-    train_path = modelFolder
-
+    train_path = os.normpath(dataFolderPath + '/' + data["info"]["name"])
+    modelFolder = os.normpath(train_path + '/modelData')
 
     ##Network graph params
     filter_size_conv1 = int(data["info"]["filter_size_conv1"])

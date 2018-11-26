@@ -84,7 +84,7 @@ def show_progress(epoch, feed_dict_train, feed_dict_validate, val_loss):
     msg = "Training Epoch {0} --- Training Accuracy: {1:>6.1%}, Validation Accuracy: {2:>6.1%},  Validation Loss: {3:.3f}"
     print(msg.format(epoch + 1, acc, val_acc, val_loss))
 
-def train(batch_size, modelFolder, num_iteration):
+def train(batch_size, train_path, modelFolder, num_iteration):
     global total_iterations
     
     for i in range(total_iterations,
@@ -200,4 +200,4 @@ def doRun(classes, validation_size, train_path, batch_size, img_size, num_channe
     global saver
     saver = tf.train.Saver()
 
-    train(batch_size, modelFolder, num_iteration=1000)
+    train(batch_size, train_path, modelFolder, num_iteration=1000)

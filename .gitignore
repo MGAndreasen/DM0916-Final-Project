@@ -329,3 +329,6 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /DM0916-FinalProject/.vs/DM0916-FinalProject/v15/Server/sqlite3
+
+# Folders to be ignored
+CnnModelCreatorData/
