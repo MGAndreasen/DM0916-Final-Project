@@ -322,6 +322,12 @@ $commands[] = sprintf(
 	, $exclude
 );
 
+// Chmod command 
+$commands[] = sprintf(
+	'chmod 774 -Rv %s'
+	, TARGET_DIR
+);
+
 // =======================================[ Post-Deployment steps ]===
 
 // Remove the TMP_DIR (depends on CLEAN_UP)
