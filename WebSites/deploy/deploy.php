@@ -324,7 +324,7 @@ $commands[] = sprintf(
 
 // Chmod command -fix
 $commands[] = sprintf(
-	'chmod 774 -Rv %s'
+	'chmod 776 -Rv %s'
 	, TARGET_DIR
 );
 
