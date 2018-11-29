@@ -16,7 +16,7 @@ class ConnectionDB
 
 	public function getConnection()
 	{
-		if(!$this->connection)
+		if($this->connection === NULL)
 		{
 			return null;
 		}
