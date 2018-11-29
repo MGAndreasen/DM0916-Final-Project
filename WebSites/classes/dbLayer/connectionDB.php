@@ -10,6 +10,7 @@ class ConnectionDB
 
     private function connect()
     {
+		global $config;
         $this->connection = new mysqli($config['DBHost'], $config['DBUser'], $config['DBPass'], $config['DBName']);
 
         if ($this->connection->connect_errno) {

@@ -1,6 +1,6 @@
 <?php
 // Include our configuration
-global $config = include('../config.php');
+$config = include('../config.php');
 include('../classes/dbLayer/connectionDB.php');
 
 echo $config['DBName'];
