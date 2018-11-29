@@ -7,6 +7,7 @@ session_start();
 
 // create output array
 $data = array();
+$data['test'] = 'Hmm';
 
 // Load Include files.
 include('../classes/dbLayer/connectionDB.php');
