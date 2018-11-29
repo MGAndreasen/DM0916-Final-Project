@@ -75,6 +75,29 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageClassifier", "Tensorfl
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageModifer", "Tensorflow\ImageModifer\ImageModifer.pyproj", "{D09242FF-0B3B-4DC8-A05A-98376F2BAAF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "classes", "classes", "{C10D64C3-CCE2-4342-B85E-FBFB0C5ACF18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ctrlLayer", "ctrlLayer", "{050482BA-F4AC-4452-97B4-E608872309C3}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\classes\ctrlLayer\customerCtrl.php = WebSites\classes\ctrlLayer\customerCtrl.php
+		WebSites\classes\ctrlLayer\modelCtrl.php = WebSites\classes\ctrlLayer\modelCtrl.php
+		WebSites\classes\ctrlLayer\projectCtrl.php = WebSites\classes\ctrlLayer\projectCtrl.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dbLayer", "dbLayer", "{77D1700B-2A7C-463A-A1D1-FBF1118C30ED}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\classes\dbLayer\customerDB.php = WebSites\classes\dbLayer\customerDB.php
+		WebSites\classes\dbLayer\modelDB.php = WebSites\classes\dbLayer\modelDB.php
+		WebSites\classes\dbLayer\projectDB.php = WebSites\classes\dbLayer\projectDB.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modelLayer", "modelLayer", "{EA5EDE8B-0E34-4146-96E0-C393180CB559}"
+	ProjectSection(SolutionItems) = preProject
+		WebSites\classes\modelLayer\customer.php = WebSites\classes\modelLayer\customer.php
+		WebSites\classes\modelLayer\model.php = WebSites\classes\modelLayer\model.php
+		WebSites\classes\modelLayer\project.php = WebSites\classes\modelLayer\project.php
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +161,10 @@ Global
 		{25ACFB6A-D6EE-4FB1-873E-A9E40701EF1A} = {0848500B-0527-4710-9399-806A94A81639}
 		{B6852872-8A75-4072-BA39-0D7457533304} = {0848500B-0527-4710-9399-806A94A81639}
 		{D09242FF-0B3B-4DC8-A05A-98376F2BAAF6} = {0848500B-0527-4710-9399-806A94A81639}
+		{C10D64C3-CCE2-4342-B85E-FBFB0C5ACF18} = {70027DCB-660E-49DA-9A11-8A303E8DD11D}
+		{050482BA-F4AC-4452-97B4-E608872309C3} = {C10D64C3-CCE2-4342-B85E-FBFB0C5ACF18}
+		{77D1700B-2A7C-463A-A1D1-FBF1118C30ED} = {C10D64C3-CCE2-4342-B85E-FBFB0C5ACF18}
+		{EA5EDE8B-0E34-4146-96E0-C393180CB559} = {C10D64C3-CCE2-4342-B85E-FBFB0C5ACF18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE771AEB-FA5E-420A-962D-9887DEB4C9F5}
