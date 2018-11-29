@@ -11,7 +11,7 @@ class ConnectionDB
     private function connect()
     {
 		global $config;
-        $this->connection = new mysqli($config['DBHost'], $config['DBUser'].'s', $config['DBPass'], $config['DBName']);
+        $this->connection = new mysqli($config['DBHost'], $config['DBUser'], $config['DBPass'], $config['DBName']);
     }
 
 	public function getConnection()
