@@ -1,2 +1,2 @@
-section.page { display: none; }
-section.default { display: block; }
+.pages .page { display: none; }
+.pages .default { display: block; }
