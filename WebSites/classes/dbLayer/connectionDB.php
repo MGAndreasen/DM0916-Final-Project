@@ -18,8 +18,9 @@ class ConnectionDB
 	{
 		if($this->connection->connect_errno)
 		{
-			getError();
-			exit;
+			global $data;
+			array_push($data,getError());
+			unset($this->connection);
 		}
 
 		return $this->connection;
@@ -27,10 +28,11 @@ class ConnectionDB
 
 	private function getError()
 	{
-            echo '<br/>', 'Error: Unable to connect to Database.' , '<br>';
-            echo "Debugging errno: " .  $this->connection->connect_errno , '<br>';
-            echo "Debugging error: " .  $this->connection->connect_error , '<br>';
-            unset($this->connection);
+		return array(
+			'ERROR' => 'Unable to connect to Database.',
+			'ERRNO' => $this->connection->connect_errno,
+			'ERRMSG' => $this->connection->connect_error
+		);
 	}
 
 	public function closeConnection()
