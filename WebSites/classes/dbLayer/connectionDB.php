@@ -18,20 +18,19 @@ class ConnectionDB
 	{
 		if($this->connection->connect_errno)
 		{
-			return null;
+			getError();
+			exit;
 		}
 
 		return $this->connection;
 	}
 
-	public function getError()
+	private function getError()
 	{
-		if ($this->connection->connect_errno) {
             echo '<br/>', 'Error: Unable to connect to Database.' , '<br>';
             echo "Debugging errno: " .  $this->connection->connect_errno , '<br>';
             echo "Debugging error: " .  $this->connection->connect_error , '<br>';
             unset($this->connection);
-        }
 	}
 
 	public function closeConnection()

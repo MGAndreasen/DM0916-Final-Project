@@ -9,11 +9,6 @@ include('../classes/dbLayer/connectionDB.php');
 $dbCtrl = new connectionDB();
 $conn = $dbCtrl->getConnection();
 
-if($conn === NULL)
-{
-	$dbCtrl->getError();
-	exit;
-}
 
 echo "connected!";
 ?>
