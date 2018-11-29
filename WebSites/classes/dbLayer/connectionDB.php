@@ -3,7 +3,7 @@ class ConnectionDB
 {
 	private $connection = null;
 
-    private function __construct()
+    public function __construct()
     {
         $this->connect();
     }
