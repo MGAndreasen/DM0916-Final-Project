@@ -16,6 +16,11 @@ class ConnectionDB
 
 	public function getConnection()
 	{
+		if(!$this->connection)
+		{
+			return null;
+		}
+
 		return $this->connection;
 	}
 
