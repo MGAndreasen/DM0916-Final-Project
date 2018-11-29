@@ -1,15 +1,19 @@
 <?php
 // Include our configuration
 $config = include('../config.php');
+
+// Load Include files.
 include('../classes/dbLayer/connectionDB.php');
 
-echo $config['DBName'];
+// Connect to Mysql (MariaDB)
+$dbCtrl = new connectionDB();
+$conn = $dbCtrl->getConnection();
 
-$db = new connectionDB();
-
-$conn = $db->getConnection();
-if($conn)
+if(!$conn)
 {
-	echo "connected!";
+	$dbCtrl->getError();
+	exit;
 }
+
+echo "connected!";
 ?>
