@@ -7,5 +7,5 @@ echo $config['db'];
 
 $db = new connectionDB();
 
-$conn = $db->getConnection();
+//$conn = $db->getConnection();
 ?>
