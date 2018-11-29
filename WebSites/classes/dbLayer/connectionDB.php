@@ -1,5 +1,5 @@
 <?php
-class ConnectionDB()
+class ConnectionDB
 {
 	private connection = null;
 
