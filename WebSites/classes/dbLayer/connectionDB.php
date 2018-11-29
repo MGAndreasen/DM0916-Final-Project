@@ -21,7 +21,7 @@ class ConnectionDB
         }
     }
 
-	public getConnection()
+	public function getConnection()
 	{
 		return $this->connection;
 	}
