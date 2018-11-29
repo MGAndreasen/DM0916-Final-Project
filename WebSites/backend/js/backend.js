@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
     $.ajax({
-        url: "/backend/ajaxs.php",
+        url: "/backend/ajax12.php",
         data: {
             test: 12
         },
