@@ -8,4 +8,8 @@ echo $config['DBName'];
 $db = new connectionDB();
 
 $conn = $db->getConnection();
+if($conn)
+{
+	echo "connected!";
+}
 ?>
