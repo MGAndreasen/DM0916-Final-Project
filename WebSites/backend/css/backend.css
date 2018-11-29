@@ -1,7 +1,7 @@
-section.page {
+section .page {
     display: none;
 }
 
-section.default {
+section .default {
     display: block;
 }
