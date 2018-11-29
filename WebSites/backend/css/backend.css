@@ -1,2 +1,7 @@
-.pages .page { display: none; }
-.pages .default { display: block; }
+section.page {
+    display: none;
+}
+
+section.default {
+    display: block;
+}
