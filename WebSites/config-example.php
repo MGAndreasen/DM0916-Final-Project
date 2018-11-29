@@ -1,8 +1,8 @@
 <?php 
 	return array(
-		'host' => 'localhost',
-		'db' => 'TFProject'
-		'username' => '4pi',
-		'userpass' => 'YourUserPasswordGoesHere'
+		'DBHost' => 'localhost',
+		'DBName' => 'TFProject'
+		'DBUser' => '4pi',
+		'DBPass' => 'YourUserPasswordGoesHere'
 	);
 ?>
