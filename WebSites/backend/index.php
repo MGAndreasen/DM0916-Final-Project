@@ -1,11 +1,11 @@
 <?php
 // Include our configuration
 $config = include('../config.php');
-include('../classes/dbLayer/connectionDB.php')
+include('../classes/dbLayer/connectionDB.php');
 
-echo $config['db'];
+echo $config['DBName'];
 
 $db = new connectionDB();
 
-//$conn = $db->getConnection();
+$conn = $db->getConnection();
 ?>
