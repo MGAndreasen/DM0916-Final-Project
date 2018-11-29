@@ -1,7 +1,7 @@
 <?php
 class ConnectionDB
 {
-	private connection = null;
+	private $connection = null;
 
     public function __construct()
     {
