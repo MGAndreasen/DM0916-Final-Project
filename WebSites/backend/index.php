@@ -9,6 +9,18 @@ include('../classes/dbLayer/connectionDB.php');
 $dbCtrl = new connectionDB();
 $conn = $dbCtrl->getConnection();
 
+// Page goes here!
+echo <<<HTMLout
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Backend SPA</title>
+  </head>
+<body>
+Some ajax calls here.
+</body>
 
-echo "connected!";
+</html>
+HTMLout;
 ?>
