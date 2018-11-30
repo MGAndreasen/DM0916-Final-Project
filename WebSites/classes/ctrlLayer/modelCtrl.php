@@ -10,7 +10,5 @@ class ModelCtrl
 		$modelDB = new ModelCtrl();
 		global $data;
 	}
-
-	
 }
 ?>
