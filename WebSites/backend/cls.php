@@ -15,7 +15,6 @@ include('../classes/dbLayer/connectionDB.php');
 $dbCtrl = new connectionDB();
 $conn = $dbCtrl->getConnection();
 
-
 // kode her under
 
 include('../classes/dbLayer/modelCtrl.php');

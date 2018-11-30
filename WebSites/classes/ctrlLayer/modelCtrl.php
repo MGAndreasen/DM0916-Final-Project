@@ -1,7 +1,4 @@
 <?php
-// test
-include('../classes/dbLayer/modelCtrl.php');
-
 class ModelCtrl
 {
 	$modelDB = null;
@@ -10,7 +7,6 @@ class ModelCtrl
 	{
 		global $data;
 		$modelDB = new ModelCtrl();
-		
 	}
 }
 ?>
