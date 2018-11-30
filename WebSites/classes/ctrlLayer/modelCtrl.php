@@ -1,13 +1,13 @@
 <?php
 class ModelCtrl
 {
-	$modelDB = null;
+	private $mDB = null;
 	include('../dbLayer/modelDB.php');
 
 	public function __construct()
 	{
 		global $data;
-		$modelDB = new ModelDB();
+		$mDB = new ModelDB();
 	}
 }
 ?>
