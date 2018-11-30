@@ -18,8 +18,8 @@ $conn = $dbCtrl->getConnection();
 
 // kode her under
 
-include('../classes/dbLayer/modelDB.php');
-$myModelDB = new modelDB();
+include('../classes/dbLayer/modelCtrl.php');
+$modelCtrl = new ModelCtrl();
 
 
 // output data array as Json
