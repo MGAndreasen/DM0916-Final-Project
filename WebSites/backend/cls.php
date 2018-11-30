@@ -19,8 +19,8 @@ $conn = $dbCtrl->getConnection();
 // kode her under
 
 include('../classes/dbLayer/modelDB.php');
+$myModelDB = new modelDB();
 
-$data['test'] = 'Hmm';
 
 // output data array as Json
 echo json_encode($data, JSON_PRETTY_PRINT);
