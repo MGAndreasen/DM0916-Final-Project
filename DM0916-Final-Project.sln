@@ -44,7 +44,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{5B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{70027DCB-660E-49DA-9A11-8A303E8DD11D}"
 	ProjectSection(SolutionItems) = preProject
-		WebSites\backend\index.php = WebSites\backend\index.php
+		WebSites\backend\ajax.php = WebSites\backend\ajax.php
+		WebSites\backend\index.html = WebSites\backend\index.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{F760D727-44B6-4F69-B33B-099C80B9A806}"
