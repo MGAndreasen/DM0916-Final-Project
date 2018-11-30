@@ -2,11 +2,12 @@
 class ModelCtrl
 {
 	$modelDB = null;
+	include('../dbLayer/modelDB.php');
 
 	public function __construct()
 	{
 		global $data;
-		$modelDB = new ModelCtrl();
+		$modelDB = new ModelDB();
 	}
 }
 ?>

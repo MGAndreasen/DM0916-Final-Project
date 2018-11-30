@@ -17,7 +17,7 @@ $conn = $dbCtrl->getConnection();
 
 // kode her under
 
-include('../classes/dbLayer/modelCtrl.php');
+include('../classes/ctrlLayer/modelCtrl.php');
 $modelCtrl = new ModelCtrl();
 
 
