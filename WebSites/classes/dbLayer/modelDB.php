@@ -11,7 +11,7 @@ class ModelDB
 
 		$someData['test'] = 'Hmm';
 
-		return $someDate;
+		return $someData;
 	}
 }
 ?>
