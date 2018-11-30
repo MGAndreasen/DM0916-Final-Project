@@ -1,8 +1,15 @@
 <?php
 class ModelDB
 {
-	
+	public function __construct()
+	{
+	}
 
-	$data['test'] = 'Hmm';
+	public function test()
+	{
+		$someData['test'] = 'Hmm';
+
+		return $someDate;
+	}
 }
 ?>

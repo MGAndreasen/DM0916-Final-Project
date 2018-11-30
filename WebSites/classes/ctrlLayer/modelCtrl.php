@@ -10,6 +10,8 @@ class ModelCtrl
 	{
 		global $data;
 		$mDB = new ModelDB();
+		$someDataFromDB = $mDB->test();
+		array_push($data,$someDataFromDB);
 	}
 }
 ?>
