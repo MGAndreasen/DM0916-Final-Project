@@ -6,12 +6,17 @@ $(document).ready(function () {
         data: {
             test: 12
         },
-        success: function (result) {
-            $("#status").html("<strong>" + result + "</strong>");
-        },
-        error: function () {
-            $("#status").html("<strong>could not load ajax.php</strong>");
-        }
+        success: testOk(result),
+        error: fejl()
     });
 
 });
+
+// Functions
+function testOk(result) {
+    $("#status").html("<p>STATUS: </p><strong>" + result + "</strong>");
+}
+
+function fejl() {
+    $("#status").html("<p>STATUS: </p><strong>could not load ajax.php</strong>");
+}
