@@ -1,8 +1,10 @@
 <?php
+// Includes
+require_once('../dbLayer/modelDB.php');
+
 class ModelCtrl
 {
 	private $mDB = null;
-	include('../dbLayer/modelDB.php');
 
 	public function __construct()
 	{
