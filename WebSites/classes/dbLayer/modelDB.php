@@ -7,6 +7,8 @@ class ModelDB
 
 	public function test()
 	{
+		$someData = array();
+
 		$someData['test'] = 'Hmm';
 
 		return $someDate;
