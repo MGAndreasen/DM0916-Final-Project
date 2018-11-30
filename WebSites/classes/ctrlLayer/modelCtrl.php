@@ -1,6 +1,6 @@
 <?php
 // Includes
-require_once('../dbLayer/modelDB.php');
+require_once('../classes/dbLayer/modelDB.php');
 
 class ModelCtrl
 {
