@@ -1,4 +1,5 @@
 <?php
+// test
 include('../classes/dbLayer/modelCtrl.php');
 
 class ModelCtrl
@@ -7,8 +8,9 @@ class ModelCtrl
 
 	public function __construct()
 	{
-		$modelDB = new ModelCtrl();
 		global $data;
+		$modelDB = new ModelCtrl();
+		
 	}
 }
 ?>
