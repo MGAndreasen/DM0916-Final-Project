@@ -25,10 +25,10 @@ $modelCtrl->getModels();
 
 echo '<br> Testing projectCtrl <br>';
 include('../classes/ctrlLayer/projectCtrl.php');
-$projectCtr = new ProjectCtr();
-$projectCtr->getProject(1);
+$projectCtrl = new ProjectCtrl();
+$projectCtrl->getProject(1);
 echo '<br>';
-$projectCtr->getProjects();
+$projectCtrl->getProjects();
 
 //include('../classes/dbLayer/modelDB.php');
 //$modelDB = new ModelDB();
