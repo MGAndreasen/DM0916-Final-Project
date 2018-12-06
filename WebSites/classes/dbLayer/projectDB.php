@@ -50,7 +50,8 @@ class ProjectDB
 				$projectStructure = new ProjectStructure($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 				$subStructures = $this->getSubProjectStructures($row['id']);
 				$projectStructure->setProjectStructures($subStructures);
-				array_push($resultArr, $projectStructure);
+				if (!is_empty($subStructures))
+					array_push($resultArr, $projectStructure);
 			}
 		} 
 		else 
