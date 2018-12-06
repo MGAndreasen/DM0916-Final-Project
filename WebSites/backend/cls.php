@@ -23,6 +23,13 @@ $modelCtrl->getModel(1);
 
 $modelCtrl->getModels();
 
+echo '<br> Testing projectCtr <br>';
+include('../classes/ctrlLayer/projectCtr.php');
+$projectCtr = new ProjectCtr();
+$projectCtr->getProject(1);
+echo '<br>';
+$projectCtr->getProjects();
+
 //include('../classes/dbLayer/modelDB.php');
 //$modelDB = new ModelDB();
 //array_push($data, $modelDB->getModel(1));
