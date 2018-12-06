@@ -5,7 +5,6 @@ class ModelDB
 
 	public function __construct()
 	{
-		global $conn;
 	}
 
 	public function test()
@@ -24,6 +23,7 @@ class ModelDB
 	}
 
 	public function getModel($projectID){
+		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare(getModelSQL);
 		$query->bind_param('i', $_GET('projectID'));
