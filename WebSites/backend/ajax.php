@@ -33,7 +33,7 @@ if (realpath($path))
 
 	$theClass = mb_strtoupper($ctrl);
 	$theCtrl = new $theClass();
-	$theCtrl->$func();
+	//$theCtrl->$func();
 }
 else
 {
