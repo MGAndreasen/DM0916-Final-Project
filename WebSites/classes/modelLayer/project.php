@@ -6,6 +6,8 @@ class Project implements JsonSerializable {
 	private $enabled;
 	private $name;
 	private $models = array();
+	private $images = array();
+	private $projectStructes = array();
 
 	public function __construct(int $id, string $image_size, string $enabled, string $name){
 		$this->id = $id;
