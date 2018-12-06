@@ -40,7 +40,7 @@ class ProjectDB
 	public function getProjectStructures($projectID){
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->$getProjectStructuresFromProjectID_SQL);
+		$query = $conn->prepare($this->getProjectStructuresFromProjectID_SQL);
 		$query->bind_param('i', $projectID);
 		$query->execute();
 		$result = $query->get_result();
