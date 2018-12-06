@@ -25,7 +25,7 @@ class ProjectDB
 			while($row = $result->fetch_assoc()) {
 				$project = new Project($row['id'], $row['image_size'], $row['enabled'], $row['name']);
 				$projectStructures = $this->getProjectStructures((int)$row['id']); 
-				$project->setProjectStructures($projectStructes);
+				$project->setProjectStructures($projectStructures);
 				array_push($resultArr, $project);
 			}
 		} 
