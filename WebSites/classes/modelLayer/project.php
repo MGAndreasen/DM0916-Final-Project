@@ -56,7 +56,7 @@ class Project implements JsonSerializable {
 	}
 
 	public function setImages($images){
-		$this-> = $images;
+		$this->images = $images;
 	}
 	
 	public function setProjectStructures($projectStructures){
