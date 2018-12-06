@@ -5,9 +5,18 @@ $config = include('../config.php');
 // Init session
 session_start();
 
-// create output array
+// create empty output array
 $data = array();
-$data['test'] = 'Hmm';
+
+// allowed Ctrls
+$ctrls = array('customer', 'model', 'project', 'user');
+
+if(!in_array($_GET['ctrl'], $ctrls))
+{
+	echo = "Ctrl findes ikke!";
+}
+
+
 
 // Load Include files.
 include('../classes/dbLayer/connectionDB.php');
