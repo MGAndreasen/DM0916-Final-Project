@@ -12,7 +12,7 @@ class ProjectStruture implements JsonSerializable {
 		$this->id = $id;
 		$this->image_size = $image_size;
 		$this->filter_size = $filter_size;
-		$this->$validation_size = $validation_size;
+		$this->validation_size = $validation_size;
 		$this->name = $name;
 	}
 
