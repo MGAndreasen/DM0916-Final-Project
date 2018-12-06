@@ -16,6 +16,7 @@ $data = array();
 $error = array();
 
 $ctrl = basename(strtolower($_GET['ctrl']), ".php").PHP_EOL;
+echo  $ctrl;
 $func = basename(strtolower($_GET['func']));
 
 if (realpath('../classes/ctrlLayer/'.$ctrl.'Ctrl.php'))
