@@ -79,7 +79,7 @@ class Project implements JsonSerializable {
             'imagesize' => $this->image_size,
 			'enabled' => $this->enabled,
 			'name' => $this->name,
-			'projectStructure' => $jsonProjectStructes,
+			'projectStructures' => $jsonProjectStructes,
 			'images' => $jsonImages
         );
     }
