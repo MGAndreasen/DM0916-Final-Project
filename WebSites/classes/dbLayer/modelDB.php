@@ -1,11 +1,11 @@
 <?php
 class ModelDB
 {
-	
 	private $getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
 
 	public function __construct()
 	{
+		global $conn;
 	}
 
 	public function test()
