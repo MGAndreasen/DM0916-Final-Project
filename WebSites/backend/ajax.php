@@ -15,11 +15,12 @@ session_start();
 $data = array();
 $error = array();
 
-$ctrl = basename(strtolower($_GET['ctrl']), ".php").PHP_EOL;
+$ctrl = basename(strtolower($_GET['ctrl']), ".php");
 echo  $ctrl;
 $func = basename(strtolower($_GET['func']));
-
-if (realpath('../classes/ctrlLayer/'.$ctrl.'Ctrl.php'))
+$path = '../classes/ctrlLayer/'.$ctrl.'Ctrl.php';
+echo $path;
+if (realpath($path))
 {
 	// Load Include files.
 	require_once('../classes/util/connectionDB.php');
