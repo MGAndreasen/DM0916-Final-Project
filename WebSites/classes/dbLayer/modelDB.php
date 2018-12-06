@@ -23,7 +23,7 @@ class ModelDB
 		return $someData;
 	}
 
-	public function getModel(int projectID){
+	public function getModel($projectID){
 		$resultArr = [];
 		$query = $conn->prepare(getModelSQL);
 		$query->bind_param('i', $_GET('projectID'));
