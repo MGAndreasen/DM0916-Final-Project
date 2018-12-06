@@ -1,7 +1,7 @@
 <?php
 class ModelDB
 {
-	private $getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
+	//private $getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
 
 	public function __construct()
 	{
@@ -23,9 +23,10 @@ class ModelDB
 	}
 
 	public function getModel($projectID){
+		$getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->$getModelSQL);
+		$query = $conn->prepare($getModelSQL);
 		$query->bind_param('i', $_GET('projectID'));
 		$result = $query->execute();
 		
