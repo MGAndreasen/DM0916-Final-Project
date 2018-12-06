@@ -73,7 +73,9 @@ class ProjectStructure implements JsonSerializable {
 		if(!empty($this->projectStructures)){
 			foreach($this->projectStructures as $projectStructure){
 				var_dump($projectStructure);
-				array_push($jsonStrutures, $projectStructure->jsonSerialize());
+				if(!is_string($projectStructure)){
+					array_push($jsonStrutures, $projectStructure->jsonSerialize());
+				}
 			}
 		}
 		else{
