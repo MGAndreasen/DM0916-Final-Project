@@ -48,7 +48,7 @@ class ProjectDB
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
 				$projectStructure = new ProjectStructure($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
-				$subStructures = $this->getSubProjectStructures($row['parent_id']);
+				$subStructures = $this->getSubProjectStructures($row['id']);
 				$projectStructure->setProjectStructures($subStructures);
 				array_push($resultArr, $projectStructure);
 			}
