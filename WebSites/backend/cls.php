@@ -26,8 +26,9 @@ $modelCtrl->getModels();
 echo '<br> Testing projectCtrl <br>';
 include('../classes/ctrlLayer/projectCtrl.php');
 $projectCtrl = new ProjectCtrl();
+echo '<br> projectCtrl->getProject(1) <br>';
 $projectCtrl->getProject(1);
-echo '<br>';
+echo '<br> projectCtrl->getProjects <br>';
 $projectCtrl->getProjects();
 
 //include('../classes/dbLayer/modelDB.php');
