@@ -13,7 +13,7 @@ $ctrls = array('customer', 'model', 'project', 'user');
 
 if(!in_array($_GET['ctrl'], $ctrls))
 {
-	echo = "Ctrl findes ikke!";
+	echo "Ctrl findes ikke!";
 }
 
 
