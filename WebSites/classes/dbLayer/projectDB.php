@@ -41,7 +41,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$model = new Model($row['id'], $row['image_size'], $row['enabled'], $row['name']);
+				$model = new Project($row['id'], $row['image_size'], $row['enabled'], $row['name']);
 				array_push($resultArr, $model);
 			}
 		} 
