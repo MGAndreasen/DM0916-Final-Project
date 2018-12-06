@@ -14,7 +14,7 @@ class ProjectDB
 	public function getProject($customerID){
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->$getProjectFromCustomerID_SQL);
+		$query = $conn->prepare($this->getProjectFromCustomerID_SQL);
 		$query->bind_param('i', $customerID);
 		$query->execute();
 		$result = $query->get_result();
@@ -35,7 +35,7 @@ class ProjectDB
 	public function getProjects(){
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->$getProjects_SQL);
+		$query = $conn->prepare($this->getProjects_SQL);
 		$query->execute();
 		$result = $query->get_result();
 		
