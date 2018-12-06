@@ -9,7 +9,7 @@ class ModelCtrl
 	public function __construct()
 	{
 		global $data;
-		$mDB = new ModelDB();
+		$this->mDB = new ModelDB();
 	}
 
 	public function getModel($projectId)
