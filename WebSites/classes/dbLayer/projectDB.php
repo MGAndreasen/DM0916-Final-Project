@@ -48,7 +48,7 @@ class ProjectDB
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
 				$projectStruture = new ProjectStruture($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
-				$subStructures = $this->getSubProjectStructures($row['id']);
+				$subStructures = $this->getSubProjectStructures($row['parent_id']);
 				
 				array_push($resultArr, $projectStruture);
 			}
@@ -60,10 +60,11 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	public function getSubProjectStructures($projectStruteID){
+	public function getSubProjectStructures($parent_id){
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getSubProjectStructuresFromProjectID_SQL);
+		$query->bind_param('i', $parent_id);
 		$query->execute();
 		$result = $query->get_result();
 		
@@ -79,7 +80,7 @@ class ProjectDB
 		}
 		return $resultArr;
 	}
-
+	
 	public function getProjects(){
 		global $conn;
 		$resultArr = [];
