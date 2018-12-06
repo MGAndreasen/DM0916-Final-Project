@@ -7,42 +7,42 @@ class Model {
 	private $completed;
 
 	public function __contruct(int $id, string $name, string $created, string $completed){
-		$this->$id = $id;
-		$this->$image_size = $image_size;
-		$this->$created = $created;
-		$this->$completed = $completed;
+		$this->id = $id;
+		$this->image_size = $image_size;
+		$this->created = $created;
+		$this->completed = $completed;
 	}
 
 	public function getID(){
-		return $this->$id;
+		return $this->id;
 	}
 
 	public function getImage_size(){
-		return $this->$image_size;
+		return $this->image_size;
 	}
 
 	public function getCreated(){
-		return $this->$created;
+		return $this->created;
 	}
 
 	public function getCompleted(){
-		return $this->$completed;
+		return $this->completed;
 	}
 
 	public function setID(int $id){
-		$this->{$id} = $id;
+		$this->id = $id;
 	}
 
 	public function setÍmage_size(int $size){
-		$this->{$image_size} = $size;
+		$this->image_size = $size;
 	}
 
 	public function setCreated($created){
-		$this->$created = $created;
+		$this->created = $created;
 	}
 
 	public function setCompleted($completed){
-		$this->$completed = $completed;
+		$this->completed = $completed;
 	}
 }
 
