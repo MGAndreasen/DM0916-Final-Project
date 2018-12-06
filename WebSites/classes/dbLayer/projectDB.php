@@ -7,7 +7,7 @@ class ProjectDB
 {
 	private $getProjectFromCustomerID_SQL = 'SELECT * FROM project WHERE customer_Id = ?';
 	private $getProjects_SQL = 'SELECT * FROM project';
-	private $getProjectStructuresFromProjectID_SQL = 'SELECT * FROM projectStruture WHERE project_id = ?';
+	private $getProjectStructuresFromProjectID_SQL = 'SELECT * FROM project_structur WHERE project_id = ?';
 
 	public function __construct()
 	{
