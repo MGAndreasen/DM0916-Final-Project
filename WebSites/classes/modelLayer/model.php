@@ -1,11 +1,11 @@
 <?php
-class Model implements JsonSerializable {
+class Model {
     private $id;
 	private $image_size;
 	private $created;
 	private $completed;
 
-	public function __construct($id, $name, $created, $completed){
+	public function __construct($id, $image_size, $created, $completed){
 		$this->id = $id;
 		$this->image_size = $image_size;
 		$this->created = $created;
@@ -46,7 +46,7 @@ class Model implements JsonSerializable {
 
 	public function jsonSerialize() {
         return array (
-            'id' => 1+$this->id,
+            'id' => $this->id,
             'imagesize' => $this->image_size,
 			'created' => $this->created,
 			'completed' => $this->completed
