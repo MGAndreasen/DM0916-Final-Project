@@ -66,7 +66,7 @@ class ProjectStruture implements JsonSerializable {
 
 	public function jsonSerialize() {
 		$jsonStrutures = [];
-		foreach($this->projectStructes as projectStructe){
+		foreach($this->projectStructes as $projectStructe){
 			push_array($jsonStrutures, $projectStructe->JsonSerializable());
 		}
 
