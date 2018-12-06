@@ -6,7 +6,7 @@ class Project implements JsonSerializable {
 	private $enabled;
 	private $name;
 	private $images = array();
-	private $projectStructes = array();
+	private $projectStructures = array();
 
 	public function __construct(int $id, string $image_size, string $enabled, string $name){
 		$this->id = $id;
@@ -60,7 +60,7 @@ class Project implements JsonSerializable {
 	}
 	
 	public function setProjectStructures($projectStructures){
-		$this->ProjectStructures = $projectStructures; 
+		$this->projectStructures = $projectStructures; 
 	}
 
 	public function jsonSerialize() {
