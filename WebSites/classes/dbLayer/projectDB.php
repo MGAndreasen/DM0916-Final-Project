@@ -47,10 +47,10 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$projectStruture = new ProjectStruture($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+				$projectStructure = new ProjectStructure($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 				$subStructures = $this->getSubProjectStructures($row['id']);
-				$projectStruture->setProjectStructures($subStructures);
-				array_push($resultArr, $projectStruture);
+				$projectStructure->setProjectStructures($subStructures);
+				array_push($resultArr, $projectStructure);
 			}
 		} 
 		else 
@@ -70,8 +70,8 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$subProjectStruture = new ProjectStruture($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
-				array_push($resultArr, $subProjectStruture);
+				$subProjectStructure = new ProjectStructure($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+				array_push($resultArr, $subProjectStructure);
 			}
 		} 
 		else 
