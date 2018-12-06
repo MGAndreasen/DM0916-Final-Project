@@ -79,10 +79,6 @@ class ProjectDB
 				array_push($resultArr, $subProjectStructure);
 			}
 		} 
-		else 
-		{
-			array_push($resultArr, '');
-		}
 		return $resultArr;
 	}
 	
