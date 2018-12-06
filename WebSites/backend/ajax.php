@@ -32,7 +32,7 @@ if (realpath('../classes/ctrlLayer/'.$ctrl.'Ctrl.php'))
 }
 else
 {
-	array_push($error, errorMsg($ctrl, '0', 'findes ikke.'));
+	array_push($error, errorMsg($ctrl, $func, 'Controller fil findes ikke.'));
 }
 
 // output data array as Json
@@ -41,12 +41,12 @@ array_push($data, $error);
 echo json_encode($data, JSON_PRETTY_PRINT);
 
 
-function errorMsg(string $error, string $errorno, $errormsg)
+function errorMsg(string $ctrl, string $func, $msg)
 {
 	return array(
-			'ERROR' => $error,
-			'ERRNO' => $errorno,
-			'ERRMSG' => $errormsg
+			'ERRCTRL' => $ctrl,
+			'ERRFUNC' => $func,
+			'ERRMSG' => $msg
 	);
 }
 ?>
