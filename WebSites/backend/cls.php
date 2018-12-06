@@ -20,21 +20,28 @@ $conn = $dbCtrl->getConnection();
 include('../classes/ctrlLayer/modelCtrl.php');
 $modelCtrl = new ModelCtrl();
 $modelCtrl->getModel(1);
-
 $modelCtrl->getModels();
+$data = [];
+
 
 echo '<br> Testing projectCtrl <br>';
 include('../classes/ctrlLayer/projectCtrl.php');
 $projectCtrl = new ProjectCtrl();
+
 echo '<br> projectCtrl->getProject(1) <br>';
 $projectCtrl->getProject(1);
+echo json_encode($data, JSON_PRETTY_PRINT);
+$data = [];
+
 echo '<br> projectCtrl->getProjects <br>';
 $projectCtrl->getProjects();
+echo json_encode($data, JSON_PRETTY_PRINT);
+$data = [];
 
 //include('../classes/dbLayer/modelDB.php');
 //$modelDB = new ModelDB();
 //array_push($data, $modelDB->getModel(1));
 
 // output data array as Json
-echo json_encode($data, JSON_PRETTY_PRINT);
+
 ?>
