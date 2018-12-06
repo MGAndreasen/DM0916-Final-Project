@@ -19,7 +19,7 @@ $conn = $dbCtrl->getConnection();
 
 include('../classes/ctrlLayer/modelCtrl.php');
 $modelCtrl = new ModelCtrl();
-
+$modelCtrl->getModel(1);
 
 // output data array as Json
 echo json_encode($data, JSON_PRETTY_PRINT);

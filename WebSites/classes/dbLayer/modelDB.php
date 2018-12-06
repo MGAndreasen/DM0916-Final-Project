@@ -1,6 +1,9 @@
 <?php
 class ModelDB
 {
+	
+	$getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
+
 	public function __construct()
 	{
 	}
@@ -18,6 +21,29 @@ class ModelDB
 		$query->execute();
 
 		return $someData;
+	}
+
+	public function getModel(int projectID){
+		$resultArr = [];
+		$query = $conn->prepare(getModelSQL);
+		$query->bind_param('i', $_GET('projectID'));
+		$result = $query->execute();
+		
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$id = $row["id"];
+				$image_size = $row["image_size"];
+				$created = $row["created"];
+				$completed = $row["completed"];
+				$model = new Model($id, $name, $created, $completed);
+				array_push($resultArr, $model);
+			}
+		} 
+		else 
+		{
+			array_push($resultArr, 'error: couldnt find any models with that projectID');
+		}
+		return $resultArr;
 	}
 }
 ?>
