@@ -29,10 +29,10 @@ echo json_encode($data, JSON_PRETTY_PRINT);
 // Functions! skal nok placeres andetsteds!
 
 
-function boolean isValidCtrl($ctrl)
+function isValidCtrl($ctrl)
 {
 	global $ctrls;
-	if(!in_array($_GET['ctrl'], $ctrls))
+	if(!in_array($_GET[ctrl], $ctrls))
 	{
 		echo "Ctrl findes ikke!";
 		exit;
