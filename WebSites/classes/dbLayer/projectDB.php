@@ -51,6 +51,9 @@ class ProjectDB
 				$subStructures = $this->getSubProjectStructures($row['id']);
 				$projectStructure->setProjectStructures($subStructures);
 				
+				//Checks if there exists any subStructures for this structure.
+				//so if no cant find a projectStructure with a parrent id matching this projectStructures id
+				//there shouldnt be a substructure
 				if (!(empty($this->getSubProjectStructures($row['id'])))){
 					array_push($resultArr, $projectStructure);
 				}
