@@ -25,7 +25,7 @@ class ModelDB
 	public function getModel($projectID){
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare(getModelSQL);
+		$query = $conn->prepare($getModelSQL);
 		$query->bind_param('i', $_GET('projectID'));
 		$result = $query->execute();
 		
