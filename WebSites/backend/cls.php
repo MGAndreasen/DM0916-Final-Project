@@ -17,9 +17,13 @@ $conn = $dbCtrl->getConnection();
 
 // kode her under
 
-include('../classes/ctrlLayer/modelCtrl.php');
-$modelCtrl = new ModelCtrl();
-$modelCtrl->getModel(1);
+//include('../classes/ctrlLayer/modelCtrl.php');
+//$modelCtrl = new ModelCtrl();
+//$modelCtrl->getModel(1);
+
+include('../classes/dbLayer/modelDB.php');
+$modelDB = new ModelDB();
+modelDB->getModel(1);
 
 // output data array as Json
 echo json_encode($data, JSON_PRETTY_PRINT);
