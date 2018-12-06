@@ -11,7 +11,7 @@ class ProjectDB
 	{
 	}
 
-	public function getModel($customerID){
+	public function getProject($customerID){
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->$getProjectFromCustomerID_SQL);
@@ -32,7 +32,7 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	public function getModels(){
+	public function getProjects(){
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->$getProjects_SQL);
