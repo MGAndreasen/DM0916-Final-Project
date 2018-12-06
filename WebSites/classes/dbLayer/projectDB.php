@@ -8,6 +8,7 @@ class ProjectDB
 	private $getProjectFromCustomerID_SQL = 'SELECT * FROM project WHERE customer_Id = ?';
 	private $getProjects_SQL = 'SELECT * FROM project';
 	private $getProjectStructuresFromProjectID_SQL = 'SELECT * FROM project_structur WHERE project_id = ?';
+	private $getSubProjectStructuresFromProjectID_SQL = 'SELECT * FROM project_structur WHERE parrent_id = ?';
 
 	public function __construct()
 	{
@@ -36,7 +37,6 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	//TODO
 	public function getProjectStructures($projectID){
 		global $conn;
 		$resultArr = [];
@@ -48,6 +48,8 @@ class ProjectDB
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
 				$projectStruture = new ProjectStruture($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+				$subStructures = $this->getSubStructures($row['id'])
+				
 				array_push($resultArr, $projectStruture);
 			}
 		} 
@@ -56,8 +58,26 @@ class ProjectDB
 			array_push($resultArr, 'error: couldnt find any projectStruture with that projectID');
 		}
 		return $resultArr;
+	}
 
-
+	public function getSubProjectStructures($projectStruteID){
+		global $conn;
+		$resultArr = [];
+		$query = $conn->prepare($this->getSubProjectStructuresFromProjectID_SQL);
+		$query->execute();
+		$result = $query->get_result();
+		
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$subProjectStruture = new ProjectStruture($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+				array_push($resultArr, $subProjectStruture);
+			}
+		} 
+		else 
+		{
+			array_push($resultArr, 'error: couldnt find any projects');
+		}
+		return $resultArr;
 	}
 
 	public function getProjects(){
