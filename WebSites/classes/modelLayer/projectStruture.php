@@ -70,7 +70,7 @@ class ProjectStruture implements JsonSerializable {
 
 	public function jsonSerialize() {
 		$jsonStrutures = [];
-		if($projectStructures != null){
+		if($this->projectStructures != null){
 			foreach($this->projectStructures as $projectStructure){
 				array_push($jsonStrutures, $projectStructure->jsonSerialize());
 			}
