@@ -50,9 +50,12 @@ class ProjectDB
 				$projectStructure = new ProjectStructure($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 				$subStructures = $this->getSubProjectStructures($row['id']);
 				$projectStructure->setProjectStructures($subStructures);
-				if ($row['parent_id'] != 0){
+				
+				if ($this->getSubProjectStructures($row['id']) != '')
 					array_push($resultArr, $projectStructure);
 				}
+
+
 			}
 		} 
 		else 
@@ -78,7 +81,7 @@ class ProjectDB
 		} 
 		else 
 		{
-			array_push($resultArr, 'error: couldnt find any projects');
+			array_push($resultArr, '');
 		}
 		return $resultArr;
 	}
