@@ -1,7 +1,10 @@
 <?php
+// Includes
+require_once('../classes/modelLayer/model.php');
+
 class ModelDB
 {
-	//private $getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
+	//private getModelSQL = 'SELECT * FROM model WHERE project_Id = ?';
 
 	public function __construct()
 	{
@@ -33,11 +36,7 @@ class ModelDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$id = $row["id"];
-				$image_size = $row["image_size"];
-				$created = $row["created"];
-				$completed = $row["completed"];
-				$model = new Model($id, $name, $created, $completed);
+				$model = new Model($row["id"], $row["image_size"], $row["created"], $row["completed"]);
 				array_push($resultArr, $model);
 			}
 		} 
