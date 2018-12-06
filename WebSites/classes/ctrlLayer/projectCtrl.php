@@ -2,7 +2,7 @@
 // Includes
 require_once('../classes/dbLayer/modelDB.php');
 
-class ModelCtrl
+class ProjectCtrl
 {
 	private $mDB = null;
 	private $data = null;

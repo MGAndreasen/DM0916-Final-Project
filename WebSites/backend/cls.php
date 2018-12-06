@@ -23,8 +23,8 @@ $modelCtrl->getModel(1);
 
 $modelCtrl->getModels();
 
-echo '<br> Testing projectCtr <br>';
-include('../classes/ctrlLayer/projectCtr.php');
+echo '<br> Testing projectCtrl <br>';
+include('../classes/ctrlLayer/projectCtrl.php');
 $projectCtr = new ProjectCtr();
 $projectCtr->getProject(1);
 echo '<br>';

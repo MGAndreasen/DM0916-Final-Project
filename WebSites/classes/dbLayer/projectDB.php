@@ -2,7 +2,7 @@
 // Includes
 require_once('../classes/modelLayer/project.php');
 
-class ModelDB
+class ProjectDB
 {
 	private $getProjectFromCustomerID_SQL = 'SELECT * FROM project WHERE customer_Id = ?';
 	private $getProjects_SQL = 'SELECT * FROM project';
