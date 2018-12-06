@@ -1,6 +1,6 @@
 <?php
 //	id	project_id	parent_id	image_size	filter_size	validation_size	name
-class ProjectStruture implements JsonSerializable {
+class ProjectStructure implements JsonSerializable {
     private $id;
 	private $image_size;
 	private $filter_size;
