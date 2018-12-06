@@ -9,7 +9,7 @@ session_start();
 $data = array();
 
 // Load Include files.
-include('../classes/dbLayer/connectionDB.php');
+include('../classes/util/connectionDB.php');
 
 // Connect to Mysql (MariaDB)
 $dbCtrl = new connectionDB();
