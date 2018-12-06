@@ -38,6 +38,7 @@ class ModelDB
 				$model = new Model($row["id"], $row["image_size"], $row["created"], $row["completed"]);
 				var_dump($model);
 				array_push($resultArr, $model);
+				echo  "testROW:".$row['id'];
 			}
 		} 
 		else 
