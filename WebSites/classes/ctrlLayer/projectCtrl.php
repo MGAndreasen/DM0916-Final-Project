@@ -1,6 +1,6 @@
 <?php
 // Includes
-require_once('../classes/dbLayer/modelDB.php');
+require_once('../classes/dbLayer/projectDB.php');
 
 class ProjectCtrl
 {
