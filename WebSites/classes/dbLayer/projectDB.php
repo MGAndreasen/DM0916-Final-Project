@@ -49,7 +49,7 @@ class ProjectDB
 			while($row = $result->fetch_assoc()) {
 				$projectStruture = new ProjectStruture($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 				$subStructures = $this->getSubProjectStructures($row['id']);
-				
+				$projectStruture->setProjectStructures($subStructures);
 				array_push($resultArr, $projectStruture);
 			}
 		} 
