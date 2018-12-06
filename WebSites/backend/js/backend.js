@@ -1,4 +1,3 @@
-// Dom ready
 $(document).ready(function () {
 
     $.ajax({
