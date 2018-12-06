@@ -10,7 +10,7 @@ class ModelDB
 
 	public function test()
 	{
-		global conn;
+		global $conn;
 		$someData = array();
 
 		$someData['test'] = 'Hmm';
