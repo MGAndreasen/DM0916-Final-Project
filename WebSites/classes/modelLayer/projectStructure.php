@@ -77,7 +77,7 @@ class ProjectStructure implements JsonSerializable {
 			}
 		}
 		else{
-			array_push('');
+			array_push($jsonStrutures, '');
 		}
 
         return array (
