@@ -3,7 +3,7 @@
 class Project implements JsonSerializable {
     private $id;
 	private $image_size;
-	private $enabled:
+	private $enabled;
 	private $name;
 	private $models = array();
 
