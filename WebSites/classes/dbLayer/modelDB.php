@@ -5,7 +5,7 @@ require_once('../classes/modelLayer/model.php');
 class ModelDB
 {
 	private $getModelSQL = 'SELECT * FROM model WHERE project_Id = ?';
-	private $getModelSQL = 'SELECT * FROM model';
+	private $getModelsSQL = 'SELECT * FROM model';
 
 	public function __construct()
 	{
@@ -50,7 +50,7 @@ class ModelDB
 	public function getModels(){
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->getModelSQL);
+		$query = $conn->prepare($this->getModelsSQL);
 		$query->execute();
 		$result = $query->get_result();
 		
