@@ -12,6 +12,7 @@ class ConnectionDB
     {
 		global $config;
         $this->connection = new mysqli($config['DBHost'], $config['DBUser'], $config['DBPass'], $config['DBName']);
+		$this->connection->set_charset("utf8mb4_unicode_ci");
     }
 
 	public function getConnection()
