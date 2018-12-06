@@ -23,7 +23,7 @@ class ModelDB
 	}
 
 	public function getModel($projectID){
-		$getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
+		$getModelSQL = 'SELECT * FROM model WHERE project_Id = ?';
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($getModelSQL);
