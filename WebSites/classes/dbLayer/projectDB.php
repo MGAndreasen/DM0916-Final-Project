@@ -51,7 +51,7 @@ class ProjectDB
 				$subStructures = $this->getSubProjectStructures($row['id']);
 				$projectStructure->setProjectStructures($subStructures);
 				
-				if ($this->getSubProjectStructures($row['id']) != '')
+				if ($this->getSubProjectStructures($row['id']) != ''){
 					array_push($resultArr, $projectStructure);
 				}
 
