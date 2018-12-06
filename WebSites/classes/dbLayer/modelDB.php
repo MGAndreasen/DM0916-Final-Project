@@ -27,7 +27,7 @@ class ModelDB
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($getModelSQL);
-		$query->bind_param('i', $_GET('projectID'));
+		$query->bind_param('i', (int)$_GET('projectID'));
 		$result = $query->execute();
 		
 		if ($result->num_rows > 0) {
