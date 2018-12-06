@@ -3,7 +3,7 @@
 class Model {
     private $id;
 	private $image_size;
-	private $created:
+	private $created;
 	private $completed;
 
 	public function __contruct(int $id, string $name, string $created, string $completed){
