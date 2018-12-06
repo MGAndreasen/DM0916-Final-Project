@@ -28,7 +28,8 @@ class ModelDB
 		$resultArr = [];
 		$query = $conn->prepare($getModelSQL);
 		$query->bind_param('i', $projectID);
-		$result = $query->execute();
+		$query->execute();
+		$result = $query->get_result();
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
