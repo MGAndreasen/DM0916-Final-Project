@@ -32,7 +32,7 @@ if (realpath($path))
 	require_once($path);
 
 	$theClass = mb_strtoupper($ctrl);
-	$theCtrl = new $theClass();
+	$theCtrl = new $theClass;
 	//$theCtrl->$func();
 }
 else
