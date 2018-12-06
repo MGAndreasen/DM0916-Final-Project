@@ -10,7 +10,11 @@ class ModelCtrl
 	{
 		global $data;
 		$mDB = new ModelDB();
-		$someDataFromDB = $mDB->test();
+	}
+
+	public function getModel($projectId)
+	{
+		$someDataFromDB = $mDB->getModel($projectId);
 		array_push($data,$someDataFromDB);
 	}
 }
