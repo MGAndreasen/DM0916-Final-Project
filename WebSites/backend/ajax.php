@@ -16,21 +16,24 @@ $data = array();
 $error = array();
 
 $ctrl = basename(strtolower($_GET['ctrl']), ".php");
-echo  $ctrl;
 $func = basename(strtolower($_GET['func']));
 $path = '../classes/ctrlLayer/'.$ctrl.'Ctrl.php';
-echo $path;
+
 if (realpath($path))
 {
 	// Load Include files.
 	require_once('../classes/util/connectionDB.php');
 
-	// Load Include files.
-	require_once($path);
-
 	// Connect to Mysql (MariaDB)
 	$dbCtrl = new connectionDB();
 	$conn = $dbCtrl->getConnection();
+
+	// Load Include files.
+	require_once($path);
+
+	$theClass = mb_strtoupper($ctrl);
+	$theCtrl = new $theClass;
+	//$theCtrl->$func();
 }
 else
 {
