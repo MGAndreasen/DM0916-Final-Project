@@ -97,6 +97,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modelLayer", "modelLayer", 
 		WebSites\classes\modelLayer\customer.php = WebSites\classes\modelLayer\customer.php
 		WebSites\classes\modelLayer\model.php = WebSites\classes\modelLayer\model.php
 		WebSites\classes\modelLayer\project.php = WebSites\classes\modelLayer\project.php
+		WebSites\classes\modelLayer\projectStruture.php = WebSites\classes\modelLayer\projectStruture.php
 	EndProjectSection
 EndProject
 Global
