@@ -76,6 +76,9 @@ class ProjectStructure implements JsonSerializable {
 				array_push($jsonStrutures, $projectStructure->jsonSerialize());
 			}
 		}
+		else{
+			array_push('');
+		}
 
         return array (
             'id' => $this->id,
