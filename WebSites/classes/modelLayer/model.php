@@ -46,12 +46,12 @@ class Model implements JsonSerializable {
 	}
 
 	public function jsonSerialize() {
-        return [
+        return array (
             'id' => $this->id,
             'imagesize' => $this->image_size,
 			'created' => $this->created,
 			'completed' => $this->completed
-        ];
+        );
     }
 }
 
