@@ -19,5 +19,11 @@ class ModelCtrl
 		$someDataFromDB = $this->mDB->getModel($projectId);
 		array_push($this->data,$someDataFromDB);
 	}
+
+	public function getModels()
+	{
+		$someDataFromDB = $this->mDB->getModels();
+		array_push($this->data,$someDataFromDB);
+	}
 }
 ?>

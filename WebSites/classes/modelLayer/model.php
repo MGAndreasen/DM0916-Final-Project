@@ -1,5 +1,5 @@
 <?php
-class Model {
+class Model implements JsonSerializable {
     private $id;
 	private $image_size;
 	private $created;

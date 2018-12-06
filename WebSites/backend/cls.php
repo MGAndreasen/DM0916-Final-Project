@@ -21,6 +21,8 @@ include('../classes/ctrlLayer/modelCtrl.php');
 $modelCtrl = new ModelCtrl();
 $modelCtrl->getModel(1);
 
+$modelCtrl->getModels();
+
 //include('../classes/dbLayer/modelDB.php');
 //$modelDB = new ModelDB();
 //array_push($data, $modelDB->getModel(1));
