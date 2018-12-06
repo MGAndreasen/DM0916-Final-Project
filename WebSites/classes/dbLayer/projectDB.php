@@ -1,7 +1,7 @@
 <?php
 // Includes
 require_once('../classes/modelLayer/project.php');
-require_once('../classes/modelLayer/projectStruture.php');
+require_once('../classes/modelLayer/projectStructure.php');
 
 class ProjectDB
 {
