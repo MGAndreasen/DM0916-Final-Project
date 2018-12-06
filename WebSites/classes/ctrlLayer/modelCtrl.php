@@ -14,7 +14,7 @@ class ModelCtrl
 
 	public function getModel($projectId)
 	{
-		$someDataFromDB = $mDB->getModel($projectId);
+		$someDataFromDB = $this->mDB->getModel($projectId);
 		array_push($data,$someDataFromDB);
 	}
 }
