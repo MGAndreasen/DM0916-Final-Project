@@ -11,10 +11,7 @@ $data = array();
 // allowed Ctrls
 $ctrls = array('customer', 'model', 'project', 'user');
 
-if(!in_array($_GET['ctrl'], $ctrls))
-{
-	echo "Ctrl findes ikke!";
-}
+isValidCtrl($_GET['ctrl']);
 
 
 
@@ -27,4 +24,18 @@ $conn = $dbCtrl->getConnection();
 
 // output data array as Json
 echo json_encode($data, JSON_PRETTY_PRINT);
+
+
+// Functions! skal nok placeres andetsteds!
+
+
+function boolean isValidCtrl($ctrl)
+{
+	global $ctrls;
+	if(!in_array($_GET['ctrl'], $ctrls))
+	{
+		echo "Ctrl findes ikke!";
+		exit;
+	}
+}
 ?>
