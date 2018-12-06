@@ -1,12 +1,12 @@
 <?php
-
-class Model implements JsonSerializable {
+class Model {
+	// implements JsonSerializable 
     private $id;
 	private $image_size;
 	private $created;
 	private $completed;
 
-	public function __contruct(int $id, string $name, string $created, string $completed){
+	public function __contruct($id, $name, $created, $completed){
 		$this->id = "test";
 		$this->image_size = $image_size;
 		$this->created = $created;
