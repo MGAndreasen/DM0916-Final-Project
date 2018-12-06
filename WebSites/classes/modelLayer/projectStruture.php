@@ -44,7 +44,7 @@ class ProjectStruture implements JsonSerializable {
 		$this->id = $id;
 	}
 
-	public function setProjectStrutures($projectStructes){
+	public function setProjectStructures($projectStructes){
 		$this->projectStructes = $projectStructes;
 	}
 
