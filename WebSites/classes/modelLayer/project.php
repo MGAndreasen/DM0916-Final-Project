@@ -66,12 +66,12 @@ class Project implements JsonSerializable {
 	public function jsonSerialize() {
 		$jsonProjectStructes = [];
 		foreach($this->projectStructures as $projectStructure){
-			array_push($jsonProjectStructes, $projectStructure->jsonSerializable());
+			array_push($jsonProjectStructes, $projectStructure->jsonSerialize());
 		}
 
 		$jsonImages = [];
 		foreach($this->images as $image){
-			array_push($jsonImages, $image->jsonSerializable());
+			array_push($jsonImages, $image->jsonSerialize());
 		}
 
         return array (
