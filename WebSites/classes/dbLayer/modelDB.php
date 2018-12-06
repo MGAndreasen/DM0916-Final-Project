@@ -2,7 +2,7 @@
 class ModelDB
 {
 	
-	$getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
+	private $getModelSQL = 'SELECT * FROM models WHERE projectID = ?';
 
 	public function __construct()
 	{
