@@ -7,7 +7,7 @@ class Model implements JsonSerializable {
 	private $completed;
 
 	public function __contruct(int $id, string $name, string $created, string $completed){
-		$this->id = 1+$id;
+		$this->id = "test";
 		$this->image_size = $image_size;
 		$this->created = $created;
 		$this->completed = $completed;
