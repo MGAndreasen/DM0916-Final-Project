@@ -1,6 +1,6 @@
 <?php
 
-class Model {
+class Model implements JsonSerializable {
     private $id;
 	private $image_size;
 	private $created;
@@ -13,7 +13,7 @@ class Model {
 		$this->completed = $completed;
 	}
 
-	public function getID(){
+	public function getID() {
 		return $this->id;
 	}
 
@@ -44,6 +44,15 @@ class Model {
 	public function setCompleted($completed){
 		$this->completed = $completed;
 	}
+
+	public function jsonSerialize() {
+        return [
+            'id' => $this->id,
+            'imagesize' => $this->image_size,
+			'created' => $this->created,
+			'completed' => $this->completed
+        ];
+    }
 }
 
 ?>
