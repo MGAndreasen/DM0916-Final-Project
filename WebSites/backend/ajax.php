@@ -29,13 +29,23 @@ echo json_encode($data, JSON_PRETTY_PRINT);
 // Functions! skal nok placeres andetsteds!
 
 
-function isValidCtrl($ctrl)
+function isValidCtrl(string $ctrl)
 {
 	global $ctrls;
-	if(!in_array($_GET[ctrl], $ctrls))
+	if(!in_array($ctrl, $ctrls))
 	{
-		echo "Ctrl findes ikke!";
+		$msg = errorMsg($ctrl, '0', 'findes ikke.')
+		echo json_encode($msg);
 		exit;
 	}
+}
+
+function errorMsg(string $error, string $errorno, $errormsg)
+{
+	return array(
+			'ERROR' => $error,
+			'ERRNO' => $errorno,
+			'ERRMSG' => $errormsg
+	);
 }
 ?>
