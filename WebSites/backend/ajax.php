@@ -18,7 +18,7 @@ $error = array();
 $ctrl = basename(strtolower($_GET['ctrl']), ".php").PHP_EOL;
 $func = basename(strtolower($_GET['func']));
 
-if (realpath($path))
+if (realpath('../classes/ctrlLayer/'.$ctrl.'Ctrl.php'))
 {
 	// Load Include files.
 	require_once('../classes/util/connectionDB.php');
