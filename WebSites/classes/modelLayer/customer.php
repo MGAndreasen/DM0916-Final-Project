@@ -10,15 +10,15 @@ class Customer {
 		$this->$name = $name;
 	}
 
-	public function getID(){
+	public function getID() :int{
 		return $this->$id;
 	}
 
-	public function getName(){
+	public function getName() :string{
 		return $this->$name;
 	}
 
-	public function getProjects(){
+	public function getProjects() :array{
 		return $this->$projects;
 	}
 
@@ -33,6 +33,17 @@ class Customer {
 	public function setProjects($projects){
 		$this->$projects = $projects;
 	}
-}
 
+	public function jsonSerialize() {
+		$jsonProjects = [];
+		foreach($this->projects as $project){
+			array_push($jsonProjects, $project->jsonSerialize());
+		}
+
+        return array (
+            'id' => $this->id,
+			'name' => $this->name,
+			'projects' => $jsonProjects
+        );
+}
 ?>
