@@ -5,26 +5,26 @@ class Model implements JsonSerializable {
 	private $created;
 	private $completed;
 
-	public function __construct($id, $image_size, $created, $completed){
+	public function __construct(int $id, int $image_size, string $created, string $completed){
 		$this->id = $id;
 		$this->image_size = $image_size;
 		$this->created = $created;
 		$this->completed = $completed;
 	}
 
-	public function getID() {
+	public function getID(): int{
 		return $this->id;
 	}
 
-	public function getImage_size(){
+	public function getImage_size(): int{
 		return $this->image_size;
 	}
 
-	public function getCreated(){
+	public function getCreated(): string{
 		return $this->created;
 	}
 
-	public function getCompleted(){
+	public function getCompleted(): string{
 		return $this->completed;
 	}
 
@@ -44,7 +44,7 @@ class Model implements JsonSerializable {
 		$this->completed = $completed;
 	}
 
-	public function jsonSerialize() {
+	public function jsonSerialize(): array{
         return array (
             'id' => $this->id,
             'imagesize' => $this->image_size,
