@@ -95,6 +95,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modelLayer", "modelLayer", "{EA5EDE8B-0E34-4146-96E0-C393180CB559}"
 	ProjectSection(SolutionItems) = preProject
 		WebSites\classes\modelLayer\customer.php = WebSites\classes\modelLayer\customer.php
+		WebSites\classes\modelLayer\image.php = WebSites\classes\modelLayer\image.php
 		WebSites\classes\modelLayer\model.php = WebSites\classes\modelLayer\model.php
 		WebSites\classes\modelLayer\project.php = WebSites\classes\modelLayer\project.php
 		WebSites\classes\modelLayer\projectStructure.php = WebSites\classes\modelLayer\projectStructure.php
