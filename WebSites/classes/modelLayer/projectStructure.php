@@ -1,5 +1,4 @@
 <?php
-//	id	project_id	parent_id	image_size	filter_size	validation_size	name
 class ProjectStructure implements JsonSerializable {
     private $id;
 	private $image_size;
@@ -16,27 +15,27 @@ class ProjectStructure implements JsonSerializable {
 		$this->name = $name;
 	}
 
-	public function getID(){
+	public function getID(): int{
 		return $this->id;
 	}
 
-	public function getImage_size(){
+	public function getImage_size(): int{
 		return $this->image_size;
 	}
 
-	public function getfilter_size(){
+	public function getfilter_size(): int{
 		return $this->filter_size;
 	}
 
-	public function getValidationSize(){
+	public function getValidationSize(): int{
 		return $this->validation_size;
 	}
 
-	public function getName(){
+	public function getName(): string{
 		return $this->name;
 	}
 
-	public function getModels(){
+	public function getModels(): array{
 		return $this->models();
 	}
 
@@ -68,8 +67,9 @@ class ProjectStructure implements JsonSerializable {
 		$this->models = $models; 
 	}
 
-	public function jsonSerialize() {
+	public function jsonSerialize(): array{
 		$jsonStrutures = array();
+
 		if(!empty($this->subProjectStructures)){
 			foreach($this->subProjectStructures as $projectStructure){
 				if(!is_string($projectStructure)){
@@ -86,9 +86,6 @@ class ProjectStructure implements JsonSerializable {
 			'name' => $this->name,
 			'subStructures' => $jsonStrutures
         );
-    }
-
-	
+    }	
 }
-
 ?>
