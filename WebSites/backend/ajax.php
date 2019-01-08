@@ -37,7 +37,7 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 
 		$theClass = mb_strtoupper($ctrl)+"Ctrl";
 		echo $theClass;
-		$theCtrl = new $theClass();
+		//$theCtrl = new $theClass();
 		//$theCtrl->$func();
 	}
 	else
