@@ -12,9 +12,7 @@ $(document).ready(function () {
         url: "/backend/ajax.php",
         data: {
             test: 12
-        },
-        success: testOk(result),
-        error: fejl()
+        }
     });
 
 });
