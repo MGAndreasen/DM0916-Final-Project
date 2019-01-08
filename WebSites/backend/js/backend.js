@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     $.ajax({
-        url: "/backend/ajax.php",
+        url: "/backend/ajaxs.php",
         data: {
             test: 12
         }
