@@ -35,9 +35,9 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 		// Load Include files.
 		require_once($path);
 
-		$theClass = $ctrl."Ctrl()";
-		$theCtrl = new $theClass;
-		//$theCtrl->$func();
+		$theClass = mb_ucfirst($ctrl)."Ctrl";
+		$theCtrl = new $theClass();
+		$theCtrl->$func();
 	}
 	else
 	{
