@@ -23,7 +23,13 @@ function ajaxOk(result) {
     var rawData = result.responseText;
     var jsonData = JSON.parse(rawData);
     console.log(jsonData);
-    $("#status").html("<p>STATUS: OK!</p>");
+    if (jsonData['errors']) {
+        $("#status").html("<p>STATUS: ERR!</p>");
+    }
+    else {
+        $("#status").html("<p>STATUS: OK!</p>");
+    }
+    
 }
 
 function ajaxFejl() {
