@@ -24,8 +24,8 @@ function ajaxOk(result) {
     var jsonData = JSON.parse(rawData);
     console.log(jsonData);
     if (jsonData['errors']) {
-        $.each(jsonData['errors'], function (key, value) {
-            alert("Ctrl: " + value['ERRCTRL'] + "\n\rFunc: " + value['ERRFUNC'] + "\n\rMSG: " + value['ERRMSG']);
+        $.each(jsonData['errors'], function (value) {
+            alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
         });
     }
     else {

@@ -42,13 +42,11 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 	else
 	{
 		errorMsg($ctrl, $func, 'Controller fil findes ikke.');
-		errorMsg($ctrl, $func, 'loool');
 	}
 }
 else
 {
 	errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
-	errorMsg($ctrl, $func, 'weee');
 }
 
 // output data array as Json
