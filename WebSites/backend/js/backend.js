@@ -22,7 +22,7 @@ $(document).ready(function () {
 function ajaxOk(result) {
     var rawData = result.responseText;
     var jsonData = JSON.parse(rawData);
-    console.log(jsonData);
+    console.log(jsonData[0][0]);
     $("#status").html("<p>STATUS: OK!</p>");
 }
 
