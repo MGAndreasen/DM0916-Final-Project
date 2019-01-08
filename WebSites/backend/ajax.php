@@ -56,7 +56,7 @@ array_push($data, $error);
 echo json_encode($data, JSON_PRETTY_PRINT);
 
 
-function errorMsg(string $ctrl, string $func, $msg)
+function errorMsg(string $ctrl = "NULL", string $func = "NULL", $msg)
 {
 	return array(
 			'ERRCTRL' => $ctrl,
