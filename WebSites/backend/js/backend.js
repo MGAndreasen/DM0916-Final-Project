@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
 
     $(document).ajaxSuccess(function (event, xhr, settings) {
-            $("status").text("Triggered ajaxSuccess handler. The Ajax response was: " + xhr.responseText);
+            $("#status").text("Triggered ajaxSuccess handler");
     });
 
     $.ajax({
