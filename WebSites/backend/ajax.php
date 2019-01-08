@@ -13,8 +13,6 @@ session_start();
 
 // create empty output array
 $data = array();
-$data['errors'] = array();
-//$error = array();
 @$ctrl = $_GET['ctrl'];
 @$func = $_GET['func'];
 
@@ -60,12 +58,21 @@ function errorMsg($ctrl, $func , $msg)
 {
 	global $data;
 
+	if(!$data['errors'])
+	{
+		$data['errors'] = array();
+	}
+
 	$err = array(
 			'ERRCTRL' => $ctrl,
 			'ERRFUNC' => $func,
 			'ERRMSG' => $msg
 	);
 
-	array_push($data['errors'], $err);
+	array_push($data['errors'], array(
+			'ERRCTRL' => $ctrl,
+			'ERRFUNC' => $func,
+			'ERRMSG' => $msg
+	));
 }
 ?>
