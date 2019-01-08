@@ -42,17 +42,17 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 	}
 	else
 	{
-		$error['status'] = errorMsg($ctrl, $func, 'Controller fil findes ikke.');
+		array_push($error, errorMsg($ctrl, $func, 'Controller fil findes ikke.'));
 	}
 }
 else
 {
-	$error['status'] = errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
+	array_push($error, errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'));
 }
 
 // output data array as Json
 
-array_push($data, $error);
+array_push($data['errors'], $error);
 echo json_encode($data, JSON_PRETTY_PRINT);
 
 
