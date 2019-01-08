@@ -10,6 +10,7 @@ $(document).ready(function () {
 
     $.ajax({
         url: "/backend/ajax.php",
+        dataType: "json",
         data: {
             test: 12
         }
@@ -19,10 +20,11 @@ $(document).ready(function () {
 
 // Functions
 function ajaxOk(result) {
-    console.log(result);
-    $("#status").html("<p>STATUS: </p><strong>OK!</strong>");
+    var json = JSON.parse(result);
+    console.log(json["Data"]);
+    $("#status").html("<p>STATUS: OK!</p>");
 }
 
 function ajaxFejl() {
-    $("#status").html("<p>STATUS: </p><strong>could not load ajax.php</strong>");
+    $("#status").html("<p>STATUS: could not load ajax.php</p>");
 }
