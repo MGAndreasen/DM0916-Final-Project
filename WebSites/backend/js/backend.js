@@ -22,7 +22,7 @@ $(document).ready(function () {
 function ajaxOk(result) {
     var rawData = result.responseText;
     var jsonData = JSON.parse(rawData);
-    console.log(jsonData[0][0]['ERRMSG']);
+    console.log(jsonData);
     $("#status").html("<p>STATUS: OK!</p>");
 }
 
