@@ -1,15 +1,15 @@
 $(document).ready(function () {
 
     $(document).ajaxError(function (event, xhr, settings) {
-            $("#status").text("The Ajax Error was: " + xhr.responseText);
+        ajaxOk(xhr.responseText);
     });
 
     $(document).ajaxSuccess(function (event, xhr, settings) {
-            $("#status").text("Triggered ajaxSuccess handler");
+        ajaxFejl();
     });
 
     $.ajax({
-        url: "/backend/ajaxs.php",
+        url: "/backend/ajax.php",
         data: {
             test: 12
         }
@@ -18,10 +18,11 @@ $(document).ready(function () {
 });
 
 // Functions
-function testOk(result) {
-    $("#status").html("<p>STATUS: </p><strong>" + result + "</strong>");
+function ajaxOk(result) {
+    console.log(result);
+    $("#status").html("<p>STATUS: </p><strong>OK!</strong>");
 }
 
-function fejl() {
+function ajaxFejl() {
     $("#status").html("<p>STATUS: </p><strong>could not load ajax.php</strong>");
 }
