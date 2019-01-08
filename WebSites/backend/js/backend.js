@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
 
     $(document).ajaxSuccess(function (event, xhr, settings) {
-        ajaxOk(xhr.responseText);
+        ajaxOk(xhr);
     });
 
     $.ajax({
@@ -20,8 +20,9 @@ $(document).ready(function () {
 
 // Functions
 function ajaxOk(result) {
-    var json = JSON.parse(result);
-    console.log(json["Data"]);
+    var rawData = xhr.responseText;
+    var jsonData = JSON.parse(rawData);
+    console.log(jsonData);
     $("#status").html("<p>STATUS: OK!</p>");
 }
 
