@@ -17,7 +17,17 @@ $(document).ready(function () {
         }
     });
 
-    var mydata = [{ "ctrl": "A" }, { "func": "B" }, "parms": [{ "1": "dsad", "2": "fgfdf" }]];
+    var mydata = [{
+        "cmd": {
+            "ctrl": "projects",
+            "func": "getProject",
+            "parms": [
+                {
+                    "value": "1"
+                }
+            ]
+        }
+    }];
     myPost(mydata);
 });
 
