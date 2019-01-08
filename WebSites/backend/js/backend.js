@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     $(document).ajaxError(function (event, xhr, settings) {
-        ajaxOk(xhr.responseText);
+        ajaxFejl();
     });
 
     $(document).ajaxSuccess(function (event, xhr, settings) {
-        ajaxFejl();
+        ajaxOk(xhr.responseText);
     });
 
     $.ajax({
