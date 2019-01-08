@@ -20,12 +20,7 @@ $(document).ready(function () {
     var mydata = [{
         "cmd": {
             "ctrl": "projects",
-            "func": "getProject",
-            "parms": [
-                {
-                    "value": "1"
-                }
-            ]
+            "func": "getProject"
         }
     }];
     myPost(mydata);
