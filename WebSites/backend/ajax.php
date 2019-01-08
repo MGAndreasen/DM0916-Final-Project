@@ -52,7 +52,7 @@ else
 
 // output data array as Json
 
-array_push($data['errors'], $error);
+$data['errors'] = $error;
 echo json_encode($data, JSON_PRETTY_PRINT);
 
 
