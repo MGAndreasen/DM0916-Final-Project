@@ -24,7 +24,10 @@ function ajaxOk(result) {
     var jsonData = JSON.parse(rawData);
     console.log(jsonData);
     if (jsonData['errors']) {
-        $("#status").html("<p>STATUS: ERR!</p>");
+        $.each(jsonData['errors'], function (key, value) {
+            alert(key + ": " + value['ERRMSG']);
+        });
+        //$("#status").html("<p>STATUS: ERR!</p>");
     }
     else {
         $("#status").html("<p>STATUS: OK!</p>");
