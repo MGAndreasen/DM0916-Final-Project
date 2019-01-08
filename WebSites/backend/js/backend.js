@@ -17,7 +17,18 @@ $(document).ready(function () {
         }
     });
 
+    var mydata = [{ "ctrl": "A" }, { "func": "B" }, "parms": [{ "1": "dsad", "2": "fgfdf" }]];
+    myPost(mydata);
 });
+
+function myPost(mydata) {
+    $.ajax({
+        type: "POST",
+        url: "/backend/ajax.php",
+        data: JSON.stringify({ Resp: mydata }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json" });
+}
 
 // Functions
 function ajaxOk(result) {

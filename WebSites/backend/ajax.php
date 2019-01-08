@@ -13,6 +13,14 @@ session_start();
 
 // create empty output array
 $data = array();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+	errorMsg("hmm","hmm2","looool post");
+}
+else {
+
+
 @$ctrl = $_GET['ctrl'];
 @$func = $_GET['func'];
 
@@ -47,6 +55,7 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 else
 {
 	errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
+}
 }
 
 // output data array as Json
