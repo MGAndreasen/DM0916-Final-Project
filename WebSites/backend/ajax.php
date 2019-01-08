@@ -14,8 +14,8 @@ session_start();
 // create empty output array
 $data = array();
 $error = array();
-@$ctrl = "" + $_GET['ctrl'];
-@$func = "" + $_GET['func'];
+@$ctrl = $_GET['ctrl'];
+@$func = $_GET['func'];
 
 if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
 {
