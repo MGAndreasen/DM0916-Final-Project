@@ -44,10 +44,12 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 	else
 	{
 		array_push($data['errors'], errorMsg($ctrl, $func, 'Controller fil findes ikke.'));
+		array_push($data['errors'], errorMsg($ctrl, $func, 'Controller fil findes ikke.'));
 	}
 }
 else
 {
+	array_push($data['errors'], errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'));
 	array_push($data['errors'], errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'));
 }
 
