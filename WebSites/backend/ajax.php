@@ -58,16 +58,10 @@ function errorMsg($ctrl, $func , $msg)
 {
 	global $data;
 
-	if(!$data['errors'])
+	if(!isset($data['errors']))
 	{
 		$data['errors'] = array();
 	}
-
-	$err = array(
-			'ERRCTRL' => $ctrl,
-			'ERRFUNC' => $func,
-			'ERRMSG' => $msg
-	);
 
 	array_push($data['errors'], array(
 			'ERRCTRL' => $ctrl,
