@@ -14,9 +14,10 @@ session_start();
 // create empty output array
 $data = array();
 $error = array();
+@$ctrl = "" + $_GET['ctrl'];
+@$func = "" + $_GET['func'];
 
-
-if((isset($_GET['ctrl']) && !empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false) && (isset($_GET['func']) && !empty($_GET['func'])  && mb_stripos($_GET['func'], "..") === false))
+if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
 {
 	$ctrl = basename(strtolower($_GET['ctrl']), ".php");
 	$func = basename(strtolower($_GET['func']));
@@ -46,7 +47,7 @@ if((isset($_GET['ctrl']) && !empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "
 }
 else
 {
-	@array_push($error, errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'));
+	array_push($error, errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'));
 }
 
 // output data array as Json
