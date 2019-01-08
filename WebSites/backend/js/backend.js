@@ -12,7 +12,8 @@ $(document).ready(function () {
         url: "/backend/ajax.php",
         dataType: "json",
         data: {
-            test: 12
+            ctrl: project,
+            func: stuf
         }
     });
 
@@ -24,7 +25,7 @@ function ajaxOk(result) {
     var jsonData = JSON.parse(rawData);
     console.log(jsonData);
     if (jsonData['errors']) {
-        $.each(jsonData['errors'], function (value) {
+        $.each(jsonData['errors'], function (key, value) {
             alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
         });
     }
@@ -35,5 +36,5 @@ function ajaxOk(result) {
 }
 
 function ajaxFejl() {
-    $("#status").html("<p>STATUS: could not load ajax.php</p>");
+    alert("Could not load ajax.php");
 }
