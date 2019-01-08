@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 // Functions
 function ajaxOk(result) {
-    var rawData = xhr.responseText;
+    var rawData = result.responseText;
     var jsonData = JSON.parse(rawData);
     console.log(jsonData);
     $("#status").html("<p>STATUS: OK!</p>");
