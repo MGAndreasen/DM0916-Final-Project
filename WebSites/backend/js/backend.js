@@ -12,8 +12,8 @@ $(document).ready(function () {
         url: "/backend/ajax.php",
         dataType: "json",
         data: {
-            ctrl: 'project',
-            func: 'stuf'
+            ctrl: "project",
+            func: "stuf"
         }
     });
 
