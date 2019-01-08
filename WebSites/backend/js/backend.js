@@ -13,7 +13,7 @@ $(document).ready(function () {
         dataType: "json",
         data: {
             ctrl: "project",
-            func: "stuf"
+            func: "getProjects"
         }
     });
 
