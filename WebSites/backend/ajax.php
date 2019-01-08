@@ -13,7 +13,8 @@ session_start();
 
 // create empty output array
 $data = array();
-$error = array();
+$data['errors'] = array();
+//$error = array();
 @$ctrl = $_GET['ctrl'];
 @$func = $_GET['func'];
 
@@ -42,26 +43,26 @@ if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty(
 	}
 	else
 	{
-		array_push($error, errorMsg($ctrl, $func, 'Controller fil findes ikke.'));
+		errorMsg($ctrl, $func, 'Controller fil findes ikke.');
 	}
 }
 else
 {
-	array_push($error, errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'));
+	errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
 }
 
 // output data array as Json
 
-$data['errors'] = $error;
+//$data['errors'] = $error;
 echo json_encode($data, JSON_PRETTY_PRINT);
 
 
 function errorMsg($ctrl, $func , $msg)
 {
-	return array(
+	array_push(data['errors'], array(
 			'ERRCTRL' => $ctrl,
 			'ERRFUNC' => $func,
 			'ERRMSG' => $msg
-	);
+	));
 }
 ?>
