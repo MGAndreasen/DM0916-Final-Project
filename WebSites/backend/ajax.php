@@ -16,7 +16,7 @@ $data = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-	if (isset($_POST['resp']))
+	if (isset($_POST['data']))
 	{
 		$data['data'] = $_POST['data'];
 	}
