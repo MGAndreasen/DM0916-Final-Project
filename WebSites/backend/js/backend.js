@@ -16,8 +16,8 @@ $(document).ready(function () {
     //        func: "getProjects"
     //    }
     //});
-
-    myPost('projects', 'getProject', [1,2]);
+    var test = new Array(1, 2, 3, 4, "fdfdsfs");
+    myPost('projects', 'getProject', test);
 });
 
 function myPost(ctrl, func, parms) {
