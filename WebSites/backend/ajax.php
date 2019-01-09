@@ -16,7 +16,7 @@ $data = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-	$data['data'] = $_post['data']
+	$data['data'] = $_post['resp']
 	errorMsg("hmm","hmm2","looool post");
 }
 else
