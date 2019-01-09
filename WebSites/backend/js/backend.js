@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 function myPost(ctrl, func, parms) {
     var mydata = new Array(ctrl, func, parms);
-    console.log(mydata);
+    //console.log(mydata);
     var toSend = JSON.stringify(mydata);
     console.log(toSend);
     $.ajax({
