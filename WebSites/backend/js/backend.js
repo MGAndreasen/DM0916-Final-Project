@@ -25,14 +25,14 @@ function myPost(ctrl, func, parms) {
     mydata['ctrl'] = ctrl;
     mydata['func'] = func;
     mydata['parms'] = parms;
-    var toSend = JSON.stringify(mydata);
+    var toSend = { resp: JSON.stringify(mydata) };
     alert("SENDES:\n" + toSend);
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
         dataType: 'json',
         encode: true,
-        data: { resp: toSend }
+        data: toSend
     });
 }
 
