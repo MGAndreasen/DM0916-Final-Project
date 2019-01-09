@@ -25,7 +25,7 @@ function myPost(ctrl, func, parms) {
     mydata['ctrl'] = ctrl;
     mydata['func'] = func;
     mydata['parms'] = parms;
-    alert¨(mydata);
+    alert(mydata);
     var toSend = JSON.stringify({ resp: mydata });
     alert("SENDES:\n" + toSend);
     $.ajax({
