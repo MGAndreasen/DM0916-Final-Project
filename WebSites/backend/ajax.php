@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		$data['data'] = $_REQUEST['resp'];
 	}
 	
-	errorMsg("hmm","hmm2","looool post");
+	//errorMsg("hmm","hmm2","looool post");
 }
 else
 {

@@ -43,7 +43,7 @@ function ajaxOk(result) {
     console.log(jsonData);
     if (jsonData['errors']) {
         $.each(jsonData['errors'], function (key, value) {
-            //alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
+            alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
         });
     }
     else {
