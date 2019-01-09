@@ -16,13 +16,16 @@ $data = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
+	if (isset($_POST['resp']))
+	{
+		$data['data'] = $_POST['data'];
+	}
 	errorMsg("hmm","hmm2","looool post");
 }
 else
 {
 	@$ctrl = $_GET['ctrl'];
 	@$func = $_GET['func'];
-	$data['data'] = $_POST['Resp'];
 	if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
 	{
 		$ctrl = basename(strtolower($_GET['ctrl']), ".php");
