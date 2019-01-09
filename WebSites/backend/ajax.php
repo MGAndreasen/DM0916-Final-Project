@@ -17,7 +17,7 @@ $data = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	$data['data'] = 2;
-	if (isset($_POST['data']))
+	if (isset($_POST['resp']))
 	{
 		$data['data'] = 1;
 	}
