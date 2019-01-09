@@ -18,14 +18,12 @@ class ProjectCtrl
 	{
 		$someDataFromDB = $this->mDB->getProject($customerID);
 		$this->data['result'] = $someDataFromDB;
-		//array_push($this->data, $someDataFromDB);
 	}
 
 	public function getProjects()
 	{
 		$someDataFromDB = $this->mDB->getProjects();
 		$this->data['result'] = $someDataFromDB;
-		//array_push($this->data, $someDataFromDB);
 	}
 }
 ?>
