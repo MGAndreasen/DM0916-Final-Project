@@ -30,7 +30,7 @@ function myPost(ctrl, func, parms) {
         url: "/backend/ajax.php",
         dataType: 'json',
         encode: true,
-        data: toSend
+        data: { resp: toSend }
     });
 }
 
