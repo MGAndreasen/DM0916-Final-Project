@@ -17,7 +17,7 @@ $(document).ready(function () {
     //    }
     //});
     var test = [1,2,"tesgf"];
-    myPost('project', 'getProject', test);
+    myPost('project', 'getProjects', test);
 });
 
 function myPost(ctrl, func, parms) {
