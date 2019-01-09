@@ -17,7 +17,7 @@ $(document).ready(function () {
     //    }
     //});
     var test = new Array(1, 2, 3, 4, "hest");
-    myPost('projects', 'getProject', test);
+    myPost('projects', 'getProjects', test);
 });
 
 function myPost(ctrl, func, parms) {
