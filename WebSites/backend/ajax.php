@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_REQUEST['resp']))
 	{
-		@$response = json_decode(utf8_encode($_REQUEST['resp'][0]), true);
+		@$response = json_decode(utf8_encode($_REQUEST['resp']), true)[0];
 
 		@$ctrl = $response['ctrl'];
 		@$func = $response['func'];
