@@ -37,6 +37,7 @@ function myPost(ctrl, func, parms) {
 // Functions
 function ajaxOk(result) {
     var rawData = result.responseText;
+    console.log(rawData);
     var jsonData = JSON.parse(rawData);
     if (jsonData['errors']) {
         $.each(jsonData['errors'], function (key, value) {
