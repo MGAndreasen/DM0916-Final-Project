@@ -8,6 +8,11 @@ section .page {
 
 section #loading {
     display: block;
+    z-index: 10;
+}
+
+section .default {
+    display: block;
 }
 
 nav ul {
