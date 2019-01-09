@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	$data['data'] = 2;
 	if (isset($_POST['resp']))
 	{
-		$data['data'] = 1;
+		$data['data'] = $_POST['resp'];
 	}
 	
 	errorMsg("hmm","hmm2","looool post");
