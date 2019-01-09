@@ -9,7 +9,7 @@ require_once('../classes/modelLayer/projectStructure.php');
 class ProjectDB
 {
 	private $getProject_SQL = 'SELECT * FROM project WHERE id = ?';
-	private $getProjects_SQL = 'SELECT * FROM project customer_Id = ?';
+	private $getProjects_SQL = 'SELECT * FROM project WHERE customer_Id = ?';
 
 	public function __construct()
 	{
