@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
 		if(!empty($ctrl) && mb_stripos($ctrl, "..") === false && !empty($func))
 		{
-			$ctrl = basename(strtolower($_GET['ctrl']), ".php");
-			$func = basename(strtolower($_GET['func']));
+			$ctrl = basename(strtolower($ctrl), ".php");
+			$func = basename(strtolower($func));
 
 			$path = '../classes/ctrlLayer/'.$ctrl.'Ctrl.php';
 
