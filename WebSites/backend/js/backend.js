@@ -11,8 +11,8 @@ $(document).ready(function () {
     $('nav ul li a').click(function (e) {
         var div = $(this).attr('href');
         var page = $(div);
+        $('.pages').hide();
         page.show();
-        $('.pages').not(page).hide();
         e.preventDefault();
     });
 
