@@ -10,6 +10,8 @@ $(document).ready(function () {
 
     $('nav ul li a').click(function (e) {
         var div = $(this).attr('href');
+        
+        div.addClass("active");
         var page = $(div);
         $('.pages').hide();
         page.show();
