@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		$func = $response['func'];
 		$parms = array();
 
-		if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
+		if(!empty($ctrl) && mb_stripos($ctrl, "..") === false && !empty($func))
 		{
 			$ctrl = basename(strtolower($_GET['ctrl']), ".php");
 			$func = basename(strtolower($_GET['func']));
