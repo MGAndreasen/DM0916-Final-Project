@@ -16,14 +16,11 @@ $data = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-	$data['data'] = 2;
-	if (isset($_REQUEST['resp']))
+	if (isset($_POST['resp']))
 	{
 		//var_dump($_POST['resp']);
 		$data['data'] = [1,2,3,4];
 	}
-	
-	//errorMsg("hmm","hmm2","looool post");
 }
 else
 {
