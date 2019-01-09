@@ -17,10 +17,10 @@ $data = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	$data['data'] = 2;
-	if (isset($_POST['resp']))
+	if (isset($_REQUEST['resp']))
 	{
 		//var_dump($_POST['resp']);
-		$data['data'] = print_r($_POST);
+		$data['data'] = json_decode($_REQUEST['resp']);
 	}
 	
 	errorMsg("hmm","hmm2","looool post");
