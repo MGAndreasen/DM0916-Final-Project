@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_REQUEST['resp']))
 	{
-		$response = json_decode($_REQUEST['resp'], true);
+		@$response = json_decode($_REQUEST['resp'], true);
 
-		$ctrl = $response['ctrl'];
-		$func = $response['func'];
-		$parms = array();
+		@$ctrl = $response['ctrl'];
+		@$func = $response['func'];
+		@$parms = array();
 
 		/*
 		if(!empty($ctrl) && mb_stripos($ctrl, "..") === false && !empty($func))
