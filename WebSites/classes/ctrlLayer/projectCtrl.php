@@ -17,13 +17,15 @@ class ProjectCtrl
 	public function getProject($customerID)
 	{
 		$someDataFromDB = $this->mDB->getProject($customerID);
-		array_push($this->data['result'], $someDataFromDB);
+		$this->data['result'] = $someDataFromDB;
+		//array_push($this->data, $someDataFromDB);
 	}
 
 	public function getProjects()
 	{
 		$someDataFromDB = $this->mDB->getProjects();
-		array_push($this->data['result'], $someDataFromDB);
+		$this->data['result'] = $someDataFromDB;
+		//array_push($this->data, $someDataFromDB);
 	}
 }
 ?>
