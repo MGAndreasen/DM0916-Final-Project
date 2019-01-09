@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_REQUEST['resp']))
 	{
-		@$response = json_decode($_REQUEST['resp'], true);
+		@$response = json_decode(utf8_encode($_REQUEST['resp']), true);
 
 		@$ctrl = $response['ctrl'];
 		@$func = $response['func'];
 		@$parms = array();
 
-		errorMsg(null,null,$_REQUEST['resp']);
+		errorMsg(null,null,$response);
 	}
 }
 else
