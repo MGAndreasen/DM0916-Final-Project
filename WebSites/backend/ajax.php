@@ -15,8 +15,6 @@ session_start();
 $data = array();
 $response = array();
 
-a
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_REQUEST['resp']))
