@@ -12,9 +12,10 @@ $(document).ready(function () {
         var div = $(this).attr('href');
         $(div).toggle('fast');
         e.preventDefault();
-    }
+    });
 
     $("#loading").toggle();
+
     var test = [1];
     myPost('project', 'getProjects', test);
 });
