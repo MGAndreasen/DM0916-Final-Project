@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	{
 		@$response = json_decode(utf8_encode($_REQUEST['resp']), true);
 
-		@$ctrl = $response[0]['ctrl'];
+		@$ctrl = $response['ctrl'];
 		@$func = $response['func'];
 		@$parms = array();
 
