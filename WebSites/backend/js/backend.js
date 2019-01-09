@@ -21,7 +21,7 @@ $(document).ready(function () {
 });
 
 function myPost(ctrl, func, parms) {
-    var mydata = new Array({ "ctrl": ctrl }, { "func": func }, { "parms": parms });
+    var mydata = new Array(ctrl, func, parms);
     var toSend = JSON.stringify(mydata);
     console.log("SENDES:\n" + toSend);
     $.ajax({
