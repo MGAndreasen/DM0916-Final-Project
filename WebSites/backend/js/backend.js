@@ -21,13 +21,9 @@ $(document).ready(function () {
 });
 
 function myPost(ctrl, func, parms) {
-    var mydata = new Array();
-    mydata['ctrl'] = ctrl;
-    mydata['func'] = func;
-    mydata['parms'] = parms;
+    var mydata = new Array(ctrl, func, parms);
     console.log(mydata);
     var toSend = JSON.stringify({ resp: mydata });
-    alert("SENDES:\n" + toSend);
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
@@ -40,7 +36,6 @@ function myPost(ctrl, func, parms) {
 // Functions
 function ajaxOk(result) {
     var rawData = result.responseText;
-    alert(rawData);
     var jsonData = JSON.parse(rawData);
     console.log(jsonData);
     if (jsonData['errors']) {
