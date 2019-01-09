@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		@$func = $response['func'];
 		@$parms = array();
 
-		errorMsg(null,null,var_dump($response));
+		errorMsg(null,null,[$response]);
 	}
 }
 else
