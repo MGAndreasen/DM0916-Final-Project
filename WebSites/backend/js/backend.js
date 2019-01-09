@@ -16,7 +16,7 @@ $(document).ready(function () {
     //        func: "getProjects"
     //    }
     //});
-    var test = new Array(1, 2, 3, 4, "fdfdsfs");
+    var test = new Array(1, 2, 3, 4);
     myPost('projects', 'getProject', test);
 });
 
@@ -25,6 +25,8 @@ function myPost(ctrl, func, parms) {
     mydata['ctrl'] = ctrl;
     mydata['func'] = func;
     mydata['parms'] = parms;
+
+    console.log(mydata);
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
