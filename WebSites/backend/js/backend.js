@@ -24,6 +24,7 @@ function myPost(ctrl, func, parms) {
     var mydata = new Array(ctrl, func, parms);
     console.log(mydata);
     var toSend = JSON.stringify({ resp: mydata });
+    console.log(toSend);
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
