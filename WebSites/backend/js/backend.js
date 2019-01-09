@@ -10,7 +10,8 @@ $(document).ready(function () {
 
     $('nav ul li a').click(function (e) {
         var div = $(this).attr('href');
-        $(div).toggle('fast');
+        $(div).show();
+        $('.pages[id^=div]').not(div).show();
         e.preventDefault();
     });
 
