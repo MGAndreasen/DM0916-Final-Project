@@ -46,7 +46,6 @@ function ajaxOk(result) {
     else {
         $("#status").html("<p>STATUS: OK!</p>");
     }
-    
 }
 
 function ajaxFejl() {

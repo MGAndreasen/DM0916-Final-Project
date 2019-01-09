@@ -17,45 +17,45 @@ $data = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	errorMsg("hmm","hmm2","looool post");
-}
-else {
-
-
-@$ctrl = $_GET['ctrl'];
-@$func = $_GET['func'];
-
-if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
-{
-	$ctrl = basename(strtolower($_GET['ctrl']), ".php");
-	$func = basename(strtolower($_GET['func']));
-
-	$path = '../classes/ctrlLayer/'.$ctrl.'Ctrl.php';
-
-	if (realpath($path))
-	{
-		// Load Include files.
-		require_once('../classes/util/connectionDB.php');
-
-		// Connect to Mysql (MariaDB)
-		$dbCtrl = new connectionDB();
-		$conn = $dbCtrl->getConnection();
-
-		// Load Include files.
-		require_once($path);
-
-		$theClass = ucfirst($ctrl)."Ctrl";
-		$theCtrl = new $theClass();
-		$theCtrl->$func();
-	}
-	else
-	{
-		errorMsg($ctrl, $func, 'Controller fil findes ikke.');
-	}
+	echo json_encode($_POST['data'], JSON_PRETTY_PRINT);
 }
 else
 {
-	errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
-}
+	@$ctrl = $_GET['ctrl'];
+	@$func = $_GET['func'];
+
+	if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
+	{
+		$ctrl = basename(strtolower($_GET['ctrl']), ".php");
+		$func = basename(strtolower($_GET['func']));
+
+		$path = '../classes/ctrlLayer/'.$ctrl.'Ctrl.php';
+
+		if (realpath($path))
+		{
+			// Load Include files.
+			require_once('../classes/util/connectionDB.php');
+
+			// Connect to Mysql (MariaDB)
+			$dbCtrl = new connectionDB();
+			$conn = $dbCtrl->getConnection();
+
+			// Load Include files.
+			require_once($path);
+
+			$theClass = ucfirst($ctrl)."Ctrl";
+			$theCtrl = new $theClass();
+			$theCtrl->$func();
+		}
+		else
+		{
+			errorMsg($ctrl, $func, 'Controller fil findes ikke.');
+		}
+	}
+	else
+	{
+		errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
+	}
 }
 
 // output data array as Json
