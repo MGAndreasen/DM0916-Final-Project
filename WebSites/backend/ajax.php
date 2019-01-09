@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	{
 		@$response = json_decode(utf8_encode($_REQUEST['resp']), true);
 
-		@$ctrl = $response['ctrl'];
+		@$ctrl = $response[0];
 		@$func = $response['func'];
 		@$parms = array();
 
-		errorMsg(null,null,$response);
+		errorMsg(null,null,$ctrl);
 	}
 }
 else
