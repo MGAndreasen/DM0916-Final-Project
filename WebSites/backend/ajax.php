@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_POST['data']))
 	{
-		$data['data'] = $_POST['data'];
+		$data['data'] = 1;
 	}
 	errorMsg("hmm","hmm2","looool post");
 }
