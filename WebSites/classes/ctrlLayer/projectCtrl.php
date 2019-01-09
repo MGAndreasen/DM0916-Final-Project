@@ -16,13 +16,13 @@ class ProjectCtrl
 
 	public function getProject($id)
 	{
-		$someDataFromDB = $this->mDB->getProject($customerID);
+		$someDataFromDB = $this->mDB->getProject($id);
 		array_push($this->data, $someDataFromDB);
 	}
 
 	public function getProjects($customerID)
 	{
-		$someDataFromDB = $this->mDB->getProjects();
+		$someDataFromDB = $this->mDB->getProjects($customerID);
 		array_push($this->data, $someDataFromDB);
 	}
 }
