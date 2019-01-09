@@ -16,10 +16,12 @@ $data = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
+	$data['data'] = 2;
 	if (isset($_POST['data']))
 	{
 		$data['data'] = 1;
 	}
+	
 	errorMsg("hmm","hmm2","looool post");
 }
 else
