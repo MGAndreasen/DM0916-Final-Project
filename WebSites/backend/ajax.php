@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		@$func = $response['func'];
 		@$parms = array();
 
-		errorMsg('ewq','ewq','eqweqwe');
+		errorMsg('ewq','ewq',$response);
 	}
 }
 else
