@@ -8,6 +8,12 @@ $(document).ready(function () {
         ajaxOk(xhr);
     });
 
+    $('nav ul li a').click(function (e) {
+        var div = $(this).attr('href');
+        $(div).toggle('fast');
+        e.preventDefault();
+    }
+
     $("#loading").toggle();
     var test = [1];
     myPost('project', 'getProjects', test);
