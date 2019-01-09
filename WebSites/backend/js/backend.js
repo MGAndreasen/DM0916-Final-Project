@@ -8,14 +8,14 @@ $(document).ready(function () {
         ajaxOk(xhr);
     });
 
-    $.ajax({
-        url: "/backend/ajax.php",
-        dataType: "json",
-        data: {
-            ctrl: "project",
-            func: "getProjects"
-        }
-    });
+    //$.ajax({
+    //    url: "/backend/ajax.php",
+    //    dataType: "json",
+    //    data: {
+    //        ctrl: "project",
+    //        func: "getProjects"
+    //    }
+    //});
 
     myPost('projects', 'getProject', [1,2]);
 });
