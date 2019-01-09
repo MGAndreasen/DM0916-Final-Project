@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 		$func = $response['func'];
 		$parms = array();
 
+		/*
 		if(!empty($ctrl) && mb_stripos($ctrl, "..") === false && !empty($func))
 		{
 			$ctrl = basename(strtolower($ctrl), ".php");
@@ -51,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 			{
 				errorMsg($ctrl, $func, 'Controller fil findes ikke.');
 			}
+			*/
 		}
 		else
 		{
