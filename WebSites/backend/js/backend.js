@@ -30,7 +30,7 @@ function myPost(ctrl, func, parms) {
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
-        data: { resp: JSON.stringify(mydata) }
+        data: JSON.stringify({ resp: mydata })
     });
 }
 
