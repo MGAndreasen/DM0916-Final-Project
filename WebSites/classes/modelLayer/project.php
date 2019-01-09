@@ -64,6 +64,7 @@ class Project implements JsonSerializable {
 	}
 
 	public function jsonSerialize() {
+		/*
 		$jsonProjectStructes = [];
 		if(!empty($this->projectStructures))
 		foreach($this->projectStructures as $projectStructure){
@@ -74,14 +75,14 @@ class Project implements JsonSerializable {
 		foreach($this->images as $image){
 			array_push($jsonImages, $image->jsonSerialize());
 		}
-
+		*/
         return array (
             'id' => $this->id,
             'imagesize' => $this->image_size,
 			'enabled' => $this->enabled,
 			'name' => $this->name,
-			'projectStructures' => $jsonProjectStructes,
-			'images' => $jsonImages
+			'projectStructures' => null,
+			'images' => null
         );
     }
 }
