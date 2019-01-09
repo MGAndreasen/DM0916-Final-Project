@@ -10,8 +10,9 @@ $(document).ready(function () {
 
     $('nav ul li a').click(function (e) {
         var div = $(this).attr('href');
-        $(div).show();
-        $('.pages').not(div).hide();
+        var page = $(div);
+        page.show();
+        $('.pages').not(page).hide();
         e.preventDefault();
     });
 
