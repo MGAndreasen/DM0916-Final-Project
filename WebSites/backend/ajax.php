@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	if (isset($_POST['resp']))
 	{
 		//var_dump($_POST['resp']);
-		$data['data'] = $_POST['resp'];
+		$data['data'] = print_r($_POST);
 	}
 	
 	errorMsg("hmm","hmm2","looool post");
