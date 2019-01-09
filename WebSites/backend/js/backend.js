@@ -16,7 +16,7 @@ $(document).ready(function () {
     //        func: "getProjects"
     //    }
     //});
-    var test = new Array(1, 2, 3, 4);
+    var test = new Array(1, 2, 3, 4, "hest");
     myPost('projects', 'getProject', test);
 });
 
