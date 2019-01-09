@@ -17,7 +17,7 @@ $data = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	errorMsg("hmm","hmm2","looool post");
-	echo json_encode($_POST['data'], JSON_PRETTY_PRINT);
+	echo $_POST['data'];
 }
 else
 {
