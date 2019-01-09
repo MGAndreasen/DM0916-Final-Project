@@ -17,16 +17,14 @@ $(document).ready(function () {
         }
     });
 
-    var mydata = [{
-        "cmd": {
-            "ctrl": "projects",
-            "func": "getProject"
-        }
-    }];
-    myPost(mydata);
+    myPost('projects', 'getProject', [1,2]);
 });
 
-function myPost(mydata) {
+function myPost(ctrl, func, parms) {
+    var mydata = new Array();
+    mydata['ctrl'] = ctrl;
+    mydata['func'] = func;
+    mydata['parms'] = parms;
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
