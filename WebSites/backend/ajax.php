@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	if (isset($_REQUEST['resp']))
 	{
 		//var_dump($_POST['resp']);
-		$data['data'] = json_decode($_REQUEST['resp']);
+		$data['data'] = json_decode($_REQUEST['resp'], true);
 	}
 }
 else
