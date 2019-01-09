@@ -13,18 +13,21 @@ session_start();
 
 // create empty output array
 $data = array();
+$response = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_REQUEST['resp']))
 	{
-		@$response = json_decode(utf8_encode($_REQUEST['resp']), true);
+		@$response = json_decode(utf8_encode($_REQUEST['resp'][0]), true);
 
 		@$ctrl = $response['ctrl'];
 		@$func = $response['func'];
 		@$parms = array();
 
-		errorMsg(null,null,$ctrl);
+
+
+		errorMsg($ctrl,$func,$parms);
 	}
 }
 else
