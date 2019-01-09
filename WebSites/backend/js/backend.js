@@ -28,7 +28,7 @@ function myPost(ctrl, func, parms) {
     $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
-        data: JSON.stringify({ Resp: mydata }),
+        data: JSON.stringify(mydata),
         contentType: "application/json; charset=utf-8",
         dataType: "json" });
 }
