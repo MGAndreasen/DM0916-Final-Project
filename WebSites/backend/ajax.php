@@ -18,7 +18,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	if (isset($_REQUEST['resp']))
 	{
-		$data['data'] = json_decode($_REQUEST['resp'], true);
+		$response = json_decode($_REQUEST['resp'], true);
+
+		$ctrl = $response['ctrl'];
+		$func = $response['func'];
+		$parms = array();
+
+		if(!empty($_GET['ctrl']) && mb_stripos($_GET['ctrl'], "..") === false && !empty($_GET['func']))
+		{
+			$ctrl = basename(strtolower($_GET['ctrl']), ".php");
+			$func = basename(strtolower($_GET['func']));
+
+			$path = '../classes/ctrlLayer/'.$ctrl.'Ctrl.php';
+
+			if (realpath($path))
+			{
+				// Load Include files.
+				require_once('../classes/util/connectionDB.php');
+
+				// Connect to Mysql (MariaDB)
+				$dbCtrl = new connectionDB();
+				$conn = $dbCtrl->getConnection();
+
+				// Load Include files.
+				require_once($path);
+
+				$theClass = ucfirst($ctrl)."Ctrl";
+				$theCtrl = new $theClass();
+				$theCtrl->$func();
+			}
+			else
+			{
+				errorMsg($ctrl, $func, 'Controller fil findes ikke.');
+			}
+		}
+		else
+		{
+			errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!');
+		}
+	}
+	else
+	{
+		errorMsg(NULL, NULL, 'Der blev ikke modtaget json!');
 	}
 }
 else
