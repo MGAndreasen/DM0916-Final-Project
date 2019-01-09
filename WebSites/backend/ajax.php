@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	$data['data'] = 2;
 	if (isset($_POST['resp']))
 	{
-		var_dump($_POST['resp']);
+		//var_dump($_POST['resp']);
 		$data['data'] = $_POST['resp'];
 	}
 	
