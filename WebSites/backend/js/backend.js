@@ -18,9 +18,6 @@ $(document).ready(function () {
 
             $(section).addClass('active');
             $('#pages .page').not(section).removeClass('active');
-            //$('#pages .page').removeClass('active');
-            
-            
         }
         e.preventDefault();
     });
