@@ -5,9 +5,9 @@ $(document).ready(function () {
     });
 
     // Ajax eventhandler
-    //$(document).ajaxSuccess(function (event, xhr, settings) {
-    //    ajaxOk(xhr);
-    //});
+    $(document).ajaxSuccess(function (event, xhr, settings) {
+        ajaxOk(xhr);
+    });
 
     // Mainmenu
     $('nav ul li a').click(function () {
@@ -92,7 +92,6 @@ function myPost(ctrl, func, parms) {
         async: false,
         data: { resp: toSend },
         success: function (result) {
-            //var jsonData = JSON.parse(result);
             console.log("MODTAGET:\n" + JSON.stringify(result));
             toReturn = result[0];
         }
