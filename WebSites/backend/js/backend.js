@@ -43,11 +43,11 @@ function pageProjects() {
     $("#projects").html("<p>projects</p>");
 
     // Test load data.
-    var test = [1];
-    var projects = myPost('project', 'getProjects', test);
+    var customerid = ["hest",1];
+    var projects = myPost('project', 'getProjects', customerid);
 
     $.each(projects, function (key, value) {
-        var p = "<div id='project-"+value['id']+"'>"+value['name']+"</div>";
+        var p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
         $("#projects").append(p);
     });
 
