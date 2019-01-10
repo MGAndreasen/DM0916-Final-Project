@@ -37,11 +37,13 @@ $(document).ready(function () {
 
 //-- Funcs
 function handlePagechange() {
-    var pageName = $('#pages .page').hasClass('active');
-    pageName = pageName.attr('id');
+    var page = $('#pages .page').hasClass('active');
+    console.log(page);
+    
+    var pageName = page.attr('id');
+    console.log(pageName);
 
-
-    $('#' + pageName).html("stuff: " + pageName);
+    //$('#' + pageName).html("stuff: " + pageName);
 }
 
 
