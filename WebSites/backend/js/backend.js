@@ -24,6 +24,14 @@ $(document).ready(function () {
 
     // Remove Splashscreen
     $("#loading").toggle();
+
+    if (location.hash && location.hash.length) {
+        var hash = decodeURIComponent(location.hash.replace('#', ''));
+
+        if (hash.length) {
+            $('#'+hash).get(0).click();
+        }
+    }       
 });
 
 //-- Page functions
