@@ -92,7 +92,6 @@ function myPost(ctrl, func, parms) {
         success: function (result) {
             //var jsonData = JSON.parse(result);
             console.log("MODTAGET:\n" + JSON.stringify(result));
-            return result[0];
         }
     });
     return thecall.responseText;
