@@ -9,12 +9,16 @@ $(document).ready(function () {
     });
 
     $('nav ul li a').click(function (e) {
-        var div = $(this).attr('href');
-        
-        div.addClass("active");
-        var page = $(div);
-        $('.pages').hide();
-        page.show();
+        if (!$(this).hasClass('active')) {
+            var section = $(this).attr('href');
+
+            $('nav ul li a').removeClass('active');
+
+            $(this).addClass('active');
+
+            $(section).show();
+            $('.pages').not(section).removeClass('active');
+        }
         e.preventDefault();
     });
 

@@ -6,6 +6,10 @@ section .page {
     display: none;
 }
 
+section .active {
+    display: block;
+}
+
 section #loading {
     display: block;
     z-index: 10;
