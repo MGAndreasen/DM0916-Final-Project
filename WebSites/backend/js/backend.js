@@ -25,49 +25,18 @@ $(document).ready(function () {
     // Remove Splashscreen
     $("#loading").toggle();
 
+    // Check if page is loaded with a hash already in place
     if (location.hash && location.hash.length) {
+        // and if so, decode that part and remove hashtag from it
         var hash = decodeURIComponent(location.hash.replace('#', ''));
 
+        // if there is still something in it
         if (hash.length) {
+            // lets try and find an menuelement with the given hash in the href attribute, and perform an automatic click on it, to load the correct section :-D
             $("nav ul li a[href='#"+hash+"']").get(0).click();
         }
     }       
 });
-
-//-- Page functions
-function pageHome() {
-    $("#home").html("<p>Home</p>");
-}
-
-function pageAbout() {
-    $("#about").html("<p>about</p>");
-}
-
-function pageTests() {
-    $("#tests").html("<p>tests</p>");
-}
-
-function pageProjects() {
-    $("#projects").html("<p>projects</p>");
-
-    // Test load data.
-    var customerid = [1];
-    var projects = myPost('project', 'getProjects', customerid);
-
-    $.each(projects, function (key, value) {
-        var p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
-        $("#projects").append(p);
-
-        //bind evt. eventhandlers her, eller globalt?
-    });
-
-    $("#projects").append(JSON.stringify(projects));
-}
-
-function pageTestDataSets() {
-    $("#testdatasets").html("<p>data</p>");
-}
-
 
 //-- SITE Funcs
 function handlePagechange() {
