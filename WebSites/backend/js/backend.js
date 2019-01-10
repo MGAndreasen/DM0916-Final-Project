@@ -28,10 +28,6 @@ $(document).ready(function () {
 
     // Remove Splashscreen
     $("#loading").toggle();
-
-    // Test load data.
-    var test = [1];
-    myPost('project', 'getProjects', test);
 });
 
 //-- Page functions
@@ -49,6 +45,10 @@ function pageTests() {
 
 function pageProjects() {
     $("#projects").html("<p>projects</p>");
+
+    // Test load data.
+    var test = [1];
+    myPost('project', 'getProjects', test);
 }
 
 function pageTestDataSets() {
