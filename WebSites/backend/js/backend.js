@@ -40,10 +40,9 @@ function handlePagechange() {
     var page = $('#pages .active');
     console.log(page);
     
-    //var pageName = page.attr('id');
-    //console.log(pageName);
+    var pageName = $(page).attr('id');
 
-    $(page).html("stuff: " );
+    $(page).html("stuff: " + pageName);
 }
 
 
