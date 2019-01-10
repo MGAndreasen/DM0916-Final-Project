@@ -91,7 +91,9 @@ function myPost(ctrl, func, parms) {
         data: { resp: toSend },
         success: function (result) {
             //var jsonData = JSON.parse(result);
-            console.log("MODTAGET:\n" + result);
+            console.log("MODTAGET:\n" + JSON.stringify(result));
+            console.log("MODTAGET:\n" + JSON.stringify(result[0]));
+            console.log("MODTAGET:\n" + JSON.stringify(result[0][0]));
             //return jsonData;
         }
     });
