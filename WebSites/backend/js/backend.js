@@ -45,6 +45,11 @@ function pageProjects() {
     // Test load data.
     var test = [1];
     var data = myPost('project', 'getProjects', test);
+
+    $.each(data, function (key, value) {
+        $("#projects").append("<div>"+key + "-" + value+"</div>");
+    });
+
     $("#projects").append(JSON.stringify(data));
 }
 
