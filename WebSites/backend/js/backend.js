@@ -16,9 +16,10 @@ $(document).ready(function () {
 
             $(this).addClass('active');
 
-            //$('.pages').not(section).removeClass('active');
-            $('.pages').removeClass('active');
             $(section).addClass('active');
+            $('#pages .page').not(section).removeClass('active');
+            //$('#pages .page').removeClass('active');
+            
             
         }
         e.preventDefault();
