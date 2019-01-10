@@ -91,8 +91,9 @@ function myPost(ctrl, func, parms) {
         data: { resp: toSend },
         success: function (event, xhr, settings) {
             var rawData = xhr.responseText;
-            var jsonData = JSON.parse(rawData);
-            return jsonData;
+            alert(rawData);
+            //var jsonData = JSON.parse(rawData);
+            //return jsonData;
         }
     });
 }
