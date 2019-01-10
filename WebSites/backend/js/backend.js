@@ -82,9 +82,8 @@ function handlePagechange() {
 function myPost(ctrl, func, parms) {
     var mydata = new Array({ "ctrl": ctrl, "func": func, "parms": parms });
     var toSend = JSON.stringify(mydata);
-    var answer = [];
     console.log("SENDES:\n" + toSend);
-    $.ajax({
+    var thecall = $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
         dataType: 'json',
@@ -93,10 +92,10 @@ function myPost(ctrl, func, parms) {
         success: function (result) {
             //var jsonData = JSON.parse(result);
             console.log("MODTAGET:\n" + JSON.stringify(result));
-            answer = result[0];
+            return result[0];
         }
     });
-    return answer;
+    return thecall;
 }
 
 function ajaxOk(result) {
