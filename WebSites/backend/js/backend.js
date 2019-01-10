@@ -89,7 +89,7 @@ function myPost(ctrl, func, parms) {
         dataType: 'json',
         encode: true,
         data: { resp: toSend },
-        success: function (event, xhr, settings) {
+        done: function (event, xhr, settings) {
             var rawData = xhr.responseText;
             alert(rawData);
             //var jsonData = JSON.parse(rawData);
