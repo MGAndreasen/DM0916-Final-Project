@@ -37,7 +37,9 @@ $(document).ready(function () {
 
 //-- Funcs
 function handlePagechange() {
-    var pageName = $('#pages .page').hasClass('active').attr('id');
+    var pageName = $('#pages .page').hasClass('active');
+    pageName = pageName.attr('id');
+
 
     $('#' + pageName).html("stuff: " + pageName);
 }
