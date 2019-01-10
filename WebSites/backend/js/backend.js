@@ -44,7 +44,8 @@ function pageProjects() {
 
     // Test load data.
     var test = [1];
-    myPost('project', 'getProjects', test);
+    var data = myPost('project', 'getProjects', test);
+    $("#projects").append(data);
 }
 
 function pageTestDataSets() {
@@ -88,8 +89,10 @@ function myPost(ctrl, func, parms) {
         dataType: 'json',
         encode: true,
         data: { resp: toSend },
-        success: function () {
-            alert('success');
+        success: function (event, xhr, settings) {
+            var rawData = result.responseText;
+            var jsonData = JSON.parse(rawData);
+            return jsonData;
         }
     });
 }
