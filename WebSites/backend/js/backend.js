@@ -5,9 +5,9 @@ $(document).ready(function () {
     });
 
     // Ajax eventhandler
-    $(document).ajaxSuccess(function (event, xhr, settings) {
-        ajaxOk(xhr);
-    });
+    //$(document).ajaxSuccess(function (event, xhr, settings) {
+    //    ajaxOk(xhr);
+    //});
 
     // Mainmenu
     $('nav ul li a').click(function () {
