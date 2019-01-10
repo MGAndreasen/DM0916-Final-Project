@@ -44,10 +44,10 @@ function pageProjects() {
 
     // Test load data.
     var test = [1];
-    var data = myPost('project', 'getProjects', test);
+    var projects = myPost('project', 'getProjects', test);
 
-    $.each(data, function (key, value) {
-        $("#projects").append("<div>"+key + "-" + value+"</div>");
+    $.each(projects, function (key, value) {
+        $("#projects").append("<div>"+value['id'] + "-" + value['name']+"</div>");
     });
 
     $("#projects").append(JSON.stringify(data));
