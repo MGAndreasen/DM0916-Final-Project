@@ -37,13 +37,13 @@ $(document).ready(function () {
 
 //-- Funcs
 function handlePagechange() {
-    var page = $('#pages .page').hasClass('active');
+    var page = $('#pages .active');
     console.log(page);
     
-    var pageName = page.attr('id');
-    console.log(pageName);
+    //var pageName = page.attr('id');
+    //console.log(pageName);
 
-    //$('#' + pageName).html("stuff: " + pageName);
+    $(page).html("stuff: " );
 }
 
 
