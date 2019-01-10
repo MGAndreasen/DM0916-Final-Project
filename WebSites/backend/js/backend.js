@@ -45,7 +45,7 @@ function pageProjects() {
     // Test load data.
     var test = [1];
     var data = myPost('project', 'getProjects', test);
-    $("#projects").append(data);
+    $("#projects").append(JSON.stringify(data));
 }
 
 function pageTestDataSets() {
@@ -82,6 +82,7 @@ function handlePagechange() {
 function myPost(ctrl, func, parms) {
     var mydata = new Array({ "ctrl": ctrl, "func": func, "parms": parms });
     var toSend = JSON.stringify(mydata);
+    var answer = [];
     console.log("SENDES:\n" + toSend);
     $.ajax({
         type: "POST",
@@ -92,11 +93,10 @@ function myPost(ctrl, func, parms) {
         success: function (result) {
             //var jsonData = JSON.parse(result);
             console.log("MODTAGET:\n" + JSON.stringify(result));
-            console.log("MODTAGET:\n" + JSON.stringify(result[0]));
-            console.log("MODTAGET:\n" + JSON.stringify(result[0][0]));
-            //return jsonData;
+            answer = result[0];
         }
     });
+    return answer;
 }
 
 function ajaxOk(result) {
