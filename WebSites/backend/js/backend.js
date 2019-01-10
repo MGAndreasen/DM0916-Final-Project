@@ -88,13 +88,12 @@ function myPost(ctrl, func, parms) {
         url: "/backend/ajax.php",
         dataType: 'json',
         encode: true,
-        data: { resp: toSend },
-        done: function (result) {
-            var rawData = result.responseText;
-            alert(rawData);
-            //var jsonData = JSON.parse(rawData);
-            //return jsonData;
-        }
+        data: { resp: toSend }
+    }).done(function (result) {
+        var rawData = result.responseText;
+        alert(rawData);
+        //var jsonData = JSON.parse(rawData);
+        //return jsonData;
     });
 }
 
