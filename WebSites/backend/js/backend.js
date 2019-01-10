@@ -8,7 +8,7 @@ $(document).ready(function () {
         ajaxOk(xhr);
     });
 
-    $('nav ul li a').click(function (e) {
+    $('nav ul li a').click(function () {
         if (!$(this).hasClass('active')) {
             var section = $(this).attr('href');
 
@@ -19,7 +19,6 @@ $(document).ready(function () {
             $(section).addClass('active');
             $('#pages .page').not(section).removeClass('active');
         }
-        e.preventDefault();
     });
 
     $("#loading").toggle();
