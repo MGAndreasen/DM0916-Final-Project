@@ -44,7 +44,7 @@ function pageProjects() {
 
     // Test load data.
     var customerid = ["hest",1];
-    var projects = myPost('project', 'getProjects', customerid);
+    var projects = myPost('projecta', 'getProjects', customerid);
 
     $.each(projects, function (key, value) {
         var p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
