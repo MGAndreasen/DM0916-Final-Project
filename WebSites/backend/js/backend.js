@@ -91,7 +91,7 @@ function myPost(ctrl, func, parms) {
         data: { resp: toSend }
     }).success(function (event, xhr, settings) {
         var rawData = xhr.responseText;
-        alert(rawData);
+        console.log("MODTAGET:\n" + rawData);
         //var jsonData = JSON.parse(rawData);
         //return jsonData;
     });
