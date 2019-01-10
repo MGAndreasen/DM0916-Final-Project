@@ -101,7 +101,7 @@ function myPost(ctrl, func, parms) {
 
 function ajaxOk(result) {
     var rawData = result.responseText;
-    console.log("MODTAGET:\n" + rawData);
+    //console.log("MODTAGET:\n" + rawData);
     var jsonData = JSON.parse(rawData);
     if (jsonData['errors']) {
         $.each(jsonData['errors'], function (key, value) {
