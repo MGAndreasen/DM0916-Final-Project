@@ -34,15 +34,53 @@ $(document).ready(function () {
     myPost('project', 'getProjects', test);
 });
 
+//-- Page functions
+function pageHome() {
+    $("#home").html("<p>Home</p>");
+}
+
+function pageAbout() {
+    $("#about").html("<p>about</p>");
+}
+
+function pageTests() {
+    $("#tests").html("<p>tests</p>");
+}
+
+function pageProjects() {
+    $("#projects").html("<p>projects</p>");
+}
+
+function pageTestDataSets() {
+    $("#testdatasets").html("<p>data</p>");
+}
+
 
 //-- Funcs
 function handlePagechange() {
-    var page = $('#pages .active');
-    console.log(page);
-    
-    var pageName = $(page).attr('id');
+    var pageName = $('#pages .active').attr('id');
+    //var pageName = $(page).attr('id');
 
-    $(page).html("stuff: " + pageName);
+    switch (pageName) {
+        case 'home':
+            pageHome();
+            break;
+        case 'about':
+            pageAbout();
+            break;
+        case 'tests':
+            pageTests();
+            break;
+        case 'projects':
+            pageProjects();
+            break;
+        case 'testdatasets':
+            pageTestDataSets();
+            break;
+        default:
+        // code block
+    }
+    $("#status").html("<p>STATUS: FEJL! pageHandler (" + pageName + ")</p>");
 }
 
 
