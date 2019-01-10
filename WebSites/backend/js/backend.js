@@ -88,6 +88,7 @@ function myPost(ctrl, func, parms) {
         url: "/backend/ajax.php",
         dataType: 'json',
         encode: true,
+        async: false,
         data: { resp: toSend },
         success: function (result) {
             //var jsonData = JSON.parse(result);
