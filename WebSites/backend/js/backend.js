@@ -88,12 +88,13 @@ function myPost(ctrl, func, parms) {
         url: "/backend/ajax.php",
         dataType: 'json',
         encode: true,
-        data: { resp: toSend }
-    }).success(function (event, xhr, settings) {
-        var rawData = xhr.responseText;
-        console.log("MODTAGET:\n" + rawData);
-        //var jsonData = JSON.parse(rawData);
-        //return jsonData;
+        data: { resp: toSend },
+        success: function (result) {
+            //var rawData = xhr.responseText;
+            console.log("MODTAGET:\n" + result);
+            //var jsonData = JSON.parse(rawData);
+            //return jsonData;
+        }
     });
 }
 
