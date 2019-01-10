@@ -95,7 +95,7 @@ function myPost(ctrl, func, parms) {
             return result[0];
         }
     });
-    return thecall;
+    return thecall.responseText;
 }
 
 function ajaxOk(result) {
