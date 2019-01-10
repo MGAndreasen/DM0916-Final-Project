@@ -37,7 +37,7 @@ $(document).ready(function () {
 
 //-- Funcs
 function handlePagechange(thepage) {
-    var lePage = $(section);
+    var lePage = $(thepage);
 
     lePage.html("stuff: " + lePage);
 }
