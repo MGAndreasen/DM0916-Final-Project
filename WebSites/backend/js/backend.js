@@ -1,13 +1,16 @@
 $(document).ready(function () {
 
+    // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
         ajaxFejl();
     });
 
+    // Ajax eventhandler
     $(document).ajaxSuccess(function (event, xhr, settings) {
         ajaxOk(xhr);
     });
 
+    // Mainmenu
     $('nav ul li a').click(function () {
         if (!$(this).hasClass('active')) {
             var section = $(this).attr('href');
@@ -18,14 +21,28 @@ $(document).ready(function () {
 
             $(section).addClass('active');
             $('#pages .page').not(section).removeClass('active');
+
+            handlePagechange(section);
         }
     });
 
+    // Remove Splashscreen
     $("#loading").toggle();
 
+    // Test load data.
     var test = [1];
     myPost('project', 'getProjects', test);
 });
+
+
+//-- Funcs
+function handlePagechange(thepage) {
+    var lePage = $(section);
+
+    lePage.html("stuff");
+}
+
+
 
 function myPost(ctrl, func, parms) {
     var mydata = new Array({ "ctrl": ctrl, "func": func, "parms": parms });
