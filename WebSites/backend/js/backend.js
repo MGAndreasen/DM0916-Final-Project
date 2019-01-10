@@ -29,7 +29,7 @@ $(document).ready(function () {
         var hash = decodeURIComponent(location.hash.replace('#', ''));
 
         if (hash.length) {
-            $('#'+hash).get(0).click();
+            $("nav ul li a[href='#"+hash+"']").get(0).click();
         }
     }       
 });
