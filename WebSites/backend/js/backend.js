@@ -78,9 +78,8 @@ function handlePagechange() {
             pageTestDataSets();
             break;
         default:
-        // code block
+            $("#status").html("<p>STATUS: FEJL! pageHandler (" + pageName + ")</p>");
     }
-    $("#status").html("<p>STATUS: FEJL! pageHandler (" + pageName + ")</p>");
 }
 
 
