@@ -22,7 +22,7 @@ $(document).ready(function () {
             $(section).addClass('active');
             $('#pages .page').not(section).removeClass('active');
 
-            handlePagechange(section);
+            handlePagechange();
         }
     });
 
@@ -36,10 +36,10 @@ $(document).ready(function () {
 
 
 //-- Funcs
-function handlePagechange(thepage) {
-    var lePage = $(thepage);
+function handlePagechange() {
+    var pageName = $('#pages .page').hasClass('active').attr('id');
 
-    lePage.html("stuff: " + lePage);
+    $('#' + pageName).html("stuff: " + pageName);
 }
 
 
