@@ -18,7 +18,7 @@ $(document).ready(function () {
 
             //$('.pages').not(section).removeClass('active');
             $('.pages').removeClass('active');
-            $(section).show();
+            $(section).addClass('active');
             
         }
         e.preventDefault();
