@@ -47,10 +47,11 @@ function pageProjects() {
     var projects = myPost('project', 'getProjects', test);
 
     $.each(projects, function (key, value) {
-        $("#projects").append("<div>"+value['id'] + "-" + value['name']+"</div>");
+        var p = "<div id='project-"+value['id']+"'>"+value['name']+"</div>";
+        $("#projects").append(p);
     });
 
-    $("#projects").append(JSON.stringify(data));
+    $("#projects").append(JSON.stringify(projects));
 }
 
 function pageTestDataSets() {
