@@ -90,8 +90,8 @@ function myPost(ctrl, func, parms) {
         encode: true,
         data: { resp: toSend },
         success: function (result) {
-            var jsonData = JSON.parse(result);
-            console.log("MODTAGET:\n" + jsonData);
+            //var jsonData = JSON.parse(result);
+            console.log("MODTAGET:\n" + result);
             //return jsonData;
         }
     });
