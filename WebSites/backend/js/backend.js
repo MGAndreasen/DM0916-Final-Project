@@ -83,6 +83,7 @@ function myPost(ctrl, func, parms) {
     var mydata = new Array({ "ctrl": ctrl, "func": func, "parms": parms });
     var toSend = JSON.stringify(mydata);
     console.log("SENDES:\n" + toSend);
+    var toReturn = [];
     var thecall = $.ajax({
         type: "POST",
         url: "/backend/ajax.php",
@@ -93,9 +94,10 @@ function myPost(ctrl, func, parms) {
         success: function (result) {
             //var jsonData = JSON.parse(result);
             console.log("MODTAGET:\n" + JSON.stringify(result));
+            toReturn = result[0];
         }
     });
-    return thecall.responseText;
+    return toReturn;
 }
 
 function ajaxOk(result) {
