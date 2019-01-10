@@ -3,17 +3,10 @@ import shutil
 from PIL import Image
 import numpy as np
 
-#This script should maybe be in its own .py project as its purpose is only to manipulate images so they will be the correct size for a cnn network.
-
-#scale factor along the horizontal axis
+#scale factor along the horizontal axis and vertical. InterpolationMethod is how the picture is resized.
 def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod, dst):
-    #finds the file name in filepath
-    #filePathSplitted = str(filePath).split('/', -1)
-    #lastSplit = filePath.count('/')
-    #orginalFileName = filePathSplitted[lastSplit] 
+
     orginalFileName = filePath.split('\\')[-1]
-
-
     newFileName = '/resized_'+ str(col) + '-' + str(row) + '_' + str(interpolationMethod) + orginalFileName
     newFilePath = dst + newFileName;
     
@@ -31,6 +24,7 @@ def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVert
         newImage = cv2.resize(image, (col, row), scaleFactorHorizontal, scaleFactorVertical, interpolationMethod)
         cv2.imwrite(newFilePath, newImage)
 
+#NB as it stands now the col, row, scalefactor and interpolationMethods are all hardcorded and therefore not utilized.
 def resizeImagesInFolder(folderPath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod):
     folderPath = os.path.normpath(folderPath)
     dst = folderPath
