@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
         ajaxFejl();
@@ -14,14 +13,11 @@ $(document).ready(function () {
     $('nav ul li a').click(function () {
         if (!$(this).hasClass('active')) {
             var section = $(this).attr('href');
-
             $('nav ul li a').removeClass('active');
-
             $(this).addClass('active');
-
             $(section).addClass('active');
             $('#pages .page').not(section).removeClass('active');
-
+            // do page stuff
             handlePagechange();
         }
     });
@@ -56,7 +52,7 @@ function pageTestDataSets() {
 }
 
 
-//-- Funcs
+//-- SITE Funcs
 function handlePagechange() {
     var pageName = $('#pages .active').attr('id');
     //var pageName = $(page).attr('id');
@@ -82,8 +78,6 @@ function handlePagechange() {
     }
 }
 
-
-
 function myPost(ctrl, func, parms) {
     var mydata = new Array({ "ctrl": ctrl, "func": func, "parms": parms });
     var toSend = JSON.stringify(mydata);
@@ -93,11 +87,13 @@ function myPost(ctrl, func, parms) {
         url: "/backend/ajax.php",
         dataType: 'json',
         encode: true,
-        data: { resp: toSend }
+        data: { resp: toSend },
+        success: function () {
+            alert('success');
+        }
     });
 }
 
-// Functions
 function ajaxOk(result) {
     var rawData = result.responseText;
     console.log("MODTAGET:\n" + rawData);
