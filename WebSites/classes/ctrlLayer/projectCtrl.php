@@ -4,9 +4,6 @@ require_once('../classes/dbLayer/projectDB.php');
 
 class ProjectCtrl {
     private static $instance;
-	private final function __construct() {}
-    private final function __clone() {}
-
 	private $mDB = null;
 	private $data = null;
 
@@ -17,7 +14,8 @@ class ProjectCtrl {
         return self::$instance;
     }
 
-	private function __construct() {
+	private final function __clone() {}
+	private final function __construct() {
 		global $data;
 		$this->data = &$data;
 		$this->mDB = new ProjectDB();
