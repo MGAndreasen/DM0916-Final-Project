@@ -8,17 +8,17 @@ class ProjectDB
 	private $removeProject_SQL = 'DELETE FROM project WHERE id = ?';
 	private $updateProject_SQL = 'UPDATE SET name=?, customer_id=?, enabled=?, image_size=?  FROM project WHERE id = ?';
 	private $getProject_SQL = 'SELECT * FROM project WHERE id = ?';
-	private $getProjects_SQL = 'SELECT * FROM project WHERE customer_Id = ?';
+	private $getProjects_SQL = 'SELECT * FROM project WHERE customer_id = ?';
 
 	public function __construct() {
 	}
 
 	// getProjects($customer_Id)
-	public function getProjects($customer_Id) {
+	public function getProjects($customer_id) {
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getProjects_SQL);
-		$query->bind_param('i', $customer_Id);
+		$query->bind_param('i', $customer_id);
 		$query->execute();
 		$result = $query->get_result();
 		
