@@ -6,7 +6,7 @@ class Project implements JsonSerializable {
 	private $enabled;
 	private $name;
 	
-	public function __construct(int $id, int $customer_id, int $image_size, int $enabled, string $name) {
+	public function __construct(int $id, int $customer_id, int $image_size, bool $enabled, string $name) {
 		$this->id = $id;
 		$this->customer_id = $customer_id;
 		$this->image_size = $image_size;
@@ -45,6 +45,7 @@ class Project implements JsonSerializable {
 	public function jsonSerialize() {
         return array (
             'id' => $this->id,
+			'customer_id' => $this->customer_id,
             'imagesize' => $this->image_size,
 			'enabled' => $this->enabled,
 			'name' => $this->name
