@@ -13,18 +13,18 @@ class ProjectDB
 	public function __construct() {
 	}
 
-	// getProjects($customerID)
-	public function getProjects($customerID) {
+	// getProjects($customer_Id)
+	public function getProjects($customer_Id) {
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getProjects_SQL);
-		$query->bind_param('i', $customerID);
+		$query->bind_param('i', $customer_Id);
 		$query->execute();
 		$result = $query->get_result();
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['image_size'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['customer_Id'], $row['image_size'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		} else { errorMsg('projectDB','getProjects','couldnt find any projects'); }
@@ -42,9 +42,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['image_size'], $row['enabled'], $row['name']);
-				//$projectStructures = $this->getProjectStructures((int)$row['id']); 
-				//$project->setProjectStructures($projectStructures);
+				$project = new Project($row['id'], $row['customer_Id'], $row['image_size'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		} 
