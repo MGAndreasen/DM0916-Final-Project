@@ -1,13 +1,14 @@
 <?php
-
 class Project implements JsonSerializable {
     private $id;
+	private $customer_id;
 	private $image_size;
 	private $enabled;
 	private $name;
 	
-	public function __construct(int $id, string $image_size, string $enabled, string $name){
+	public function __construct(int $id, int $customer_id, string $image_size, string $enabled, string $name){
 		$this->id = $id;
+		$this->customer_id = $customer_id;
 		$this->image_size = $image_size;
 		$this->enabled = $enabled;
 		$this->name = $name;
@@ -27,14 +28,6 @@ class Project implements JsonSerializable {
 
 	public function getName(){
 		return $this->name;
-	}
-
-	public function getImages(){
-		return $this->images();
-	}
-
-	public function setID(int $id){
-		$this->id = $id;
 	}
 
 	public function setÍmage_size(int $size){
@@ -58,5 +51,4 @@ class Project implements JsonSerializable {
         );
     }
 }
-
 ?>

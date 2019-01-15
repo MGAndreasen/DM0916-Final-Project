@@ -33,5 +33,19 @@ class ProjectCtrl {
 		$someDataFromDB = $this->mDB->getProjects($customerID);
 		array_push($this->data, $someDataFromDB);
 	}
+
+	public function createProject() {
+		
+		
+	}
+
+	public function updateProject($id) {
+	
+	}
+
+	public function deleteProject($id) {
+		
+		
+	}
 }
 ?>
