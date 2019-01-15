@@ -1,12 +1,12 @@
 <?php
 class Project implements JsonSerializable {
-    private int $id;
-	private int $customer_id;
-	private int $image_size;
-	private int $enabled;
-	private string $name;
+    private $id;
+	private $customer_id;
+	private $image_size;
+	private $enabled;
+	private $name;
 	
-	public function __construct($id, $customer_id, $image_size, $enabled, $name) {
+	public function __construct(int $id, int $customer_id, int $image_size, int $enabled, string $name) {
 		$this->id = $id;
 		$this->customer_id = $customer_id;
 		$this->image_size = $image_size;
