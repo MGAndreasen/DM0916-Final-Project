@@ -24,7 +24,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['customer_Id'], $row['image_size'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['customer_id'], $row['image_size'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		} else { errorMsg('projectDB','getProjects','couldnt find any projects'); }
