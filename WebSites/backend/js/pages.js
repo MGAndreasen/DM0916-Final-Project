@@ -61,7 +61,7 @@ function pageApiTest() {
         var parms = JSON.parse($("#apitest form textarea").val());
         var result = myPost(ctrl, func, parms);
         console.log("TEST: " + JSON.stringify(result));
-        $("#apitestResult").val(JSON.stringify(result));
+        $("#apitestResult").html("<p>"+JSON.stringify(result)+"</p>");
     });
 
     
