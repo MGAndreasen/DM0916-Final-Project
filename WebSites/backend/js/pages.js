@@ -41,7 +41,7 @@ function pageApiTest() {
     section.on('click', '.example', function () {
         $("#apitestCtrl").html("project");
         $("#apitestFunc").html("getProjects");
-        $("#apitest form textarea").html("[1]");
+        $("#apitest form textarea").html([1]);
     });
 
     section.on('click', '.runquery', function () {
