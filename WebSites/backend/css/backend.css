@@ -64,7 +64,7 @@ nav ul li a.active {
 
 #apitest form {
     margin: 10px auto;
-    width: 50px;
+    width: 50%;
     height: auto;
     padding: 10px;
     border-radius: 9px;
@@ -74,4 +74,6 @@ nav ul li a.active {
     #apitest form textarea {
         width: 100%;
         height: 250px;
+        border-radius: 9px;
+        border: 1px solid #eee;
     }
