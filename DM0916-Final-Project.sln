@@ -88,6 +88,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dbLayer", "dbLayer", "{77D1700B-2A7C-463A-A1D1-FBF1118C30ED}"
 	ProjectSection(SolutionItems) = preProject
 		WebSites\classes\dbLayer\customerDB.php = WebSites\classes\dbLayer\customerDB.php
+		imageDB.php = imageDB.php
 		WebSites\classes\dbLayer\modelDB.php = WebSites\classes\dbLayer\modelDB.php
 		WebSites\classes\dbLayer\projectDB.php = WebSites\classes\dbLayer\projectDB.php
 	EndProjectSection
