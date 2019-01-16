@@ -60,7 +60,7 @@ function pageApiTest() {
         var func = $("#apitestFunc").val();
         var parms = JSON.parse($("#apitest form textarea").val());
         var result = myPost(ctrl, func, parms);
-        $("#apitestResult").html("<code>"+JSON.stringify(result, null, "\t")+"</code>");
+        $("#apitestResult").html("<pre>"+JSON.stringify(result, null, "\t")+"</pre>");
     });
 
     

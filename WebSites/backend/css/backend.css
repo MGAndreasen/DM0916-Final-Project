@@ -79,3 +79,7 @@ nav ul li a.active {
         border: 1px solid ddd;
         color: #000;
     }
+
+pre {
+    font-family: monospace;
+}
