@@ -32,7 +32,7 @@ class Project implements JsonSerializable {
 		return $this->name;
 	}
 
-	public function getProjectStrutures(): array {
+	public function getProjectStrutures() {
 		return $this->projectStrutues();
 	}
 
