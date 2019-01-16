@@ -49,7 +49,7 @@ function pageApiTest() {
         var ctrl = $("#apitestCtrl").val();
         var funk = $("#apitestFunk").val();
         var parms = Array.from($("#apitest form textarea").val());
-        var result = myPost(ctrl, funk, parms);
+        var result = myPost(ctrl, funk, parms[0]);
         $("#apitestResult").html(result+"hmm");
     });
 
