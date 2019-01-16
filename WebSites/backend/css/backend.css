@@ -50,6 +50,7 @@ nav ul li a.active {
 }
 
 #status .notify {
-    background-color: light-yellow;
+    background-color: #333;
     border-radius: 7px;
+    color: #fff;
 }
