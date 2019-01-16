@@ -5,7 +5,9 @@ class ProjectStructure implements JsonSerializable {
 	private $filter_size;
 	private $validation_size;
 	private $name;
-	private $subProjectStructures = array();
+	private $subProjectStructures;
+
+	/* private $subProjectStructures = array(); */
 
 	public function __construct(int $id, string $image_size, string $filter_size, string $validation_size, string $name){
 		$this->id = $id;
@@ -13,6 +15,7 @@ class ProjectStructure implements JsonSerializable {
 		$this->filter_size = $filter_size;
 		$this->validation_size = $validation_size;
 		$this->name = $name;
+		$this->subProjectStructures = array();
 	}
 
 	public function getID(): int{
@@ -68,15 +71,17 @@ class ProjectStructure implements JsonSerializable {
 	}
 
 	public function jsonSerialize(): array{
-		$jsonStrutures = array();
+		/*
+			$jsonStrutures = array();
 
-		if(!empty($this->subProjectStructures)){
-			foreach($this->subProjectStructures as $projectStructure){
-				if(!is_string($projectStructure)){
-					array_push($jsonStrutures, $projectStructure->jsonSerialize());
+			if(!empty($this->subProjectStructures)){
+				foreach($this->subProjectStructures as $projectStructure){
+					if(!is_string($projectStructure)){
+						array_push($jsonStrutures, $projectStructure->jsonSerialize());
+					}
 				}
 			}
-		}
+		*/
 
         return array (
             'id' => $this->id,
@@ -84,7 +89,7 @@ class ProjectStructure implements JsonSerializable {
 			'filter_size' => $this->filter_size,
 			'validation_size' => $this->validation_size,
 			'name' => $this->name,
-			'subStructures' => $jsonStrutures
+			'subStructures' => $this->subProjectStructures;
         );
     }	
 }
