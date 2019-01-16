@@ -93,7 +93,8 @@ function ajaxOk(result) {
     var jsonData = JSON.parse(rawData);
     if (jsonData['errors']) {
         $.each(jsonData['errors'], function (key, value) {
-            alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
+            notify("Ajax", "Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
+            //alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
         });
     }
     else {
