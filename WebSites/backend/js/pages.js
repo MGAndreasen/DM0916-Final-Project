@@ -40,7 +40,7 @@ function pageApiTest() {
     var lePage = "<form>"
         + "<label>Ctrl: <input id='apitestCtrl' type='text' value='project'/></label></br>"
         + "<label>Func: <input id='apitestFunc' type='text' value='getProjects'/></label></br>"
-        + "<label>Parms:<textarea></textarea></lable></br>"
+        + "<label>Parms:<textarea></textarea></label></br>"
         + "<input class='runquery' type='button' value='Run Query'/>"
         + "<input class='example' type='button' value='Example'/>"
         + "</form></br>"
