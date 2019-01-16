@@ -107,6 +107,6 @@ function ajaxFejl() {
 }
 
 function notify(title, msg) {
-    var notisElement = "<div class='notify'><div>" + title + "</div>" + msg + "</div>";
+    var notisElement = "<div class='notify'><div>" + title + "</div><div>" + msg + "</div></div>";
     $(notisElement).prependTo("#status").delay(10000).fadeOut(2000).delay(3000).queue(function () { $(this).remove(); });
 }
