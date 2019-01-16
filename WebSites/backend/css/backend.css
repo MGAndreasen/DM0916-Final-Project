@@ -48,6 +48,10 @@ nav ul li a.active {
     text-align: center;
 }
 
+#status .notify div:first-child {
+    background-color: #808080;
+}
+
 #status .notify {
     background-color: #2273e4;
     border-radius: 9px;
