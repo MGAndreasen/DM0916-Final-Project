@@ -107,9 +107,9 @@ class ProjectDB
 	public function updateProject($project){
 		global $conn;
 		$query = $conn->prepare($this->$updateProject_SQL);
-		$query->bind_param(':customer_id', $project->getCustomerID();
-		$query->bind_param(':enabled', $project->getEnabled();
-		$query->bind_param(':name', $project->getName();
+		$query->bind_param(':customer_id', $project->getCustomerID());
+		$query->bind_param(':enabled', $project->getEnabled());
+		$query->bind_param(':name', $project->getName());
 
 		$query->execute();
 		$result = $query->get_result();
