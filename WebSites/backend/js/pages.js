@@ -41,14 +41,14 @@ function pageApiTest() {
     section.on('click', '.example', function () {
         $("#apitestCtrl").html("project");
         $("#apitestFunc").html("getProjects");
-        $("#apitest form textarea").html([1]);
+        $("#apitest form textarea").html(1);
     });
 
     section.on('click', '.runquery', function () {
         // Test Query
         var ctrl = $("#apitestCtrl").val();
         var func = $("#apitestFunc").val();
-        var parms = $("#apitest form textarea").val();
+        var parms = [$("#apitest form textarea").val()];
         //console.log(parms);
         var result = myPost(ctrl, func, parms);
         $("#apitestResult").html(JSON.stringify(result));
