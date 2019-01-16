@@ -113,10 +113,11 @@ function ajaxFejl() {
 
 function notify(title, msg) {
     notifyNum++;
-    var id = notifyNum;
-    var data = "<div class='notify' id='notify-"+id+"'><div>"+title+"</div>"+msg+"</div>";
+    var id = "#notify-"+notifyNum;
+    var data = "<div class='notify' id='"+id+"'><div>"+title+"</div>"+msg+"</div>";
     setTimeout(function () {
         $("#status").append(data);
-        //$(".divclass").hide("2000")
-    }, 5000);
+        var notify = $(id);
+        notify.hide("5000").remove();
+    }, 3000);
 }
