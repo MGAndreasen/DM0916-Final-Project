@@ -9,10 +9,6 @@ $(document).ready(function () {
         ajaxOk(xhr);
     });
 
-    $('#apitest').on('click', '.example', function () {
-        alert("new link clicked!");
-    });
-
     // Mainmenu
     $('nav ul li a').click(function () {
         if (!$(this).hasClass('active')) {

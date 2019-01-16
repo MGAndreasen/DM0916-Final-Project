@@ -38,5 +38,18 @@ function pageApiTest() {
     // Get section ref.
     var section = $("#apitest");
 
-    section.html("<form><textarea></textarea></br><input type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
+    var samplequery = "dsadsasa";
+
+    section.on('click', '.example', function () {
+        $("#apitest form textarea").html(samplequery);
+    });
+
+    section.on('click', '.runquery', function () {
+        // Test load data.
+        var customerid = [1];
+        var result = myPost('project', 'getProjects', customerid);
+        $("#apitestResult").html(result);
+    });
+
+    section.html("<form><textarea></textarea></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
 }
