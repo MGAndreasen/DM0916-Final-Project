@@ -82,4 +82,11 @@ nav ul li a.active {
 
 pre {
     font-family: monospace;
+    text-align: left;
+    width: 50%;
+    background-color: #eee;
+    border-radius: 9px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
 }
