@@ -116,7 +116,7 @@ function notify(title, msg) {
     var id = notifyNum;
     var data = "<div class='notify' id='notify-"+id+"'><div>"+title+"</div>"+msg+"</div>";
     setTimeout(function () {
-        $("#status").appendHtml(data);
+        $("#status").append(data);
         //$(".divclass").hide("2000")
     }, 5000);
 }
