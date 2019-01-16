@@ -114,6 +114,6 @@ function ajaxFejl() {
 function notify(title, msg) {
     notifyNum++;
     var id = "#notify-"+notifyNum;
-    var data = "<div class='notify' id='" + id + "'><div>" + title + "</div>" + msg + "</div>";
-    $(data).prependTo("#status").delay(10000).fadeOut(2000).remove();
+    var notisElement = "<div class='notify' id='" + id + "'><div>" + title + "</div>" + msg + "</div>";
+    $(notisElement).prependTo("#status").delay(3000).fadeOut(2000);
 }
