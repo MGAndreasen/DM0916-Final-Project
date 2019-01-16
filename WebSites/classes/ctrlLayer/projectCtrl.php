@@ -32,9 +32,10 @@ class ProjectCtrl {
 
 	public function getProjects($customerID) {
 		errorMsg('test','hmm','lol');
-		$toReturn = array();
-		$toReturn['projects'] = $this->mDB->getProjects($customerID);
-		array_push($this->data, $toReturn);
+		//$toReturn = array();
+		//$toReturn['projects'] = $this->mDB->getProjects($customerID);
+		//array_push($this->data, $toReturn);
+		$this->data['projects'] = $this->mDB->getProjects($customerID);
 	}
 
 	public function createProject() {
