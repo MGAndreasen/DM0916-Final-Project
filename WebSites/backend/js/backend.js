@@ -113,7 +113,7 @@ function ajaxFejl() {
 
 function notify(title, msg) {
     notifyNum++;
-    var id = NotifyNum;
+    var id = notifyNum;
     var data = "<div class='notify' id='notify-"+id+"'><div>"+title+"</div>"+msg+"</div>";
     setTimeout(function () {
         $("#status").appendHtml(data);
