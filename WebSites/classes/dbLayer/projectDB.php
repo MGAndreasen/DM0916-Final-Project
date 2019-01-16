@@ -4,12 +4,14 @@ require_once('../classes/modelLayer/project.php');
 
 class ProjectDB
 {
+	// SQL Querys
 	private $createProject_SQL = 'INSERT INTO project VALUE(null,?,?,?,?)';
 	private $removeProject_SQL = 'DELETE FROM project WHERE id = ?';
 	private $updateProject_SQL = 'UPDATE SET name=?, customer_id=?, enabled=?, image_size=?  FROM project WHERE id = ?';
 	private $getProject_SQL = 'SELECT * FROM project WHERE id = ?';
 	private $getProjects_SQL = 'SELECT * FROM project WHERE customer_id = ?';
 
+	// Constructor
 	public function __construct() {
 	}
 
@@ -45,7 +47,7 @@ class ProjectDB
 				$project = new Project($row['id'], $row['customer_Id'], $row['image_size'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
-		} 
+		}
 		else 
 		{
 			errorMsg('projectDB','getProjects','error: couldnt find any projects with that customerID');
