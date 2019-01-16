@@ -48,9 +48,9 @@ class Project implements JsonSerializable {
 		$this->name = $name;
 	}
 
-	//public function setProjectStrutures($projectStructures) {
-	//	$this->projectStrutures = $projectStructures;
-	//}
+	public function setProjectStrutures($projectStructures) {
+		$this->projectStrutures = $projectStructures;
+	}
 
 	public function jsonSerialize() {
         return array (
@@ -59,7 +59,7 @@ class Project implements JsonSerializable {
             'imagesize' => $this->image_size,
 			'enabled' => $this->enabled,
 			'name' => $this->name,
-			'projectStrutures' = $this->projectStrutures
+			'projectStrutures' => $this->projectStrutures
         );
     }
 }
