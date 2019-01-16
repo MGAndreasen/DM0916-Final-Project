@@ -5,12 +5,12 @@ require_once('../classes/modelLayer/project.php');
 class ProjectDB
 {
 	// SQL Querys
-	private $createProject_SQL = 'INSERT INTO project VALUE(null,?,?,?,?)';
-	private $removeProject_SQL = 'DELETE FROM project WHERE id = ?';
-	private $updateProject_SQL = 'UPDATE SET name=?, customer_id=?, enabled=?, image_size=?  FROM project WHERE id = ?';
-	private $getProject_SQL = 'SELECT * FROM project WHERE id = ?';
-	private $getProjects_SQL = 'SELECT * FROM project WHERE customer_id = ?';
-
+	private $getProject_SQL		= 'SELECT * FROM project WHERE id = ?';
+	private $getProjects_SQL	= 'SELECT * FROM project WHERE customer_id = ?';
+	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, enabled=:enabled FROM project WHERE id = :id';
+	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, customer_Id=:customer_id, enabled=_enabled)';
+	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
+	 
 	// Constructor
 	public function __construct() {
 	}
@@ -27,7 +27,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['customer_id'], $row['image_size'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['customer_id'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		} else { errorMsg('projectDB','getProjects','couldnt find any projects'); }
@@ -45,7 +45,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['customer_Id'], $row['image_size'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['customer_Id'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		}
@@ -56,8 +56,7 @@ class ProjectDB
 		return $resultArr;
 	}
 
-/*	
-	//Skal indsættes ind i projectDB?
+	//Gets all projectstructures inclussive thier childrens projectStructure etc.
 	public function getProjectStructures($projectID){
 		global $conn;
 		$resultArr = [];
@@ -87,7 +86,7 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	//Skal indsættes ind i projectDB?
+	//Helper function for getProjectStructures
 	public function getSubProjectStructures($parent_id){
 		global $conn;
 		$resultArr = [];
@@ -105,51 +104,37 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	//Skal indsættes ind i projectDB?
-	public function getProjects(){
+	public function updateProject($project){
 		global $conn;
-		$resultArr = [];
-		$query = $conn->prepare($this->getProjects_SQL);
+		$query = $conn->prepare($this->$updateProject_SQL);
+		$query->bind_param(':customer_id', $project->getCustomerID();
+		$query->bind_param(':enabled', $project->getEnabled();
+		$query->bind_param(':name', $project->getName();
+
 		$query->execute();
 		$result = $query->get_result();
-		
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['image_size'], $row['enabled'], $row['name']);
-				$projectStructures = $this->getProjectStructures((int)$row['id']); 
-				$project->setProjectStructures($projectStructures);
-				array_push($resultArr, $project);
-			}
-		} 
-		else 
-		{
-			array_push($resultArr, 'error: couldnt find any projects');
+
+		//Not quite sure on this one for handling error msges.
+		if ($result == FALSE) {
+			return 'error: couldnt execute ' + $updateProject_SQL + ' on id ' + $id;
 		}
-		return $resultArr;
+		else {
+			return 1; 
+		}
 	}
 
-	//Skal indsættes ind i projectDB?
-	public function getProjects(){
-		global $conn;
-		$resultArr = [];
-		$query = $conn->prepare($this->getProjects_SQL);
+	public function removeProject($id){
+		$query = $conn->prepare($this->$removeProject_SQL);
+		$query->bind_param(':id', $project->getID());
 		$query->execute();
 		$result = $query->get_result();
-		
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['image_size'], $row['enabled'], $row['name']);
-				$projectStructures = $this->getProjectStructures((int)$row['id']); 
-				$project->setProjectStructures($projectStructures);
-				array_push($resultArr, $project);
-			}
-		} 
-		else 
-		{
-			array_push($resultArr, 'error: couldnt find any projects');
+
+		if ($result == FALSE) {
+			return 'error: couldnt execute ' + $removeProject_SQL + ' on id ' + $id;
 		}
-		return $resultArr;
+		else {
+			return 1; 
+		}
 	}
-	*/
 }
 ?>
