@@ -48,9 +48,9 @@ class Project implements JsonSerializable {
 		$this->name = $name;
 	}
 
-	public function setProjectStrutures($projectStructures) {
-		$this->projectStrutures = $projectStructures;
-	}
+	//public function setProjectStrutures($projectStructures) {
+	//	$this->projectStrutures = $projectStructures;
+	//}
 
 	public function jsonSerialize() {
         return array (
