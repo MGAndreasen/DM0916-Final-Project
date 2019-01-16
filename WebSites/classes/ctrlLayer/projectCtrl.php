@@ -9,7 +9,7 @@ class ProjectCtrl {
 
 	public final static function getInstance() {
         if(!self::$instance) {
-            self::$instance = new self;    
+            self::$instance = new self;
         }
         return self::$instance;
     }
@@ -36,7 +36,6 @@ class ProjectCtrl {
 
 	public function createProject() {
 		
-		
 	}
 
 	public function updateProject($id) {
@@ -44,7 +43,6 @@ class ProjectCtrl {
 	}
 
 	public function deleteProject($id) {
-		
 		
 	}
 }
