@@ -38,6 +38,5 @@ function pageApiTest() {
     // Get section ref.
     var section = $("#apitest");
 
-
-    section.html("<form><textarea></textarea></br><input type='button' value='Run Query'/><input type='button' value='Example'/></form>");
+    section.html("<form><textarea></textarea></br><input type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
 }
