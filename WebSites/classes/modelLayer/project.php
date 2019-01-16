@@ -5,6 +5,7 @@ class Project implements JsonSerializable {
 	private $image_size;
 	private $enabled;
 	private $name;
+	private $projectStructures;
 	
 	public function __construct(int $id, int $customer_id, int $image_size, bool $enabled, string $name) {
 		$this->id = $id;
@@ -12,6 +13,7 @@ class Project implements JsonSerializable {
 		$this->image_size = $image_size;
 		$this->enabled = $enabled;
 		$this->name = $name;
+		$this->projectStrutures = array();
 	}
 
 	public function getID() {
@@ -30,6 +32,10 @@ class Project implements JsonSerializable {
 		return $this->name;
 	}
 
+	public function getProjectStrutures(): array {
+		return $this->projectStrutues();
+	}
+
 	public function setÍmage_size(int $size) {
 		$this->image_size = $size;
 	}
@@ -42,13 +48,18 @@ class Project implements JsonSerializable {
 		$this->name = $name;
 	}
 
+	public function setProjectStrutures($projectStructures) {
+		$this->projectStrutures -> $projectStructures
+	}
+
 	public function jsonSerialize() {
         return array (
             'id' => $this->id,
 			'customer_id' => $this->customer_id,
             'imagesize' => $this->image_size,
 			'enabled' => $this->enabled,
-			'name' => $this->name
+			'name' => $this->name,
+			'projectStrutures' = $this->projectStrutures
         );
     }
 }
