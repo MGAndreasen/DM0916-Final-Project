@@ -54,5 +54,5 @@ function pageApiTest() {
         $("#apitestResult").html(JSON.stringify(result));
     });
 
-    section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable></br><lable>Ctrl: <input id='apitestFunk' type='text' value='getProjects'/><lable></br><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
+    section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable></br><lable>Func: <input id='apitestFunc' type='text' value='getProjects'/><lable></br><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
 }
