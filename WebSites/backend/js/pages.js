@@ -31,3 +31,7 @@ function pageProjects() {
 function pageTestDataSets() {
     $("#testdatasets").html("<p>data</p>");
 }
+
+function pageApiTest() {
+    $("#apitest").html("some Test data");
+}

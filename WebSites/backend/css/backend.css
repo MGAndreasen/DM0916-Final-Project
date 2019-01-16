@@ -2,19 +2,19 @@ html, body {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
 }
+.right {
+    float: right;
+}
 section .page {
     display: none;
 }
-
 section .active {
     display: block;
 }
-
 section #loading {
     display: block;
     z-index: 10;
 }
-
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -23,11 +23,9 @@ nav ul {
     background-color: #333;
     position: sticky;
 }
-
 nav ul li {
     float: left;
 }
-
 nav ul li a {
     display: block;
     color: white;
@@ -35,15 +33,12 @@ nav ul li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
 nav ul li a:hover:not(.active) {
     background-color: #111;
 }
-
 nav ul li a.active {
     background-color: #4CAF50;
 }
-
 #status {
     position: absolute;
     bottom: 0px;
