@@ -29,6 +29,7 @@ function pageApiTest() {
         }
         catch (e) {
             $("#apitestResult").html("<pre>" + e + "</pre>");
+            notify('JSON.parse', e);
         }
     });
 }
