@@ -5,6 +5,9 @@ html, body {
 .right {
     float: right;
 }
+section.pages {
+    padding-top: 70px;
+}
 section .page {
     display: none;
     text-align: center;
@@ -22,7 +25,11 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    position: sticky;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 9999;
 }
 nav ul li {
     float: left;
@@ -42,11 +49,12 @@ nav ul li a.active {
 }
 #status {
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: 0px;
     width: 250px;
     height: auto;
     text-align: center;
+    z-index: 999;
 }
 
 #status .notify {
