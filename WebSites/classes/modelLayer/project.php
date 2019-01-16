@@ -49,7 +49,7 @@ class Project implements JsonSerializable {
 	}
 
 	public function setProjectStrutures($projectStructures) {
-		$this->projectStrutures -> $projectStructures
+		$this->projectStrutures -> $projectStructures;
 	}
 
 	public function jsonSerialize() {
