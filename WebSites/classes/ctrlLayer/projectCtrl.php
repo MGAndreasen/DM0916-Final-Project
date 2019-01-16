@@ -31,9 +31,6 @@ class ProjectCtrl {
 	}
 
 	public function getProjects($customerID) {
-		errorMsg('hej','hej','hej');
-		errorMsg('med','med','med');
-		errorMsg('dig','dig','dig');
 		//$toReturn = array();
 		//$toReturn['projects'] = $this->mDB->getProjects($customerID);
 		//array_push($this->data, $toReturn);
