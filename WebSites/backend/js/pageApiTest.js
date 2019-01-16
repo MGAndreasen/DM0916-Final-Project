@@ -31,6 +31,4 @@ function pageApiTest() {
             $("#apitestResult").html("<pre>" + e + "</pre>");
         }
     });
-
-
 }
