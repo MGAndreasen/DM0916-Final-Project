@@ -40,17 +40,18 @@ function pageApiTest() {
 
     section.on('click', '.example', function () {
         $("#apitestCtrl").html("project");
-        $("#apitestFunk").html("getProjects");
+        $("#apitestFunc").html("getProjects");
         $("#apitest form textarea").html("[1]");
     });
 
     section.on('click', '.runquery', function () {
         // Test Query
         var ctrl = $("#apitestCtrl").val();
-        var funk = $("#apitestFunk").val();
-        var parms = Array.from($("#apitest form textarea").val());
-        var result = myPost(ctrl, funk, parms[0]);
-        $("#apitestResult").html(result+"hmm");
+        var func = $("#apitestFunc").val();
+        var parms = $("#apitest form textarea").val();
+        console.log(parms);
+        var result = myPost(ctrl, func, parms);
+        $("#apitestResult").html(JSON.stringify(result));
     });
 
     section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable></br><lable>Ctrl: <input id='apitestFunk' type='text' value='getProjects'/><lable></br><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
