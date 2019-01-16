@@ -44,9 +44,12 @@ class CustomerCtrl {
 		if (sizeof($toReturn) < 1) {
 			errorMsg('projectDB','getCustomer','couldnt find any customers');
 		}
-
+		else {
 		$toReturn['customers'] = $this->mDB->getCustomers();
-		array_push($this->data, $toReturn);
+		array_push($this->data, $toReturn);		
+		}
+
+
 	}
 
 	public function createCustomer($email) {
@@ -54,7 +57,8 @@ class CustomerCtrl {
 		if (empty($email) || strpos($email, '@') !== TRUE){
 			errorMsg('projectDB','createCustomer','email was not valid');
 		}
-		
+		else
+		{
 		$toReturn = array();
 		$date = date('m/d/Y h:i:s a', time());
 
@@ -71,14 +75,22 @@ class CustomerCtrl {
 		$this->mDB->createCustomer();
 
 		array_push($this->data, $toReturn);
+		}
+		
+
 	}
 
 	public function updateCustomerEmail($id, $email) {
-		$toReturn = array();
-		$customer = $this->mDB->getCustomer($id);
-		$customer->setEmail($email);
-		$this->mDB->updateCustomer($customer);
-		array_push('ok');
+		if (empty($email) || strpos($email, '@') !== TRUE){
+			errorMsg('projectDB','createCustomer','email was not valid');
+		}
+			else {
+			$toReturn = array();
+			$customer = $this->mDB->getCustomer($id);
+			$customer->setEmail($email);
+			$this->mDB->updateCustomer($customer);
+			array_push('ok');
+		}
 	}
 
 
