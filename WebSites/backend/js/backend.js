@@ -81,7 +81,8 @@ function myPost(ctrl, func, parms) {
         data: { resp: toSend },
         success: function (result) {
             console.log("MODTAGET:\n" + JSON.stringify(result));
-            toReturn = result[0];
+            //toReturn = result[0];
+            toReturn = result;
         }
     });
     return toReturn;
