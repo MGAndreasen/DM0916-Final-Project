@@ -7,15 +7,15 @@ class ProjectDB
 	// SQL Querys
 	private $getProject_SQL		= 'SELECT * FROM project WHERE id = ?';
 	private $getProjects_SQL	= 'SELECT * FROM project WHERE customer_id = ?';
-	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, enabled=:enabled FROM project WHERE id = :id';
-	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, customer_Id=:customer_id, enabled=_enabled)';
+	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, image_size=:image_size, enabled=:enabled FROM project WHERE id = :id';
+	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 	 
 	// Constructor
 	public function __construct() {
 	}
 
-
+	//(int $id, int $image_size, int $customer_id, bool $enabled, string $name) {
 	// getProjects($customer_Id)
 	public function getProjects($customer_id) {
 		global $conn;
@@ -27,7 +27,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['customer_id'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['image_size'], $row['customer_id'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		} else { errorMsg('projectDB','getProjects','couldnt find any projects'); }
@@ -45,7 +45,7 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['customer_Id'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['image_size'], $row['customer_Id'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		}
