@@ -41,7 +41,7 @@ nav ul li a.active {
 }
 #status {
     position: absolute;
-    top: 25px;
+    top: 40px;
     right: 0px;
     width: 250px;
     height: auto;
@@ -50,8 +50,9 @@ nav ul li a.active {
 
 #status .notify {
     background-color: #2273e4;
-    border-radius: 7px;
+    border-radius: 9px;
     color: #fff;
     width: 220px;
     min-height: 100px;
+    margin-bottom: 20px;
 }
