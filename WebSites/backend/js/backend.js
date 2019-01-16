@@ -1,3 +1,6 @@
+// For keeping track
+var notifyNum = 0;
+
 $(document).ready(function () {
     // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
@@ -63,7 +66,8 @@ function handlePagechange() {
             pageApiTest();
             break;
         default:
-            $("#status").html("<p>STATUS: FEJL! pageHandler (" + pageName + ")</p>");
+            notify("AjaxOK", "FEJL! pageHandler (" + pageName + ")");
+            //$("#status").html("<p>STATUS: FEJL! pageHandler (" + pageName + ")</p>");
     }
 }
 
@@ -97,10 +101,22 @@ function ajaxOk(result) {
         });
     }
     else {
-        $("#status").html("<p>STATUS: OK!</p>");
+        //$("#status").html("<p>STATUS: OK!</p>");
+        notify("AjaxOK", "OK!");
     }
 }
 
 function ajaxFejl() {
-    alert("Could not load ajax.php");
+    notify("Ajax", "Could not load ajax.php");
+    //alert("Could not load ajax.php");
+}
+
+function notify(title, msg) {
+    notifyNum++;
+    var id = NotifyNum;
+    var data = "<div class='notify' id='notify-"+id+"'><div>"+title+"</div>"+msg+"</div>";
+    setTimeout(function () {
+        $("#status").appendHtml(data);
+        //$(".divclass").hide("2000")
+    }, 5000);
 }
