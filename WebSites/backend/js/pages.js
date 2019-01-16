@@ -33,5 +33,9 @@ function pageTestDataSets() {
 }
 
 function pageApiTest() {
-    $("#apitest").html("some Test data");
+    // Get section ref.
+    var section = $("#apitest");
+
+
+    section.html("some Test data");
 }
