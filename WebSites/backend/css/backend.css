@@ -70,10 +70,12 @@ nav ul li a.active {
     border-radius: 9px;
     border: 1px solid #ddd;
     background-color: #eee;
+    color: #000;
 }
     #apitest form textarea {
         width: 100%;
         height: 250px;
         border-radius: 9px;
-        border: 1px solid #eee;
+        border: 1px solid ddd;
+        color: #000;
     }
