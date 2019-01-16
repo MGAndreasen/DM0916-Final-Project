@@ -31,7 +31,7 @@ function pageProjects() {
 }
 
 function pageTestDataSets() {
-    $("#testdatasets").html("<p>data</p>"); 
+    $("#testdatasets").html("<p>data</p>");
 }
 
 function pageApiTest() {
