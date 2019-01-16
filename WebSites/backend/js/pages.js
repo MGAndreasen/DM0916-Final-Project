@@ -44,7 +44,7 @@ function pageApiTest() {
         + "<input class='runquery' type='button' value='Run Query'/>"
         + "<input class='example' type='button' value='Example'/>"
         + "</form></br>"
-        + "<div id='#apitestResult'></div>";
+        + "<div id='apitestResult'></div>";
 
     section.html(lePage);
 
@@ -60,8 +60,7 @@ function pageApiTest() {
         var func = $("#apitestFunc").val();
         var parms = JSON.parse($("#apitest form textarea").val());
         var result = myPost(ctrl, func, parms);
-        console.log("TEST: " + JSON.stringify(result));
-        $("#apitestResult").html("<p>"+JSON.stringify(result)+"</p>");
+        $("#apitestResult").html("<code>"+JSON.stringify(result, null, "\t")+"</code>");
     });
 
     
