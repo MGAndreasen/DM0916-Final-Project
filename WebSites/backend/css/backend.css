@@ -48,11 +48,8 @@ nav ul li a.active {
     text-align: center;
 }
 
-#status .notify div:first-child {
-    background-color: #808080;
-}
-
 #status .notify {
+    overflow-x: hidden;
     background-color: #2273e4;
     border-radius: 9px;
     color: #fff;
@@ -60,3 +57,6 @@ nav ul li a.active {
     min-height: 100px;
     margin-bottom: 20px;
 }
+    #status .notify div:first-child {
+        background-color: #2f589a;
+    }
