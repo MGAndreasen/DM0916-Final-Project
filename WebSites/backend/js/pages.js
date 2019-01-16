@@ -48,8 +48,8 @@ function pageApiTest() {
         // Test Query
         var ctrl = $("#apitestCtrl").val();
         var func = $("#apitestFunc").val();
-        var parms = array($("#apitest form textarea").val());
-        console.log(parms);
+        var parms = new Array($("#apitest form textarea").val());
+        //console.log(parms);
         var result = myPost(ctrl, func, parms);
         $("#apitestResult").html(JSON.stringify(result));
     });
