@@ -58,9 +58,14 @@ function pageApiTest() {
         // Test Query
         var ctrl = $("#apitestCtrl").val();
         var func = $("#apitestFunc").val();
-        var parms = JSON.parse($("#apitest form textarea").val());
-        var result = myPost(ctrl, func, parms);
-        $("#apitestResult").html("<pre>"+JSON.stringify(result, null, "\t")+"</pre>");
+        try {
+            var parms = JSON.parse($("#apitest form textarea").val());
+            var result = myPost(ctrl, func, parms);
+            $("#apitestResult").html("<pre>" + JSON.stringify(result, null, "\t") + "</pre>");
+        }
+        catch (e) {
+            $("#apitestResult").html("<pre>" + e + "</pre>");
+        }
     });
 
     
