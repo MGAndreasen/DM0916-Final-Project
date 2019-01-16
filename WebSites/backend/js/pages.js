@@ -53,5 +53,5 @@ function pageApiTest() {
         $("#apitestResult").html(result);
     });
 
-    section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable><lable>Ctrl: <input id='apitestFunk' type='text' value='getProjects'/><lable><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
+    section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable></br><lable>Ctrl: <input id='apitestFunk' type='text' value='getProjects'/><lable></br><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
 }
