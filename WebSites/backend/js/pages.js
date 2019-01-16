@@ -12,22 +12,32 @@ function pageTests() {
 }
 
 function pageProjects() {
-    $("#projects").html("<p>projects</p>");
+    var section = $("#projects");
+
+    section.html("<p>projects</p>");
 
     // Test load data.
     var customerid = [1];
-    var projects = myPost('project', 'getProjects', customerid);
+    var result = myPost('project', 'getProjects', customerid);
 
-    $.each(projects, function (key, value) {
+    $.each(result['projects'], function (key, value) {
         var p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
-        $("#projects").append(p);
+        section.append(p);
 
         //bind evt. eventhandlers her, eller globalt?
     });
 
-    $("#projects").append(JSON.stringify(projects));
+    section.append(JSON.stringify(result));
 }
 
 function pageTestDataSets() {
     $("#testdatasets").html("<p>data</p>");
+}
+
+function pageApiTest() {
+    // Get section ref.
+    var section = $("#apitest");
+
+
+    section.html("some Test data");
 }

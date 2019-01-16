@@ -59,6 +59,9 @@ function handlePagechange() {
         case 'testdatasets':
             pageTestDataSets();
             break;
+        case 'apitest':
+            pageApiTest();
+            break;
         default:
             $("#status").html("<p>STATUS: FEJL! pageHandler (" + pageName + ")</p>");
     }
