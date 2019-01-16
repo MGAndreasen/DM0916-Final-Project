@@ -49,9 +49,9 @@ function pageApiTest() {
     section.html(lePage);
 
     section.on('click', '.example', function () {
-        $("#apitestCtrl").html("project");
-        $("#apitestFunc").html("getProjects");
-        $("#apitest form textarea").html("[1]");
+        $("#apitestCtrl").val("project");
+        $("#apitestFunc").val("getProjects");
+        $("#apitest form textarea").val("[1]");
     });
 
     section.on('click', '.runquery', function () {
@@ -61,8 +61,7 @@ function pageApiTest() {
         var parms = JSON.parse($("#apitest form textarea").val());
         var result = myPost(ctrl, func, parms);
         console.log("TEST: " + JSON.stringify(result));
-        $("#apitestResult").append(JSON.stringify(result));
-        //$("#apitestResult").html(""+JSON.stringify(result));
+        $("#apitestResult").val(JSON.stringify(result));
     });
 
     
