@@ -38,17 +38,17 @@ function pageApiTest() {
     // Get section ref.
     var section = $("#apitest");
 
-    var samplequery = "[1]";
-
     section.on('click', '.example', function () {
-        $("#apitest form textarea").html(samplequery);
+        $("#apitestCtrl").html("project");
+        $("#apitestFunk").html("getProjects");
+        $("#apitest form textarea").html("[1]");
     });
 
     section.on('click', '.runquery', function () {
         // Test Query
-        var ctrl = $("#apitestCtrl").value;
-        var funk = $("#apitestFunk").value;
-        var parms = $("#apitest form textarea").value;
+        var ctrl = $("#apitestCtrl").val();
+        var funk = $("#apitestFunk").val;
+        var parms = $("#apitest form textarea").val;
         var result = myPost(ctrl, funk, parms);
         $("#apitestResult").html(result);
     });
