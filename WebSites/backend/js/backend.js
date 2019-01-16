@@ -116,5 +116,6 @@ function notify(title, msg) {
     var id = "#notify-"+notifyNum;
     var data = "<div class='notify' id='" + id + "'><div>" + title + "</div>" + msg + "</div>";
     $("#status").prepend(data);
-    $(id).delay(5000).fadeOut(250).delay(1000).remove();
+    //$(id).delay(5000).fadeOut(250).delay(1000).remove();
+    alert(id);
 }
