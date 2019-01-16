@@ -37,8 +37,16 @@ function pageTestDataSets() {
 function pageApiTest() {
     // Get section ref.
     var section = $("#apitest");
+    var lePage = "<form>"
+        + "<label>Ctrl: <input id='apitestCtrl' type='text' value='project'/></label></br>"
+        + "<label>Func: <input id='apitestFunc' type='text' value='getProjects'/></label></br>"
+        + "<label>Parms:<textarea></textarea></lable></br>"
+        + "<input class='runquery' type='button' value='Run Query'/>"
+        + "<input class='example' type='button' value='Example'/>"
+        + "</form></br>"
+        + "<div id='#apitestResult'></div>";
 
-    section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable></br><lable>Func: <input id='apitestFunc' type='text' value='getProjects'/><lable></br><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
+    section.html(lePage);
 
     section.on('click', '.example', function () {
         $("#apitestCtrl").html("project");
