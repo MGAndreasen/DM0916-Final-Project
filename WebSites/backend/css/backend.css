@@ -5,7 +5,7 @@ html, body {
 .right {
     float: right;
 }
-section.pages {
+#pages {
     padding-top: 70px;
 }
 section .page {
