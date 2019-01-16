@@ -61,3 +61,17 @@ nav ul li a.active {
     #status .notify div:first-child {
         background-color: #2f589a;
     }
+
+#apitest form {
+    margin: 10px auto;
+    width: 50px;
+    height: auto;
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+    #apitest form textarea {
+        width: 100%;
+        height: 250px;
+    }
