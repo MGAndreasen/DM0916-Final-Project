@@ -25,8 +25,9 @@ class ProjectCtrl {
 	}
 
 	public function getProject($id)	{
-		$someDataFromDB = $this->mDB->getProject($id);
-		array_push($this->data, $someDataFromDB);
+		$toReturn = array();
+		$toReturn['projects'] = $this->mDB->getProject($id);
+		array_push($this->data, $toReturn);
 	}
 
 	public function getProjects($customerID) {
