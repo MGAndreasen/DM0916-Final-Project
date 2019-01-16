@@ -39,5 +39,5 @@ function pageApiTest() {
     var section = $("#apitest");
 
 
-    section.html("<div><form><textfield></textfield><input type='button' value='Run Query'/></form></div>");
+    section.html("<div style='margin: 0 auto; width: auto;'><form><textarea></textarea><input type='button' value='Run Query'/></form></div>");
 }
