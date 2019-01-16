@@ -48,9 +48,9 @@ function pageApiTest() {
         // Test Query
         var ctrl = $("#apitestCtrl").val();
         var funk = $("#apitestFunk").val();
-        var parms = $("#apitest form textarea").val();
+        var parms = Array.from($("#apitest form textarea").val());
         var result = myPost(ctrl, funk, parms);
-        $("#apitestResult").html(result);
+        $("#apitestResult").html(result+"hmm");
     });
 
     section.html("<form><lable>Ctrl: <input id='apitestCtrl' type='text' value='project'/><lable></br><lable>Ctrl: <input id='apitestFunk' type='text' value='getProjects'/><lable></br><lable>Parms:<textarea></textarea></lable></br><input class='runquery' type='button' value='Run Query'/><input class='example' type='button' value='Example'/></form><div id='#apitestResult'></div>");
