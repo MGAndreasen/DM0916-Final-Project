@@ -1,4 +1,3 @@
-/*
 function page_customers() {
     var section = $("#customers");
 
@@ -13,4 +12,3 @@ function page_customers() {
         section.append(p);
     });
 }
-*/
