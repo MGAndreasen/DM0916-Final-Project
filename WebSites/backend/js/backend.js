@@ -48,33 +48,10 @@ function handlePagechange() {
         else {
             notify("PageHandler", "Section (" + pageName + ") not found!");
         }
+    }
+    else {
         notify("PageHandler", "No Section with .active class found!");
     }
-/*
-    switch (pageName) {
-        case 'home':
-            pageHome();
-            break;
-        case 'about':
-            pageAbout();
-            break;
-        case 'tests':
-            pageTests();
-            break;
-        case 'projects':
-            pageProjects();
-            break;
-        case 'testdatasets':
-            pageTestDataSets();
-            break;
-        case 'apitest':
-            pageApiTest();
-            break;
-        default:
-        
-            notify("AjaxOK", "FEJL! pageHandler (" + pageName + ")");
-    }
-    */
 }
 
 function myPost(ctrl, func, parms) {
