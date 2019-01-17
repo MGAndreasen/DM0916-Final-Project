@@ -327,6 +327,11 @@ $commands[] = sprintf(
 	'chmod 776 -Rv %s'
 	, TARGET_DIR
 );
+ 
+$commands[] = sprintf(
+'echo combine JS files at: %s/WebSites/backend/js/'
+, TARGET_DIR
+);
 
 // =======================================[ Post-Deployment steps ]===
 
