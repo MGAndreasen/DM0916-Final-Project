@@ -56,6 +56,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{2D69DF4A-22C8-47A9-BDCB-57E933135483}"
 	ProjectSection(SolutionItems) = preProject
 		WebSites\backend\js\backend.js = WebSites\backend\js\backend.js
+		WebSites\backend\js\pageAbout.js = WebSites\backend\js\pageAbout.js
+		WebSites\backend\js\pageApiTest.js = WebSites\backend\js\pageApiTest.js
+		WebSites\backend\js\pageCustomer.js = WebSites\backend\js\pageCustomer.js
+		WebSites\backend\js\pageHome.js = WebSites\backend\js\pageHome.js
+		WebSites\backend\js\pageProjects.js = WebSites\backend\js\pageProjects.js
+		WebSites\backend\js\pageTestDataSets.js = WebSites\backend\js\pageTestDataSets.js
+		WebSites\backend\js\pageTests.js = WebSites\backend\js\pageTests.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{FAD86754-23E7-4BC6-9C69-27D48F47BA0F}"
