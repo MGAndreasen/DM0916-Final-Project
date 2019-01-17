@@ -329,6 +329,7 @@ $commands[] = sprintf(
 );
  // combine JS
  $JS_DIR = sprintf('%sWebSites/backend/js/', TARGET_DIR);
+ echo "The js dir".$JS_DIR;
  $combined = 'combined.js';
  if (file_exists(JS_DIR) && is_dir(JS_DIR))
  {
