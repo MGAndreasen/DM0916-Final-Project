@@ -346,7 +346,7 @@ $commands[] = sprintf(
 		if($file != 'backend.js')
 		{
 			// append to combined
-			$commands[] = sprintf('cat %s%s >> %s%s', $JS_DIR, $file, $JS_DIR, $combined);
+			$commands[] = sprintf('cat %s >> %s%s', $file, $JS_DIR, $combined);
 		}
 	}
 }
