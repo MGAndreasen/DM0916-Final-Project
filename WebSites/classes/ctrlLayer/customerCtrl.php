@@ -45,11 +45,9 @@ class CustomerCtrl {
 			errorMsg('projectDB','getCustomer','couldnt find any customers');
 		}
 		else {
-		$toReturn['customers'] = $this->mDB->getCustomers();
-		array_push($this->data, $toReturn);		
+			$toReturn['customers'] = $this->mDB->getCustomers();
+			array_push($this->data, $toReturn);		
 		}
-
-
 	}
 
 	public function createCustomer($email) {
@@ -59,32 +57,30 @@ class CustomerCtrl {
 		}
 		else
 		{
-		$toReturn = array();
-		$date = date('m/d/Y h:i:s a', time());
+			$toReturn = array();
+			$date = date('m/d/Y h:i:s a', time());
 
-		$customer = new Customer($email);
-		$customer->setCreated = $date;
-		$customer->setLastAccess = $date;
-		$customer->setEmail($email);
+			$customer = new Customer($email);
+			$customer->setCreated = $date;
+			$customer->setLastAccess = $date;
+			$customer->setEmail($email);
 
-		//Just initiated it with some values.
-		$customer->setEnabled = TRUE;
-		$customer->setHash = null;
-		$customer->setSalt = null;
+			//Just initiated it with some values.s
+			$customer->setEnabled = TRUE;
+			$customer->setHash = null;
+			$customer->setSalt = null;
 
-		$this->mDB->createCustomer();
+			$this->mDB->createCustomer();
 
-		array_push($this->data, $toReturn);
+			array_push($this->data, $toReturn);
 		}
-		
-
 	}
 
 	public function updateCustomerEmail($id, $email) {
-		if (empty($email) || strpos($email, '@') !== TRUE){
+		if (empty($email) || strpos($email, '@') !== TRUE) {
 			errorMsg('projectDB','createCustomer','email was not valid');
 		}
-			else {
+		else {
 			$toReturn = array();
 			$customer = $this->mDB->getCustomer($id);
 			$customer->setEmail($email);
