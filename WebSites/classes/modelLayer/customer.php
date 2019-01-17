@@ -24,11 +24,11 @@ class Customer {
 	}
 
 	public function getHash() {
-		return $this->hash
+		return $this->hash;
 	}
 
 	public function getSalt() {
-		return $this->salt
+		return $this->salt;
 	}
 
 	public function getCreated() {
