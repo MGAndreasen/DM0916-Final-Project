@@ -1,3 +1,4 @@
+/*
 function page_customers() {
     var section = $("#customers");
 
@@ -10,9 +11,6 @@ function page_customers() {
     $.each(restData['result']['customer'], function (key, value) {
         var p = "<div id='customer-" + value['id'] + "'>" + value['email'] + "</div>";
         section.append(p);
-
-        //bind evt. eventhandlers her, eller globalt?
     });
-
-    //section.append(JSON.stringify(result));
 }
+*/
