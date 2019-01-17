@@ -4,15 +4,14 @@ function page_errorlog() {
 
     section.html(errorlog_Layout());
 
-    var call = $.ajax({
+    $.ajax({
         type: "GET",
         url: "/error.log",
         dataType: 'text',
         encode: true,
-        async: false,
-        success: function (result) {
-            error_list.html(result);
-        }
+        async: false
+    }).done(function (html) {
+        error_list.html(html);
     });
 }
 
