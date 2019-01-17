@@ -322,11 +322,6 @@ $commands[] = sprintf(
 	, $exclude
 );
 
-// Chmod command
-$commands[] = sprintf(
-	'chmod 776 -Rv %s'
-	, TARGET_DIR
-);
  // combine JS
  $JS_DIR = sprintf('%sWebSites/backend/js/', TARGET_DIR);
  echo "JS_DIR: ".$JS_DIR."\n";
@@ -354,10 +349,17 @@ $commands[] = sprintf(
 		{
 			echo "JS file added: ".$file."\n";
 			// append to combined
+			$commands[] = sprintf('echo "//-- %s\n\n" >> %s', $file, $combined);
 			$commands[] = sprintf('cat %s >> %s', $file, $combined);
 		}
 	}
 }
+
+// Chmod command
+$commands[] = sprintf(
+	'chmod 776 -Rv %s'
+	, TARGET_DIR
+);
 
 // =======================================[ Post-Deployment steps ]===
 
