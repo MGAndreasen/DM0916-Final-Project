@@ -9,7 +9,9 @@ function page_projects() {
 
 function projects_Layout() {
     return "<h1>projects</h1>"
-        + "<div id='project_list'></div>";
+        + "<div id='project_list'></div>"
+        + "<div id='project_hirachy'></div>"
+        + "<div id='project_images'></div>";
 }
 
 function populate_projectList() {
