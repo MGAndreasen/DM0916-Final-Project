@@ -1,5 +1,5 @@
 //-- Main entry
-function pageApiTest() {
+function page_apitest() {
     var section = $("#apitest");                                        // Get section ref.
     section.off();                                                      // unbind eventhandlers.
     section.html(apitest_createLayout());                               // Populate section layout.

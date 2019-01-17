@@ -1,4 +1,4 @@
-function pageProjects() {
+function page_projects() {
     var section = $("#projects");
 
     section.html("<p>projects</p>");

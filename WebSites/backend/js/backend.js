@@ -43,7 +43,8 @@ function handlePagechange() {
     if ($('#pages .active').length) {
         var pageName = $('#pages .active').attr('id');
         if ($('#' + pageName).length) {
-            pageName();
+            var p = 'page_' + pageName;
+            p();
         }
         else {
             notify("PageHandler", "Section (" + pageName + ") not found!");
