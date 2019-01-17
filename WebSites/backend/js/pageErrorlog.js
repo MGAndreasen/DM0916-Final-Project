@@ -2,7 +2,7 @@ function page_errorlog() {
     var section = $('#errorlog');
     var error_list = $('#error_list');
 
-    section.html(error_Layout());
+    section.html(errorlog_Layout());
 
     $.ajax({
         type: "GET",
