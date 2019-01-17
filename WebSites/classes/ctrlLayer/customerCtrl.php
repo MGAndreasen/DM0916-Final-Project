@@ -26,14 +26,9 @@ class CustomerCtrl {
 	}
 
 	public function getCustomer($id)	{
-		$result = array();
 		$result = $this->mDB->getCustomer($id);
-		
-		if (sizeof($toReturn) < 1) {
-			errorMsg('customerDB','getCustomer','couldnt find customer');
-		}
-		elseif (!empty($result)) {
-			$this->data['result']['projects'] = $result;
+	    if (!empty($result)) {
+			$this->data['result']['customers'] = $result;
 		}
 	}
 
