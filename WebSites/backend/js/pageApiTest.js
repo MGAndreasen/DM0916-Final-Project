@@ -1,9 +1,15 @@
+//-- Main entry
 function pageApiTest() {
-    var section = $("#apitest");    // Get section ref.
-    section.off();                  // unbind eventhandlers.
+    var section = $("#apitest");                                        // Get section ref.
+    section.off();                                                      // unbind eventhandlers.
+    section.html(apitest_createLayout());                               // Populate section layout.
+    section.on('click', '.example', apitest_populateExampleQueue());    // Create new eventhandler
+    section.on('click', '.runquery', apitest_runQuery());               // Create new eventhandler
+}
 
-    // The section Layout
-    var lePage = "<form>"
+//-- Section Layout
+function apitest_createLayout() {
+    return "<form>"
         + "<label>Ctrl: <input id='apitestCtrl' type='text' value='project'/></label></br>"
         + "<label>Func: <input id='apitestFunc' type='text' value='getProjects'/></label></br>"
         + "<label>Parms:<textarea></textarea></label></br>"
@@ -11,31 +17,26 @@ function pageApiTest() {
         + "<input class='example' type='button' value='Example'/>"
         + "</form></br>"
         + "<div id='apitestResult'></div>";
-
-    section.html(lePage);           // Populate section layout.
-
-    // Create new eventhandler
-    section.on('click', '.example', populateExampleQueue());
-
-    // Create new eventhandler
-    section.on('click', '.runquery', function () {
-        // Test Query
-        var ctrl = $("#apitestCtrl").val();
-        var func = $("#apitestFunc").val();
-        try {
-            var parms = JSON.parse($("#apitest form textarea").val());
-            var result = myPost(ctrl, func, parms);
-            $("#apitestResult").html("<pre>" + JSON.stringify(result, null, "\t") + "</pre>");
-        }
-        catch (e) {
-            $("#apitestResult").html("<pre>" + e + "</pre>");
-            notify('JSON.parse', e);
-        }
-    });
 }
 
-function populateExampleQueue() {
+//-- Example Query
+function apitest_populateExampleQueue() {
     $("#apitestCtrl").val("project");
     $("#apitestFunc").val("getProjects");
     $("#apitest form textarea").val("[1]");
+}
+
+//-- Test Query
+function apitest_runQuery() {
+    var ctrl = $("#apitestCtrl").val();
+    var func = $("#apitestFunc").val();
+    try {
+        var parms = JSON.parse($("#apitest form textarea").val());
+        var result = myPost(ctrl, func, parms);
+        $("#apitestResult").html("<pre>" + JSON.stringify(result, null, "\t") + "</pre>");
+    }
+    catch (e) {
+        $("#apitestResult").html("<pre>" + e + "</pre>");
+        notify('JSON.parse', e);
+    }
 }
