@@ -343,7 +343,7 @@ $commands[] = sprintf(
 	foreach($jsfiles as $file)
 	{
 		// excludes backend.js as its already added
-		if($file != 'backend.js')
+		if($file != $JS_DIR.'backend.js')
 		{
 			// append to combined
 			$commands[] = sprintf('cat %s >> %s%s', $file, $JS_DIR, $combined);
