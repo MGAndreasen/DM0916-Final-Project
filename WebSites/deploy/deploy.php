@@ -336,7 +336,7 @@ $commands[] = sprintf(
 
 	// add backend.js first!
 	$commands[] = sprintf('echo "//-- %s" >> %s', $firstjs, $combined);
-	$commands[] = sprintf('cat %s > %s', $firstjs, $combined); 
+	$commands[] = sprintf('cat %s > %s', $firstjs, $combined);
 
 	// find *.js files
 	$jsfiles = glob($JS_DIR."*.js");
