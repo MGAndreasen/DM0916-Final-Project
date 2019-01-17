@@ -50,13 +50,13 @@ class CustomerDB
 	public function updateCustomer($customer){
 		global $conn;
 		$query = $conn->prepare($this->$updateCustomer_SQL);
-		$query->bind_param(':id', $customer->getID();
-		$query->bind_param(':enabled', $customer->getEnabled();
-		$query->bind_param(':hash', $customer->getHash();
-		$query->bind_param(':salt', $customer->getSalt();
-		$query->bind_param(':created', $customer->getCreated();
-		$query->bind_param(':last_access', $customer->getLastAccess();
-		$query->bind_param(':email', $customer->getEmail();
+		$query->bind_param(':id', $customer->getID());
+		$query->bind_param(':enabled', $customer->getEnabled());
+		$query->bind_param(':hash', $customer->getHash());
+		$query->bind_param(':salt', $customer->getSalt());
+		$query->bind_param(':created', $customer->getCreated());
+		$query->bind_param(':last_access', $customer->getLastAccess());
+		$query->bind_param(':email', $customer->getEmail());
 		$query->execute();
 		$result = $query->get_result();
 
@@ -72,12 +72,12 @@ class CustomerDB
 	public function createCustomer($customer){
 		global $conn;
 		$query = $conn->prepare($this->$createCustomer_SQL);
-		$query->bind_param(':enabled', $customer->getEnabled();
-		$query->bind_param(':hash', $customer->getHash();
-		$query->bind_param(':salt', $customer->getSalt();
-		$query->bind_param(':created', $customer->getCreated();
-		$query->bind_param(':last_access', $customer->getLastAccess();
-		$query->bind_param(':email', $customer->getEmail();
+		$query->bind_param(':enabled', $customer->getEnabled());
+		$query->bind_param(':hash', $customer->getHash());
+		$query->bind_param(':salt', $customer->getSalt());
+		$query->bind_param(':created', $customer->getCreated());
+		$query->bind_param(':last_access', $customer->getLastAccess());
+		$query->bind_param(':email', $customer->getEmail());
 		$query->execute();
 		$result = $query->get_result();
 		
