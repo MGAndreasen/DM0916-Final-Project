@@ -4,11 +4,11 @@ $(document).ready(function () {
         notify("Ajax", "Request: Could not load ajax.php");
     });
 
-    // Ajax eventhandler
-/*    
-    $(document).ajaxSuccess(function (event, xhr, settings) {
-        ajaxOk(xhr);
-    });
+    // Ajax eventhandler gemmes lidt i nu
+    /*    
+        $(document).ajaxSuccess(function (event, xhr, settings) {
+            ajaxOk(xhr);
+        });
     */
 
     // Mainmenu
@@ -80,20 +80,7 @@ function myPost(ctrl, func, parms) {
     });
     return toReturn;
 }
-/*
-function ajaxOk(result) {
-    var rawData = result.responseText;
-    var jsonData = JSON.parse(rawData);
-    if (jsonData['errors']) {
-        $.each(jsonData['errors'], function (key, value) {
-            notify("Ajax", "Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
-        });
-    }
-    else {
-        notify("AjaxOK", "OK!");
-    }
-}
-*/
+
 function notify(title, msg) {
     var notisElement = "<div class='notify'><div>" + title + "</div><div>" + msg + "</div></div>";
     $(notisElement).prependTo("#status").delay(10000).fadeOut(2000).delay(3000).queue(function () { $(this).remove(); });
