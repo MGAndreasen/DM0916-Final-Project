@@ -4,7 +4,7 @@ function page_errorlog() {
 
     section.html(errorlog_Layout());
 
-    $.ajax({
+    var call = $.ajax({
         type: "GET",
         url: "/error.log",
         dataType: 'text',
