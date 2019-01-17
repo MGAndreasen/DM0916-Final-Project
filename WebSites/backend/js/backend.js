@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
-        ajaxFejl();
+        notify("Ajax", "Request: Could not load ajax.php");
     });
 
     // Ajax eventhandler
@@ -40,9 +40,17 @@ $(document).ready(function () {
 
 //-- SITE Funcs
 function handlePagechange() {
-    var pageName = $('#pages .active').attr('id');
-    //var pageName = $(page).attr('id');
-
+    if ($('#pages .active').length) {
+        var pageName = $('#pages .active').attr('id');
+        if ($('#' + pageName).length) {
+            pageName();
+        }
+        else {
+            notify("PageHandler", "Section (" + pageName + ") not found!");
+        }
+        notify("PageHandler", "No Section with .active class found!");
+    }
+/*
     switch (pageName) {
         case 'home':
             pageHome();
@@ -63,8 +71,10 @@ function handlePagechange() {
             pageApiTest();
             break;
         default:
+        
             notify("AjaxOK", "FEJL! pageHandler (" + pageName + ")");
     }
+    */
 }
 
 function myPost(ctrl, func, parms) {
@@ -81,7 +91,6 @@ function myPost(ctrl, func, parms) {
         data: { resp: toSend },
         success: function (result) {
             console.log("MODTAGET:\n" + JSON.stringify(result));
-            //toReturn = result[0];
             toReturn = result;
         }
     });
@@ -90,21 +99,15 @@ function myPost(ctrl, func, parms) {
 
 function ajaxOk(result) {
     var rawData = result.responseText;
-    //console.log("MODTAGET:\n" + rawData);
     var jsonData = JSON.parse(rawData);
     if (jsonData['errors']) {
         $.each(jsonData['errors'], function (key, value) {
             notify("Ajax", "Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
-            //alert("Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
         });
     }
     else {
         notify("AjaxOK", "OK!");
     }
-}
-
-function ajaxFejl() {
-    notify("Ajax", "Could not load ajax.php");
 }
 
 function notify(title, msg) {
