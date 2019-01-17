@@ -52,7 +52,7 @@ class CustomerCtrl {
 
 	public function createCustomer($email) {
 		
-		if (empty($email) || strpos($email, '@') !== TRUE){
+		if ((empty($email) || strpos($email, '@')) !== TRUE){
 			errorMsg('projectDB','createCustomer','email was not valid');
 		}
 		else
