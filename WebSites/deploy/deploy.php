@@ -350,7 +350,7 @@ $commands[] = sprintf(
 		{
 			echo "JS file added: ".$file."\n";
 			// append to combined
-			$commands[] = sprintf('\n\necho "//-- %s" >> %s', $file, $combined);
+			$commands[] = sprintf('echo "\n\n//-- %s" >> %s', $file, $combined);
 			$commands[] = sprintf('cat %s >> %s', $file, $combined);
 		}
 	}
