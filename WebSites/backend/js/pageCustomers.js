@@ -13,7 +13,7 @@
 //
 //}
 
-function populate_customerList() {
+function page_customer() {
     var section = $("#customers");
 
     section.html("<p>Customers</p>");
