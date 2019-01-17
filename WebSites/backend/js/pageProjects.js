@@ -9,6 +9,7 @@ function page_projects() {
     var restData = myPost('project', 'getProjects', customerid);
     var p;
 
+    console.log(restData['status']);
     //if (restData['status'] === "OK") {
         $.each(restData['result']['projects'], function (key, value) {
             p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
