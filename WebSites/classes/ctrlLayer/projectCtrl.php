@@ -1,5 +1,6 @@
 <?php
 // Includes
+require_once('../classes/modelLayer/project.php');
 require_once('../classes/dbLayer/projectDB.php');
 
 class ProjectCtrl {
@@ -39,8 +40,9 @@ class ProjectCtrl {
 		}
 	}
 
-	public function createProject() {
-		
+	public function createProject(int $image_size, int $customer_id, bool $enabled, string $name) {
+		//if()
+		//$model = new project();
 	}
 
 	public function updateProject($id) {
