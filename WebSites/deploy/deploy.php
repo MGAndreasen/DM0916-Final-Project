@@ -335,6 +335,7 @@ $commands[] = sprintf(
 	echo "JS_DIR: Valid."."\n";
 
 	// add backend.js first!
+	$commands[] = sprintf('echo "//-- %s" >> %s', $file, $combined);
 	$commands[] = sprintf('cat %s > %s', $firstjs, $combined);
 
 	// find *.js files
@@ -349,7 +350,7 @@ $commands[] = sprintf(
 		{
 			echo "JS file added: ".$file."\n";
 			// append to combined
-			$commands[] = sprintf('echo "//-- %s\n\n" >> %s', $file, $combined);
+			$commands[] = sprintf('\n\necho "//-- %s" >> %s', $file, $combined);
 			$commands[] = sprintf('cat %s >> %s', $file, $combined);
 		}
 	}
