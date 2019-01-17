@@ -1,4 +1,17 @@
 function page_customers() {
+    var section = $('#customers');
+    section.html(customers_Layout());
+
+    populate_customerList();
+}
+
+
+function customers_Layout() {
+    return "<div id='customer_list'></div>"
+}
+
+
+function populate__customerList() {
     var section = $("#customers");
 
     section.html("<p>Customers</p>");
