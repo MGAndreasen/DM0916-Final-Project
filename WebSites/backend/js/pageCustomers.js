@@ -1,7 +1,7 @@
 function page_customers() {
     var section = $("#customers");
 
-    section.html("<p>customers</p>");
+    section.html("<p>Customers</p>");
 
     // Test load data.
     var customerid = [1];
