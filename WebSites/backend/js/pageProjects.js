@@ -13,6 +13,5 @@ function page_projects() {
 
         //bind evt. eventhandlers her, eller globalt?
     });
-
     //section.append(JSON.stringify(result));
 }
