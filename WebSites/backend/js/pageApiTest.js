@@ -1,6 +1,8 @@
 function pageApiTest() {
-    // Get section ref.
-    var section = $("#apitest");
+    var section = $("#apitest");    // Get section ref.
+    section.off();                  // unbind eventhandlers.
+
+    // The section Layout
     var lePage = "<form>"
         + "<label>Ctrl: <input id='apitestCtrl' type='text' value='project'/></label></br>"
         + "<label>Func: <input id='apitestFunc' type='text' value='getProjects'/></label></br>"
@@ -10,14 +12,12 @@ function pageApiTest() {
         + "</form></br>"
         + "<div id='apitestResult'></div>";
 
-    section.html(lePage);
+    section.html(lePage);           // Populate section layout.
 
-    section.on('click', '.example', function () {
-        $("#apitestCtrl").val("project");
-        $("#apitestFunc").val("getProjects");
-        $("#apitest form textarea").val("[1]");
-    });
+    // Create new eventhandler
+    section.on('click', '.example', populateExampleQueue());
 
+    // Create new eventhandler
     section.on('click', '.runquery', function () {
         // Test Query
         var ctrl = $("#apitestCtrl").val();
@@ -32,4 +32,10 @@ function pageApiTest() {
             notify('JSON.parse', e);
         }
     });
+}
+
+function populateExampleQueue() {
+    $("#apitestCtrl").val("project");
+    $("#apitestFunc").val("getProjects");
+    $("#apitest form textarea").val("[1]");
 }
