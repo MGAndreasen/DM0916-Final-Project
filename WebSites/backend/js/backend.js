@@ -5,9 +5,11 @@ $(document).ready(function () {
     });
 
     // Ajax eventhandler
+/*    
     $(document).ajaxSuccess(function (event, xhr, settings) {
         ajaxOk(xhr);
     });
+    */
 
     // Mainmenu
     $('nav ul li a').click(function () {
@@ -68,12 +70,17 @@ function myPost(ctrl, func, parms) {
         data: { resp: toSend },
         success: function (result) {
             console.log("MODTAGET:\n" + JSON.stringify(result));
+            if (result['errors']) {
+                $.each(result['errors'], function (key, value) {
+                    notify("Ajax", "Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
+                });
+            }
             toReturn = result;
         }
     });
     return toReturn;
 }
-
+/*
 function ajaxOk(result) {
     var rawData = result.responseText;
     var jsonData = JSON.parse(rawData);
@@ -86,7 +93,7 @@ function ajaxOk(result) {
         notify("AjaxOK", "OK!");
     }
 }
-
+*/
 function notify(title, msg) {
     var notisElement = "<div class='notify'><div>" + title + "</div><div>" + msg + "</div></div>";
     $(notisElement).prependTo("#status").delay(10000).fadeOut(2000).delay(3000).queue(function () { $(this).remove(); });
