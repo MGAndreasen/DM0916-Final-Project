@@ -9,12 +9,12 @@ function page_projects() {
     var restData = myPost('project', 'getProjects', customerid);
     var p;
 
-    if (restData['status'] === "OK") {
+    //if (restData['status'] === "OK") {
         $.each(restData['result']['projects'], function (key, value) {
             p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
             project_list.append(p);
         });
-    }
+    //}
 }
 
 function projects_Layout() {
