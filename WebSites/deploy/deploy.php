@@ -335,7 +335,7 @@ $commands[] = sprintf(
 	echo "JS_DIR: Valid."."\n";
 
 	// add backend.js first!
-	$commands[] = sprintf('echo "//-- %s" >> %s', $file, $combined);
+	$commands[] = sprintf('echo "//-- %s" >> %s', $firstjs, $combined);
 	$commands[] = sprintf('cat %s > %s', $firstjs, $combined);
 
 	// find *.js files
