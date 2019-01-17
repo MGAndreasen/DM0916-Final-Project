@@ -1,6 +1,5 @@
 function page_errorlog() {
     var section = $('#errorlog');
-    var error_list = $('#error_list');
 
     section.html(errorlog_Layout());
 
@@ -11,7 +10,7 @@ function page_errorlog() {
         encode: true,
         async: false
     }).done(function (html) {
-        error_list.html(html);
+        $('#error_list').html(html);
     });
 }
 
