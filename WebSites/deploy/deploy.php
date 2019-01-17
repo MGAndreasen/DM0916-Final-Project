@@ -340,7 +340,7 @@ $commands[] = sprintf(
 	echo "JS_DIR: Valid."."\n";
 
 	// add backend.js first!
-	$commands[] = sprintf('cat %s > %s', $firstjs , $combined);
+	$commands[] = sprintf('cat %s > %s', $firstjs, $combined);
 
 	// find *.js files
 	$jsfiles = glob($JS_DIR."*.js");
@@ -350,7 +350,7 @@ $commands[] = sprintf(
 	{
 		echo "JS file found: ".$file."\n";
 		// excludes backend.js as its already added
-		if($file != $firstjs)
+		if($file != $firstjs || $file != $combined)
 		{
 			echo "JS file added: ".$file."\n";
 			// append to combined
