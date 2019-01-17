@@ -21,22 +21,26 @@ function apitest_createLayout() {
 
 //-- Example Query
 function apitest_populateExampleQueue() {
-    $("#apitestCtrl").val("project");
-    $("#apitestFunc").val("getProjects");
-    $("#apitest form textarea").val("[1]");
+    return function () {
+        $("#apitestCtrl").val("project");
+        $("#apitestFunc").val("getProjects");
+        $("#apitest form textarea").val("[1]");
+    };
 }
 
 //-- Test Query
 function apitest_runQuery() {
-    var ctrl = $("#apitestCtrl").val();
-    var func = $("#apitestFunc").val();
-    try {
-        var parms = JSON.parse($("#apitest form textarea").val());
-        var result = myPost(ctrl, func, parms);
-        $("#apitestResult").html("<pre>" + JSON.stringify(result, null, "\t") + "</pre>");
-    }
-    catch (e) {
-        $("#apitestResult").html("<pre>" + e + "</pre>");
-        notify('JSON.parse', e);
-    }
+    return function () {
+        var ctrl = $("#apitestCtrl").val();
+        var func = $("#apitestFunc").val();
+        try {
+            var parms = JSON.parse($("#apitest form textarea").val());
+            var result = myPost(ctrl, func, parms);
+            $("#apitestResult").html("<pre>" + JSON.stringify(result, null, "\t") + "</pre>");
+        }
+        catch (e) {
+            $("#apitestResult").html("<pre>" + e + "</pre>");
+            notify('JSON.parse', e);
+        }
+    };
 }
