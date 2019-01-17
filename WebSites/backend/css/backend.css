@@ -98,3 +98,21 @@ pre {
     margin: 10px auto;
     border: 1px solid #ddd;
 }
+
+/* Project Section */
+#projects_list {
+    margin: 10px auto;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    color: #000;
+}
+
+
+
+/* Customer Section */
+
+/* ApiTest Section */
