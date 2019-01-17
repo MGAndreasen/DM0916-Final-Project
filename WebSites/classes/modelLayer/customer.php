@@ -96,5 +96,6 @@ class Customer {
 			'email' => $this->email,
 			'projects' => $jsonProjects
         );
+	}
 }
 ?>
