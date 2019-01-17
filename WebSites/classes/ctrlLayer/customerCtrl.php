@@ -30,7 +30,7 @@ class CustomerCtrl {
 		$result = $this->mDB->getCustomer($id);
 		
 		if (sizeof($toReturn) < 1) {
-			errorMsg('projectDB','getCustomer','couldnt find customer');
+			errorMsg('customerDB','getCustomer','couldnt find customer');
 		}
 		elseif (!empty($result)) {
 			$this->data['result']['projects'] = $result;
