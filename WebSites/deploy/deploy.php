@@ -350,7 +350,7 @@ $commands[] = sprintf(
 	{
 		echo "JS file found: ".$file."\n";
 		// excludes backend.js as its already added
-		if($file <> $firstjs || $file <> $combined)
+		if(($file != $firstjs) && ($file != $combined))
 		{
 			echo "JS file added: ".$file."\n";
 			// append to combined
