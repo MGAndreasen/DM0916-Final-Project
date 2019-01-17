@@ -329,12 +329,18 @@ $commands[] = sprintf(
 );
  // combine JS
  $JS_DIR = sprintf('%sWebSites/backend/js/', TARGET_DIR);
- echo "The js dir".$JS_DIR;
- $combined = 'combined.js';
+ echo "JS_DIR: ".$JS_DIR;
+ $combined = $JS_DIR.'combined.js';
+ echo "JS combined: ".$combined;
+ $firstjs = $JS_DIR.'backend.js';
+ echo "JS first: ".$firstjs;
+
  if (file_exists($JS_DIR) && is_dir($JS_DIR))
  {
+	echo "JS_DIR: Valid."
+
 	// add backend.js first!
-	$commands[] = sprintf('cat %s%s > %s%s', $JS_DIR, 'backend.js', $JS_DIR, $combined);
+	$commands[] = sprintf('cat %s%s > %s', $JS_DIR, 'backend.js', $combined);
 
 	// find *.js files
 	$jsfiles = glob($JS_DIR."*.js");
@@ -342,11 +348,13 @@ $commands[] = sprintf(
 	// loop js files
 	foreach($jsfiles as $file)
 	{
+		echo "JS file found: ".$file;
 		// excludes backend.js as its already added
-		if($file != $JS_DIR.'backend.js')
+		if($file = $firstjs)
 		{
+			echo "JS file added: ".$file;
 			// append to combined
-			$commands[] = sprintf('cat %s >> %s%s', $file, $JS_DIR, $combined);
+			$commands[] = sprintf('cat %s >> %s', $file, $combined);
 		}
 	}
 }
