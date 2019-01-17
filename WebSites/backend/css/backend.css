@@ -109,6 +109,32 @@ pre {
     border: 1px solid #ddd;
     background-color: #eee;
     color: #000;
+    overflow-x: hidden;
+}
+
+    #project_list .projects {
+        height: 30px;
+        padding-top: 5px;
+        font-size: 16px;
+    }
+
+    #project_list .projects:hover {
+        background-color: #ccc;
+    }
+
+    #project_list .active {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+#project_list_title {
+    border-bottom: 1px solid #ddd;
+    margin: -10px -10px 0px -10px;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #cdcdcd;
 }
 
 
