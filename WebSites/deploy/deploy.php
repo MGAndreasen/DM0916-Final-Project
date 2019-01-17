@@ -327,11 +327,28 @@ $commands[] = sprintf(
 	'chmod 776 -Rv %s'
 	, TARGET_DIR
 );
- 
-$commands[] = sprintf(
-'echo combine JS files at: %s/WebSites/backend/js/'
-, TARGET_DIR
-);
+ // combine JS
+ $JS_DIR = sprintf('%sWebSites/backend/js/', TARGET_DIR);
+ $combined = 'combined.js';
+ if (file_exists(JS_DIR) && is_dir(JS_DIR))
+ {
+	// add backend.js first!
+	$commands[] = sprintf('cat %s%s > %s%s', JS_DIR, 'backend.js', JS_DIR, combined);
+
+	// find *.js files
+	$jsfiles = glob(JS_DIR."*.js");
+
+	// loop js files
+	foreach($jsfiles as $file)
+	{
+		// excludes backend.js as its already added
+		if($file != 'backend.js')
+		{
+			// append to combined
+			$commands[] = sprintf('cat %s%s >> %s%s', JS_DIR, file, JS_DIR, combined);
+		}
+	}
+}
 
 // =======================================[ Post-Deployment steps ]===
 
