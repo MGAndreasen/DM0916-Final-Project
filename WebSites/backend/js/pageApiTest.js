@@ -35,8 +35,8 @@ function apitest_runQuery() {
         var func = $("#apitestFunc").val();
         try {
             var parms = JSON.parse($("#apitest form textarea").val());
-            var result = myPost(ctrl, func, parms);
-            $("#apitestResult").html("<pre>" + JSON.stringify(result, null, "\t") + "</pre>");
+            var restData = myPost(ctrl, func, parms);
+            $("#apitestResult").html("<pre>" + JSON.stringify(restData, null, "\t") + "</pre>");
         }
         catch (e) {
             $("#apitestResult").html("<pre>" + e + "</pre>");

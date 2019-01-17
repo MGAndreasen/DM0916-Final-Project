@@ -5,14 +5,14 @@ function pageProjects() {
 
     // Test load data.
     var customerid = [1];
-    var result = myPost('project', 'getProjects', customerid);
+    var restData = myPost('project', 'getProjects', customerid);
 
-    $.each(result['projects'], function (key, value) {
+    $.each(restData['result']['projects'], function (key, value) {
         var p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
         section.append(p);
 
         //bind evt. eventhandlers her, eller globalt?
     });
 
-    section.append(JSON.stringify(result));
+    //section.append(JSON.stringify(result));
 }

@@ -19,7 +19,6 @@ class Project implements JsonSerializable {
 	public function getID() {
 		return $this->id;
 	}
-
 	
 	public function getImage_size() {
 		return $this->image_size;

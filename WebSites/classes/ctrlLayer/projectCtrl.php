@@ -25,16 +25,18 @@ class ProjectCtrl {
 	}
 
 	public function getProject($id)	{
-		$toReturn = array();
-		$toReturn['projects'] = $this->mDB->getProject($id);
-		array_push($this->data, $toReturn);
+		$result = $this->mDB->getProject($id);
+		if(!empty($result))	{
+			$this->data['result']['projects'] = $result;
+		}
 	}
 
 	public function getProjects($customerID) {
-		//$toReturn = array();
-		//$toReturn['projects'] = $this->mDB->getProjects($customerID);
-		//array_push($this->data, $toReturn);
-		$this->data['projects'] = $this->mDB->getProjects($customerID);
+		$result = $this->mDB->getProjects($customerID);
+
+		if(!empty($result))	{
+			$this->data['result']['projects'] = $result;
+		}
 	}
 
 	public function createProject() {

@@ -39,11 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				// Lav instans af klassen og afvikel funktionen med parameterne
 				$theClass = ucfirst($ctrl)."Ctrl";
 				$theCtrl = $theClass::getInstance();
-				call_user_func_array(array($theCtrl, $func), $parms);
+				@call_user_func_array(array($theCtrl, $func), $parms);
 			} else { errorMsg($ctrl, $func, 'Controller fil findes ikke.'); }
 		} else { errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'); }
 	} else { errorMsg(null, null, 'Json ikke korrekt posted.'); }
 } else { errorMsg(null, null, 'Request var ikke en HTTP POST.'); }
+
+// Hvis ingen fejl, send OK status med tilbage
+if(empty($data['errors'])) {
+	$data['status'] = "OK";
+}
 
 // output data array as Json
 echo json_encode($data, JSON_PRETTY_PRINT);
