@@ -85,7 +85,6 @@ class CustomerCtrl {
 			$customer = $this->mDB->getCustomer($id);
 			$customer->setEmail($email);
 			$this->mDB->updateCustomer($customer);
-			array_push('ok');
 		}
 	}
 
@@ -93,7 +92,6 @@ class CustomerCtrl {
 	public function removeCustomer($id) {
 		$toReturn = array();
 		$this->mDB->removeCustomer($customer);
-		array_push('ok');
 	}
 }
 ?>
