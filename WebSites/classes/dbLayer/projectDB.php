@@ -49,7 +49,7 @@ class ProjectDB
 				array_push($resultArr, $project);
 			}
 		}
-		else { errorMsg('projectDB','getProjects','error: couldnt find any projects with that customerID'); }
+		else { errorMsg('projectDB','getProject','couldnt find any project with that ID'); }
 		return $resultArr;
 	}
 

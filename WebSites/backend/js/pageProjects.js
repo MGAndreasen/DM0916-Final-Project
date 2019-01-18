@@ -44,7 +44,7 @@ function populate_projectList() {
 
     if (restData['status'] === "OK") {
         $.each(restData['result']['projects'], function (key, value) {
-            p = "<div class='project' id='project-" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
+            p = "<div class='project' id='project_" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
             project_list.append(p);
         });
     }
