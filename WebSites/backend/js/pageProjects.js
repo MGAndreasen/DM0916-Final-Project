@@ -15,7 +15,7 @@ function projects_Layout() {
 
 function populate_projectList() {
     var project_list = $('#project_list');
-    project_list.html("<div id='#project_list_title'>Projects</div>");
+    project_list.html("<div id='project_list_title'>Projects</div>");
 
     // Test load data.
     var customerid = [1];
@@ -24,7 +24,7 @@ function populate_projectList() {
 
     if (restData['status'] === "OK") {
         $.each(restData['result']['projects'], function (key, value) {
-            p = "<div id='project-" + value['id'] + "'>" + value['name'] + "</div>";
+            p = "<div class='project' id='project-" + value['id'] + "'>" + value['name'] + "</div>";
             project_list.append(p);
         });
     }
