@@ -107,7 +107,8 @@ i {
 /* Project Section */
 #projects {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-content:space-around;
     align-items: stretch;
 }
     #projects > div.project_list {
