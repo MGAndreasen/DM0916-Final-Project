@@ -46,8 +46,9 @@ function populate_projectList() {
 
 function projects_newProject() {
     return function () {
-        var pname = $(this).val();
-        $(this).val('');
+        var ele = $('#projects .project_list > .new > input');
+        var pname = ele.val();
+        ele.val('');
         var html = "<div class='project'><i class='fas fa-project-diagram'></i >" + pname + "</div >";
         $('#projects .project_list > .content').append(html);
     };
