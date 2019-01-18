@@ -11,7 +11,7 @@ function projects_Layout() {
     return ""
         + "<div class='project_list'>"
         + "  <div class='title'>Projects</div>"
-        + "  <div class='content'>ds</div>"
+        + "  <div class='content'></div>"
         + "  <div class='add'><i class='far fa - plus - circle'></i>add</div>"
         + "</div>"
         + "<div class='project_hirachy'></div>"

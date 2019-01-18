@@ -100,7 +100,7 @@ pre {
 }
 
 /* Project Section */
-#project > .project_list {
+#project > div.project_list {
     margin: 10px 0px 0px 10px;
     width: 300px;
     height: auto;
