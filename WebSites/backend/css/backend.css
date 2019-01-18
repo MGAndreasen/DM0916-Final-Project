@@ -153,7 +153,7 @@ i {
     margin-left: 10px;
 }
 
-#project > .project_list > .new > input {
+#projects > .project_list > .new > input {
     padding: 4px;
     font-size: 16px;
     border-radius: 9px;
