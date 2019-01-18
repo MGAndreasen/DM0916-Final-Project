@@ -3,34 +3,23 @@
 require_once('../classes/modelLayer/model.php');
 
 class ModelDB
-{
-	private $getModelSQL = 'SELECT * FROM model WHERE project_Id = ?';
-	private $getModelsSQL = 'SELECT * FROM model';
+{	
+	//SQL Queries
+	private $getModel_SQL					= 'SELECT * FROM model WHERE project_Id = ?';
+	private $getModels_SQL					= 'SELECT * FROM model';
+	private $getModelsFromProjectId_SQL		= 'SELECT * FROM model where id = ?';
+	private $updateModel_SQL				= 'UPDATE SET image_size=:image_size, created=:created, completed=:completed, WHERE id = :id';
+	private $createModel_SQL				= 'INSERT INTO model VALUE(null, image_size=:image_size, created=:created, completed=:completed)';
+	private $removeModel_SQL				= 'DELETE FROM model WHERE id = ?';
 
-	public function __construct()
-	{
+	public function __construct() {
 	}
 
-	public function test()
-	{
-		global $conn;
-		$someData = array();
-
-		$someData['test'] = 'Hmm';
-
-		// mysqli, prepared statements
-		$query = $conn->prepare('SELECT * FROM users WHERE username = ?');
-		$query->bind_param('s', $_GET['username']);
-		$query->execute();
-
-		return $someData;
-	}
-
-	public function getModel($projectID){
+	public function getModel($modelID){
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getModelSQL);
-		$query->bind_param('i', $projectID);
+		$query->bind_param('i', $modelID);
 		$query->execute();
 		$result = $query->get_result();
 		
@@ -40,13 +29,13 @@ class ModelDB
 				array_push($resultArr, $model);
 			}
 		} 
-		else 
-		{
-			array_push($resultArr, 'error: couldnt find any models with that projectID');
+		else {
+			errorMsg($resultArr, 'error: couldnt find any models with that projectID');
 		}
 		return $resultArr;
 	}
 
+	//Bookmark CH
 	public function getModels(){
 		global $conn;
 		$resultArr = [];
