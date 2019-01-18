@@ -107,7 +107,6 @@ i {
 #projects > .cols > div.project_list {
     box-sizing: border-box;
     width: 100%;
-    min-width: 300px;
     height: auto;
     border-radius: 9px;
     border: 1px solid #999;
@@ -124,7 +123,7 @@ i {
 
     #projects > div.cols > .project_list > .content > .project {
         padding: 10px;
-        font-size: 16px;
+        font-size: 1em;
         font-weight: 600;
         text-align: left;
         border-bottom: 1px solid #999;
@@ -168,7 +167,6 @@ i {
     #projects > .cols > div.project_hirachy {
         box-sizing: border-box;
         width: 100%;
-        min-width: 400px;
         height: auto;
         border-radius: 9px;
         border: 1px solid #999;
@@ -180,7 +178,6 @@ i {
     #projects > .cols > div.project_data {
         box-sizing: border-box;
         width: 100%;
-        min-width: 300px;
         height: auto;
         border-radius: 9px;
         border: 1px solid #999;
