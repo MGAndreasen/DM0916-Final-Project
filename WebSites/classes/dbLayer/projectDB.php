@@ -12,7 +12,7 @@ class ProjectDB
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
-	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
+	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = :project_id AND parent_id = :parent_id';
 	 
 	// Constructor
 	public function __construct() {
@@ -141,12 +141,9 @@ class ProjectDB
 		global $conn;
 		$resultArr = [];
 
-		$pid = 1;
-		$pa = 0;
-
 		$query = $conn->prepare($this->modelStructure_SQL);
-		$query->bind_param('i', (int)$pid);
-		$query->bind_param('i', (int)$pa);
+		$query->bind_param(':project_id', $project_id);
+		$query->bind_param(':parent_id', $parent_id);
 		$query->execute();
 		$result = $query->get_result();
 		
