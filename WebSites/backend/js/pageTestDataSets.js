@@ -60,7 +60,7 @@ function testdatasets_dragdrop(e) {
                 e.preventDefault();
                 e.stopPropagation();
 
-                add adgang too the dropped files and pass work on
+                //add adgang too the dropped files and pass work on
                 uploadFun(e.originalEvent.dataTransfer.files);
             }
         }
