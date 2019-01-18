@@ -111,19 +111,19 @@ pre {
     overflow-x: hidden;
 }
 
-#project .project_list .project {
-        height: 30px;
-        padding-top: 5px;
-        font-size: 16px;
+#project .project_list .content .project {
+    height: 30px;
+    padding-top: 5px;
+    font-size: 16px;
 }
 
-#project .project_list .project:hover {
-        background-color: #ccc;
- }
+#project .project_list .content .project:hover {
+    background-color: #ccc;
+}
 
-#project .project_list .active {
-        background-color: #4CAF50;
-        color: #fff;
+#project .project_list .content .active {
+    background-color: #4CAF50;
+    color: #fff;
 }
 
 #project .project_list .title {

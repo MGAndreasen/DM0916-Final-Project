@@ -8,14 +8,18 @@ function page_projects() {
 }
 
 function projects_Layout() {
-    return "<div class='project_list'></div>"
+    return "" +
+        + "<div class='project_list'>"
+        + "  <div class='title'>Projects</div>"
+        + "  <div class='content'></div>"
+        + "  <div class='bottom'><i class="far fa - plus - circle"></i></div>"
+        + "</div>"
         + "<div class='project_hirachy'></div>"
         + "<div class='project_images'></div>";
 }
 
 function populate_projectList() {
-    var project_list = $('#projects .project_list');
-    project_list.html("<div class='title'>Projects</div>");
+    var project_list = $('#projects .project_list .content');
 
     // Test load data.
     var customerid = [1];
