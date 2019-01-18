@@ -105,7 +105,7 @@ pre {
     width: 300px;
     height: auto;
     border-radius: 9px;
-    border: 1px solid #ddd;
+    border: 1px solid #999;
     background-color: #eee;
     color: #000;
     overflow-x: hidden;
@@ -116,6 +116,7 @@ pre {
     font-size: 16px;
     font-weight: 600;
     text-align: left;
+    border-bottom: 1px solid #999;
 }
 
 #projects > .project_list > .content > .project > i {
@@ -132,7 +133,7 @@ pre {
 }
 
 #projects > .project_list > .title {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #999;
     height: 30px;
     padding-top: 10px;
     font-size: 20px;
