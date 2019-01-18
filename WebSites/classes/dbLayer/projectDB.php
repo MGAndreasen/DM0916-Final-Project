@@ -149,7 +149,7 @@ class ProjectDB
 		
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					$ModelData = new Array();
+					$ModelData = [];
 					$ModelData['id'] = $row['id'];
 					$ModelData['model_id'] = 1;
 					$ModelData['project_structure_id'] = $row['id'];
