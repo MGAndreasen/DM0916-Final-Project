@@ -73,7 +73,7 @@ function projects_populateHirachy() {
 
         if (restData['status'] === "OK") {
             project_data.children('.name').val(restData['result']['projects'][0]['name']);
-            project_data.children('.size').val(restData['result']['projects'][0]['size']);
+            project_data.children('.size').val(restData['result']['projects'][0]['imagesize']);
             project_data.children('.enabled').val(restData['result']['projects'][0]['enabled']);
 
             /*
