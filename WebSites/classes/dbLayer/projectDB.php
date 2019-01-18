@@ -12,7 +12,7 @@ class ProjectDB
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
-	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = :project_id AND parent_id = :parent_id';
+	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
 	 
 	// Constructor
 	public function __construct() {
