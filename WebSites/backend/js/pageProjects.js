@@ -51,6 +51,7 @@ function projects_newProject() {
         ele.val('');
         var html = "<div class='project'><i class='fas fa-project-diagram'></i >" + pname + "</div >";
         $('#projects .project_list > .content').append(html);
+        notify('Project', 'Created: '+pname);
     };
 }
 
