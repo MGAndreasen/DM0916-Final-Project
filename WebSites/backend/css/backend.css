@@ -105,6 +105,8 @@ i {
 
 /* Project Section */
 #projects > div > div.project_list {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 12%;
     min-width: 300px;
     height: auto;
@@ -159,6 +161,8 @@ i {
     }
 
 #projects > div > div.project_hirachy {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 76%;
     min-width: 400px;
     height: auto;
@@ -170,6 +174,8 @@ i {
 }
 
 #projects > div > div.project_data {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 12%;
     min-width: 300px;
     height: auto;
