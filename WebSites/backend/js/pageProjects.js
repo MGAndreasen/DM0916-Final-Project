@@ -3,7 +3,7 @@ function page_projects() {
     section.off();                                                      // unbind eventhandlers.
     section.html(projects_createLayout());                              // Populate section layout.
     section.on('click', '.project', projects_populateHirachy());        // Create new eventhandler
-    section.on('click', '.new', projects_newProject());                 // Create new eventhandler
+    section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
 
 
     populate_projectList();
@@ -17,7 +17,7 @@ function projects_createLayout() {
         + "  <div class='project_list'>"
         + "    <div class='title'>Projects</div>"
         + "    <div class='content'></div>"
-        + "    <div class='new'><i class='fas fa-project-diagram'></i ><input type='text' placeholder='New Project Name'/><i class='fas fa-plus-circle'></i></div>"
+        + "    <div class='new'><i class='fas fa-project-diagram'></i ><input type='text' placeholder='New Project Name'/><i class='fas fa-plus-circle addNew'></i></div>"
         + "  </div>"
         + "  <div class='project_hirachy'>"
         + "    <div class='title'>Hirachy</div>"
