@@ -20,7 +20,7 @@ function page_testdatasets() {
 function testdatasets_createLayout() {
     return ""
         + "<p>data</p></br>"
-        + "<div id='filedock' style='width: 300px; height:150px; border: 1px solid #999; background-color: #ddd; color: #999; text-align:center; margin: 0 auto;'>DROP IMAGE FILES HERE</div>"
+        + "<div id='filedock' class='filedock'>DROP IMAGE FILES HERE</div>"
         + "<div id='filedock_file'></div >"
         + "<div id='file-result'></div >";
 }
