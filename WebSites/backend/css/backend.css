@@ -104,7 +104,6 @@ pre {
     margin: 10px 0px 0px 10px;
     width: 300px;
     height: auto;
-    padding: 10px;
     border-radius: 9px;
     border: 1px solid #ddd;
     background-color: #eee;
@@ -129,7 +128,6 @@ pre {
 
 #project_list_title {
     border-bottom: 1px solid #ddd;
-    margin: -10px -10px 0px -10px;
     height: 30px;
     padding-top: 10px;
     font-size: 20px;
