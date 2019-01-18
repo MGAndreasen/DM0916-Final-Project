@@ -106,6 +106,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modelLayer", "modelLayer", 
 		WebSites\classes\modelLayer\error.php = WebSites\classes\modelLayer\error.php
 		WebSites\classes\modelLayer\image.php = WebSites\classes\modelLayer\image.php
 		WebSites\classes\modelLayer\model.php = WebSites\classes\modelLayer\model.php
+		modelStructure.php = modelStructure.php
 		WebSites\classes\modelLayer\project.php = WebSites\classes\modelLayer\project.php
 		WebSites\classes\modelLayer\projectStructure.php = WebSites\classes\modelLayer\projectStructure.php
 	EndProjectSection
