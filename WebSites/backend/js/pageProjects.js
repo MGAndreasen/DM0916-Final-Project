@@ -21,9 +21,15 @@ function projects_createLayout() {
         + "  </div>"
         + "  <div class='project_hirachy'>"
         + "    <div class='title'>Hirachy</div>"
+        + "    <div class='content'></div>"
         + "  </div>"
         + "  <div class='project_data'>"
         + "    <div class='title'>Data</div>"
+        + "    <div class='content'>"
+        + "      <input class='name' type='text' placeholder='name'/>"
+        + "      <input class='size' type='text' placeholder='size'/>"
+        + "      <input class='enabled' type='text' placeholder='enabled'/>"
+        + "    </div>"
         + "  </div>"
         + "</div>";
 }
@@ -57,7 +63,25 @@ function projects_newProject() {
 
 function projects_populateHirachy() {
     return function () {
-        var hirachy = $('#projects .project_hirachy');
-        hirachy.append('load stuff here');
+        var project_data = $('#projects  .project_data > .content');
+        var project_hirachy = $('#projects  .project_hirachy > .content');
+ 
+
+        var projectid = [1];
+        var restData = myPost('project', 'getProject', projectid);
+
+        if (restData['status'] === "OK") {
+
+            notify('Ajax','loaded data')
+            /*
+            $.each(restData['result']['projects'], function (key, value) {
+                p = "<div class='project' id='project-" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
+                project_list.append(p);
+            });
+            */
+        }
+
+        project_hirachy.append('load stuff here');
+
     };
 }
