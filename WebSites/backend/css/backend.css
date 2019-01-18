@@ -107,7 +107,7 @@ i {
 /* Project Section */
 #projects {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenæy;
     align-content:space-around;
     align-items: stretch;
 }
