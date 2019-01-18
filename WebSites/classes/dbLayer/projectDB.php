@@ -1,8 +1,7 @@
 <?php
 // Includes
 require_once('../classes/modelLayer/project.php');
-require_once('../classes/modelLayer/modelStructure.php');
-
+require_once('../classes/modelLayer/projectStructure.php');
 
 class ProjectDB
 {
@@ -13,7 +12,7 @@ class ProjectDB
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
-	private $modelstructure_SQL	= 'SELECT * FROM project_structure WHERE parent_id = ?';
+	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
 	 
 	// Constructor
 	public function __construct() {
@@ -138,32 +137,37 @@ class ProjectDB
 		}
 	}
 
-	public function getModelToBuild($parent_id) {
+	public function getModelToBuild(int $project_id, int $parent_id) {
 		global $conn;
 		$resultArr = [];
 
-			$query = $conn->prepare($this->modelstructure_SQL);
-			$query->bind_param('i', $parent_id);
-			$query->execute();
-			$result = $query->get_result();
+		$query = $conn->prepare($this->modelStructure_SQL);
+		$query->bind_param("ii", $project_id, $parent_id);
+		$query->execute();
+		$result = $query->get_result();
 		
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) {
-					$ModelData = new Array();
-					$ModelData['id'] = $row['id'];
-					$ModelData['model_id'] = 1;
-					$ModelData['project_structure_id'] = $row['id'];
-					$ModelData['project_structur_parent_id'] = $row['parent_id'];
-					$ModelData['image_size'] = $row['image_size'];
-					$ModelData['filer_size'] = $row['filer_size'];
-					$ModelData['validation_size'] = $row['validation_size'];
-					$ModelData['name'] = $row['name'];
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$ps = new ProjectStructure($row['id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 
-					array_push($resultArr, ModelData);
-				}
+				// indfsadfdsafdsfdsf
+
+
+
+				array_push($resultArr, $ps);
 			}
-			else { errorMsg('projectDB','getProject','couldnt find any project with that ID'); }
+		}
+		else
+		{
+			errorMsg('projectDB','getModelToBuild','couldnt find any ('.$project_id.') project_structure with parent_id'.$parent_id);
+		}
+		
 		return $resultArr;
+	}
+
+
+	private function getProjectStructureImages(int $id) {
+		
 	}
 }
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 class Customer {
     private $id;
 	private $enabled;
@@ -8,14 +7,18 @@ class Customer {
 	private $created;
 	private $lastAccess;
 	private $email;
-	private $projects = array();
 
-	public function __contruct(int $id, string $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email){
+	public function __contruct(int $id, string $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email) {
 		$this->id = $id;
+		$this->enabled = $enabled;
+		$this->hash = $hash;
+		$this->salt = salt;
+		$this->created = created;
+		$this->lastAccess = $lastAccess;
 		$this->email = $email;
 	}
 
-	public function getID() :int{
+	public function getId() :int{
 		return $this->id;
 	}
 
@@ -35,7 +38,7 @@ class Customer {
 		return $this->created;
 	}
 
-	public function getLastAcces() {
+	public function getLastAccess() {
 		return $this->lastAccess;
 	}
 
@@ -43,11 +46,7 @@ class Customer {
 		return $this->email;
 	}
 
-	public function getProjects() :array{
-		return $this->projects;
-	}
-
-	public function setID(int $id){
+	public function setId(int $id){
 		$this->id = $id;
 	}
 
@@ -63,38 +62,19 @@ class Customer {
 		$this->salt = $salt;
 	}
 
-	public function setCreated($created) {
-		$this->created = $created;
-	}
-
-	public function setLastAcces($lastAccess) {
-		$this->lastAccess = $lastAccess;
-	}
-
-
 	public function setEmail(string $email){
 		$this->email = $email;
 	}
 
-	public function setProjects($projects){
-		$this->$projects = $projects;
-	}
-
 	public function jsonSerialize() {
-		$jsonProjects = [];
-		foreach($this->projects as $project){
-			array_push($jsonProjects, $project->jsonSerialize());
-		}
-
         return array (
             'id' => $this->id,
 			'enabled' => $this->enabled,
 			'hash' => $this->hash,
 			'salt' => $this->salt,
 			'created' => $this->created,
-			'lastAccess' => $this->lastAccess,
-			'email' => $this->email,
-			'projects' => $jsonProjects
+			'lastaccess' => $this->lastAccess,
+			'email' => $this->email
         );
 	}
 }
