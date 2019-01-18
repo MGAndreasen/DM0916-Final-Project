@@ -142,8 +142,7 @@ class ProjectDB
 		$resultArr = [];
 
 		$query = $conn->prepare($this->modelStructure_SQL);
-		$query->bind_param("ii", $project_id);
-		$query->bind_param("ii", $parent_id);
+		$query->bind_param("ii", $project_id, $parent_id);
 		$query->execute();
 		$result = $query->get_result();
 		
