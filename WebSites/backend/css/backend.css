@@ -112,13 +112,13 @@ pre {
     overflow-x: hidden;
 }
 
-    #project_list .projects {
+    #project_list .project {
         height: 30px;
         padding-top: 5px;
         font-size: 16px;
     }
 
-    #project_list .projects:hover {
+    #project_list .project:hover {
         background-color: #ccc;
     }
 
