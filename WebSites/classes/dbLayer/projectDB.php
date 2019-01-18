@@ -137,7 +137,7 @@ class ProjectDB
 		}
 	}
 
-	public function getModelToBuild($project_id, $parent_id) {
+	public function getModelToBuild(int $project_id, int $parent_id) {
 		global $conn;
 		$resultArr = [];
 
