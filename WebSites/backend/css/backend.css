@@ -70,7 +70,7 @@ nav ul li a.active {
         background-color: #2f589a;
     }
 
-#apitest form {
+#apitest > form {
     margin: 10px auto;
     width: 50%;
     height: auto;
@@ -80,13 +80,13 @@ nav ul li a.active {
     background-color: #eee;
     color: #000;
 }
-    #apitest form textarea {
-        width: 100%;
-        height: 250px;
-        border-radius: 9px;
-        border: 1px solid #ddd;
-        color: #000;
-    }
+#apitest > form textarea {
+    width: 100%;
+    height: 250px;
+    border-radius: 9px;
+    border: 1px solid #ddd;
+    color: #000;
+}
 
 pre {
     font-family: monospace;
@@ -100,7 +100,7 @@ pre {
 }
 
 /* Project Section */
-#project>.project_list {
+#project > .project_list {
     margin: 10px 0px 0px 10px;
     width: 300px;
     height: auto;
@@ -111,22 +111,22 @@ pre {
     overflow-x: hidden;
 }
 
-#project .project_list .content .project {
+#project > .project_list > .content > .project {
     height: 30px;
     padding-top: 5px;
     font-size: 16px;
 }
 
-#project .project_list .content .project:hover {
+#project > .project_list > .content > .project:hover {
     background-color: #ccc;
 }
 
-#project .project_list .content .active {
+#project > .project_list > .content > .active {
     background-color: #4CAF50;
     color: #fff;
 }
 
-#project .project_list .title {
+#project > .project_list > .title {
     border-bottom: 1px solid #ddd;
     height: 30px;
     padding-top: 10px;
@@ -135,7 +135,7 @@ pre {
     background-color: #cdcdcd;
 }
 
-#project .project_list .add {
+#project > .project_list > .add {
     height: 30px;
     padding-top: 5px;
     font-size: 16px;
