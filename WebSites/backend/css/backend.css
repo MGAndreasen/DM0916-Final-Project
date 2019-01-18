@@ -105,14 +105,14 @@ i {
 }
 
 /* Project Section */
-#projects {
+#projects > div.container {
     display: flex;
     justify-content: space-around;
     align-content:space-around;
     align-items: stretch;
 }
 
-    #projects > div.project_list {
+    #projects div.project_list {
         margin: 10px;
         flex-basis: 300px;
         flex-shrink: 0;
@@ -126,7 +126,7 @@ i {
         overflow-x: hidden;
     }
 
-    #projects > div.project_hirachy {
+    #projects div.project_hirachy {
         margin: 10px;
         flex-basis: auto;
         box-sizing: border-box;
@@ -139,7 +139,7 @@ i {
         overflow-x: hidden;
     }
 
-        #projects > div.project_hirachy > .title {
+        #projects div.project_hirachy > .title {
             border-bottom: 1px solid #999;
             height: 30px;
             padding-top: 10px;
@@ -148,7 +148,7 @@ i {
             background-color: #cdcdcd;
         }
 
-    #projects > div.project_data {
+    #projects div.project_data {
         margin: 10px;
         flex-basis: 300px;
         flex-shrink: 0;
@@ -162,7 +162,7 @@ i {
         overflow-x: hidden;
     }
 
-        #projects > div.project_data > .title {
+        #projects div.project_data > .title {
             border-bottom: 1px solid #999;
             height: 30px;
             padding-top: 10px;
@@ -171,7 +171,7 @@ i {
             background-color: #cdcdcd;
         }
 
-    #projects > .project_list > .content > .project {
+    #projects .project_list > .content > .project {
         padding: 10px;
         font-size: 1em;
         font-weight: 600;
@@ -179,20 +179,20 @@ i {
         border-bottom: 1px solid #999;
     }
 
-#projects > .project_list > .content > .project > i {
+#projects .project_list > .content > .project > i {
     margin-right: 15px;
 }
 
-#projects >  .project_list > .content > .project:hover {
+#projects .project_list > .content > .project:hover {
     background-color: #ccc;
 }
 
- #projects >  .project_list > .content > .active {
+ #projects .project_list > .content > .active {
     background-color: #4CAF50;
     color: #fff;
 }
 
-#projects >  .project_list > .title {
+#projects .project_list > .title {
     border-bottom: 1px solid #999;
     height: 30px;
     padding-top: 10px;
@@ -201,12 +201,12 @@ i {
     background-color: #cdcdcd;
 }
 
-#projects >  .project_list > .new {
+#projects .project_list > .new {
     padding: 10px;
     text-align: left;
 }
 
-#projects >  .project_list > .new > input {
+#projects .project_list > .new > input {
     padding: 4px;
     font-size: 16px;
     border-radius: 9px;

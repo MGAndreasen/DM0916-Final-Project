@@ -13,16 +13,18 @@ function page_projects() {
 
 function projects_createLayout() {
     return ""
-        + "<div class='project_list'>"
-        + "  <div class='title'>Projects</div>"
-        + "  <div class='content'></div>"
-        + "  <div class='new'><i class='fas fa-project-diagram'></i ><input type='text' placeholder='New Project Name'/><i class='fas fa-plus-circle'></i></div>"
-        + "</div>"
-        + "<div class='project_hirachy'>"
-        + "  <div class='title'>Hirachy</div>"
-        + "</div>"
-        + "<div class='project_data'>"
-        + "  <div class='title'>Data</div>"
+        + "<div class='container'>"
+        + "  <div class='project_list'>"
+        + "    <div class='title'>Projects</div>"
+        + "    <div class='content'></div>"
+        + "    <div class='new'><i class='fas fa-project-diagram'></i ><input type='text' placeholder='New Project Name'/><i class='fas fa-plus-circle'></i></div>"
+        + "  </div>"
+        + "  <div class='project_hirachy'>"
+        + "    <div class='title'>Hirachy</div>"
+        + "  </div>"
+        + "  <div class='project_data'>"
+        + "    <div class='title'>Data</div>"
+        + "  </div>"
         + "</div>";
 }
 
