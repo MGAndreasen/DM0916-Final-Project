@@ -72,8 +72,10 @@ function projects_populateHirachy() {
         var restData = myPost('project', 'getProject', projectid);
 
         if (restData['status'] === "OK") {
+            project_data.children('.name').val(restData['result']['projects'][0]['name']);
+            project_data.children('.size').val(restData['result']['projects'][0]['size']);
+            project_data.children('.enabled').val(restData['result']['projects'][0]['enabled']);
 
-            notify('Ajax', 'loaded data');
             /*
             $.each(restData['result']['projects'], function (key, value) {
                 p = "<div class='project' id='project-" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
