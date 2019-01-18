@@ -8,7 +8,7 @@ function page_projects() {
 }
 
 function projects_Layout() {
-    return " ..." +
+    return ""
         + "<div class='project_list'>"
         + "  <div class='title'>Projects</div>"
         + "  <div class='content'>ds</div>"
