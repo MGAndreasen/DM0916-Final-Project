@@ -9,12 +9,13 @@ function page_apitest() {
 
 //-- Section Layout
 function apitest_createLayout() {
-    return "<form>"
-        + "<label>Ctrl: <input id='apitestCtrl' type='text' value='project'/></label></br>"
-        + "<label>Func: <input id='apitestFunc' type='text' value='getProjects'/></label></br>"
-        + "<label>Parms:<textarea></textarea></label></br>"
-        + "<input class='runquery' type='button' value='Run Query'/>"
-        + "<input class='example' type='button' value='Example'/>"
+    return ""
+        + "<form>"
+        + "  <label>Ctrl: <input id='apitestCtrl' type='text' value='project'/></label></br>"
+        + "  <label>Func: <input id='apitestFunc' type='text' value='getProjects'/></label></br>"
+        + "  <label>Parms:<textarea></textarea></label></br>"
+        + "  <input class='runquery' type='button' value='Run Query'/>"
+        + "  <input class='example' type='button' value='Example'/>"
         + "</form></br>"
         + "<div id='apitestResult'></div>";
 }

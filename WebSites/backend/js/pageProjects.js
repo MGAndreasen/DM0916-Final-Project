@@ -1,18 +1,22 @@
 function page_projects() {
-    var section = $('#projects');
-    section.html(projects_Layout());
+    var section = $("#projects");                                       // Get section ref.
+    section.off();                                                      // unbind eventhandlers.
+    section.html(projects_createLayout());                              // Populate section layout.
+    section.on('click', '.project', projects_populateHirachy());        // Create new eventhandler
+    section.on('click', '.new', projects_newProject());                 // Create new eventhandler
+
 
     populate_projectList();
 
     
 }
 
-function projects_Layout() {
+function projects_createLayout() {
     return ""
         + "<div class='project_list'>"
         + "  <div class='title'>Projects</div>"
         + "  <div class='content'></div>"
-        + "  <div class='add'><i class='fas fa - plus - circle'></i></div>"
+        + "  <div class='new'><i class='fas fa - plus - circle'></i></div>"
         + "</div>"
         + "<div class='project_hirachy'></div>"
         + "<div class='project_images'></div>";
@@ -32,4 +36,16 @@ function populate_projectList() {
             project_list.append(p);
         });
     }
+}
+
+function projects_newProject() {
+    return function () {
+        $(this).append('WooooT');
+    };
+}
+
+function projects_populateHirachy() {
+    return function () {
+        $(this).append('Hirachy');
+    };
 }
