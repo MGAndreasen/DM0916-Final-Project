@@ -160,7 +160,7 @@ class ProjectDB
 		}
 		else
 		{
-			errorMsg('projectDB','getModelToBuild','couldnt find any project with that ID');
+			errorMsg('projectDB','getModelToBuild','couldnt find any ('.$project_id.') project_structure with parent_id'.$parent_id);
 		}
 		
 		return $resultArr;
