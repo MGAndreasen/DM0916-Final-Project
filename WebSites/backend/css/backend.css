@@ -104,7 +104,7 @@ i {
 }
 
 /* Project Section */
-#projects > div > div.project_list {
+#projects > .cols > div.project_list {
     box-sizing: border-box;
     width: 100%;
     min-width: 300px;
@@ -116,72 +116,78 @@ i {
     overflow-x: hidden;
 }
 
-#projects > div > .project_list > .content > .project {
+#projects > .cols {
+    float: left;
     padding: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: left;
-    border-bottom: 1px solid #999;
+    box-sizing: border-box;
 }
 
-    #projects > div > .project_list > .content > .project > i {
-        margin-right: 15px;
-    }
-
-    #projects > div > .project_list > .content > .project:hover {
-        background-color: #ccc;
-    }
-
-#projects > div > .project_list > .content > .active {
-    background-color: #4CAF50;
-    color: #fff;
-}
-
-#projects > div > .project_list > .title {
-    border-bottom: 1px solid #999;
-    height: 30px;
-    padding-top: 10px;
-    font-size: 20px;
-    font-weight: bolder;
-    background-color: #cdcdcd;
-}
-
-#projects > div > .project_list > .new {
-    padding: 10px;
-    text-align: left;
-}
-
-    #projects > div > .project_list > .new > input {
-        padding: 4px;
+    #projects > div.cols > .project_list > .content > .project {
+        padding: 10px;
         font-size: 16px;
+        font-weight: 600;
+        text-align: left;
+        border-bottom: 1px solid #999;
+    }
+
+        #projects > .cols > .project_list > .content > .project > i {
+            margin-right: 15px;
+        }
+
+        #projects > .cols > .project_list > .content > .project:hover {
+            background-color: #ccc;
+        }
+
+    #projects > .cols > .project_list > .content > .active {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+    #projects > .cols > .project_list > .title {
+        border-bottom: 1px solid #999;
+        height: 30px;
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        background-color: #cdcdcd;
+    }
+
+    #projects > .cols > .project_list > .new {
+        padding: 10px;
+        text-align: left;
+    }
+
+        #projects > .cols > .project_list > .new > input {
+            padding: 4px;
+            font-size: 16px;
+            border-radius: 9px;
+            border: 1px solid #999;
+            margin: 0px 10px 0px 10px;
+        }
+
+    #projects > .cols > div.project_hirachy {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 400px;
+        height: auto;
         border-radius: 9px;
         border: 1px solid #999;
-        margin: 0px 10px 0px 10px;
+        background-color: #eee;
+        color: #000;
+        overflow-x: hidden;
     }
 
-#projects > div > div.project_hirachy {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 400px;
-    height: auto;
-    border-radius: 9px;
-    border: 1px solid #999;
-    background-color: #eee;
-    color: #000;
-    overflow-x: hidden;
-}
-
-#projects > div > div.project_data {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 300px;
-    height: auto;
-    border-radius: 9px;
-    border: 1px solid #999;
-    background-color: #eee;
-    color: #000;
-    overflow-x: hidden;
-}
+    #projects > .cols > div.project_data {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 300px;
+        height: auto;
+        border-radius: 9px;
+        border: 1px solid #999;
+        background-color: #eee;
+        color: #000;
+        overflow-x: hidden;
+    }
 
 /* Customer Section */
 
