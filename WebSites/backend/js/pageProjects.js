@@ -8,14 +8,14 @@ function page_projects() {
 }
 
 function projects_Layout() {
-    return "<div id='project_list'></div>"
-        + "<div id='project_hirachy'></div>"
-        + "<div id='project_images'></div>";
+    return "<div class='project_list'></div>"
+        + "<div class='project_hirachy'></div>"
+        + "<div class='project_images'></div>";
 }
 
 function populate_projectList() {
-    var project_list = $('#project_list');
-    project_list.html("<div id='project_list_title'>Projects</div>");
+    var project_list = $('#projects .project_list');
+    project_list.html("<div class='title'>Projects</div>");
 
     // Test load data.
     var customerid = [1];

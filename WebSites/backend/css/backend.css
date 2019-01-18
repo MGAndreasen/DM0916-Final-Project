@@ -100,7 +100,7 @@ pre {
 }
 
 /* Project Section */
-#project_list {
+#project .project_list {
     margin: 10px 0px 0px 10px;
     width: 300px;
     height: auto;
@@ -111,22 +111,22 @@ pre {
     overflow-x: hidden;
 }
 
-    #project_list .project {
+#project .project_list .project {
         height: 30px;
         padding-top: 5px;
         font-size: 16px;
-    }
+}
 
-    #project_list .project:hover {
+#project .project_list .project:hover {
         background-color: #ccc;
-    }
+ }
 
-    #project_list .active {
+#project .project_list .active {
         background-color: #4CAF50;
         color: #fff;
-    }
+}
 
-#project_list_title {
+#project .project_list .title {
     border-bottom: 1px solid #ddd;
     height: 30px;
     padding-top: 10px;
@@ -135,6 +135,11 @@ pre {
     background-color: #cdcdcd;
 }
 
+#project .project_list .add {
+    height: 30px;
+    padding-top: 5px;
+    font-size: 16px;
+}
 
 
 /* Customer Section */
