@@ -29,7 +29,7 @@ function projects_createLayout() {
 }
 
 function populate_projectList() {
-    var project_list = $('#projects > .project_list > .content');
+    var project_list = $('#projects .project_list > .content');
 
     // Test load data.
     var customerid = [1];
