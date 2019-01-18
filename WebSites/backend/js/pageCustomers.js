@@ -22,8 +22,13 @@ function page_customers() {
     var customerid = [1];
     var restData = myPost('customer', 'getCustomer', customerid);
 
-    $.each(restData['result']['customers'], function (key, value) {
-        var p = "<div id='customer-" + value['id'] + "'>" + value['email'] + "</div>";
-        section.append(p);
-    });
+    if (restData['status'] === "OK") {
+        $.each(restData['result']['customers'], function (key, value) {
+            var p = "<div id='customer-" + value['id'] + "'>" + value['email'] + "</div>";
+            section.append(p);
+        });
+    }
+    else {
+        notify('lort','gik ikke godt!');
+    }
 }
