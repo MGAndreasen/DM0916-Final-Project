@@ -23,7 +23,7 @@ class ProjectDB
 	public function getProjects($customer_id) {
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->getProjects_SQL); 
+		$query = $conn->prepare($this->getProjects_SQL);
 		$query->bind_param('i', $customer_id);
 		$query->execute();
 		$result = $query->get_result();
