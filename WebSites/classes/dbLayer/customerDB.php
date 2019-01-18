@@ -16,14 +16,15 @@ class CustomerDB
 
 	public function getCustomer($customerID){
 		global $conn;
+		$resultArr = [];
 		$query = $conn->prepare($this->$getCustomer_SQL);
 		$query->bind_param('i', $customerID);
 		$query->execute();
 		$result = $query->get_result();
-		if ($result->num_rows != 0) {
+		if ($result->num_rows > 0) {
 			$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], $row['created'], $row['last_access'], $row['email']);
-			return $customer;
 		}
+		return $customer;
 	}
 
 	public function getCustomers(){
