@@ -107,7 +107,7 @@ i {
 /* Project Section */
 #projects {
     display: flex;
-    justify-content: space-evenæy;
+    justify-content: space-around;
     align-content:space-around;
     align-items: stretch;
 }
@@ -139,6 +139,15 @@ i {
         overflow-x: hidden;
     }
 
+        #projects > div.project_hirachy > .title {
+            border-bottom: 1px solid #999;
+            height: 30px;
+            padding-top: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+            background-color: #cdcdcd;
+        }
+
     #projects > div.project_data {
         margin: 10px;
         flex-basis: 300px;
@@ -152,6 +161,15 @@ i {
         color: #000;
         overflow-x: hidden;
     }
+
+        #projects > div.project_data > .title {
+            border-bottom: 1px solid #999;
+            height: 30px;
+            padding-top: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+            background-color: #cdcdcd;
+        }
 
     #projects > .project_list > .content > .project {
         padding: 10px;
