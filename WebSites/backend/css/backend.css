@@ -106,7 +106,7 @@ i {
 /* Project Section */
 #projects > div.project_list {
     margin: 10px 0px 0px 10px;
-    width: 20%;
+    width: 12%;
     min-width: 300px;
     height: auto;
     border-radius: 9px;
@@ -162,8 +162,21 @@ i {
 
 #projects > div.project_hirachy {
     margin: 10px 0px 0px 10px;
-    width: 70%;
+    width: 76%;
     min-width: 400px;
+    height: auto;
+    border-radius: 9px;
+    border: 1px solid #999;
+    background-color: #eee;
+    color: #000;
+    overflow-x: hidden;
+    float: left;
+}
+
+#projects > div.project_data {
+    margin: 10px 0px 0px 10px;
+    width: 12%;
+    min-width: 300px;
     height: auto;
     border-radius: 9px;
     border: 1px solid #999;
