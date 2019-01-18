@@ -99,6 +99,10 @@ pre {
     border: 1px solid #ddd;
 }
 
+i {
+    color: #999;
+}
+
 /* Project Section */
 #projects > div.project_list {
     margin: 10px 0px 0px 10px;
@@ -121,7 +125,6 @@ pre {
 
 #projects > .project_list > .content > .project > i {
     margin-right: 15px;
-    color: #999;
 }
 
 #projects > .project_list > .content > .project:hover {
