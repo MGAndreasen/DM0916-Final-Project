@@ -1,8 +1,6 @@
 <?php
 // Includes
 require_once('../classes/modelLayer/project.php');
-require_once('../classes/modelLayer/modelStructure.php');
-
 
 class ProjectDB
 {
@@ -138,6 +136,7 @@ class ProjectDB
 		}
 	}
 
+	/*
 	public function getModelToBuild($parent_id) {
 		global $conn;
 		$resultArr = [];
@@ -165,5 +164,6 @@ class ProjectDB
 			else { errorMsg('projectDB','getProject','couldnt find any project with that ID'); }
 		return $resultArr;
 	}
+	*/
 }
 ?>
