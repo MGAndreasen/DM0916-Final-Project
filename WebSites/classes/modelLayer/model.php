@@ -1,13 +1,13 @@
 <?php
 class Model implements JsonSerializable {
     private $id;
-	private $image_size;
+	private $imageSize;
 	private $created;
 	private $completed;
 
-	public function __construct(int $id, int $image_size, string $created, string $completed){
+	public function __construct(int $id, int $imageSize, string $created, string $completed){
 		$this->id = $id;
-		$this->image_size = $image_size;
+		$this->imageSize = $imageSize;
 		$this->created = $created;
 		$this->completed = $completed;
 	}
@@ -16,8 +16,12 @@ class Model implements JsonSerializable {
 		return $this->id;
 	}
 
-	public function getImage_size(): int{
-		return $this->image_size;
+	public function getProject(){
+		return $this->project;
+	}
+
+	public function getimageSize(): int{
+		return $this->imageSize;
 	}
 
 	public function getCreated(): string{
@@ -32,8 +36,8 @@ class Model implements JsonSerializable {
 		$this->id = $id;
 	}
 
-	public function setÍmage_size(int $size){
-		$this->image_size = $size;
+	public function setimageSize(int $size){
+		$this->imageSize = $size;
 	}
 
 	public function setCreated($created){
@@ -47,11 +51,10 @@ class Model implements JsonSerializable {
 	public function jsonSerialize(): array{
         return array (
             'id' => $this->id,
-            'imagesize' => $this->image_size,
+            'imagesize' => $this->imageSize,
 			'created' => $this->created,
 			'completed' => $this->completed
         );
     }
 }
-
 ?>
