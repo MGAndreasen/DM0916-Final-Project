@@ -72,7 +72,7 @@ function projects_populateHirachy() {
 
         if (restData['status'] === "OK") {
 
-            notify('Ajax','loaded data')
+            notify('Ajax', 'loaded data');
             /*
             $.each(restData['result']['projects'], function (key, value) {
                 p = "<div class='project' id='project-" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
