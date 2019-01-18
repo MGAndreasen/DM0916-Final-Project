@@ -12,7 +12,7 @@ function projects_Layout() {
         + "<div class='project_list'>"
         + "  <div class='title'>Projects</div>"
         + "  <div class='content'></div>"
-        + "  <div class='bottom'><i class="far fa - plus - circle"></i></div>"
+        + "  <div class='bottom'><i class='far fa - plus - circle'></i>add</div>"
         + "</div>"
         + "<div class='project_hirachy'></div>"
         + "<div class='project_images'></div>";
