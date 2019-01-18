@@ -70,10 +70,9 @@ function testdatasets_dragdrop(e) {
 function uploadFun(file) {
     var reader = new FileReader();
 
-    for (var i = 0; i < files.length; i++) 
-        
+    for (var i = 0; i < files.length; i++) {
 
-    $('#filedock_files').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
+        $('#filedock_files').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
 
     $('#filedock_result').append(reader.readAsDataURL(files[i]));
     }
