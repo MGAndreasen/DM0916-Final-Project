@@ -145,8 +145,8 @@ class ProjectDB
 		$pa = 0;
 
 		$query = $conn->prepare($this->modelStructure_SQL);
-		$query->bind_param('i', $pid);
-		$query->bind_param('i', $pa);
+		$query->bind_param('i', (int)$pid);
+		$query->bind_param('i', (int)$pa);
 		$query->execute();
 		$result = $query->get_result();
 		
