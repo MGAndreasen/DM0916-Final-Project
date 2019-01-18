@@ -77,6 +77,7 @@ class ProjectStructure implements JsonSerializable {
 			'filter_size' => $this->filter_size,
 			'validation_size' => $this->validation_size,
 			'name' => $this->name,
+			'images' => $this->images,
 			'subStructures' => $this->subProjectStructures
         );
     }	
