@@ -39,7 +39,7 @@ class CustomerCtrl {
 			errorMsg('projectDB','getCustomer','couldnt find any customers');
 		}
 		else {
-			$toReturn['customers'] = $this->mDB->getCustomers();
+			$toReturn['result']['customers'] = $this->mDB->getCustomers();
 			array_push($this->data, $toReturn);		
 		}
 	}

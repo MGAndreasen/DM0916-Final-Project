@@ -52,5 +52,14 @@ class ProjectCtrl {
 	public function deleteProject($id) {
 		
 	}
+
+
+	public function getModelToBuild($parent_id) {
+		$result = $this->mDB->getModelToBuild($parent_id);
+
+		if(!empty($result))	{
+			$this->data['result']['modelstructure'] = $result;
+		}
+	}
 }
 ?>

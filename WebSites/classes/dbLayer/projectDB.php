@@ -10,6 +10,8 @@ class ProjectDB
 	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, image_size=:image_size, enabled=:enabled FROM project WHERE id = :id';
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
+
+	private $modelstructure_SQL	= 'SELECT * FROM project_structure WHERE parent_id = ?';
 	 
 	// Constructor
 	public function __construct() {
@@ -132,6 +134,25 @@ class ProjectDB
 		else {
 			return 1; 
 		}
+	}
+
+	public function getModelToBuild($parent_id) {
+		global $conn;
+		$resultArr = [];
+
+		$query = $conn->prepare($this->modelstructure_SQL);
+			$query->bind_param('i', $parent_id);
+			$query->execute();
+			$result = $query->get_result();
+		
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$project = new Project($row['id'], $row['image_size'], $row['customer_id'], $row['enabled'], $row['name']);
+					array_push($resultArr, $project);
+				}
+			}
+			else { errorMsg('projectDB','getProject','couldnt find any project with that ID'); }
+		return $resultArr;
 	}
 }
 ?>
