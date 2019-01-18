@@ -15,11 +15,11 @@ class ModelDB
 	public function __construct() {
 	}
 
-	public function getModel($modelID){
+	public function getModel($modelId){
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getModelSQL);
-		$query->bind_param('i', $modelID);
+		$query->bind_param('i', $modelId);
 		$query->execute();
 		$result = $query->get_result();
 		
@@ -52,7 +52,29 @@ class ModelDB
 		} 
 		else 
 		{
-			array_push($resultArr, 'error: couldnt find any models with that projectID');
+			errorMsg($resultArr, 'error: couldnt find any models with that projectID');
+		}
+		return $resultArr;
+	}
+
+	//$getModelsFromProjectId_SQL
+	public function getModelsFromProjectId($projectId){
+		global $conn;
+		$resultArr = [];
+		$query = $conn->prepare($this->getModelSQL);
+		$query->bind_param('i', $projectId);
+		$query->execute();
+		$result = $query->get_result();
+		
+		if ($result->num_rows > 0) {
+			{
+				$row = $result->fetch_assoc()
+				$model = new Model($row['id'], $row['image_size'], $row['created'], $row['completed']);
+				array_push($resultArr, $model);
+			}
+		} 
+		else {
+			errorMsg($resultArr, 'error: couldnt find any models with that projectID');
 		}
 		return $resultArr;
 	}

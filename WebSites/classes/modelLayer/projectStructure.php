@@ -6,6 +6,7 @@ class ProjectStructure implements JsonSerializable {
 	private $validation_size;
 	private $name;
 	private $subProjectStructures;
+	private $images;
 
 	public function __construct(int $id, string $image_size, string $filter_size, string $validation_size, string $name) {
 		$this->id = $id;
@@ -14,6 +15,7 @@ class ProjectStructure implements JsonSerializable {
 		$this->validation_size = $validation_size;
 		$this->name = $name;
 		$this->subProjectStructures = array();
+		$this->images = array();
 	}
 
 	public function getID(): int{
