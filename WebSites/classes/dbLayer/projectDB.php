@@ -141,8 +141,8 @@ class ProjectDB
 		global $conn;
 		$resultArr = [];
 
-		$pid = '1';
-		$pa ='0';
+		$pid = 1;
+		$pa = 0;
 
 		$query = $conn->prepare($this->modelStructure_SQL);
 		$query->bind_param('i', $pid);
