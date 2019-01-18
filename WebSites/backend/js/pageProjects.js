@@ -29,7 +29,7 @@ function projects_createLayout() {
 }
 
 function populate_projectList() {
-    var project_list = $('#projects .project_list > .content');
+    var project_list = $('#projects  .project_list > .content');
 
     // Test load data.
     var customerid = [1];
@@ -46,12 +46,16 @@ function populate_projectList() {
 
 function projects_newProject() {
     return function () {
-        $(this).append('WooooT');
+        var pname = $(this).val();
+        $(this).val('');
+        var html = "<div class='project'><i class='fas fa-project-diagram'></i >" + pname + "</div >";
+        $('#projects .project_list > .content').append(html);
     };
 }
 
 function projects_populateHirachy() {
     return function () {
-        $(this).append('Hirachy');
+        var hirachy = $('#projects .project_hirachy');
+        hirachy.append('load stuff here');
     };
 }
