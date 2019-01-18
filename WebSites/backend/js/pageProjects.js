@@ -13,23 +13,23 @@ function page_projects() {
 
 function projects_createLayout() {
     return ""
-        + "<div class='cols' style='width: 12%;'>"
+        //+ "<div class='cols' style='width: 12%;'>"
         + "  <div class='project_list'>"
         + "    <div class='title'>Projects</div>"
         + "    <div class='content'></div>"
         + "    <div class='new'><i class='fas fa-project-diagram'></i ><input type='text' placeholder='New Project Name'/><i class='fas fa-plus-circle'></i></div>"
         + "  </div>"
-        + "</div>"
-        + "<div class='cols' style='width: 76%;'>"
+        //+ "</div>"
+        //+ "<div class='cols' style='width: 76%;'>"
         + "  <div class='project_hirachy'></div>"
-        + "</div>"
-        + "<div class='cols' style='width: 12%;'>"
+        //+ "</div>"
+        //+ "<div class='cols' style='width: 12%;'>"
         + "  <div class='project_data'></div>"
-        + "</div>";
+        //+ "</div>";
 }
 
 function populate_projectList() {
-    var project_list = $('#projects > .cols > .project_list > .content');
+    var project_list = $('#projects > .project_list > .content');
 
     // Test load data.
     var customerid = [1];
