@@ -16,7 +16,7 @@ function projects_createLayout() {
         + "<div class='project_list'>"
         + "  <div class='title'>Projects</div>"
         + "  <div class='content'></div>"
-        + "  <div class='new'><i class='fas fa - plus - circle'></i></div>"
+        + "  <div class='new'><i class='fas fa-plus-circle'></i></div>"
         + "</div>"
         + "<div class='project_hirachy'></div>"
         + "<div class='project_images'></div>";
@@ -32,7 +32,7 @@ function populate_projectList() {
 
     if (restData['status'] === "OK") {
         $.each(restData['result']['projects'], function (key, value) {
-            p = "<div class='project' id='project-" + value['id'] + "'>" + value['name'] + "</div>";
+            p = "<div class='project' id='project-" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
             project_list.append(p);
         });
     }
