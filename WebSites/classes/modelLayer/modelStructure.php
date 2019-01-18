@@ -10,8 +10,11 @@ class ModelStructure implements JsonSerializable {
 	private $name;
 	private $subProjectStructures;
 
-	public function __construct(int $id, string $image_size, string $filter_size, string $validation_size, string $name) {
+	public function __construct(int $id, $model_id, $project_history_structure_id, $project_history_project_id, int $image_size, int $filter_size, int $validation_size, string $name) {
 		$this->id = $id;
+		$this->model_id = $model_id
+		$this->$project_history_structure_id = $project_history_structure_id
+		$this->project_history_project_id = $project_history_project_id
 		$this->image_size = $image_size;
 		$this->filter_size = $filter_size;
 		$this->validation_size = $validation_size;
@@ -74,6 +77,9 @@ class ModelStructure implements JsonSerializable {
 	public function jsonSerialize(): array{
         return array (
             'id' => $this->id,
+			'model_id' => $this->model_id,
+			'project_history_structure_id' => $this->project_history_structure_id,
+			'project_history_parent_id' => $this->project_history_parent_id,
             'imagesize' => $this->image_size,
 			'filter_size' => $this->filter_size,
 			'validation_size' => $this->validation_size,

@@ -1,6 +1,8 @@
 <?php
 // Includes
 require_once('../classes/modelLayer/project.php');
+require_once('../classes/modelLayer/modelStructure.php');
+
 
 class ProjectDB
 {
@@ -140,15 +142,24 @@ class ProjectDB
 		global $conn;
 		$resultArr = [];
 
-		$query = $conn->prepare($this->modelstructure_SQL);
+			$query = $conn->prepare($this->modelstructure_SQL);
 			$query->bind_param('i', $parent_id);
 			$query->execute();
 			$result = $query->get_result();
 		
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					$project = new Project($row['id'], $row['image_size'], $row['customer_id'], $row['enabled'], $row['name']);
-					array_push($resultArr, $project);
+					$ModelData = new Array();
+					$ModelData['id'] = $row['id'];
+					$ModelData['model_id'] = 1;
+					$ModelData['project_structure_id'] = $row['id'];
+					$ModelData['project_structur_parent_id'] = $row['parent_id'];
+					$ModelData['image_size'] = $row['image_size'];
+					$ModelData['filer_size'] = $row['filer_size'];
+					$ModelData['validation_size'] = $row['validation_size'];
+					$ModelData['name'] = $row['name'];
+
+					array_push($resultArr, ModelData);
 				}
 			}
 			else { errorMsg('projectDB','getProject','couldnt find any project with that ID'); }
