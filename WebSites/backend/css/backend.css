@@ -112,6 +112,7 @@ i {
     align-items: stretch;
 }
     #projects > div.project_list {
+        margin: 10px;
         flex-basis: 290px;
         flex-shrink: 0;
         box-sizing: border-box;
@@ -168,6 +169,7 @@ i {
         }
 
     #projects > div.project_hirachy {
+        margin: 10px;
         flex-basis: auto;
         box-sizing: border-box;
         width: 100%;
@@ -180,6 +182,7 @@ i {
     }
 
     #projects > div.project_data {
+        margin: 10px;
         flex-basis: 290px;
         flex-shrink: 0;
         box-sizing: border-box;
