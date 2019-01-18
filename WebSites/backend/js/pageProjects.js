@@ -63,11 +63,12 @@ function projects_newProject() {
 
 function projects_populateHirachy() {
     return function () {
+        var id = $(this).attr('id').replace('project_','');
         var project_data = $('#projects  .project_data > .content');
         var project_hirachy = $('#projects  .project_hirachy > .content');
  
 
-        var projectid = [1];
+        var projectid = [id];
         var restData = myPost('project', 'getProject', projectid);
 
         if (restData['status'] === "OK") {
