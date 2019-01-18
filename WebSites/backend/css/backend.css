@@ -111,7 +111,8 @@ i {
     align-items: stretch;
 }
     #projects > div.project_list {
-        flex-basis: 290px | auto;
+        flex-basis: 290px;
+        flex-shrink: 0;
         box-sizing: border-box;
         width: 100%;
         height: auto;
@@ -122,13 +123,7 @@ i {
         overflow-x: hidden;
     }
 
-#projects > .cols {
-    float: left;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-    #projects > .project_list > .content > .project {
+#projects > .project_list > .content > .project {
         padding: 10px;
         font-size: 1em;
         font-weight: 600;
@@ -172,7 +167,7 @@ i {
         }
 
     #projects > div.project_hirachy {
-        flex-basis: 300px | auto;
+        flex-basis: auto;
         box-sizing: border-box;
         width: 100%;
         height: auto;
@@ -184,7 +179,8 @@ i {
     }
 
     #projects > div.project_data {
-        flex-basis: 290px | auto;
+        flex-basis: 290px;
+        flex-shrink: 0;
         box-sizing: border-box;
         width: 100%;
         height: auto;
