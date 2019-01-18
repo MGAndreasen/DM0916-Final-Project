@@ -146,9 +146,18 @@ i {
 }
 
 #projects > .project_list > .new {
-    height: 30px;
-    padding-top: 5px;
+    padding: 10px;
+}
+
+#projects > .project_list > .new > i {
+    margin-left: 10px;
+}
+
+#project > .project_list > .new > input {
+    padding: 4px;
     font-size: 16px;
+    border-radius: 9px;
+    border: 1px solid #999;
 }
 
 
