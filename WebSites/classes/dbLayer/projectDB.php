@@ -45,14 +45,11 @@ class ProjectDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['image_size'], $row['customer_Id'], $row['enabled'], $row['name']);
+				$project = new Project($row['id'], $row['image_size'], $row['customer_id'], $row['enabled'], $row['name']);
 				array_push($resultArr, $project);
 			}
 		}
-		else 
-		{
-			errorMsg('projectDB','getProjects','error: couldnt find any projects with that customerID');
-		}
+		else { errorMsg('projectDB','getProjects','error: couldnt find any projects with that customerID'); }
 		return $resultArr;
 	}
 
