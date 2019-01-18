@@ -54,8 +54,8 @@ class ProjectCtrl {
 	}
 
 
-	public function getModelToBuild($parent_id) {
-		$result = $this->mDB->getModelToBuild($parent_id);
+	public function getModelToBuild($project_id, $parent_id) {
+		$result = $this->mDB->getModelToBuild($project_id, $parent_id);
 
 		if(!empty($result))	{
 			$this->data['result']['modelstructure'] = $result;
