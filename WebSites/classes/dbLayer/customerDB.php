@@ -23,8 +23,9 @@ class CustomerDB
 		$result = $query->get_result();
 		if ($result->num_rows > 0) {
 			$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], $row['created'], $row['last_access'], $row['email']);
+			array_push($resultArr, $customer);
 		}
-		return $customer;
+		return resultArr;
 	}
 
 	public function getCustomers(){
