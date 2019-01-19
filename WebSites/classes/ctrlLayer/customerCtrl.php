@@ -36,7 +36,7 @@ class CustomerCtrl {
 	}
 
 	public function getCustomers() {
-		$result = $this->mDB->getCustomer($id);
+		$result = $this->mDB->getCustomers();
 
 	    if (!empty($result)) {
 			$this->data['result']['customers'] = $result;
