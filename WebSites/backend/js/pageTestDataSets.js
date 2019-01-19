@@ -81,10 +81,3 @@ function uploadFun(files) {
         reader.readAsDataURL(files[i]);
     }
 }
-
-function filesChosen(evt) {
-    var chosenFile = evt.target.files[0]; //get the first file in the FileList
-    var fileName = chosenFile.name; //the name of the file as a string
-    var fileSize = chosenFile.size; //the size of the file in bytes, as an integer
-    var fileModifiedDate = chosenFile.lastModifiedDate; //a Date object
-}
