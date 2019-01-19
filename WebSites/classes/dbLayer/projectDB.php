@@ -125,7 +125,7 @@ class ProjectDB
 		$result = $query->get_result();
 
 		if ($result->num_rows > 0) {
-			 $resultArr = $this->getProject($id)
+			 $resultArr = $this->getProject($id);
 		}
 
 		return $resultArr;
