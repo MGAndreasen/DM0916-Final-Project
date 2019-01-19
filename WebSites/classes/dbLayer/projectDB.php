@@ -104,6 +104,30 @@ class ProjectDB
 		return $resultArr;
 	}
 
+	public function createProject($project){
+		$imageSize	= $project->getImageSize();
+		$customerId	= $project->getCustomerID();
+		$enabled	= $project->getEnabled();
+		$name		= $project->getName();
+		
+		global $conn;
+		$conn->autocommit(false);
+		$query = $conn->prepare($this->$createProject_SQL);
+		$query->bind_param('iiis', $imageSize, $customerId, $enabled, $name);
+		$query->execute();
+		$result = $conn->insert_id;
+
+		$conn->commit();
+		$conn->autocommit(true);
+
+		if ($result > 0) {
+			return $result;
+		}
+
+		return null;
+		
+	}
+
 	public function updateProject($project){
 		global $conn;
 		$query = $conn->prepare($this->$updateProject_SQL);
