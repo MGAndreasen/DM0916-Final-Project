@@ -41,20 +41,9 @@ class CustomerCtrl {
 		}
 	}
 
-	public function createCustomer($email, $passwd) {
+	public function createCustomer($email, $passwd)	{
 		if(!empty($email) && !empty($passwd)) {
 			if(strpos($email, '@')) { // fix bedre tjek
-
-			}
-			else {
-
-				/* Test div algos
-				foreach (hash_algos() as $v)
-				{ 
-					$r = hash($v, $testdata, false); 
-			        printf("<p>%-12s %3d %s</p>\n", $v, strlen($r), $r); 
-				}
-				*/
 
 				// ikke færdig imp
 				$hash_type = "whirlpool";
@@ -63,7 +52,7 @@ class CustomerCtrl {
 				$randomString = createRandomString(128,"0123456789SomOmJegOrkerAtFindePaaFlereEndDisseABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".$email); // CHAR(128)  createRandomString(length,"POOLofCHaRsWeCANMixFrom")
 
 				$salt = hash($salt_type, $randomString, false); // CHAR(128) hash af CHAR(128) randomString inkl. af brugers originale email ved oprettelse
-				$hash = hash($hash_type, $salt.$passwd.$site_salt);  // CHAR(128) af vores unique generede $salt forhaabentlig + brugers indtastet password + den globale salt for hele sitet.
+				$hash = hash($hash_type, $salt.$passwd.$site_salt,false);  // CHAR(128) af vores unique generede $salt forhaabentlig + brugers indtastet password + den globale salt for hele sitet.
 
 				// Senere til at loggeind igen:
 				// 1) find email i db, og retuner salt samt hash
@@ -72,22 +61,26 @@ class CustomerCtrl {
 
 				$newCustomerId = $this->mDB->createCustomer($email, $hash, $salt);
 
-				if (!empty($result)) {
+				if (!empty($result))
+				{
 					// Lets try and fetch
 					getCustomer($newCustomerId);
 				}
-				else {
+				else
+				{
 					errorMsg('CustomerCtrl','createCustomer()','returned no result');
 				}
+
 			}
-			else {
+			else
+			{
 				errorMsg('CustomerCtrl','createCustomer()','Invalid email');
 			}
 		}
-		else {
+		else
+		{
 			errorMsg('CustomerCtrl','createCustomer()','Missing email or password');
 		}
-
 	}
 
 	public function updateCustomerEmail($id, $email, $passwd) {
