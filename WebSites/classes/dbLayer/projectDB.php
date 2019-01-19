@@ -9,7 +9,7 @@ class ProjectDB
 	private $getProject_SQL		= 'SELECT * FROM project WHERE id = ?';
 	private $getProjects_SQL	= 'SELECT * FROM project WHERE customer_id = ?';
 	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, image_size=:image_size, enabled=:enabled FROM project WHERE id = :id';
-	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
+	private $createProject_SQL	= 'INSERT INTO project VALUE(null, ?, ?, ?, ?)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
 	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
