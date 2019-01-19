@@ -124,10 +124,7 @@ class ProjectDB
 		$query->execute();
 		//$result = $query->get_result();
 
-		//$conn->affected_rows
-		//$query->affected_rows
-
-		if ($query->num_rows > 0) {
+		if ($query->affected_rows > 0) {
 			errorMsg('fdfdsfs');
 			 $resultArr = $this->getProject($id);
 		}
