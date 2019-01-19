@@ -49,7 +49,7 @@ class CustomerCtrl {
 
 				$checkExists = $this->mDB->getCustomerFromEmail($email);
 				
-				if(!empty($checkExists)) { // findes ikke
+				if(empty($checkExists)) { // findes ikke
 					// ikke færdig imp
 					$hash_type = "whirlpool";
 					$salt_type = "sha512";								// anden algo
