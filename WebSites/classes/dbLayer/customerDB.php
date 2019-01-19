@@ -6,7 +6,7 @@ class CustomerDB
 {
 	private $getCustomer_SQL				= 'SELECT * FROM customer WHERE id = ?';
 	private $getCustomers_SQL				= 'SELECT * FROM customer';
-	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(null, 1, ?, ?, now(), now(), ?)';
+	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(null, null, ?, ?, now(), now(), ?)';
 	private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = ?';
 
 	public function __construct()
@@ -59,10 +59,10 @@ class CustomerDB
 		$conn->autocommit(false);
 
 		$query = $conn->prepare($this->createCustomer_SQL);
-		$query->bind_param('sss', $email, $hash, $salt);
+		$query->bind_param('sss', $hash, $salt, $email);
 		$query->execute();
 		//$result = $query->get_result();
-		$result = $db->insert_id;
+		$result = $conn->insert_id;
 
 		$conn->commit();
 		$conn->autocommit(true);
