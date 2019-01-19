@@ -35,7 +35,7 @@ class CustomerCtrl {
 		*/
 	}
 
-	public function getCustomers($fake) {
+	public function getCustomers() {
 		$result = $this->mDB->getCustomers();
 
 	    if (!empty($result)) {

@@ -14,7 +14,7 @@ function customers_Layout() {
 
 function customer_populate_customerList() {
     var section = $('#customers');
-    var parms = [0];
+    var parms = [];
     var restData = myPost('customer', 'getCustomers', parms);
 
     if (restData['status'] === "OK") {
