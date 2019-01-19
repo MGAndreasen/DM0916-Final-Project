@@ -11,10 +11,10 @@ function page_testdatasets() {
     var filedock = $('filedock');
     filedock.off(); // remove eventhandlers
 
-    filedock.on('dragover', testdatasets_dragover());
-    filedock.on('dragenter', testdatasets_dragenter());
-    filedock.on('dragleave', testdatasets_dragleave());
-    filedock.on('drop', testdatasets_dragdrop());
+    filedock.on('dragover', testdatasets_dragover(e));
+    filedock.on('dragenter', testdatasets_dragenter(e));
+    filedock.on('dragleave', testdatasets_dragleave(e));
+    filedock.on('drop', testdatasets_dragdrop(e));
 }
 
 function testdatasets_createLayout() {
@@ -25,7 +25,7 @@ function testdatasets_createLayout() {
         + "<div id='file-result'></div >";
 }
 
-function testdatasets_dragover() {
+function testdatasets_dragover(e) {
     return function (e) {
         $(this).attr('class', 'filedock_hover');
         e.preventDefault();
@@ -34,7 +34,7 @@ function testdatasets_dragover() {
 }
 
 
-function testdatasets_dragenter() {
+function testdatasets_dragenter(e) {
     return function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -42,14 +42,14 @@ function testdatasets_dragenter() {
 }
 
 
-function testdatasets_dragleave() {
+function testdatasets_dragleave(e) {
     return function (e) {
         $(this).attr('class', 'filedock');
     };
 }
 
 
-function testdatasets_dragdrop() {
+function testdatasets_dragdrop(e) {
     return function (e) {
         if (e.originalEvent.dataTransfer) {
 
