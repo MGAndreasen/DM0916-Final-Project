@@ -14,23 +14,24 @@ class CustomerDB
 	{
 	}
 
-	/*
-	public function getCustomer($customerID) {
+	public function getCustomer($customer_id) {
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->$getCustomer_SQL);
-		$query->bind_param('i', $customerID);
+
+		$query = $conn->prepare($this->getCustomer_SQL);
+		$query->bind_param('i', $customer_id);
 		$query->execute();
+
 		$result = $query->get_result();
+
 		if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc();
 			$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], $row['created'], $row['last_access'], $row['email']);
 			array_push($resultArr, $customer);
 		}
-		else { errorMsg('customerDB','getCustomer','couldnt find any customer with that ID'); }
+		else { errorMsg('CustomerDB','getCustomer()','did not find any customer with that ID'); }
 		return resultArr;
 	}
-	*/
 
 	public function getCustomers() {
 		global $conn;
@@ -38,6 +39,7 @@ class CustomerDB
 
 		$query = $conn->prepare($this->getCustomers_SQL);
 		$query->execute();
+
 		$result = $query->get_result();
 		
 		if ($result->num_rows > 0) {
@@ -47,7 +49,7 @@ class CustomerDB
 				}
 		}
 		else {
-			errorMsg('CustomerDB','getCustomer() no customers found!');
+			errorMsg('CustomerDB','getCustomers()', 'no customers found!');
 		}
 
 		return $resultArr;
