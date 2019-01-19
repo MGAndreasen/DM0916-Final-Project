@@ -8,7 +8,7 @@ class Customer implements JsonSerializable {
 	private $lastAccess;
 	private $email;
 
-	public function __contruct(int $id, boolean $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email) {
+	public function __contruct($id, $enabled, $hash, $salt, $created, $lastAccess, $email) {
 		$this->id = $id;
 		$this->enabled = $enabled;
 		$this->hash = $hash;
@@ -16,10 +16,9 @@ class Customer implements JsonSerializable {
 		$this->created = $created;
 		$this->lastAccess = $lastAccess;
 		$this->email = $email;
-		errorMsg('DB',$row['id'].' - '.$row['email']);
 	}
 
-	public function getId() :int{
+	public function getId() {
 		return $this->id;
 	}
 
@@ -43,7 +42,7 @@ class Customer implements JsonSerializable {
 		return $this->lastAccess;
 	}
 
-	public function getEmail() :string{
+	public function getEmail() {
 		return $this->email;
 	}
 
@@ -59,7 +58,7 @@ class Customer implements JsonSerializable {
 		$this->salt = $salt;
 	}
 
-	public function setEmail(string $email){
+	public function setEmail($email){
 		$this->email = $email;
 	}
 
