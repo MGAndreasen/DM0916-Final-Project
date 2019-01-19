@@ -123,7 +123,7 @@ class ProjectDB
 
 	public function updateProject(int $id, int $image_size, int $customer_id, int $enabled, string $name){
 		global $conn;
-		$resultArr[];
+		$resultArr = [];
 		$query = $conn->prepare($this->updateProject_SQL);
 		$query->bind_param('iiisi', $image_size, $customer_id, $enabled, $name, $id);
 		$query->execute();
