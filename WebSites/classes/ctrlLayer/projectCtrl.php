@@ -55,15 +55,18 @@ class ProjectCtrl {
 	public function updateProject($id, int $image_size, int $customer_id, int $enabled, string $name) {
 		if ($id > 0) {
 			if (!empty($this->mDB->getProject($id))) {
-				$this->mDB->updateProject($id, $image_size, $customer_id, $enabled, $name);
+
+				// check
+				$check = $this->mDB->updateProject($id, $image_size, $customer_id, $enabled, $name);
+
 				$this->data['result']['projects'] = $this->mDB->getProject($id);
 			}
 			else {
-				errorMsg('ProjectCtrl','createProject()','Project with ' + $id + ' was not found');
+				errorMsg('ProjectCtrl','updateProject()','Project with ' + $id + ' was not found');
 			}
 		}
 		else {
-			errorMsg('ProjectCtrl','createProject()','Invaled id');
+			errorMsg('ProjectCtrl','updateProject()','Invalid id');
 		}
 	}
 
