@@ -68,13 +68,12 @@ function testdatasets_dragdrop() {
 }
 
 function uploadFun(files) {
-    var reader = new FileReader();
-
+    
     for (var i = 0; i < files.length; i++) {
         console.log(i+' - '+files[i].name);
         $('#filedock_files').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
-
-    $('#filedock_result').append(reader.readAsDataURL(files[i]));
+        var reader = new FileReader();
+        $('#filedock_result').append(reader.readAsDataURL(files[i]));
     }
 }
 
