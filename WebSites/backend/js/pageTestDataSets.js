@@ -74,11 +74,10 @@ function uploadFun(files) {
         $('#filedock_file').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
 
         reader.onloadend = function () {
-            //var data = reader.result;
-            $('#file-result').append('<p>' + data + '</p>');
-            console.log(reader.result); //this is an ArrayBuffer
+            $('#file-result').append('<p>' + reader.result + '</p>');
+            //console.log(reader.result); //this is an ArrayBuffer
         };
-        //reader.readAsDataURL();
+        reader.readAsDataURL(files[i]);
     }
 }
 
