@@ -19,7 +19,7 @@ function page_customers() {
     section.html("<p>Customers</p>");
 
     // Test load data.
-    var customerid = [1];
+    var customerid = 1;
     var restData = myPost('customer', 'getCustomer', customerid);
 
     if (restData['status'] === "OK") {
