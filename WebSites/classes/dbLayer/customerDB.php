@@ -62,7 +62,7 @@ class CustomerDB
 		$query->bind_param('sss', $hash, $salt, $email);
 		$query->execute();
 		//$result = $query->get_result();
-		errorMsg('dsad','dasda', $conn->insert_id. ' - '.$conn->insert_id())
+		errorMsg('dsad','dasda', $conn->insert_id. ' - '.$conn->insert_id());
 		$result = $conn->lastInsertId();
 
 		$conn->commit();
