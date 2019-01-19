@@ -26,13 +26,16 @@ class CustomerCtrl {
 	}
 
 	public function getCustomer($id)	{
+		errorMsg('CustomerCtrl','function not implemented!');
+	/*
 		$result = $this->mDB->getCustomer($id);
 	    if (!empty($result)) {
 			$this->data['result']['customers'] = $result;
 		}
+		*/
 	}
 
-	public function getCustomers($customerID) {
+	public function getCustomers() {
 		$toReturn = array();
 		
 		if (sizeof($toReturn) < 1) {
@@ -44,7 +47,9 @@ class CustomerCtrl {
 		}
 	}
 
-	public function createCustomer($email) {
+	public function createCustomer($email, $passwd) {
+		errorMsg('CustomerCtrl','function not implemented!');
+	/*
 		
 		if ((empty($email) || strpos($email, '@')) !== TRUE){
 			errorMsg('projectDB','createCustomer','email was not valid');
@@ -68,9 +73,12 @@ class CustomerCtrl {
 
 			array_push($this->data, $toReturn);
 		}
+		*/
 	}
 
-	public function updateCustomerEmail($id, $email) {
+	public function updateCustomerEmail($id, $email, passwd) {
+		errorMsg('CustomerCtrl','function not implemented!');
+	/*
 		if (empty($email) || strpos($email, '@') !== TRUE) {
 			errorMsg('projectDB','createCustomer','email was not valid');
 		}
@@ -80,12 +88,16 @@ class CustomerCtrl {
 			$customer->setEmail($email);
 			$this->mDB->updateCustomer($customer);
 		}
+		*/
 	}
 
 
 	public function removeCustomer($id) {
+		errorMsg('CustomerCtrl','function not implemented!');
+		/*
 		$toReturn = array();
 		$this->mDB->removeCustomer($customer);
+		*/
 	}
 }
 ?>
