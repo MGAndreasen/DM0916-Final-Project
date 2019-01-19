@@ -115,6 +115,7 @@ class ProjectDB
 		$conn->commit();
 		$conn->autocommit(true);
 
+		// Check flyttes til Ctrl
 		if ($result > 0) {
 			return $result;
 		}
