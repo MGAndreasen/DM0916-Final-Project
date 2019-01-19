@@ -48,7 +48,8 @@ class CustomerDB
 			$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], $row['created'], $row['last_access'], $row['email']);
 			array_push($resultArr, $customer);
 		}
-		else { errorMsg('CustomerDB','getCustomerFromEmail()','did not find any customer with that Email'); }
+		//else { errorMsg('CustomerDB','getCustomerFromEmail()','did not find any customer with that Email'); }
+		// Lad os melde dette fra CTRL i stedet!
 		return $resultArr;
 	}
 
