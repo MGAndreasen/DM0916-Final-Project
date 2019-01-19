@@ -11,10 +11,10 @@ function page_testdatasets() {
     var filedock = $('filedock');
     filedock.off(); // remove eventhandlers
 
-    filedock.on('dragover', testdatasets_dragover(e));
-    filedock.on('dragenter', testdatasets_dragenter(e));
-    filedock.on('dragleave', testdatasets_dragleave(e));
-    filedock.on('drop', testdatasets_dragdrop(e));
+    filedock.on('dragover', testdatasets_dragover());
+    filedock.on('dragenter', testdatasets_dragenter());
+    filedock.on('dragleave', testdatasets_dragleave());
+    filedock.on('drop', testdatasets_dragdrop());
 }
 
 function testdatasets_createLayout() {
@@ -25,31 +25,34 @@ function testdatasets_createLayout() {
         + "<div id='file-result'></div >";
 }
 
-function testdatasets_dragover(e) {
+function testdatasets_dragover() {
     return function (e) {
-        $(this).attr('class', 'filedock_hover');
+        alert(e);
+        $(this).addClass('filedock_hover').removeClass('filedock');
         e.preventDefault();
         e.stopPropagation();
     };
 }
 
 
-function testdatasets_dragenter(e) {
+function testdatasets_dragenter() {
     return function (e) {
+        alert(e);
         e.preventDefault();
         e.stopPropagation();
     };
 }
 
 
-function testdatasets_dragleave(e) {
+function testdatasets_dragleave() {
     return function (e) {
-        $(this).attr('class', 'filedock');
+        alert(e);
+        $(this).removeClass('filedock_hover').addClass('filedock');
     };
 }
 
 
-function testdatasets_dragdrop(e) {
+function testdatasets_dragdrop() {
     return function (e) {
         if (e.originalEvent.dataTransfer) {
 
