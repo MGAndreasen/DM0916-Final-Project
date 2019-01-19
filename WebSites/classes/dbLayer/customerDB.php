@@ -30,7 +30,7 @@ class CustomerDB
 			array_push($resultArr, $customer);
 		}
 		else { errorMsg('CustomerDB','getCustomer()','did not find any customer with that ID'); }
-		return resultArr;
+		return $resultArr;
 	}
 
 	public function getCustomers() {
