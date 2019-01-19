@@ -61,9 +61,8 @@ class CustomerCtrl {
 
 				$newCustomerId = $this->mDB->createCustomer($email, $hash, $salt);
 
-				if (!empty($result))
+				if (!empty($newCustomerId))
 				{
-					errorMsg($result);
 					// Lets try and fetch
 					getCustomer($newCustomerId);
 				}

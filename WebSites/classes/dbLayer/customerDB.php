@@ -62,10 +62,10 @@ class CustomerDB
 		$query->bind_param('sss', $hash, $salt, $email);
 		$query->execute();
 		$result = $query->get_result();
-		$id = mysqli_insert_id($conn); 
-		$idd = @$query->insert_id;
-		$iddd = @$conn->insert_id;
-		errorMsg($id,$idd,$iddd);
+		//$id = mysqli_insert_id($conn); 
+		//$idd = @$query->insert_id;
+		$id = $conn->insert_id;
+		//errorMsg($id,$idd,$iddd);
 		$conn->commit();
 
 //		if ($id > 0) {
