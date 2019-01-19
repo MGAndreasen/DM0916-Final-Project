@@ -58,7 +58,7 @@ class CustomerDB
 		global $conn;
 		$conn->autocommit(false);
 
-		$query = $conn->prepare($this->$createCustomer_SQL);
+		$query = $conn->prepare($this->createCustomer_SQL);
 		$query->bind_param('sss', $email, $hash, $salt);
 		$query->execute();
 		//$result = $query->get_result();

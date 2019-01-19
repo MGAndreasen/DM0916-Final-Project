@@ -60,10 +60,9 @@ class CustomerCtrl {
 				// 3) sammenlign resultatet med hash_fra_db, er de ens har man tastet korrekt password, ellers ikke!
 
 				$newCustomerId = $this->mDB->createCustomer($email, $hash, $salt);
-				errorMsg('hmm','1','1');
+
 				if (!empty($result))
 				{
-					errorMsg('hmm','1','2');
 					// Lets try and fetch
 					getCustomer($newCustomerId);
 				}
