@@ -63,7 +63,7 @@ class CustomerCtrl {
 
 				if ($newCustomerId > 0) {
 					// Lets try and fetch
-					getCustomer($newCustomerId);
+					$this->getCustomer($newCustomerId);
 				}
 				else
 				{
