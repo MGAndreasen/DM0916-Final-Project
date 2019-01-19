@@ -110,7 +110,7 @@ class ProjectDB
 		$enabled	= $project->getEnabled();
 		$name		= $project->getName();
 	*/
-	public function createProject($imageSize, $customerId, $enabled, $name)
+	public function createProject($imageSize, $customerId, $enabled, $name) {
 		global $conn;
 		$conn->autocommit(false);
 		$query = $conn->prepare($this->$createProject_SQL);
