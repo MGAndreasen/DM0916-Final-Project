@@ -114,12 +114,7 @@ class ProjectDB
 
 		$conn->commit();
 		$conn->autocommit(true);
-
-		// Check flyttes til Ctrl
-		if ($result > 0) {
-			return $result;
-		}
-		return null;
+		return $result;
 	}
 
 	public function updateProject(int $id, int $image_size, int $customer_id, int $enabled, string $name){
