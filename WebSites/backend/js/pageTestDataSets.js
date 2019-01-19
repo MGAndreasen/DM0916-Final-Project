@@ -11,13 +11,13 @@ function page_testdatasets() {
 
     section.off(); // remove eventhandlers
 
-    section.on('dragover', '.filedock', testdatasets_dragover(e));
-    section.on('dragenter', '.filedock',testdatasets_dragenter(e));
-    section.on('dragleave', '.filedock',testdatasets_dragleave(e));
-    section.on('drop', '.filedock', testdatasets_dragdrop(e));
+    section.on('dragover', '.filedock', testdatasets_dragover());
+    section.on('dragenter', '.filedock',testdatasets_dragenter());
+    section.on('dragleave', '.filedock',testdatasets_dragleave());
+    section.on('drop', '.filedock', testdatasets_dragdrop());
 }
 
-function testdatasets_createLayout(e) {
+function testdatasets_createLayout() {
     return ""
         + "<p>data</p></br>"
         + "<div id='filedock' class='filedock'>Drop filer her</div>"
@@ -25,7 +25,7 @@ function testdatasets_createLayout(e) {
         + "<div id='file-result'></div >";
 }
 
-function testdatasets_dragover(e) {
+function testdatasets_dragover() {
     return function (e) {
         notify('drag','over');
         $(this).addClass('filedock_hover');
@@ -35,7 +35,7 @@ function testdatasets_dragover(e) {
 }
 
 
-function testdatasets_dragenter(e) {
+function testdatasets_dragenter() {
     return function (e) {
         notify('drag', 'enter');
         e.preventDefault();
@@ -44,7 +44,7 @@ function testdatasets_dragenter(e) {
 }
 
 
-function testdatasets_dragleave(e) {
+function testdatasets_dragleave() {
     return function (e) {
         notify('drag', 'leave');
         $(this).removeClass('filedock_hover');
@@ -52,7 +52,7 @@ function testdatasets_dragleave(e) {
 }
 
 
-function testdatasets_dragdrop(e) {
+function testdatasets_dragdrop() {
     return function (e) {
         if (e.originalEvent.dataTransfer) {
 
