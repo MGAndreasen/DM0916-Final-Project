@@ -12,8 +12,8 @@ class Customer {
 		$this->id = $id;
 		$this->enabled = $enabled;
 		$this->hash = $hash;
-		$this->salt = salt;
-		$this->created = created;
+		$this->salt = $salt;
+		$this->created = $created;
 		$this->lastAccess = $lastAccess;
 		$this->email = $email;
 	}
@@ -44,10 +44,6 @@ class Customer {
 
 	public function getEmail() :string{
 		return $this->email;
-	}
-
-	public function setId(int $id){
-		$this->id = $id;
 	}
 
 	public function setEnabled($enabled) {
