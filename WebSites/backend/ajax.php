@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					$theCtrl = $theClass::getInstance();
 
 					foreach (get_class_methods($theCtrl) as $method) {
-					    if (strtolower($method) != $strtolower($func)) {
+					    if (strtolower($method) != strtolower($func)) {
 							continue;
 					    }
 						else {
