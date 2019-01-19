@@ -1,7 +1,7 @@
 <?php
 // Includes
-require_once('../classes/dbLayer/customerDB.php');
 require_once('../classes/modelLayer/customer.php');
+require_once('../classes/dbLayer/customerDB.php');
 
 class CustomerCtrl {
     private static $instance;
@@ -40,7 +40,7 @@ class CustomerCtrl {
 		}
 		else {
 			$toReturn['result']['customers'] = $this->mDB->getCustomers();
-			array_push($this->data, $toReturn);		
+			array_push($this->data, $toReturn);
 		}
 	}
 
