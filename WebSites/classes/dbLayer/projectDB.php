@@ -8,7 +8,7 @@ class ProjectDB
 	// SQL Querys
 	private $getProject_SQL		= 'SELECT * FROM project WHERE id = ?';
 	private $getProjects_SQL	= 'SELECT * FROM project WHERE customer_id = ?';
-	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, image_size=:image_size, enabled=:enabled FROM project WHERE id = :id';
+	private $updateProject_SQL	= 'UPDATE SET ?, ?, ?, ? FROM project WHERE id = ?';
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, ?, ?, ?, ?)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
@@ -121,23 +121,20 @@ class ProjectDB
 		return null;
 	}
 
-	public function updateProject($project){
+	public function updateProject(int $id, int $image_size, int $customer_id, int $enabled, string $name){
 		global $conn;
 		$query = $conn->prepare($this->$updateProject_SQL);
-		$query->bind_param(':customer_id', $project->getCustomerID());
-		$query->bind_param(':enabled', $project->getEnabled());
-		$query->bind_param(':name', $project->getName());
-
+		$query->bind_param('iiisi' '$image_size, $customer_id, $enabled, $name, $id');
 		$query->execute();
 		$result = $query->get_result();
 
-		//Not quite sure on this one for handling error msges.
 		if ($result == FALSE) {
-			return 'error: couldnt execute ' + $updateProject_SQL + ' on id ' + $id;
+			errorMsg('error: couldnt execute ' + $updateProject_SQL + ' on id ' + $id);
+			return null;
 		}
-		else {
-			return 1; 
-		}
+		elseif ($result > 0){
+			return $result;
+		}	
 	}
 
 	public function removeProject($id){
