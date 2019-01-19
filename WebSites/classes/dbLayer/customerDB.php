@@ -42,7 +42,7 @@ class CustomerDB
 		
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
-					$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], 'ds', 'fd', $row['email']);
+					$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], $row['created'], $row['last_access'], $row['email']);
 					array_push($resultArr, $customer);
 				}
 		}
