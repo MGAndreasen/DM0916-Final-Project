@@ -122,7 +122,6 @@ class ProjectDB
 		$query = $conn->prepare($this->updateProject_SQL);
 		$query->bind_param('iiisi', $image_size, $customer_id, $enabled, $name, $id);
 		$query->execute();
-		//$result = $query->get_result();
 
 		if ($query->affected_rows > 0) {
 			errorMsg('fdfdsfs');
