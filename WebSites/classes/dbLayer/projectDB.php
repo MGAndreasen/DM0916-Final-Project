@@ -144,7 +144,7 @@ class ProjectDB
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->removeProject_SQL);
-		$query->bind_param('i', $project->getID());
+		$query->bind_param('i', $id);
 		$query->execute();
 		$result = $query->get_result();
 
