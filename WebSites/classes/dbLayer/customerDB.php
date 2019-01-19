@@ -56,7 +56,7 @@ class CustomerDB
 
 	public function createCustomer($email, $hash, $salt) {
 		global $conn;
-		$conn->autocommit(false);
+		$conn->begin_transaction();
 
 		$query = $conn->prepare($this->createCustomer_SQL);
 		$query->bind_param('sss', $hash, $salt, $email);
@@ -64,10 +64,7 @@ class CustomerDB
 		$result = $query->get_result();
 		$id = $conn->insert_id;
 
-
-
 		$conn->commit();
-		$conn->autocommit(true);
 
 //		if ($id > 0) {
 			return $id;
