@@ -70,7 +70,7 @@ function testdatasets_dragdrop() {
     };
 }
 
-function uploadFun(file) {
+function uploadFun(files) {
     var reader = new FileReader();
 
     for (var i = 0; i < files.length; i++) {
