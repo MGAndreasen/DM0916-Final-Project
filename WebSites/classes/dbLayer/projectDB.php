@@ -113,7 +113,7 @@ class ProjectDB
 	public function createProject($imageSize, $customerId, $enabled, $name) {
 		global $conn;
 		$conn->autocommit(false);
-		$query = $conn->prepare($this->$createProject_SQL);
+		$query = $conn->prepare($this->createProject_SQL);
 		$query->bind_param('iiis', $imageSize, $customerId, $enabled, $name);
 		$query->execute();
 		$result = $conn->insert_id;
