@@ -6,7 +6,7 @@ class CustomerDB
 {
 	private $getCustomer_SQL				= 'SELECT * FROM customer WHERE id = ?';
 	private $getCustomers_SQL				= 'SELECT * FROM customer';
-	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(null, ?, ?, now(), now(), ?)';
+	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(null, 1, ?, ?, now(), now(), ?)';
 	private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = ?';
 
 	public function __construct()
