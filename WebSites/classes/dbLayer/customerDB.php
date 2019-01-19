@@ -6,9 +6,8 @@ class CustomerDB
 {
 	private $getCustomer_SQL				= 'SELECT * FROM customer WHERE id = ?';
 	private $getCustomers_SQL				= 'SELECT * FROM customer';
-	//private $createCustomer_SQL				= 'INSERT INTO customer VALUES(:enabled, :hash, :salt, :created, :last_access, :email)';
-	//private $updateCustomer_SQL				= 'UPDATE customer SET enabled = :enabled, hash = :hash, salt = :salt, created = :created, last_access = :lastAcess, email = :email WHERE id = :id';
-	//private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = :id';
+	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(null, ?, ?, now(), now(), ?)';
+	private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = ?';
 
 	public function __construct()
 	{
@@ -55,52 +54,25 @@ class CustomerDB
 		return $resultArr;
 	}
 
-	/*
-	public function updateCustomer($customer){
+	public function createCustomer($email, $hash, $salt) {
 		global $conn;
-		$query = $conn->prepare($this->$updateCustomer_SQL);
-		$query->bind_param(':id', $customer->getID());
-		$query->bind_param(':enabled', $customer->getEnabled());
-		$query->bind_param(':hash', $customer->getHash());
-		$query->bind_param(':salt', $customer->getSalt());
-		$query->bind_param(':created', $customer->getCreated());
-		$query->bind_param(':last_access', $customer->getLastAccess());
-		$query->bind_param(':email', $customer->getEmail());
-		$query->execute();
-		$result = $query->get_result();
+		$conn->autocommit(false);
 
-		//Not quite sure on this one for handling error msges.
-		if ($result == FALSE) {
-			return 'error: couldnt execute ' + $updateCustomer_SQL + ' on id ' + $id;
-		}
-		else {
-			return 1; 
-		}
-	}
-	*/
-
-	/*
-	public function createCustomer($customer){
-		global $conn;
 		$query = $conn->prepare($this->$createCustomer_SQL);
-		$query->bind_param(':enabled', $customer->getEnabled());
-		$query->bind_param(':hash', $customer->getHash());
-		$query->bind_param(':salt', $customer->getSalt());
-		$query->bind_param(':created', $customer->getCreated());
-		$query->bind_param(':last_access', $customer->getLastAccess());
-		$query->bind_param(':email', $customer->getEmail());
+		$query->bind_param('sss', $email, $hash, $salt);
 		$query->execute();
-		$result = $query->get_result();
-		
-		//Not quite sure on this one for handling error msges.
-		if ($result == FALSE) {
-			return 'error: couldnt execute ' + $createCustomer_SQL + ' on email ' + $customer->getEmail();
+		//$result = $query->get_result();
+		$result = $db->insert_id;
+
+		$conn->commit();
+		$conn->autocommit(true);
+
+		if ($result > 0) {
+			return $result;
 		}
-		else {
-			return 1; 
-		}
+
+		return null;
 	}
-	*/
 
 	/*
 	public function deleteCustomer($customer){
