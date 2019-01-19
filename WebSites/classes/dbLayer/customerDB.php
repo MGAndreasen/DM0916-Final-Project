@@ -61,15 +61,14 @@ class CustomerDB
 		$query = $conn->prepare($this->createCustomer_SQL);
 		$query->bind_param('sss', $hash, $salt, $email);
 		$query->execute();
-		//$result = $query->get_result();
-		//errorMsg('dsad','dasda', $conn->insert_id);
-		$result = $query->insert_id;
+		$result = $query->get_result();
+		$id = $result->insert_id;
 
 		$conn->commit();
 		$conn->autocommit(true);
 
 		if ($result > 0) {
-			return $result;
+			return $id;
 		}
 		return null;
 	}
