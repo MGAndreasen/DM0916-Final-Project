@@ -8,7 +8,7 @@ class Customer {
 	private $lastAccess;
 	private $email;
 
-	public function __contruct(int $id, string $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email) {
+	public function __contruct(int $id, boolean $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email) {
 		$this->id = $id;
 		$this->enabled = $enabled;
 		$this->hash = $hash;
