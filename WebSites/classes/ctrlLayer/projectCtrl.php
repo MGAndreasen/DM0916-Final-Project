@@ -54,7 +54,7 @@ class ProjectCtrl {
 
 	public function updateProject($id, int $image_size, int $customer_id, int $enabled, string $name) {
 		if ($id > 0) {
-			if (!empty($this->mDB->getProject())) {
+			if (!empty($this->mDB->getProject($id))) {
 				$this->mDB->updateProject($id, $image_size, $customer_id, $enabled, $name);
 				$this->mDB->getProject($id);
 			}
