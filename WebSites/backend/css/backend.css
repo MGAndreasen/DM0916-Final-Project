@@ -233,11 +233,5 @@ i {
 }
 
 .filedock_hover {
-    width: 300px;
-    height: 150px;
-    border: 1px solid #999;
     background-color: yellow;
-    color: #999;
-    text-align: center;
-    margin: 0 auto;
 }
