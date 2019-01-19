@@ -27,7 +27,7 @@ function testdatasets_createLayout() {
 
 function testdatasets_dragover() {
     return function (e) {
-        alert(e);
+        notify('drag','over');
         $(this).addClass('filedock_hover').removeClass('filedock');
         e.preventDefault();
         e.stopPropagation();
@@ -37,7 +37,7 @@ function testdatasets_dragover() {
 
 function testdatasets_dragenter() {
     return function (e) {
-        alert(e);
+        notify('drag', 'enter');
         e.preventDefault();
         e.stopPropagation();
     };
@@ -46,7 +46,7 @@ function testdatasets_dragenter() {
 
 function testdatasets_dragleave() {
     return function (e) {
-        alert(e);
+        notify('drag', 'leave');
         $(this).removeClass('filedock_hover').addClass('filedock');
     };
 }
