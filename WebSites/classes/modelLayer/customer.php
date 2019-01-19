@@ -8,7 +8,7 @@ class Customer implements JsonSerializable {
 	private $lastAccess;
 	private $email;
 
-	public function __construct(int $id, boolean $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email) {
+	public function __construct(int $id, int $enabled, string $hash, string $salt, string $created, string $lastAccess, string $email) {
 		$this->id = $id;
 		$this->enabled = $enabled;
 		$this->hash = $hash;
