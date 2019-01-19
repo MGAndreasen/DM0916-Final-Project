@@ -58,7 +58,7 @@ class Customer implements JsonSerializable {
 		$this->salt = $salt;
 	}
 
-	public function setEmail($email){
+	public function setEmail($email) {
 		$this->email = $email;
 	}
 
