@@ -47,10 +47,9 @@ class ProjectDB
 		$result = $query->get_result();
 		
 		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$project = new Project($row['id'], $row['image_size'], $row['customer_id'], $row['enabled'], $row['name']);
-				array_push($resultArr, $project);
-			}
+			$row = $result->fetch_assoc()
+			$project = new Project($row['id'], $row['image_size'], $row['customer_id'], $row['enabled'], $row['name']);
+			array_push($resultArr, $project);
 		}
 		else { errorMsg('projectDB','getProject','couldnt find any project with that ID'); }
 		return $resultArr;
@@ -125,14 +124,11 @@ class ProjectDB
 		$query->execute();
 		$result = $query->get_result();
 
-		if ($result == FALSE) {
-			errorMsg('error: couldnt execute ' + $this->updateProject_SQL + ' on id ' + $id);
-			array_push($resultArr, result);
-			return $resultArr;
+		if ($result->num_rows > 0) {
+			 $resultArr = $this->getProject($id)
 		}
-		elseif ($result->num_rows > 0){
-			return $resultArr;
-		}
+
+		return $resultArr;
 	}
 
 	//bookmark ch
