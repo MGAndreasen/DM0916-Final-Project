@@ -132,7 +132,7 @@ class ProjectDB
 			errorMsg('error: couldnt execute ' + $updateProject_SQL + ' on id ' + $id);
 			return null;
 		}
-		elseif ($result > 0){
+		elseif ($result->num_rows > 0){
 			return $result;
 		}	
 	}
