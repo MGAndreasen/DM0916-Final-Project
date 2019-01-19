@@ -67,8 +67,18 @@ class ProjectCtrl {
 		}
 	}
 
-	public function deleteProject($id) {
-		
+	public function removeProject($id) {
+		if ($id > 0){
+			if (!empty($this->mDB->getProject($id))){
+				$this->mDB->removeProject($id));
+			}
+			else {
+				errorMsg('ProjectCtrl', 'removeProject()', 'Project with ' + $id + ' was not found');
+			}
+		}
+		else {
+			errorMsg('ProjectCtrl', 'removeProject()', 'invalid id');
+		}
 	}
 
 
