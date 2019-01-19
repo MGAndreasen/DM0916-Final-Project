@@ -17,7 +17,7 @@ function page_testdatasets() {
     section.on('drop', '.filedock', testdatasets_dragdrop(e));
 }
 
-function testdatasets_createLayout() {
+function testdatasets_createLayout(e) {
     return ""
         + "<p>data</p></br>"
         + "<div id='filedock' class='filedock'>Drop filer her</div>"
@@ -25,7 +25,7 @@ function testdatasets_createLayout() {
         + "<div id='file-result'></div >";
 }
 
-function testdatasets_dragover() {
+function testdatasets_dragover(e) {
     return function (e) {
         notify('drag','over');
         $(this).addClass('filedock_hover');
@@ -35,7 +35,7 @@ function testdatasets_dragover() {
 }
 
 
-function testdatasets_dragenter() {
+function testdatasets_dragenter(e) {
     return function (e) {
         notify('drag', 'enter');
         e.preventDefault();
@@ -44,7 +44,7 @@ function testdatasets_dragenter() {
 }
 
 
-function testdatasets_dragleave() {
+function testdatasets_dragleave(e) {
     return function (e) {
         notify('drag', 'leave');
         $(this).removeClass('filedock_hover');
@@ -52,7 +52,7 @@ function testdatasets_dragleave() {
 }
 
 
-function testdatasets_dragdrop() {
+function testdatasets_dragdrop(e) {
     return function (e) {
         if (e.originalEvent.dataTransfer) {
 
