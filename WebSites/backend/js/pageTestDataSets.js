@@ -68,10 +68,11 @@ function testdatasets_dragdrop() {
 }
 
 function uploadFun(files) {
-    var reader = new FileReader();
+    
     for (var i = 0; i < files.length; i++) {
         console.log(i+' - '+files[i].name);
         $('#filedock_file').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
+        var reader = new FileReader();
 
         reader.onloadend = function () {
             $('#file-result').append('<p>' + reader.result + '</p>');
