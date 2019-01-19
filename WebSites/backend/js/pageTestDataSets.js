@@ -76,7 +76,7 @@ function uploadFun(files) {
         reader.onloadend = function () {
             console.log(reader.result); //this is an ArrayBuffer
         };
-        console-log(reader.readAsDataURL(files[i]));
+        console.log(reader.readAsDataURL(files[i]));
         //$('#file-result').append('<p>' + data + '</p>');
 
 
