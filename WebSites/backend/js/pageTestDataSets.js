@@ -20,7 +20,7 @@ function page_testdatasets() {
 function testdatasets_createLayout() {
     return ""
         + "<p>data</p></br>"
-        + "<div id='filedock' class='filedock'>DROP IMAGE FILES HERE</div>"
+        + "<input type='file' id='filedock' class='filedock'/>"
         + "<div id='filedock_file'></div >"
         + "<div id='file-result'></div >";
 }
