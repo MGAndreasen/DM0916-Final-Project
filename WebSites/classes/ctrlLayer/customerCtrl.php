@@ -76,7 +76,7 @@ class CustomerCtrl {
 		*/
 	}
 
-	public function updateCustomerEmail($id, $email, passwd) {
+	public function updateCustomerEmail($id, $email, $passwd) {
 		errorMsg('CustomerCtrl','function not implemented!');
 	/*
 		if (empty($email) || strpos($email, '@') !== TRUE) {
