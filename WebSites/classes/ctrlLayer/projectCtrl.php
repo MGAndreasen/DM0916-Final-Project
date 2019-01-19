@@ -70,7 +70,7 @@ class ProjectCtrl {
 	public function removeProject($id) {
 		if ($id > 0){
 			if (!empty($this->mDB->getProject($id))){
-				$this->mDB->removeProject($id));
+				$this->mDB->removeProject($id);
 			}
 			else {
 				errorMsg('ProjectCtrl', 'removeProject()', 'Project with ' + $id + ' was not found');

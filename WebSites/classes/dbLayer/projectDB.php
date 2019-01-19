@@ -139,18 +139,21 @@ class ProjectDB
 		}
 	}
 
+	//bookmark ch
 	public function removeProject($id){
+		global $conn;
+		$resultArr = [];
 		$query = $conn->prepare($this->removeProject_SQL);
-		$query->bind_param(':id', $project->getID());
+		$query->bind_param('i', $project->getID());
 		$query->execute();
 		$result = $query->get_result();
 
 		if ($result == FALSE) {
-			return 'error: couldnt execute ' + $removeProject_SQL + ' on id ' + $id;
+			errorMsg('projectDB', 'removeProject', 'error: couldnt execute ' + $removeProject_SQL + ' on id ' + $id);
 		}
-		else {
-			return 1; 
-		}
+
+		return $resultArr;
+
 	}
 
 	public function getModelToBuild(int $project_id, int $parent_id) {
