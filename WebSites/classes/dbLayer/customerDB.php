@@ -62,15 +62,15 @@ class CustomerDB
 		$query->bind_param('sss', $hash, $salt, $email);
 		$query->execute();
 		$result = $query->get_result();
-		$id = $result->insert_id;
+		$id = $conn->insert_id;
 
 		$conn->commit();
 		$conn->autocommit(true);
 
-		if ($id > 0) {
+//		if ($id > 0) {
 			return $id;
-		}
-		return null;
+//		}
+//		return null;
 	}
 
 	/*
