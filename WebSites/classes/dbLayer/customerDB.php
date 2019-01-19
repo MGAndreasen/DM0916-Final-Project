@@ -6,9 +6,9 @@ class CustomerDB
 {
 	private $getCustomer_SQL				= 'SELECT * FROM customer WHERE id = ?';
 	private $getCustomers_SQL				= 'SELECT * FROM customer';
-	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(:enabled, :hash, :salt, :created, :last_access, :email)';
-	private $updateCustomer_SQL				= 'UPDATE customer SET enabled = :enabled, hash = :hash, salt = :salt, created = :created, last_access = :lastAcess, email = :email WHERE id = :id';
-	private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = :id';
+	//private $createCustomer_SQL				= 'INSERT INTO customer VALUES(:enabled, :hash, :salt, :created, :last_access, :email)';
+	//private $updateCustomer_SQL				= 'UPDATE customer SET enabled = :enabled, hash = :hash, salt = :salt, created = :created, last_access = :lastAcess, email = :email WHERE id = :id';
+	//private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = :id';
 
 	public function __construct()
 	{
@@ -36,7 +36,7 @@ class CustomerDB
 		global $conn;
 		$resultArr = [];
 
-		$query = $conn->prepare($this->$getCustomers_SQL);
+		$query = $conn->prepare($this->getCustomers_SQL);
 		$query->execute();
 		$result = $query->get_result();
 		
