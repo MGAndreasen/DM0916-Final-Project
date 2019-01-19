@@ -5,6 +5,7 @@ require_once('../classes/modelLayer/customer.php');
 class CustomerDB
 {
 	private $getCustomer_SQL				= 'SELECT * FROM customer WHERE id = ?';
+	private $getCustomerFromEmail_SQL		= 'SELECT * FROM customer WHERE email = ?';
 	private $getCustomers_SQL				= 'SELECT * FROM customer';
 	private $createCustomer_SQL				= 'INSERT INTO customer VALUES(null, 1, ?, ?, now(), now(), ?)';
 	private $deleteCustomer_SQL				= 'DELETE FROM customer WHERE id = ?';
