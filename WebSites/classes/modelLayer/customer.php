@@ -16,6 +16,7 @@ class Customer implements JsonSerializable {
 		$this->created = $created;
 		$this->lastAccess = $lastAccess;
 		$this->email = $email;
+		errorMsg('DB',$row['id'].' - '.$row['email']);
 	}
 
 	public function getId() :int{
