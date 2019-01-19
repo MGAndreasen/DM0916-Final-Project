@@ -1,34 +1,38 @@
 <?php
 class Project implements JsonSerializable {
     private $id;
-	private $customer_id;
-	private $image_size;
+	private $customerId;
+	private $imageSize;
 	private $enabled;
 	private $name;
 	private $projectStructures;
 	
-	public function __construct(int $id, int $image_size, int $customer_id, bool $enabled, string $name) {
+	public function __construct(int $id, int $imageSize, int $customerId, int $enabled, string $name) {
 		$this->id = $id;
-		$this->image_size = $image_size;
-		$this->customer_id = $customer_id;
+		$this->imageSize = $imageSize;
+		$this->customerId = $customerId;
 		$this->enabled = $enabled;
 		$this->name = $name;
 		$this->projectStrutures = array();
 	}
 
-	public function getID() {
+	public function getID(): int {
 		return $this->id;
 	}
 	
-	public function getImage_size() {
-		return $this->image_size;
+	public function getImageSize(): int {
+		return $this->imageSize;
 	}
 
-	public function getEnabled() {
+	public function getCustomerId(): int {
+		return $this->customerId;
+	}
+
+	public function getEnabled(): int {
 		return $this->enabled;
 	}
 
-	public function getName() {
+	public function getName(): string {
 		return $this->name;
 	}
 
@@ -36,15 +40,19 @@ class Project implements JsonSerializable {
 		return $this->projectStrutues();
 	}
 
-	public function setÍmage_size(int $size) {
-		$this->image_size = $size;
+	public function setImageSize(int $size) {
+		$this->imageSize = $size;
 	}
 
-	public function setEnabled($enabled) {
+	public function setCustomerId(int $customerId) {
+		$this->customerId = $customerId;
+	}
+
+	public function setEnabled(int $enabled) {
 		$this->enabled = $enabled;
 	}
 
-	public function setName($name) {
+	public function setName(string $name) {
 		$this->name = $name;
 	}
 
@@ -55,8 +63,8 @@ class Project implements JsonSerializable {
 	public function jsonSerialize() {
         return array (
             'id' => $this->id,
-			'customer_id' => $this->customer_id,
-            'imagesize' => $this->image_size,
+			'customerId' => $this->customerId,
+            'imagesize' => $this->imageSize,
 			'enabled' => $this->enabled,
 			'name' => $this->name,
 			'projectStrutures' => $this->projectStrutures

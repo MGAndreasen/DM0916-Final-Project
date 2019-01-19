@@ -8,8 +8,8 @@ class ProjectDB
 	// SQL Querys
 	private $getProject_SQL		= 'SELECT * FROM project WHERE id = ?';
 	private $getProjects_SQL	= 'SELECT * FROM project WHERE customer_id = ?';
-	private $updateProject_SQL	= 'UPDATE SET name=:name, customer_id=:customer_id, image_size=:image_size, enabled=:enabled FROM project WHERE id = :id';
-	private $createProject_SQL	= 'INSERT INTO project VALUE(null, name=:name, image_size=:image_size, customer_Id=:customer_id, enabled=_enabled)';
+	private $updateProject_SQL	= 'UPDATE project SET image_size = ?, customer_id = ?, enabled = ?, name = ? WHERE id = ?';
+	private $createProject_SQL	= 'INSERT INTO project VALUE(null, ?, ?, ?, ?)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
 	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
@@ -104,27 +104,43 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	public function updateProject($project){
+	public function createProject($imageSize, $customerId, $enabled, $name) {
 		global $conn;
-		$query = $conn->prepare($this->$updateProject_SQL);
-		$query->bind_param(':customer_id', $project->getCustomerID());
-		$query->bind_param(':enabled', $project->getEnabled());
-		$query->bind_param(':name', $project->getName());
+		$conn->autocommit(false);
+		$query = $conn->prepare($this->createProject_SQL);
+		$query->bind_param('iiis', $imageSize, $customerId, $enabled, $name);
+		$query->execute();
+		$result = $conn->insert_id;
 
+		$conn->commit();
+		$conn->autocommit(true);
+
+		if ($result > 0) {
+			return $result;
+		}
+		return null;
+	}
+
+	public function updateProject(int $id, int $image_size, int $customer_id, int $enabled, string $name){
+		global $conn;
+		$resultArr = [];
+		$query = $conn->prepare($this->updateProject_SQL);
+		$query->bind_param('iiisi', $image_size, $customer_id, $enabled, $name, $id);
 		$query->execute();
 		$result = $query->get_result();
 
-		//Not quite sure on this one for handling error msges.
 		if ($result == FALSE) {
-			return 'error: couldnt execute ' + $updateProject_SQL + ' on id ' + $id;
+			errorMsg('error: couldnt execute ' + $this->updateProject_SQL + ' on id ' + $id);
+			array_push($resultArr, result);
+			return $resultArr;
 		}
-		else {
-			return 1; 
+		elseif ($result->num_rows > 0){
+			return $resultArr;
 		}
 	}
 
 	public function removeProject($id){
-		$query = $conn->prepare($this->$removeProject_SQL);
+		$query = $conn->prepare($this->removeProject_SQL);
 		$query->bind_param(':id', $project->getID());
 		$query->execute();
 		$result = $query->get_result();

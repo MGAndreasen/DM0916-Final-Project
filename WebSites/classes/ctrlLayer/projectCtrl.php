@@ -40,13 +40,31 @@ class ProjectCtrl {
 		}
 	}
 
-	public function createProject(int $image_size, int $customer_id, bool $enabled, string $name) {
-		//if()
-		//$model = new project();
+	public function createProject(int $image_size, int $customer_id, int $enabled, string $name) {
+		$newProjectId = $this->mDB->createProject($image_size, $customer_id, $enabled, $name);
+
+		//Check if inserted
+		if ($newProjectId > 0) {
+			$this->getProject($newProjectId);
+		}
+		else {
+			errorMsg('ProjectCtrl','createProject()','Did not insert project correctly');
+		}
 	}
 
-	public function updateProject($id) {
-	
+	public function updateProject($id, int $image_size, int $customer_id, int $enabled, string $name) {
+		if ($id > 0) {
+			if (!empty($this->mDB->getProject($id))) {
+				$this->mDB->updateProject($id, $image_size, $customer_id, $enabled, $name);
+				$this->data['result']['projects'] = $this->mDB->getProject($id);
+			}
+			else {
+				errorMsg('ProjectCtrl','createProject()','Project with ' + $id + ' was not found');
+			}
+		}
+		else {
+			errorMsg('ProjectCtrl','createProject()','Invaled id');
+		}
 	}
 
 	public function deleteProject($id) {
