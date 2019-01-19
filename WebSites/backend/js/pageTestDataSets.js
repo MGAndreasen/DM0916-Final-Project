@@ -11,10 +11,10 @@ function page_testdatasets() {
 
     section.off(); // remove eventhandlers
 
-    section.on('dragover', '.filedock', testdatasets_dragover());
-    section.on('dragenter', '.filedock',testdatasets_dragenter());
-    section.on('dragleave', '.filedock',testdatasets_dragleave());
-    section.on('drop', testdatasets_dragdrop());
+    section.on('dragover', '.filedock', testdatasets_dragover(e));
+    section.on('dragenter', '.filedock',testdatasets_dragenter(e));
+    section.on('dragleave', '.filedock',testdatasets_dragleave(e));
+    section.on('drop', '.filedock', testdatasets_dragdrop(e));
 }
 
 function testdatasets_createLayout() {
