@@ -123,13 +123,13 @@ class ProjectDB
 
 	public function updateProject(int $id, int $image_size, int $customer_id, int $enabled, string $name){
 		global $conn;
-		$query = $conn->prepare($this->$updateProject_SQL);
+		$query = $conn->prepare($this->updateProject_SQL);
 		$query->bind_param('iiisi', $image_size, $customer_id, $enabled, $name, $id);
 		$query->execute();
 		$result = $query->get_result();
 
 		if ($result == FALSE) {
-			errorMsg('error: couldnt execute ' + $updateProject_SQL + ' on id ' + $id);
+			errorMsg('error: couldnt execute ' + $this->updateProject_SQL + ' on id ' + $id);
 			return null;
 		}
 		elseif ($result->num_rows > 0){
@@ -138,7 +138,7 @@ class ProjectDB
 	}
 
 	public function removeProject($id){
-		$query = $conn->prepare($this->$removeProject_SQL);
+		$query = $conn->prepare($this->removeProject_SQL);
 		$query->bind_param(':id', $project->getID());
 		$query->execute();
 		$result = $query->get_result();
