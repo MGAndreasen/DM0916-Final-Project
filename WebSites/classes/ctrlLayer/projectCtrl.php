@@ -41,7 +41,8 @@ class ProjectCtrl {
 	}
 
 	public function createProject(int $image_size, bool $customer_id, string $enabled, string $name) {
-		$newProjectId = $this->mDB->createProject($image_size, $customer_id, $enabled, $name)
+		$newProject = new Project(null, $image_size, $customer_id, $enabled, $name);
+		$newProjectId = $this->mDB->createProject($newProject)
 
 		//Check if inserted
 		if ($newProjectId > 0) {
