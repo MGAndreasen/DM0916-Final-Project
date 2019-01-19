@@ -40,7 +40,7 @@ class ProjectCtrl {
 		}
 	}
 
-	public function createProject(int $image_size, bool $customer_id, string $enabled, string $name) {
+	public function createProject(int $image_size, int $customer_id, bool $enabled, string $name) {
 		$newProject = new Project(null, $image_size, $customer_id, $enabled, $name);
 		$newProjectId = $this->mDB->createProject($newProject)
 
