@@ -56,7 +56,7 @@ class ProjectCtrl {
 		if ($id > 0) {
 			if (!empty($this->mDB->getProject($id))) {
 				$this->mDB->updateProject($id, $image_size, $customer_id, $enabled, $name);
-				$this->mDB->getProject($id);
+				$this->data['result']['projects'] = $this->mDB->getProject($id);
 			}
 			else {
 				errorMsg('ProjectCtrl','createProject()','Project with ' + $id + ' was not found');

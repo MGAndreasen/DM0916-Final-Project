@@ -131,10 +131,11 @@ class ProjectDB
 
 		if ($result == FALSE) {
 			errorMsg('error: couldnt execute ' + $this->updateProject_SQL + ' on id ' + $id);
-			return null;
+			array_push($resultArr, result);
+			return $resultArr;
 		}
 		elseif ($result->num_rows > 0){
-			return $result;
+			return $resultArr;
 		}
 	}
 
