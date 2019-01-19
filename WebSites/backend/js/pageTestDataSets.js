@@ -72,8 +72,9 @@ function uploadFun(files) {
     for (var i = 0; i < files.length; i++) {
         console.log(i+' - '+files[i].name);
         $('#filedock_file').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
+        var data = await reader.readAsDataURL(files[i]);
+        $('#file-result').append('<p>' + reader.readAsDataURL(files[i]) + '</p>');
 
-        reader.onloadend = function () {$('#file-result').append('<p>' + reader.readAsDataURL(files[i]) + '</p>');};
 
         
     }
