@@ -1,6 +1,7 @@
 <?php
 // Includes
 require_once('../classes/modelLayer/project.php');
+require_once('../classes/modelLayer/customer.php');
 
 class CustomerDB
 {
