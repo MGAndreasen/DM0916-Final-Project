@@ -27,7 +27,6 @@ function testdatasets_createLayout() {
 
 function testdatasets_dragover() {
     return function (e) {
-        notify('drag','over');
         $(this).addClass('filedock_hover');
         e.preventDefault();
         e.stopPropagation();
@@ -37,7 +36,6 @@ function testdatasets_dragover() {
 
 function testdatasets_dragenter() {
     return function (e) {
-        notify('drag', 'enter');
         e.preventDefault();
         e.stopPropagation();
     };
@@ -46,7 +44,6 @@ function testdatasets_dragenter() {
 
 function testdatasets_dragleave() {
     return function (e) {
-        notify('drag', 'leave');
         $(this).removeClass('filedock_hover');
     };
 }
@@ -74,7 +71,7 @@ function uploadFun(files) {
     var reader = new FileReader();
 
     for (var i = 0; i < files.length; i++) {
-
+        console.log(i+' - '+files[i].name);
         $('#filedock_files').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
 
     $('#filedock_result').append(reader.readAsDataURL(files[i]));
