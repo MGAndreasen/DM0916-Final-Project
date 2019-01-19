@@ -68,10 +68,7 @@ class CustomerDB
 		//errorMsg($id,$idd,$iddd);
 		$conn->commit();
 
-//		if ($id > 0) {
-			return $id;
-//		}
-//		return null;
+		return $id;
 	}
 
 	/*
