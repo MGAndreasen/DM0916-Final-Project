@@ -63,7 +63,9 @@ class CustomerDB
 		$query->execute();
 		$result = $query->get_result();
 		$id = mysqli_insert_id($conn); 
-		errorMsg($id,$id,$id);
+		$idd = @$query->insert_id;
+		$iddd = @$conn->insert_id;
+		errorMsg($id,$idd,$iddd);
 		$conn->commit();
 
 //		if ($id > 0) {
