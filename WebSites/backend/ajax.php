@@ -46,20 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 							continue;
 					    }
 						else {
-							errorMsg('Ajax.php', '','Found func: '.$func.' as '.$method);
 							$func = $method;
 						}
 					}
 
 					if(method_exists($theClass, $func)) {
 						@call_user_func_array(array($theCtrl, $func), $parms);
-					}
-					else {
-						errorMsg('Ajax.php', $func, 'Did not find methode: '.$func.' on class: '. $theClass);
-					}
-				} else {
-					errorMsg('Ajax.php', $func, 'Did not find class: '.$theClass);
-				}
+					} else { errorMsg('Ajax.php', $func, 'Did not find methode: '.$func.' on class: '. $theClass); }
+				} else { errorMsg('Ajax.php', $func, 'Did not find class: '.$theClass); }
 			} else { errorMsg($ctrl, $func, 'Controller fil findes ikke.'); }
 		} else { errorMsg($ctrl, $func, 'Ikke valid eller manglende Ctrl eller Func parameter!'); }
 	} else { errorMsg(null, null, 'Json ikke korrekt posted.'); }
