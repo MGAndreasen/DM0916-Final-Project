@@ -8,7 +8,7 @@ class ProjectDB
 	// SQL Querys
 	private $getProject_SQL		= 'SELECT * FROM project WHERE id = ?';
 	private $getProjects_SQL	= 'SELECT * FROM project WHERE customer_id = ?';
-	private $updateProject_SQL	= 'UPDATE 'project' SET 'image_size' = ?, 'customer_id' = ?, 'enabled' = ?, 'name' = ? WHERE id = ?';
+	private $updateProject_SQL	= 'UPDATE project SET image_size = ?, customer_id = ?, enabled = ?, name = ? WHERE id = ?';
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, ?, ?, ?, ?)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 
