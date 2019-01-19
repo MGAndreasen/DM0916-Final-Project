@@ -63,7 +63,9 @@ class CustomerDB
 		$query->execute();
 		$result = $query->get_result();
 		$id = $conn->lastInsertId();
-		errorMsg($id)
+
+
+
 		$conn->commit();
 		$conn->autocommit(true);
 
