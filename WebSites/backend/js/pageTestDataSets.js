@@ -73,6 +73,9 @@ function uploadFun(files) {
         console.log(i+' - '+files[i].name);
         $('#filedock_file').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
         var reader = new FileReader();
+        reader.onloadend = function () {
+        };
+
         $('#file-result').append('<p>'+reader.readAsDataURL(files[i])+'</p>');
     }
 }
