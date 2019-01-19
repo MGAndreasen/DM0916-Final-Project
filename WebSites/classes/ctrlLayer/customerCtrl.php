@@ -1,6 +1,6 @@
 <?php
 // Includes
-require_once('../classes/util/uils.php');
+require_once('../classes/util/utils.php');
 require_once('../classes/modelLayer/customer.php');
 require_once('../classes/dbLayer/customerDB.php');
 
