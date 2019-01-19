@@ -47,7 +47,7 @@ class ProjectCtrl {
 
 		//Check if inserted
 		if ($newProjectId > 0) {
-			getProject($newProjectId);
+			$this->getProject($newProjectId);
 		}
 		else {
 			errorMsg('ProjectCtrl','createProject()','Did not insert project correctly');
