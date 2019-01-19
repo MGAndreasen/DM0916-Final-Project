@@ -40,9 +40,16 @@ class ProjectCtrl {
 		}
 	}
 
-	public function createProject(int $image_size, int $customer_id, bool $enabled, string $name) {
-		//if()
-		//$model = new project();
+	public function createProject(int $image_size, bool $customer_id, string $enabled, string $name) {
+		$newProjectId = $this->mDB->createProject($image_size, $customer_id, $enabled, $name)
+
+		//Check if inserted
+		if ($newProjectId > 0) {
+			getCustomer($newProjectId);
+		}
+		else {
+			errorMsg('ProjectCtrl','createProject()','Did not insert project correctly');
+		}
 	}
 
 	public function updateProject($id) {
