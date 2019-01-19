@@ -26,13 +26,10 @@ class CustomerCtrl {
 	}
 
 	public function getCustomer($id)	{
-		errorMsg('CustomerCtrl','function not implemented!');
-	/*
 		$result = $this->mDB->getCustomer($id);
 	    if (!empty($result)) {
 			$this->data['result']['customers'] = $result;
 		}
-		*/
 	}
 
 	public function getCustomers() {
