@@ -63,7 +63,7 @@ class CustomerDB
 		$query->execute();
 		//$result = $query->get_result();
 		errorMsg('dsad','dasda', $conn->insert_id. ' - '.$conn->insert_id())
-		$result = $conn->insert_id();
+		$result = $conn->lastInsertId();
 
 		$conn->commit();
 		$conn->autocommit(true);
