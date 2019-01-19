@@ -66,8 +66,8 @@ class Customer implements JsonSerializable {
         return array (
             'id' => $this->id,
 			'enabled' => $this->enabled,
-			'hash' => $this->hash,
-			'salt' => $this->salt,
+			//'hash' => $this->hash, // Ikke hiv denne med ud i json
+			//'salt' => $this->salt, // Ikke hiv denne med ud i json
 			'created' => $this->created,
 			'lastaccess' => $this->lastAccess,
 			'email' => $this->email
