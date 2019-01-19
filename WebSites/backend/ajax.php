@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 							continue;
 					    }
 						else {
-							errorMsg('Ajax.php', '','Found func: '.$func.' as '.$methode);
+							errorMsg('Ajax.php', '','Found func: '.$func.' as '.$method);
 							$func = $method;
 						}
 					}
