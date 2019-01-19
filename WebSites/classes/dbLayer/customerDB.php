@@ -67,7 +67,7 @@ class CustomerDB
 		$conn->commit();
 		$conn->autocommit(true);
 
-		if ($result > 0) {
+		if ($id > 0) {
 			return $id;
 		}
 		return null;
