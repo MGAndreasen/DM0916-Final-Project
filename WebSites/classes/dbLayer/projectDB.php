@@ -104,12 +104,6 @@ class ProjectDB
 		return $resultArr;
 	}
 
-	/*public function createProject($project){
-		$imageSize	= $project->getImageSize();
-		$customerId	= $project->getCustomerId();
-		$enabled	= $project->getEnabled();
-		$name		= $project->getName();
-	*/
 	public function createProject($imageSize, $customerId, $enabled, $name) {
 		global $conn;
 		$conn->autocommit(false);
@@ -124,9 +118,7 @@ class ProjectDB
 		if ($result > 0) {
 			return $result;
 		}
-
 		return null;
-		
 	}
 
 	public function updateProject($project){
