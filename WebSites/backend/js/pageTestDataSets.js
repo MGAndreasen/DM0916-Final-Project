@@ -21,7 +21,7 @@ function testdatasets_createLayout() {
     return ""
         + "<p>data</p></br>"
         + "<div id='filedock' class='filedock'>Drop filer her</div>"
-        + "<div id='filedock_file'></div >"
+        + "<div id='filedock_file'></div>"
         + "<div id='file-result'></div >";
 }
 
@@ -71,9 +71,9 @@ function uploadFun(files) {
     
     for (var i = 0; i < files.length; i++) {
         console.log(i+' - '+files[i].name);
-        $('#filedock_files').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
+        $('#filedock_file').append("<p>" + files[i].name + " - " + files[i].size + "</p>");
         var reader = new FileReader();
-        $('#filedock_result').append(reader.readAsDataURL(files[i]));
+        $('#file-result').append('<p>'+reader.readAsDataURL(files[i])+'</p>');
     }
 }
 
