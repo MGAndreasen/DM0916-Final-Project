@@ -33,12 +33,6 @@ class CustomerCtrl {
 		}
 	}
 
-	// Only private
-	private function getCustomerFromEmail($email) {
-		$result = $this->mDB->getCustomerFromEmail($email);
-		return $result;
-	}
-
 	public function getCustomers() {
 		$result = $this->mDB->getCustomers();
 
@@ -53,7 +47,7 @@ class CustomerCtrl {
 
 				$email = strtolower($email);
 
-				$checkExists = $this->getCustomerFromEmail($email);
+				$checkExists = $this->mDB->getCustomerFromEmail($email);
 				
 				if(!empty($checkExists)) { // findes ikke
 					// ikke færdig imp
