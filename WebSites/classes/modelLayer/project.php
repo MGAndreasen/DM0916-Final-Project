@@ -24,6 +24,10 @@ class Project implements JsonSerializable {
 		return $this->imageSize;
 	}
 
+	public function getCustomerId(): int {
+		return $this->customerId;
+	}
+
 	public function getEnabled(): int {
 		return $this->enabled;
 	}
@@ -38,6 +42,10 @@ class Project implements JsonSerializable {
 
 	public function setImageSize(int $size) {
 		$this->imageSize = $size;
+	}
+
+	public function setCustomerId(int $customerId) {
+		$this->customerId = $customerId;
 	}
 
 	public function setEnabled(int $enabled) {

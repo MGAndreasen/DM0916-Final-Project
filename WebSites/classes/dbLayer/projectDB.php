@@ -106,7 +106,7 @@ class ProjectDB
 
 	public function createProject($project){
 		$imageSize	= $project->getImageSize();
-		$customerId	= $project->getCustomerID();
+		$customerId	= $project->getCustomerId();
 		$enabled	= $project->getEnabled();
 		$name		= $project->getName();
 		
