@@ -26,11 +26,17 @@ class CustomerCtrl {
 		// TBD
 	}
 
-	public function getCustomer($id)	{
+	public function getCustomer($id) {
 		$result = $this->mDB->getCustomer($id);
 	    if (!empty($result)) {
 			$this->data['result']['customers'] = $result;
 		}
+	}
+
+	// Only private
+	private function getCustomerFromEmail($email) {
+		$result = $this->mDB->getCustomerFromEmail($email);
+		return $result;
 	}
 
 	public function getCustomers() {
