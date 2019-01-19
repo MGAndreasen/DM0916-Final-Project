@@ -63,6 +63,7 @@ class CustomerCtrl {
 
 				if (!empty($result))
 				{
+					errorMsg($result);
 					// Lets try and fetch
 					getCustomer($newCustomerId);
 				}
