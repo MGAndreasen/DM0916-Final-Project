@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
-        notify("Ajax", "Request: Could not load ajax.php");
+        notify("SPA", "Ajax Request:</br>Failed connect to REST service ajax.php");
     });
 
     // Ajax eventhandler gemmes lidt i nu
@@ -48,11 +48,11 @@ function handlePagechange() {
             window['page_' + pageName]();
         }
         else {
-            notify("PageHandler", "Section (" + pageName + ") not found!");
+            notify("SPA", "PageHandler</br>Section (" + pageName + ") not found!");
         }
     }
     else {
-        notify("PageHandler", "No Section with .active class found!");
+        notify("SPA", "PageHandler</br>No Section with .active class found!");
     }
 }
 
@@ -72,7 +72,7 @@ function myPost(ctrl, func, parms) {
             console.log("MODTAGET:\n" + JSON.stringify(result));
             if (result['errors']) {
                 $.each(result['errors'], function (key, value) {
-                    notify("Ajax", "Ctrl: " + value['ERRCTRL'] + "\nFunc: " + value['ERRFUNC'] + "\nMSG: " + value['ERRMSG']);
+                    notify(value['ERRCTRL'], "Func: " + value['ERRFUNC'] + "</br>MSG: " + value['ERRMSG']);
                 });
             }
             toReturn = result;
