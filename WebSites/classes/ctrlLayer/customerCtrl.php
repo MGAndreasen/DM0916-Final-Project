@@ -45,41 +45,34 @@ class CustomerCtrl {
 		if(!empty($email) && !empty($passwd)) {
 			if(strpos($email, '@')) { // fix bedre tjek
 
-				// ikke færdig imp
-				$hash_type = "whirlpool";
-				$salt_type = "sha512";								// anden algo
-				$site_salt = "5d41402abc4b2a76b9719d911017c592";	// fra Config Array, burde det vaere....
-				$randomString = createRandomString(128,"0123456789SomOmJegOrkerAtFindePaaFlereEndDisseABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".$email); // CHAR(128)  createRandomString(length,"POOLofCHaRsWeCANMixFrom")
+				$email = strtolower($email);
 
-				$salt = hash($salt_type, $randomString, false); // CHAR(128) hash af CHAR(128) randomString inkl. af brugers originale email ved oprettelse
-				$hash = hash($hash_type, $salt.$passwd.$site_salt,false);  // CHAR(128) af vores unique generede $salt forhaabentlig + brugers indtastet password + den globale salt for hele sitet.
+				$checkExists = $this->getCustomerFromEmail($email);
+				
+				if(!empty($checkExists)) { // findes ikke
+					// ikke færdig imp
+					$hash_type = "whirlpool";
+					$salt_type = "sha512";								// anden algo
+					$site_salt = "5d41402abc4b2a76b9719d911017c592";	// fra Config Array, burde det vaere....
+					$randomString = createRandomString(128,"0123456789SomOmJegOrkerAtFindePaaFlereEndDisseABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".$email); // CHAR(128)  createRandomString(length,"POOLofCHaRsWeCANMixFrom")
 
-				// Senere til at loggeind igen:
-				// 1) find email i db, og retuner salt samt hash
-				// 2) hash($hash_type, salt_fra_db . indtastet_password . salt_fra_site_salt);
-				// 3) sammenlign resultatet med hash_fra_db, er de ens har man tastet korrekt password, ellers ikke!
+					$salt = hash($salt_type, $randomString, false); // CHAR(128) hash af CHAR(128) randomString inkl. af brugers originale email ved oprettelse
+					$hash = hash($hash_type, $salt.$passwd.$site_salt,false);  // CHAR(128) af vores unique generede $salt forhaabentlig + brugers indtastet password + den globale salt for hele sitet.
 
-				$newCustomerId = $this->mDB->createCustomer($email, $hash, $salt);
+					// Senere til at loggeind igen:
+					// 1) find email i db, og retuner salt samt hash
+					// 2) hash($hash_type, salt_fra_db . indtastet_password . salt_fra_site_salt);
+					// 3) sammenlign resultatet med hash_fra_db, er de ens har man tastet korrekt password, ellers ikke!
 
-				if ($newCustomerId > 0) {
-					// Lets try and fetch
-					$this->getCustomer($newCustomerId);
-				}
-				else
-				{
-					errorMsg('CustomerCtrl','createCustomer()','returned no result');
-				}
+					$newCustomerId = $this->mDB->createCustomer($email, $hash, $salt);
 
-			}
-			else
-			{
-				errorMsg('CustomerCtrl','createCustomer()','Invalid email');
-			}
-		}
-		else
-		{
-			errorMsg('CustomerCtrl','createCustomer()','Missing email or password');
-		}
+					if ($newCustomerId > 0) { // Lets try and fetch
+						$this->getCustomer($newCustomerId);
+					}
+					else { errorMsg('CustomerCtrl','createCustomer()','returned no result'); }
+				} else { errorMsg('CustomerCtrl','createCustomer','bruger med denne Email findes allerede'); }
+			} else { errorMsg('CustomerCtrl','createCustomer()','Invalid email'); }
+		} else { errorMsg('CustomerCtrl','createCustomer()','Missing email or password'); }
 	}
 
 	public function updateCustomerEmail($id, $email, $passwd) {

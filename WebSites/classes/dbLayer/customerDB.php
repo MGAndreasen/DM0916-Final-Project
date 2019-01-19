@@ -32,6 +32,25 @@ class CustomerDB
 		return $resultArr;
 	}
 
+	public function getCustomerFromEmail($email) {
+		global $conn;
+		$resultArr = [];
+
+		$query = $conn->prepare($this->getCustomerFromEmail_SQL);
+		$query->bind_param('s', $email);
+		$query->execute();
+
+		$result = $query->get_result();
+
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+			$customer = new Customer($row['id'], $row['enabled'], $row['hash'], $row['salt'], $row['created'], $row['last_access'], $row['email']);
+			array_push($resultArr, $customer);
+		}
+		else { errorMsg('CustomerDB','getCustomerFromEmail()','did not find any customer with that Email'); }
+		return $resultArr;
+	}
+
 	public function getCustomers() {
 		global $conn;
 		$resultArr = [];
@@ -62,17 +81,16 @@ class CustomerDB
 		$query->bind_param('sss', $hash, $salt, $email);
 		$query->execute();
 		$result = $query->get_result();
-		//$id = mysqli_insert_id($conn); 
-		//$idd = @$query->insert_id;
+
 		$id = $conn->insert_id;
-		//errorMsg($id,$idd,$iddd);
+
 		$conn->commit();
 
 		return $id;
 	}
 
-	/*
-	public function deleteCustomer($customer){
+
+	public function deleteCustomer($id) {
 		$query = $conn->prepare($this->$deleteCustomer_SQL);
 		$query->bind_param(':id', $customer->getID());
 		$query->execute();
@@ -85,6 +103,5 @@ class CustomerDB
 			return 1; 
 		}
 	}
-	*/
 }
 ?>
