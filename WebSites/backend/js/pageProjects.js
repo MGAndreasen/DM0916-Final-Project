@@ -6,6 +6,10 @@ function page_projects() {
     section.on('click', '.project_list .addNew', projects_newProject());                       // Create new eventhandler
     section.on('click', '.project_new_element .addNew', projects_create_hirachy_element());  // Create new eventhandler
 
+    $("#projects .project_hirachy .sortable").sortable({
+        connectWith: "ul",
+        toleranceElement: '> div'
+    });
     
     projects_populate_projectList();
 
@@ -24,7 +28,7 @@ function projects_createLayout() {
 
         + "  <div class='project_hirachy'>"
         + "    <div class='title'>Hirachy</div>"
-        + "    <div class='content'></div>"
+        + "    <div class='content'><ul></ul></div>"
         + "  </div>"
 
         + "  <div class='project_panel'>"
@@ -135,8 +139,8 @@ function projects_create_hirachy_element() {
         nameElement.val(''); // Clear value
 
         if (name.length) {
-        var element = "<!-- Element start--><li id='project_hirachy_element_" + name + "'><div>" + name + "</div><ul></ul></li><!-- Element end-->";
-        var project_hirachy = $('#projects .project_hirachy > .content');
+            var element = "<!-- Element start--><li id='project_hirachy_element_" + name + "' class='ui-state-default'><div>" + name + "</div><ul class='sortable'></ul></li><!-- Element end-->";
+        var project_hirachy = $('#projects .project_hirachy > .content ul');
         project_hirachy.append(element);
 
         // create element
