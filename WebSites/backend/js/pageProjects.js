@@ -52,12 +52,13 @@ function projects_populate_projectList() {
 }
 
 function projects_click_project() {
+    return function () {
+        if (!$(this).hasClass('active')) {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
 
-    if (!$(this).hasClass('active')) {
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-
-        projects_populateHirachy();
+            projects_populateHirachy();
+        }
     }
 }
 
@@ -73,7 +74,6 @@ function projects_newProject() {
 }
 
 function projects_populateHirachy() {
-    return function () {
         var id = $(this).attr('id').replace('project_','');
         var project_data = $('#projects  .project_data > .content');
         var project_hirachy = $('#projects  .project_hirachy > .content');
@@ -96,6 +96,4 @@ function projects_populateHirachy() {
         }
 
         project_hirachy.append('load stuff here');
-
-    };
 }
