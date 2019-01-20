@@ -5,6 +5,7 @@ function page_projects() {
     section.on('click', '.project', projects_click_project());                   // Create new eventhandler
     section.on('click', '.project_list .addNew', projects_newProject());                       // Create new eventhandler
     section.on('click', '.project_new_element .addNew', projects_create_hirachy_element());  // Create new eventhandler
+    projectId = null;
 
     /*
     $("#projects .project_hirachy .content > ul .sortable").sortable({
@@ -80,7 +81,6 @@ function projects_createLayout() {
 function projects_populate_projectList() {
     var project_list = $('#projects  .project_list > .content');
 
-    // Test load data.
     var customerid = customer;
     var parms = [customerid];
     var restData = myPost('project', 'getProjects', parms);
@@ -143,27 +143,25 @@ function projects_populateHirachy(project) {
 
 function projects_create_hirachy_element() {
     return function () {
-
-        // create on rest service
-        // get element id
-
         var nameElement = $('#projects .project_new_element .name'); // ref input element
         var name = nameElement.val(); // Copy value
         nameElement.val(''); // Clear value
 
         if (name.length) {
-            var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>P: " + projectId + " - " + name + "</div><ul class='connectedSortable sortable'></ul></li>";
-        var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
-        project_hirachy.append(element);
+            if (projectId) {
+                        // create on rest service
+                        // get element id
+                var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>" + name + "</div><ul class='connectedSortable sortable'></ul></li>";
+                var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
+                project_hirachy.append(element);
 
-        hirachy = $(".project_hirachy .content .sortable").sortable({
-                connectWith: ".connectedSortable",
-                items: "li",
-                toleranceElement: "> div"
-            }).disableSelection();
-        // create element
-        // append to root list
-        // done
+                hirachy = $(".project_hirachy .content .sortable").sortable({
+                    connectWith: ".connectedSortable",
+                    items: "li",
+                    toleranceElement: "> div"
+                }).disableSelection();
+            }
+            else { notify('Create Hirachy Element','Failed!  Pleace select a Project first!'); }
         }
     };
 }
