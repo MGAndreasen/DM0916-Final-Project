@@ -169,6 +169,7 @@ function projects_refresh_sortable() {
         forceHelperSize: true,
         forcePlaceholderSize: true,
         grid: [20, 10],
+        helper: "clone",
         hightlight: ".highlightClass"
     }).disableSelection();
 }
