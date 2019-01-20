@@ -176,11 +176,12 @@ class ProjectDB
 		$query->execute();
 		$result = $query->get_result();
 		
-		if ($result->num_rows > 0) {
+		if ($query->affected_rows > 0) {
 			$row = $result->fetch_assoc();
-			$structure = new ProjectStructure($row['id'], $row['parent_id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 
-			array_push($resultArr, $structure);
+			@$structure = new ProjectStructure($row['id'], $row['parent_id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+
+			@array_push($resultArr, $structure);
 		}
 		else { errorMsg('projectDB','getStructureElement','couldnt find any project_structure with that ID'); }
 		return $resultArr;
