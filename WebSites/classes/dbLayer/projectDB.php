@@ -163,8 +163,7 @@ class ProjectDB
 		$id = $conn->insert_id;
 
 		$conn->commit();
-		//$resultArr = [$id];
-		$resultArr = getStructureElement($id);
+		$resultArr = $this->getStructureElement($id);
 		return $resultArr;
 	}
 
@@ -172,7 +171,7 @@ class ProjectDB
 	public function getStructureElement($id) {
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->getStructureElement_SQL);
+		$query = $conn->prepare($this->$getStructureElement_SQL);
 		$query->bind_param('i', $id);
 		$query->execute();
 		$result = $query->get_result();
@@ -180,9 +179,9 @@ class ProjectDB
 		if ($query->affected_rows > 0) {
 			$row = $result->fetch_assoc();
 
-			@$structure = new ProjectStructure($row['id'], $row['parent_id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+			$structure = new ProjectStructure($row['id'], $row['parent_id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
 
-			@array_push($resultArr, $structure);
+			array_push($resultArr, $structure);
 		}
 		else { errorMsg('projectDB','getStructureElement','couldnt find any project_structure with that ID'); }
 		return $resultArr;
