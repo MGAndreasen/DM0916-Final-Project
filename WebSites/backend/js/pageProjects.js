@@ -12,7 +12,8 @@ function page_projects() {
     });
     */
     $(".project_hirachy .content .sortable").sortable({
-        connectWith: ".connectedSortable"
+        connectWith: ".connectedSortable",
+        items: "li"
     }).disableSelection();
     // .disableSelection()
     //toleranceElement: '> div'
@@ -41,7 +42,7 @@ function projects_createLayout() {
         + "        <li class='ui-state-highlight'><div>Item 3</div></li><li class='ui-state-highlight'><div>Item 4</div></li >"
         + "      </ul>"
         + "      <ul class='connectedSortable sortable'>"
-        + "        <li class='ui-state-highlight'><div>Item 5</div></li><li class='ui-state-highlight'><div>Item 6</div></li >"
+        + "        <li class='ui-state-highlight'><div>Item 5</div><ul class='connectedSortable sortable'></li><li class='ui-state-highlight'><div>Item 7</div></ul></li><li class='ui-state-highlight'><div>Item 8</div></li>"
         + "      </ul>"
         + "    </div>"
         + "  </div>"
