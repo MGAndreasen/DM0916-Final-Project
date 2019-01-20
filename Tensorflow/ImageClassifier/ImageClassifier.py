@@ -66,7 +66,7 @@ def runPridict(image_path, image_size, num_channels, sess):
            num2 = 0.0
         if num3 < 0.01:
            num3 = 0.0
-        print("bike: ", num1, " | component: ", num2, " | cloth: ", num3, " | ")
+        print("bike: ", num1, " | cloth: ", num2, " | component: ", num3, " | ")
 
     return(result)
 
@@ -115,23 +115,23 @@ def runPredictArray(imagePaths, model_path, latestCheckpoint_path, image_size = 
                num2 = 0.0
             if num3 < 0.01:
                num3 = 0.0
-            print(path, " = ", "bike: ", num1, " | component: ", num2, " | cloth: ", num3, " | ")
+            print(path, " = ", "bike: ", num1, " | cloth: ", num2, " | component: ", num3, " | ")
 
     return(result)
 
 def testingArrayPredict():
-    model_path              = R'C:\modelCreatorData\models.meta'
-    latestCheckpoint_path   = R'C:\modelCreatorData'
-    images = {R"C:\Users\Chris\OneDrive\Skrivebord\a.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\b.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\c.jpg",
-              R"C:\Users\Chris\OneDrive\Skrivebord\d.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\e.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\f.jpg",
-              R"C:\Users\Chris\OneDrive\Skrivebord\g.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\h.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\i.jpg",
-              R"C:\Users\Chris\OneDrive\Skrivebord\l.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\n.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\m.jpg",
-              R"C:\Users\Chris\OneDrive\Skrivebord\o.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\p.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\p1.jpg",};
+    model_path              = R'C:\cnnData\topCategoriesTest.meta'
+    latestCheckpoint_path   = R'C:\cnnData'
+    images = {R"C:\Users\Chris\OneDrive\Skrivebord\a.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\b.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\c.jpg"};
+              #R"C:\Users\Chris\OneDrive\Skrivebord\d.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\e.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\f.jpg",
+              #R"C:\Users\Chris\OneDrive\Skrivebord\g.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\h.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\i.jpg",
+              #R"C:\Users\Chris\OneDrive\Skrivebord\l.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\n.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\m.jpg",
+              #R"C:\Users\Chris\OneDrive\Skrivebord\o.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\p.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\p1.jpg",};
 
     runPredictArray(images, model_path, latestCheckpoint_path);
 
 def testingSinglePredict():
-    model_path              = R'C:\modelCreatorData\models.meta'
+    model_path              = R'C:\modelCreatorData\topCategoriesTest.meta'
     latestCheckpoint_path   = R'C:\modelCreatorData'
     image_size = 128
     num_channels = 3

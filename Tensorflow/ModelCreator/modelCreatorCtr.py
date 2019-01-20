@@ -2,6 +2,7 @@ import os, shutil
 import DataCollector
 import train
 import dataset
+import DataAranger
 
 #To Do: insert the different sizes in the info json file, also move the session to "bikes" folder.
 #aka. clean up the hardcorded values in #Testing Area and make it so only one function can run it all, rest should come from json file info.
@@ -77,10 +78,81 @@ def createModelFromJsonfileUrl(url, filePath):
     #Creates the model and trains the model.
     train.doRun(classes, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder, filter_size_conv1, num_filters_conv1, filter_size_conv2, num_filters_conv2, filter_size_conv3, num_filters_conv3, fc_layer_size)
 
+
+
+def prepareData(src, dst, categories, dataFolder, itemTag, modelName, maxItems):
+    
+
+    #for retesting purposes we delete all files after we are done.
+    #deleteAllFilesInFolderAndSubFolders(dataFolder) #temperory.
+    #dataFolderPath = os.path.normpath(dataFolder)
+
+
+
+    #Making the main dir that data will be stored in.
+    #DataCollector.createFolder(dataFolder)
+    #subDataFolder = os.path.normpath(src)
+    #DataCollector.createFolder(subDataFolder)
+
+    #dataFolderForDst = os.path.normpath(dst)
+    #DataCollector.createFolder(dataFolderForDst)
+    
+    #dataFolderPathJson = os.path.normpath(dst + '/json//');
+    #DataCollector.createFolder(dataFolderPathJson)
+    
+    
+    #DataAranger.splitJsonDataIntoCategories(src, dataFolderPathJson, categories, itemTag);
+
+
+    #DataAranger.readJsonData2(dataFolderForDst, categories, modelName, dataFolderPathJson, maxItems)
+
+    validation_size = float(0.2)
+    batch_size = int(16)
+    img_size = float(128)
+    num_channels = int(3)
+    classes = []
+
+    num_classes = len(categories)
+
+    num_iteration = int(1000)
+
+
+    train_path = dst
+    modelFolder = dst
+
+    ##Network graph params
+    filter_size_conv1 = 3
+    num_filters_conv1 = 32
+
+    filter_size_conv2 = 3
+    num_filters_conv2 = 32
+
+    filter_size_conv3 = 3
+    num_filters_conv3 = 64
+
+    fc_layer_size = 128
+
+    train.doRun(categories, validation_size, train_path, batch_size, img_size, num_channels, num_iteration, modelFolder, filter_size_conv1, num_filters_conv1, filter_size_conv2, num_filters_conv2, filter_size_conv3, num_filters_conv3, fc_layer_size)
+
+    
+    #readJsonData(src)
+
+    return 0;
     #Maybe delete all trainning images after it's done? Maybe this should only be done if asked for in the info section of the json.
 
 #Testing Area - Running the createModelFromJsonfileUrl with the testData.json file
 url = "http://4pi.dk/playground/testjsondata/index.php?fbclid=IwAR3NWUErkGsKorzr7omAkj33PcWqrjMFuyLZyUiMiv2A6H5PdATMvt7cH7c";
-filePath = os.path.normpath(os.getcwd() + '/../../Websites/playground/testjsondata/testData.json');
+#filePath = os.path.normpath(os.getcwd() + '/../../Setup//data_cycling.json');
 
-createModelFromJsonfileUrl(0, filePath)
+#createModelFromJsonfileUrl(0, filePath)
+#createModelFromJsonFilePath(filePath, 'CnnModelCreatorData');
+
+
+filePath = 'C:/data_cycling.json';
+
+#itemTag = 'item_group'
+#prepareData(filePath, 'C:/cnnData/topCategories', ['cycling_bike', 'clothes_group', 'cycling_component'], 'C:/cnnData', itemTag)
+maxItems = 3000;
+itemTag = 'item_type'
+modelName = 'topCategoriesTest'
+prepareData(filePath, 'C:/cnnData/topCategoriesTest', ['mtb_bike', 'helmets_clothes', 'tyres_component'], 'C:/cnnData', itemTag, modelName, maxItems)

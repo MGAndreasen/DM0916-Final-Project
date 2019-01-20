@@ -15,9 +15,6 @@ import os
 import urllib
 import ImageResizer
 
-
-
-
 def readJsonFromUrl(url): 
     req = urllib.request.Request(url, headers={'User-Agent' : "CNNModelCreator"}) 
     con = urllib.request.urlopen(req)
@@ -47,6 +44,7 @@ def getFileNameFromUrl(url):
     fileName = url.split('img=')[-1]
     return fileName
     
+
 def readJsonData(dataFolderPath, url, filePath):
 
     if url is 0:

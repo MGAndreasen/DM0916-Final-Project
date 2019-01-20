@@ -5,9 +5,9 @@ import numpy as np
 
 #scale factor along the horizontal axis and vertical. InterpolationMethod is how the picture is resized.
 def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod, dst):
-
+    
     orginalFileName = filePath.split('\\')[-1]
-    newFileName = '/resized_'+ str(col) + '-' + str(row) + '_' + str(interpolationMethod) + orginalFileName
+    newFileName = '_resized_'+ str(col) + '-' + str(row) + '_' + str(interpolationMethod) + orginalFileName
     newFilePath = dst + newFileName;
     
     if interpolationMethod == cv2.INTER_LINEAR:
@@ -19,10 +19,21 @@ def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVert
     if os.path.isfile(newFilePath):
         print(newFileName, 'allready exixst')
     else:
-        shutil.copy(filePath, newFilePath)
-        image = cv2.imread(newFilePath, 1)
-        newImage = cv2.resize(image, (col, row), scaleFactorHorizontal, scaleFactorVertical, interpolationMethod)
-        cv2.imwrite(newFilePath, newImage)
+        try:
+            shutil.copy(filePath, newFilePath)
+            
+            image = cv2.imread(newFilePath, 1)
+
+            newImage = cv2.resize(image, (col, row), scaleFactorHorizontal, scaleFactorVertical, interpolationMethod)
+            cv2.imwrite(newFilePath, newImage)
+            
+        except:
+            print("ERROR: resizeSingleImage, something went wront");
+
+
+    if os.path.isfile(filePath):
+        os.remove(filePath)
+    return 1;
 
 #NB as it stands now the col, row, scalefactor and interpolationMethods are all hardcorded and therefore not utilized.
 def resizeImagesInFolder(folderPath, col, row, scaleFactorHorizontal, scaleFactorVertical, interpolationMethod):

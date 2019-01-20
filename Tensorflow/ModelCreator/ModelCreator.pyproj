@@ -20,6 +20,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataAranger.py" />
     <Compile Include="DataCollector.py">
       <SubType>Code</SubType>
     </Compile>
