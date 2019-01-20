@@ -19,8 +19,8 @@ function customers_createLayout() {
         + "  <div class='customer_data'>"
         + "    <div class='title'>Data</div>"
         + "    <div class='content'>"
-        + "      <input class='email' type='text' placeholder='name'/>"
-        + "      <input class='password' type='text' placeholder='size'/>"
+        + "      <input class='email' type='text' placeholder='email'/>"
+        + "      <input class='password' type='text' placeholder='new password'/>"
         + "      <input class='enabled' type='text' placeholder='enabled'/>"
         + "    </div>"
         + "  </div>"
@@ -28,7 +28,7 @@ function customers_createLayout() {
 }
 
 function customers_populate_customerList() {
-    var section = $('#customers  .customer_list > .content');
+    var section = $('#customers .customer_list > .content');
     var parms = [];
     var restData = myPost('customer', 'getCustomers', parms);
 
