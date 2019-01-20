@@ -57,9 +57,9 @@ function projects_click_project() {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
 
-            projects_populateHirachy();
+            projects_populateHirachy($(this));
         }
-    }
+    };
 }
 
 function projects_newProject() {
@@ -73,8 +73,8 @@ function projects_newProject() {
     };
 }
 
-function projects_populateHirachy() {
-        var id = $(this).attr('id').replace('project_','');
+function projects_populateHirachy(project) {
+        var id = project.attr('id').replace('project_','');
         var project_data = $('#projects  .project_data > .content');
         var project_hirachy = $('#projects  .project_hirachy > .content');
  
