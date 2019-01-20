@@ -139,16 +139,17 @@ i {
     color: #000;
     overflow-x: hidden;
 }
+/* Titles */
+#pages div.title {
+    border-bottom: 1px solid #999;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #cdcdcd;
+}
 
-    #pages div.title {
-        border-bottom: 1px solid #999;
-        height: 30px;
-        padding-top: 10px;
-        font-size: 20px;
-        font-weight: bolder;
-        background-color: #cdcdcd;
-    }
-
+/* Right panel */
 #projects div.project_panel {
     margin: 10px;
     flex-basis: 300px;
@@ -159,7 +160,8 @@ i {
     /*overflow-x: hidden;*/
 }
 
-#projects div.project_data, #projects div.project_new_element, #projects div.project_upload {
+/* Right panel childern elements */
+#projects div.project_panel > div {
     margin-bottom: 10px;
     box-sizing: border-box;
     width: 100%;
@@ -171,6 +173,7 @@ i {
     overflow-x: hidden;
 }
 
+/*
     #projects div.project_data > .title, #projects div.project_upload > .title {
         border-bottom: 1px solid #999;
         height: 30px;
@@ -179,7 +182,7 @@ i {
         font-weight: bolder;
         background-color: #cdcdcd;
     }
-
+*/
 #projects .project_list > .content > .project, #customers .customer_list > .content > .customer {
     padding: 10px;
     font-size: 1em;
