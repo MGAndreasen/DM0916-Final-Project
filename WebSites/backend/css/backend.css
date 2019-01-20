@@ -173,16 +173,6 @@ i {
     overflow-x: hidden;
 }
 
-/*
-    #projects div.project_data > .title, #projects div.project_upload > .title {
-        border-bottom: 1px solid #999;
-        height: 30px;
-        padding-top: 10px;
-        font-size: 20px;
-        font-weight: bolder;
-        background-color: #cdcdcd;
-    }
-*/
 #projects .project_list > .content > .project, #customers .customer_list > .content > .customer {
     padding: 10px;
     font-size: 1em;
@@ -204,6 +194,7 @@ i {
     color: #fff;
 }
 
+/*
 #projects .project_list > .title, #customers .customer_list > .title {
     border-bottom: 1px solid #999;
     height: 30px;
@@ -212,7 +203,7 @@ i {
     font-weight: bolder;
     background-color: #cdcdcd;
 }
-
+    */
 #projects .project_list > .new, #customers .customer_list > .new {
     padding: 10px;
     text-align: left;
@@ -226,13 +217,15 @@ i {
         margin: 0px 10px 0px 10px;
     }
 
-/* Customer Section */
+
+
+
+
+
+
+
 
 /* ApiTest Section */
-
-
-
-
 
 .filedock {
     width: 300px;
