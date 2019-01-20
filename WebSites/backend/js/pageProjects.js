@@ -23,13 +23,15 @@ function projects_createLayout() {
         + "    <div class='title'>Hirachy</div>"
         + "    <div class='content'></div>"
         + "  </div>"
-        + "  <div class='project_data'>"
-        + "    <div class='title'>Data</div>"
-        + "    <div class='content'>"
-        + "      <input class='name' type='text' placeholder='name'/>"
-        + "      <input class='size' type='text' placeholder='size'/>"
-        + "      <input class='enabled' type='text' placeholder='enabled'/>"
-        + "    </div>"
+        + "  <div class='project_panel'>"
+        + "    <div class='project_data'>"
+        + "      <div class='title'>Data</div>"
+        + "        <div class='content'>"
+        + "          <input class='name' type='text' placeholder='name'/>"
+        + "          <input class='size' type='text' placeholder='size'/>"
+        + "          <input class='enabled' type='text' placeholder='enabled'/>"
+        + "        </div>"
+        + "      </div>"
         + "  </div>"
         + "</div>";
 }
@@ -75,8 +77,8 @@ function projects_newProject() {
 
 function projects_populateHirachy(project) {
         var id = project.attr('id').replace('project_','');
-        var project_data = $('#projects  .project_data > .content');
-        var project_hirachy = $('#projects  .project_hirachy > .content');
+        var project_data = $('#projects .project_data > .content');
+        var project_hirachy = $('#projects .project_hirachy > .content');
  
 
         var projectid = [id];
