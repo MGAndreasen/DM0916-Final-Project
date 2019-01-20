@@ -223,11 +223,10 @@ i {
 
     .project_hirachy .content .sortable li {
         margin: 0 5px 5px 5px;
-        padding: 5px;
-/*        font-size: 1.2em; */
+        padding: 10px;
         min-width: 120px;
         float: left;
-        border: 1px solid #999;
+        border: 0px solid #999;
         background: transparent;
     }
 
