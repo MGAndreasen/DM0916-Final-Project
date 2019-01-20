@@ -226,7 +226,9 @@ i {
         padding: 5px;
         font-size: 1.2em;
         min-width: 120px;
-        display: inline-block;
+        /* display: inline-block; */
+        border: 1px solid #999;
+        background: #cdcdcd;
     }
 
 
