@@ -210,10 +210,10 @@ i {
 
 
 /* Hirachy */
-.sortable, .project_hirachy .content > ul {
-    border: 1px solid #eee;
+.project_hirachy .content .sortable {
+    /*border: 1px solid #eee; */
     width: 142px;
-    min-height: 20px;
+    /* min-height: 20px; */
     list-style-type: none;
     margin: 0;
     padding: 5px 0 0 0;
@@ -221,13 +221,13 @@ i {
     margin-right: 10px;
 }
 
-.sortable li {
-    margin: 0 5px 5px 5px;
-    padding: 5px;
-    font-size: 1.2em;
-    width: 120px;
-    float: left;
-}
+    .project_hirachy .content .sortable li {
+        margin: 0 5px 5px 5px;
+        padding: 5px;
+        font-size: 1.2em;
+        width: 120px;
+        float: left;
+    }
 
 
 
