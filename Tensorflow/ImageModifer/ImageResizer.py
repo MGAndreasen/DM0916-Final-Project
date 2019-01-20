@@ -21,15 +21,11 @@ def resizeSingleImage(filePath, col, row, scaleFactorHorizontal, scaleFactorVert
     else:
         try:
             shutil.copy(filePath, newFilePath)
-            
             image = cv2.imread(newFilePath, 1)
-
             newImage = cv2.resize(image, (col, row), scaleFactorHorizontal, scaleFactorVertical, interpolationMethod)
             cv2.imwrite(newFilePath, newImage)
-            
         except:
             print("ERROR: resizeSingleImage, something went wront");
-
 
     if os.path.isfile(filePath):
         os.remove(filePath)
