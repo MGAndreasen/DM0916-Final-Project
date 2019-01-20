@@ -166,6 +166,8 @@ function projects_refresh_sortable() {
         cursor: "move",
         delay: 150,
         dropOnEmpty: true,
+        forceHelperSize: true,
+        forcePlaceholderSize: true,
         hightlight: ".highlightClass"
     }).disableSelection();
 }
