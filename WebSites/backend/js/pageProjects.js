@@ -159,9 +159,8 @@ function projects_create_hirachy_element() {
         nameElement.val(''); // Clear value
 
         if (name.length) {
-            //var element = "<!-- Element start--><li id='project_hirachy_element_" + name + "' class='ui-state-default'><div>" + name + "</div><ul class='sortable'></ul></li><!-- Element end-->";
-            var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-default'>" + name +"</li>";
-        var project_hirachy = $('#projects .project_hirachy > .content > ul');
+            var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>" + name + "</div><ul class='connectedSortable sortable'></ul></li>";
+        var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
         project_hirachy.append(element);
 
         // create element
