@@ -1,12 +1,14 @@
 function page_customers() {
     var section = $('#customers');                                      // Get section ref.
     section.off();                                                      // unbind eventhandlers.
-    customer_populate_customerList();                                   // Populate section layout.
     //section.on('click', '.project', projects_populateHirachy());        // Create new eventhandler
     //section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
+
+    customers_createLayout();
+    customer_populate_customerList();                                   // Populate section layout.
 }
 
-function customers_Layout() {
+function customers_createLayout() {
     return ""
         + "<div class='container'>"
         + "  <div class='customer_list'>"
