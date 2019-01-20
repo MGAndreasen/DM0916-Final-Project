@@ -51,3 +51,16 @@ def resizeImagesInFolder(folderPath, col, row, scaleFactorHorizontal, scaleFacto
         except Exception as e:
             print("Exception in ResizeImagesInFolder")
             print(e)
+
+
+#filePath = dsa
+#col = 128
+#row = 128
+#scaleFactorHorizontal = 1
+#scaleFactorVertical = 1
+#interpolationMethod ='cv2.INTER_LINEAR'
+#dst = dsa
+
+
+
+#resizeSingleImage()

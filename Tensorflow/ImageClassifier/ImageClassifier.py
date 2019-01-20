@@ -119,10 +119,19 @@ def runPredictArray(imagePaths, model_path, latestCheckpoint_path, image_size = 
 
     return(result)
 
-def testingArrayPredict():
-    model_path              = R'C:\cnnData\topCategoriesTest.meta'
-    latestCheckpoint_path   = R'C:\cnnData'
-    images = {R"C:\Users\Chris\OneDrive\Skrivebord\a.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\b.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\c.jpg"};
+def testingArrayPredict(folderPath):
+    model_path              = R'C:\cnnData\topCategoriesTestFamily_3k\.meta'
+    latestCheckpoint_path   = R'C:\cnnData\topCategoriesTestFamily_3k'
+    images = []
+
+    for the_file in os.listdir(folderPath):
+        file_path = os.path.join(folderPath, the_file)
+        images.append(file_path)
+    
+
+
+
+    #images = {R"C:\Users\Chris\OneDrive\Skrivebord\a.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\b.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\c.jpg"};
               #R"C:\Users\Chris\OneDrive\Skrivebord\d.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\e.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\f.jpg",
               #R"C:\Users\Chris\OneDrive\Skrivebord\g.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\h.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\i.jpg",
               #R"C:\Users\Chris\OneDrive\Skrivebord\l.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\n.jpg", R"C:\Users\Chris\OneDrive\Skrivebord\m.jpg",
@@ -131,13 +140,13 @@ def testingArrayPredict():
     runPredictArray(images, model_path, latestCheckpoint_path);
 
 def testingSinglePredict():
-    model_path              = R'C:\modelCreatorData\topCategoriesTest.meta'
-    latestCheckpoint_path   = R'C:\modelCreatorData'
+    model_path              = R'C:\cnnData\topCategoriesTest_100.meta'
+    latestCheckpoint_path   = R'C:\cnnData'
     image_size = 128
     num_channels = 3
     #Recreating the network graph.
     sess = restoreGraph(model_path, latestCheckpoint_path);
-
+    
     runPridict(R"C:\Users\Chris\OneDrive\Skrivebord\a.jpg", image_size, num_channels, sess);
     runPridict(R"C:\Users\Chris\OneDrive\Skrivebord\b.jpg", image_size, num_channels, sess);
     runPridict(R"C:\Users\Chris\OneDrive\Skrivebord\c.jpg", image_size, num_channels, sess);
@@ -151,4 +160,10 @@ def testingSinglePredict():
     runPridict(R"C:\Users\Chris\OneDrive\Skrivebord\k.jpg", image_size, num_channels, sess);
 
 #Testing Area.
-testingArrayPredict();
+folder1 = R"C:\Users\Chris\OneDrive\Skrivebord\testHelmet"
+folder2 = R"C:\Users\Chris\OneDrive\Skrivebord\testMTB"
+folder3 = R"C:\Users\Chris\OneDrive\Skrivebord\testTire"
+
+testingArrayPredict(folder1);
+testingArrayPredict(folder2);
+testingArrayPredict(folder3);
