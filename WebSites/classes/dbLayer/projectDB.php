@@ -163,6 +163,7 @@ class ProjectDB
 		$id = $conn->insert_id;
 
 		$conn->commit();
+		$resultArr = [$id];
 		$resultArr = $this->getStructureElement($id);
 		return $resultArr;
 	}
