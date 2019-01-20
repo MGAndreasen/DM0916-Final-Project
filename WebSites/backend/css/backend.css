@@ -225,7 +225,7 @@ i {
         margin: 0 5px 5px 5px;
         padding: 5px;
         font-size: 1.2em;
-        width: auto;
+        min-width: 120px;
         float: left;
     }
 
