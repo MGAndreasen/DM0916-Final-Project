@@ -164,6 +164,7 @@ function projects_refresh_sortable() {
         items: "li",
         toleranceElement: "> div",
         cursor: "move",
+        delay: 150,
         hightlight: ".highlightClass"
     }).disableSelection();
 }
