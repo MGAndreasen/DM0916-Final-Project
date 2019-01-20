@@ -4,7 +4,7 @@ function page_customers() {
     //section.on('click', '.project', projects_populateHirachy());        // Create new eventhandler
     //section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
 
-    customers_createLayout();
+    section.html(customers_createLayout());
     customers_populate_customerList();                                   // Populate section layout.
 }
 
