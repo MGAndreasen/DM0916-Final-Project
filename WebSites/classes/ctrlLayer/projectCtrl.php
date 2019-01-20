@@ -79,6 +79,17 @@ class ProjectCtrl {
 			errorMsg('ProjectCtrl', 'removeProject()', 'invalid id');
 		}
 	}
+	/*** STRUCTURE ***/
+	public function getStructureElement($id)	{
+		$result = $this->mDB->getStructureElement($id);
+		if(!empty($result))	{
+			$this->data['result']['projectStructures'] = $result;
+		}
+		else {
+			errorMsg('projectCtrl','getStructureElement(id)','returned an empty result!');
+		}
+
+	}
 
 	public function createStructureElement($project_id, $parent_id, $image_size, $filter_size, $validation_size, $name) {
 		$result = $this->mDB->createStructureElement($project_id, $parent_id, $image_size, $filter_size, $validation_size, $name);
@@ -86,6 +97,23 @@ class ProjectCtrl {
 		if(!empty($result))	{
 			$this->data['result']['projectStructures'] = $result;
 		}
+	}
+
+	public function deleteStructureElement($id) {
+		errorMsg('projectCtrl','deleteStructureElement(id)','Not Implemented!');
+		// start transaction
+		// remove alle project_structure_images refs first.
+		// then
+		// get parent_id from project_structure element.
+		// then
+		// update all curent children to get root parent_id aka (0) OR just the parent_id of the one we are planing on removing
+		// then remove id
+		// commit
+		// complete transaction
+	}
+
+	public function updateStructureElement($id, $project_id, $parent_id, $image_size, $filter_size, $validation_size, $name) {
+		errorMsg('projectCtrl','updateStructureElement(id)','Not Implemented!</br>'.$id.' - '.$project_id.' - '.$parent_id.' - '.$image_size.' - '.$filter_size.' - '.$validation_size.' - '.$name);
 	}
 
 	public function getModelToBuild(int $project_id, int $parent_id) {
