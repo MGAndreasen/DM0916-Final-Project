@@ -171,7 +171,7 @@ class ProjectDB
 	public function getStructureElement($id) {
 		global $conn;
 		$resultArr = [];
-		$query = $conn->prepare($this->$getStructureElement_SQL);
+		$query = $conn->prepare($this->getStructureElement_SQL);
 		$query->bind_param('i', $id);
 		$query->execute();
 		$result = $query->get_result();
