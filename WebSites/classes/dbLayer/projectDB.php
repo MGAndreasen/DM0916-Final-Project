@@ -12,7 +12,7 @@ class ProjectDB
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, ?, ?, ?, ?)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
 	private $createStructureElement_SQL = 'INSERT INTO project_structure VALUE(null, ?, ?, ?, ?, ?, ?)';
-	private $getStructureElement_SQL = 'SELECT * FROM project_structure WHERE id = ?)';
+	private $getStructureElement_SQL = 'SELECT * FROM project_structure WHERE id = ?';
 
 	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
 	 
@@ -172,8 +172,6 @@ class ProjectDB
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getStructureElement_SQL);
-		errorMsg('','',$this->getStructureElement_SQL);
-		return $resultArr;
 		$query->bind_param('i', $id);
 		$query->execute();
 		$result = $query->get_result();
