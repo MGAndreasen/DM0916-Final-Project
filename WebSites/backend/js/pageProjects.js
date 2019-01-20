@@ -166,10 +166,27 @@ function projects_refresh_sortable() {
         cursor: "move",
         delay: 150,
         dropOnEmpty: true,
-        forceHelperSize: true,
-        forcePlaceholderSize: true,
+        //forceHelperSize: true,
+        //forcePlaceholderSize: true,
         grid: [20, 10],
-        helper: "clone",
-        hightlight: ".highlightClass"
+        //helper: "clone",
+        revert: true,
+        ///hightlight: ".highlightClass"
+
+
+        receive: function (event, ui) {
+            //Get the receiving ul id
+            var receivingID = ui.item.parent('ul').attr('id');
+            
+            //Get the sending ul id
+            var sendingID = ui.sender.attr('id');
+
+            notify('EleChange','Receiving: ' + receivingID + '</br>Sending: ' + sendingID);
+
+
+
+            //$.post('_savingFile.php', { "affectedList": receivingID, "data": $(receivingID).sortable("toArray") });
+            //$.post('_savingFile.php', { "affectedList": sendingID, "data": $(sendingID).sortable("toArray") });
+        }
     }).disableSelection();
 }
