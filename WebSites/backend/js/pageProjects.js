@@ -36,7 +36,7 @@ function projects_createLayout() {
         + "  <div class='project_hirachy'>"
         + "    <div class='title'>Hirachy</div>"
         + "    <div class='content'>"
-        + "      <ul class='connectedSortable sortable'>"
+        + "      <ul class='connectedSortable sortable' style='width:100%; height:100%;'>"
         + "        <li class='ui-state-highlight'><div>Item 0</div><ul class='connectedSortable sortable'></ul></li>"
         + "        <li class='ui-state-highlight'><div>Item 1</div><ul class='connectedSortable sortable'></ul></li>"
         + "        <li class='ui-state-highlight'><div>Item 2</div><ul class='connectedSortable sortable'></ul></li>"
