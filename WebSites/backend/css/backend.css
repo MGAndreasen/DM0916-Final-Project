@@ -181,7 +181,7 @@ i {
     border-bottom: 1px solid #999;
 }
 
-    #projects .project_list > .content > .project > i, #customers .customer_list > .content > .customer > i {
+    #projects .project_list > .content > .project > i, #projects .project_new_element .content i, #customers .customer_list > .content > .customer > i {
         margin-right: 15px;
     }
 
@@ -194,22 +194,12 @@ i {
     color: #fff;
 }
 
-/*
-#projects .project_list > .title, #customers .customer_list > .title {
-    border-bottom: 1px solid #999;
-    height: 30px;
-    padding-top: 10px;
-    font-size: 20px;
-    font-weight: bolder;
-    background-color: #cdcdcd;
-}
-    */
-#projects .project_list > .new, #customers .customer_list > .new {
+#projects .project_list > .new, #projects .project_new_element .content, #customers .customer_list > .new {
     padding: 10px;
     text-align: left;
 }
 
-    #projects .project_list > .new > input, #customers .customer_list > .new > input {
+    #projects .project_list > .new > input, #projects .project_new_element input, #customers .customer_list > .new > input {
         padding: 4px;
         font-size: 16px;
         border-radius: 9px;
