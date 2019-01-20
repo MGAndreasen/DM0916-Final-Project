@@ -185,7 +185,7 @@ function projects_refresh_sortable() {
 
             //var newItem = $(this).data().sortable.currentItem;
             //var newItem = $(this).data()['uiSortable'].currentItem;
-            console.log($(this).data()['uiSortable']);
+            console.log($(this).data()['uiSortable']).currentItem;
 
 
             //notify('EleChange', 'Receiving: ' + receivingID + '</br>Sending: ' + sendingID + '</br>ElementId: '+newItem);
