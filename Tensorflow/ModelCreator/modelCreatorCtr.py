@@ -84,27 +84,29 @@ def prepareData(src, dst, categories, dataFolder, itemTag, modelName, maxItems):
     
 
     #for retesting purposes we delete all files after we are done.
-    #deleteAllFilesInFolderAndSubFolders(dataFolder) #temperory.
-    #dataFolderPath = os.path.normpath(dataFolder)
+    #deleteAllFilesInFolderAndSubFolders(src) #temperory.
+    
+    #§dataFolderPath = os.path.normpath(dataFolder)
 
 
 
     #Making the main dir that data will be stored in.
-    #DataCollector.createFolder(dataFolder)
-    #subDataFolder = os.path.normpath(src)
-    #DataCollector.createFolder(subDataFolder)
+    DataCollector.createFolder(dataFolder)
+    subDataFolder = os.path.normpath(src)
+    DataCollector.createFolder(subDataFolder)
 
-    #dataFolderForDst = os.path.normpath(dst)
-    #DataCollector.createFolder(dataFolderForDst)
+    dataFolderForDst = os.path.normpath(dst)
+    dataFolderForDst = dataFolderForDst + "/"
+    DataCollector.createFolder(dataFolderForDst)
     
-    #dataFolderPathJson = os.path.normpath(dst + '/json//');
-    #DataCollector.createFolder(dataFolderPathJson)
+    dataFolderPathJson = os.path.normpath(dst + '/json//');
+    DataCollector.createFolder(dataFolderPathJson)
     
     
-    #DataAranger.splitJsonDataIntoCategories(src, dataFolderPathJson, categories, itemTag);
+    DataAranger.splitJsonDataIntoCategories(src, dataFolderPathJson, categories, itemTag);
 
 
-    #DataAranger.readJsonData2(dataFolderForDst, categories, modelName, dataFolderPathJson, maxItems)
+    DataAranger.readJsonData2(dataFolderForDst, categories, modelName, dataFolderPathJson, maxItems)
 
     validation_size = float(0.2)
     batch_size = int(16)
@@ -117,8 +119,8 @@ def prepareData(src, dst, categories, dataFolder, itemTag, modelName, maxItems):
     num_iteration = int(1000)
 
 
-    train_path = dst
-    modelFolder = dst
+    train_path = dataFolderForDst
+    modelFolder = dataFolderForDst
 
     ##Network graph params
     filter_size_conv1 = 3
@@ -149,10 +151,11 @@ url = "http://4pi.dk/playground/testjsondata/index.php?fbclid=IwAR3NWUErkGsKorzr
 
 
 filePath = 'C:/data_cycling.json';
+dst = 'C:/cnnData/topCategoriesTestFamily_3k/';
 
 #itemTag = 'item_group'
 #prepareData(filePath, 'C:/cnnData/topCategories', ['cycling_bike', 'clothes_group', 'cycling_component'], 'C:/cnnData', itemTag)
 maxItems = 3000;
-itemTag = 'item_type'
-modelName = 'topCategoriesTest'
-prepareData(filePath, 'C:/cnnData/topCategoriesTest', ['mtb_bike', 'helmets_clothes', 'tyres_component'], 'C:/cnnData', itemTag, modelName, maxItems)
+itemTag = 'item_family'
+modelName = 'topCategoriesTestFamily_3k'
+prepareData(filePath, dst, ['cycling_bike', 'cycling_clothes', 'cycling_component'], 'C:/cnnData/topCategoriesTest_4', itemTag, modelName, maxItems)
