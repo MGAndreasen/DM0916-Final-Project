@@ -210,7 +210,7 @@ i {
 
 
 /* Hirachy */
-.sortable {
+.sortable, project_hirachy > ul {
     border: 1px solid #eee;
     width: 142px;
     min-height: 20px;
