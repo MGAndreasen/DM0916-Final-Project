@@ -172,6 +172,8 @@ class ProjectDB
 		global $conn;
 		$resultArr = [];
 		$query = $conn->prepare($this->getStructureElement_SQL);
+		errorMsg('','',$this->getStructureElement_SQL);
+		return $resultArr;
 		$query->bind_param('i', $id);
 		$query->execute();
 		$result = $query->get_result();
