@@ -11,7 +11,7 @@ function page_projects() {
         connectWith: ".connected"
     });
     */
-    $("#sortable0, #sortable1, #sortable2").sortable({
+    $("#sortable0, #sortable1, .sortable").sortable({
         connectWith: ".connectedSortable"
     }).disableSelection();
     // .disableSelection()
@@ -35,7 +35,13 @@ function projects_createLayout() {
         + "    <div class='title'>Hirachy</div>"
         + "    <div class='content'>"
         + "      <ul id='sortable0' class='connectedSortable'>"
-        + "        <li class='ui-state-highlight'>Item 1</li><li class='ui-state-highlight'>Item 2</li ><li class='ui-state-highlight'>Item 3</li><li class='ui-state-highlight'>Item 4</li ><li class='ui-state-highlight'>Item 5</li><li class='ui-state-highlight'>Item 6</li >"
+        + "        <li class='ui-state-highlight'>Item 1</li><li class='ui-state-highlight'>Item 2</li ><li class='ui-state-highlight'>Item 3</li><li class='ui-state-highlight'>Item 4</li >"
+        + "      </ul>"
+        + "      <ul id='sortable1' class='connectedSortable'>"
+        + "        <li class='ui-state-highlight'>Item 5</li><li class='ui-state-highlight'>Item 6</li ><li class='ui-state-highlight'>Item 7</li><li class='ui-state-highlight'>Item 8</li >"
+        + "      </ul>"
+        + "      <ul class='connectedSortable sortable'>"
+        + "        <li class='ui-state-highlight'>Item 9</li><li class='ui-state-highlight'>Item 10</li ><li class='ui-state-highlight'>Item 11</li><li class='ui-state-highlight'>Item 12</li >"
         + "      </ul>"
         + "    </div>"
         + "  </div>"
