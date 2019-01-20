@@ -43,7 +43,7 @@ function projects_createLayout() {
         + "      <div class='title'>New hirachy element</div>"
         + "      <div class='content'>"
         + "        <input class='name' type='text' placeholder='name'/>"
-        + "        <input class='button' type='button' placeholder='Create Element'/>"
+        + "        <i class='fas fa-plus-circle addNew'></i>"
         + "      </div>"
         + "    </div>"
 
