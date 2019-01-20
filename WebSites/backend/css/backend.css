@@ -212,7 +212,7 @@ i {
 /* Hirachy */
 .project_hirachy .content .sortable {
     /*border: 1px solid #eee; */
-    width: 142px;
+    width: auto;
     /* min-height: 20px; */
     list-style-type: none;
     margin: 0;
@@ -225,7 +225,7 @@ i {
         margin: 0 5px 5px 5px;
         padding: 5px;
         font-size: 1.2em;
-        width: 120px;
+        width: auto;
         float: left;
     }
 
