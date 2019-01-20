@@ -1,7 +1,7 @@
 function page_customers() {
     var section = $('#customers');                                      // Get section ref.
     section.off();                                                      // unbind eventhandlers.
-    //section.on('click', '.project', projects_populateHirachy());        // Create new eventhandler
+    section.on('click', '.customer', customers_click_customer());       // Create new eventhandler
     //section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
 
     section.html(customers_createLayout());
@@ -39,4 +39,15 @@ function customers_populate_customerList() {
             section.append(c);
         });
     }
+}
+
+function customers_click_customer() {
+    return function () {
+        if (!$(this).hasClass('active')) {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+
+            customer = project.attr('id').replace('customer_', '');
+        }
+    };
 }
