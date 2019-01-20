@@ -180,16 +180,12 @@ function projects_refresh_sortable() {
         receive: function (event, ui) {
             //Get the receiving ul id
             var receivingID = ui.item.parent('ul').attr('id');
-            
             //Get the sending ul id
             var sendingID = ui.sender.attr('id');
 
-            notify('EleChange','Receiving: ' + receivingID + '</br>Sending: ' + sendingID);
+            var newItem = $(this).data().sortable.currentItem;
 
-
-
-            //$.post('_savingFile.php', { "affectedList": receivingID, "data": $(receivingID).sortable("toArray") });
-            //$.post('_savingFile.php', { "affectedList": sendingID, "data": $(sendingID).sortable("toArray") });
+            notify('EleChange', 'Receiving: ' + receivingID + '</br>Sending: ' + sendingID + '</br>ElementId: '+newItem);
         }
     }).disableSelection();
 }
