@@ -7,21 +7,8 @@ function page_projects() {
     section.on('click', '.project_new_element .addNew', projects_create_hirachy_element());  // Create new eventhandler
     projectId = null;
 
-    /*
-    $("#projects .project_hirachy .content > ul .sortable").sortable({
-        connectWith: ".connected"
-    });
-    */
-    hirachy = $(".project_hirachy .content .sortable").sortable({
-        connectWith: ".connectedSortable",
-        items: "li",
-        toleranceElement: "> div"
-    }).disableSelection();
-    // .disableSelection()
-    //toleranceElement: '> div'
     projects_populate_projectList();
-
-    
+    projects_refresh_sortable();
 }
 
 function projects_createLayout() {
@@ -154,14 +141,18 @@ function projects_create_hirachy_element() {
                 var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>" + name + "</div><ul class='connectedSortable sortable'></ul></li>";
                 var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
                 project_hirachy.append(element);
-
-                hirachy = $(".project_hirachy .content .sortable").sortable({
-                    connectWith: ".connectedSortable",
-                    items: "li",
-                    toleranceElement: "> div"
-                }).disableSelection();
+                projects_refresh_sortable();
+                
             }
             else { notify('Create Hirachy Element','Failed!  Pleace select a Project first!'); }
         }
     };
+}
+
+function projects_refresh_sortable() {
+    hirachy = $(".project_hirachy .content .sortable").sortable({
+        connectWith: ".connectedSortable",
+        items: "li",
+        toleranceElement: "> div"
+    }).disableSelection();
 }
