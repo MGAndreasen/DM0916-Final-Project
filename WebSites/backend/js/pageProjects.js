@@ -1,11 +1,12 @@
 function page_projects() {
-    var section = $("#projects");                                       // Get section ref.
-    section.off();                                                      // unbind eventhandlers.
-    section.html(projects_createLayout());                              // Populate section layout.
-    section.on('click', '.project', projects_click_project());          // Create new eventhandler
-    section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
+    var section = $("#projects");                                                // Get section ref.
+    section.off();                                                               // unbind eventhandlers.
+    section.html(projects_createLayout());                                       // Populate section layout.
+    section.on('click', '.project', projects_click_project());                   // Create new eventhandler
+    section.on('click', '.addNew', projects_newProject());                       // Create new eventhandler
+    section.on('click', '.project_new_element .button', projects_newProject());  // Create new eventhandler
 
-
+    
     projects_populate_projectList();
 
     
@@ -35,6 +36,14 @@ function projects_createLayout() {
         + "        <input class='name' type='text' placeholder='name'/>"
         + "        <input class='size' type='text' placeholder='size'/>"
         + "        <input class='enabled' type='text' placeholder='enabled'/>"
+        + "      </div>"
+        + "    </div>"
+
+        + "    <div class='project_new_element'>"
+        + "      <div class='title'>New hirachy element</div>"
+        + "      <div class='content'>"
+        + "        <input class='name' type='text' placeholder='name'/>"
+        + "        <input class='button' type='button' placeholder='Create Element'/>"
         + "      </div>"
         + "    </div>"
 
@@ -113,4 +122,26 @@ function projects_populateHirachy(project) {
         }
 
         project_hirachy.append('load stuff here');
+}
+
+function projects_create_hirachy_element() {
+    return function () {
+
+        // create on rest service
+        // get element id
+
+        var nameElement = $('#projects .project_new_element .name'); // ref input element
+        var name = nameElement.val(); // Copy value
+        nameElement.val(''); // Clear value
+
+        if (name.length) {
+        var element = "<!-- Element start--><li id='project_hirachy_element_" + name + "'><div>" + name + "</div><ul></ul></li><!-- Element end-->";
+        var project_hirachy = $('#projects .project_hirachy > .content');
+        project_hirachy.append(element);
+
+        // create element
+        // append to root list
+        // done
+        }
+    };
 }
