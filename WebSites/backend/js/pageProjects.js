@@ -183,7 +183,10 @@ function projects_refresh_sortable() {
             //Get the sending ul id
             var sendingID = ui.sender.attr('id');
 
-            var newItem = $(this).data().sortable.currentItem;
+            //var newItem = $(this).data().sortable.currentItem;
+            var newItem = $(this).data()['ui-sortable'].currentItem;
+
+            
 
             notify('EleChange', 'Receiving: ' + receivingID + '</br>Sending: ' + sendingID + '</br>ElementId: '+newItem);
         }
