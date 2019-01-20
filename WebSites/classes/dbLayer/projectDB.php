@@ -149,6 +149,7 @@ class ProjectDB
 
 	}
 
+	// partly
 	public function createStructureElement($project_id, $parent_id, $image_size, $filter_size, $validation_size, $name) {
 		//errorMsg('projectDB','createStructureElement','Not implementet. got: '.$project_id.' - '.$parent_id.' - '.$name);
 		global $conn;
@@ -166,6 +167,7 @@ class ProjectDB
 		return $resultArr;
 	}
 
+	// partly
 	public function getStructureElement($id) {
 		global $conn;
 		$resultArr = [];

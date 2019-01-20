@@ -138,7 +138,7 @@ function projects_create_hirachy_element() {
             if (projectId) {
                         // create on rest service
                         // get element id
-                var parms = [projectId, 0, 128, 3, 20, name];
+                var parms = [parseInt(projectId), 0, 128, 3, 20, name];
                 var restData = myPost('project', 'createStructureElement', parms);
 
                 if (restData['status'] === "OK") {
