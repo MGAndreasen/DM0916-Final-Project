@@ -2,11 +2,11 @@ function page_projects() {
     var section = $("#projects");                                       // Get section ref.
     section.off();                                                      // unbind eventhandlers.
     section.html(projects_createLayout());                              // Populate section layout.
-    section.on('click', '.project', projects_populateHirachy());        // Create new eventhandler
+    section.on('click', '.project', projects_click_project());          // Create new eventhandler
     section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
 
 
-    populate_projectList();
+    projects_populate_projectList();
 
     
 }
@@ -34,7 +34,7 @@ function projects_createLayout() {
         + "</div>";
 }
 
-function populate_projectList() {
+function projects_populate_projectList() {
     var project_list = $('#projects  .project_list > .content');
 
     // Test load data.
@@ -48,6 +48,16 @@ function populate_projectList() {
             p = "<div class='project' id='project_" + value['id'] + "'><i class='fas fa-project-diagram'></i >" + value['name'] + "</div>";
             project_list.append(p);
         });
+    }
+}
+
+function projects_click_project() {
+
+    if (!$(this).hasClass('active')) {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+
+        projects_populateHirachy();
     }
 }
 
