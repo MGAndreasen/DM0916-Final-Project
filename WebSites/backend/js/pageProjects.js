@@ -136,8 +136,6 @@ function projects_create_hirachy_element() {
 
         if (name.length) {
             if (projectId) {
-                        // create on rest service
-                        // get element id
                 var parms = [parseInt(projectId), 0, 128, 3, 20, name];
                 var restData = myPost('project', 'createStructureElement', parms);
 
@@ -164,6 +162,8 @@ function projects_refresh_sortable() {
     hirachy = $(".project_hirachy .content .sortable").sortable({
         connectWith: ".connectedSortable",
         items: "li",
-        toleranceElement: "> div"
+        toleranceElement: "> div",
+        cursor: "move",
+        hightlight: ".highlightClass"
     }).disableSelection();
 }
