@@ -117,13 +117,13 @@ function projects_newProject() {
 }
 
 function projects_populateHirachy(project) {
-        var id = project.attr('id').replace('project_','');
+        projectId = project.attr('id').replace('project_','');
         var project_data = $('#projects .project_data > .content');
         var project_hirachy = $('#projects .project_hirachy > .content');
  
 
-        var projectid = [id];
-        var restData = myPost('project', 'getProject', projectid);
+        var parms = [projectId];
+        var restData = myPost('project', 'getProject', parms);
 
         if (restData['status'] === "OK") {
             project_data.children('.name').val(restData['result']['projects'][0]['name']);
@@ -152,11 +152,11 @@ function projects_create_hirachy_element() {
         nameElement.val(''); // Clear value
 
         if (name.length) {
-            var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>" + name + "</div><ul class='connectedSortable sortable'></ul></li>";
+            var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>P: " + projectId + " - " + name + "</div><ul class='connectedSortable sortable'></ul></li>";
         var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
         project_hirachy.append(element);
 
-            hirachy = $(".project_hirachy .content .sortable").sortable({
+        hirachy = $(".project_hirachy .content .sortable").sortable({
                 connectWith: ".connectedSortable",
                 items: "li",
                 toleranceElement: "> div"

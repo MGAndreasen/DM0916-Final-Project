@@ -1,5 +1,6 @@
 var customer = 1;  // Cheat we have no login system
-var hirachy;
+var hirachySortables;
+var projectId;
 
 $(document).ready(function () {
     // Ajax error eventhandler
