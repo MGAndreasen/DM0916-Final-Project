@@ -126,7 +126,7 @@ i {
     overflow-x: hidden;
 }
 
-#projects div.project_hirachy, #customers div.customer_data {
+#projects div.project_hirachy, #projects div.project_new_element, #customers div.customer_data {
     margin: 10px;
     flex-basis: auto;
     box-sizing: border-box;
@@ -139,7 +139,7 @@ i {
     overflow-x: hidden;
 }
 
-    #projects div.project_hirachy > .title, #customers div.customer_data > .title {
+    #projects div.project_hirachy > .title, #projects .title, #customers div.customer_data > .title {
         border-bottom: 1px solid #999;
         height: 30px;
         padding-top: 10px;
@@ -158,7 +158,7 @@ i {
     /*overflow-x: hidden;*/
 }
 
-#projects div.project_data, #projects div.project_upload {
+#projects div.project_data, #projects div.project_new_element, #projects div.project_upload {
     margin-bottom: 10px;
     box-sizing: border-box;
     width: 100%;
