@@ -47,7 +47,7 @@ function customers_click_customer() {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
 
-            customer = project.attr('id').replace('customer_', '');
+            customer = $(this).attr('id').replace('customer_', '');
         }
     };
 }
