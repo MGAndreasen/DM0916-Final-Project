@@ -41,7 +41,7 @@ class ImageCtrl {
 	}
 
 	public function deleteImage($id) {
-		
+		errMsg('ImageCtrl','deleteImage','Not implemented');
 	}
 }
 ?>

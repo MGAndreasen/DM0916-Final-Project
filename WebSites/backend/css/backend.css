@@ -105,48 +105,48 @@ i {
 }
 
 /* Project Section */
-#projects > div.container {
+#projects > div.container, #customers > div.container {
     display: flex;
     justify-content: space-around;
-    align-content:space-around;
+    align-content: space-around;
     align-items: stretch;
 }
 
-    #projects div.project_list {
-        margin: 10px;
-        flex-basis: 300px;
-        flex-shrink: 0;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        border-radius: 9px;
-        border: 1px solid #999;
-        background-color: #eee;
-        color: #000;
-        overflow-x: hidden;
-    }
+#projects div.project_list, #customers div.customer_list {
+    margin: 10px;
+    flex-basis: 300px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+    border: 1px solid #999;
+    background-color: #eee;
+    color: #000;
+    overflow-x: hidden;
+}
 
-    #projects div.project_hirachy {
-        margin: 10px;
-        flex-basis: auto;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        border-radius: 9px;
-        border: 1px solid #999;
-        background-color: #eee;
-        color: #000;
-        overflow-x: hidden;
-    }
+#projects div.project_hirachy, #customers div.customer_data {
+    margin: 10px;
+    flex-basis: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+    border: 1px solid #999;
+    background-color: #eee;
+    color: #000;
+    overflow-x: hidden;
+}
 
-        #projects div.project_hirachy > .title {
-            border-bottom: 1px solid #999;
-            height: 30px;
-            padding-top: 10px;
-            font-size: 20px;
-            font-weight: bolder;
-            background-color: #cdcdcd;
-        }
+    #projects div.project_hirachy > .title, #customers div.customer_data > .title {
+        border-bottom: 1px solid #999;
+        height: 30px;
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        background-color: #cdcdcd;
+    }
 
     #projects div.project_data {
         margin: 10px;
@@ -171,28 +171,28 @@ i {
             background-color: #cdcdcd;
         }
 
-    #projects .project_list > .content > .project {
-        padding: 10px;
-        font-size: 1em;
-        font-weight: 600;
-        text-align: left;
-        border-bottom: 1px solid #999;
+#projects .project_list > .content > .project, #customers .customer_list > .content > .customer {
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #999;
+}
+
+    #projects .project_list > .content > .project > i, #customers .customer_list > .content > .customer > i {
+        margin-right: 15px;
     }
 
-#projects .project_list > .content > .project > i {
-    margin-right: 15px;
-}
+    #projects .project_list > .content > .project:hover, #customers .customer_list > .content > .customer:hover {
+        background-color: #ccc;
+    }
 
-#projects .project_list > .content > .project:hover {
-    background-color: #ccc;
-}
-
- #projects .project_list > .content > .active {
+#projects .project_list > .content > .active, #customers .customer_list > .content > .active {
     background-color: #4CAF50;
     color: #fff;
 }
 
-#projects .project_list > .title {
+#projects .project_list > .title, #customers .customer_list > .title {
     border-bottom: 1px solid #999;
     height: 30px;
     padding-top: 10px;
@@ -201,18 +201,18 @@ i {
     background-color: #cdcdcd;
 }
 
-#projects .project_list > .new {
+#projects .project_list > .new, #customers .customer_list > .new {
     padding: 10px;
     text-align: left;
 }
 
-#projects .project_list > .new > input {
-    padding: 4px;
-    font-size: 16px;
-    border-radius: 9px;
-    border: 1px solid #999;
-    margin: 0px 10px 0px 10px;
-}
+    #projects .project_list > .new > input, #customers .customer_list > .new > input {
+        padding: 4px;
+        font-size: 16px;
+        border-radius: 9px;
+        border: 1px solid #999;
+        margin: 0px 10px 0px 10px;
+    }
 
 /* Customer Section */
 

@@ -38,8 +38,9 @@ function populate_projectList() {
     var project_list = $('#projects  .project_list > .content');
 
     // Test load data.
-    var customerid = [1];
-    var restData = myPost('project', 'getProjects', customerid);
+    var customerid = customer;
+    var parms = [customerid];
+    var restData = myPost('project', 'getProjects', parms);
     var p;
 
     if (restData['status'] === "OK") {
