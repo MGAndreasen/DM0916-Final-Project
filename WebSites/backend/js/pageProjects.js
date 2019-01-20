@@ -11,7 +11,7 @@ function page_projects() {
         connectWith: ".connected"
     });
     */
-    $(".project_hirachy .content .sortable").sortable({
+    hirachy = $(".project_hirachy .content .sortable").sortable({
         connectWith: ".connectedSortable",
         items: "li",
         toleranceElement: "> div"
@@ -138,7 +138,7 @@ function projects_populateHirachy(project) {
             */
         }
 
-        project_hirachy.append('load stuff here');
+        //project_hirachy.append('load stuff here');
 }
 
 function projects_create_hirachy_element() {
@@ -156,6 +156,7 @@ function projects_create_hirachy_element() {
         var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
         project_hirachy.append(element);
 
+            hirachy.sortable('refresh');
         // create element
         // append to root list
         // done

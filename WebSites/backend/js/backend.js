@@ -1,4 +1,6 @@
 var customer = 1;  // Cheat we have no login system
+var hirachy;
+
 $(document).ready(function () {
     // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
