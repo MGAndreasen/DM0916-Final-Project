@@ -158,26 +158,26 @@ i {
     /*overflow-x: hidden;*/
 }
 
-    #projects div.project_data {
-        margin-bottom: 10px;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        border-radius: 9px;
-        border: 1px solid #999;
-        background-color: #eee;
-        color: #000;
-        overflow-x: hidden;
-    }
+#projects div.project_data, #projects div.project_upload {
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+    border: 1px solid #999;
+    background-color: #eee;
+    color: #000;
+    overflow-x: hidden;
+}
 
-        #projects div.project_data > .title {
-            border-bottom: 1px solid #999;
-            height: 30px;
-            padding-top: 10px;
-            font-size: 20px;
-            font-weight: bolder;
-            background-color: #cdcdcd;
-        }
+    #projects div.project_data > .title, #projects div.project_upload > .title {
+        border-bottom: 1px solid #999;
+        height: 30px;
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: bolder;
+        background-color: #cdcdcd;
+    }
 
 #projects .project_list > .content > .project, #customers .customer_list > .content > .customer {
     padding: 10px;
