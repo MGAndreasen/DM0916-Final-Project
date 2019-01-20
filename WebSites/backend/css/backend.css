@@ -212,7 +212,7 @@ i {
 /* Hirachy */
 .project_hirachy .content .sortable {
     /*border: 1px solid #eee; */
-    width: auto;
+    width: 120px;
     /* min-height: 20px; */
     list-style-type: none;
     margin: 0;
