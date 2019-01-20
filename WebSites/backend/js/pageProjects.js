@@ -138,11 +138,22 @@ function projects_create_hirachy_element() {
             if (projectId) {
                         // create on rest service
                         // get element id
-                var element = "<li id='project_hirachy_element_" + name + "' class='ui-state-highlight'><div>" + name + "</div><ul class='connectedSortable sortable'></ul></li>";
-                var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
-                project_hirachy.append(element);
-                projects_refresh_sortable();
-                
+                var parms = [projectId, 0, 128, 3, 20, name];
+                var restData = myPost('project', 'createStructureElement', parms);
+
+                if (restData['status'] === "OK") {
+                    var result = restData['result']['projectStructures'][0];
+
+                    if (result['id']) {
+                        var element = "<li id='project_hirachy_element_" + result['id'] + "' class='ui-state-highlight'><div>" + result['name'] + "</div><ul class='connectedSortable sortable'></ul></li>";
+                        var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
+                        project_hirachy.append(element);
+                        projects_refresh_sortable();
+
+                    }
+                    else { notify('Create Structure Element','No id, returned'); }
+                }
+               
             }
             else { notify('Create Hirachy Element','Failed!  Pleace select a Project first!'); }
         }
