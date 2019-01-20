@@ -164,7 +164,7 @@ class ProjectDB
 
 		$conn->commit();
 		$resultArr = [$id];
-		$resultArr = $this->getStructureElement($id);
+		//$resultArr = $this->getStructureElement($id);
 		return $resultArr;
 	}
 
