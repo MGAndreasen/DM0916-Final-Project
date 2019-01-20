@@ -13,7 +13,8 @@ function page_projects() {
     */
     $(".project_hirachy .content .sortable").sortable({
         connectWith: ".connectedSortable",
-        items: "li"
+        items: "li",
+        toleranceElement: "> div"
     }).disableSelection();
     // .disableSelection()
     //toleranceElement: '> div'
