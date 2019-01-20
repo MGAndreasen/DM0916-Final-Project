@@ -1,3 +1,4 @@
+var customer = 1;  // Cheat we have no login system
 $(document).ready(function () {
     // Ajax error eventhandler
     $(document).ajaxError(function (event, xhr, settings) {
@@ -42,8 +43,8 @@ $(document).ready(function () {
 
 //-- SITE Funcs
 function handlePagechange() {
-    if ($('#pages .active').length) {
-        var pageName = $('#pages .active').attr('id');
+    if ($('#pages > .active').length) {
+        var pageName = $('#pages > .active').attr('id');
         if ($('#' + pageName).length) {
             window['page_' + pageName]();
         }

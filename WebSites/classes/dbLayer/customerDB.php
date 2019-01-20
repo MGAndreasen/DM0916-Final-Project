@@ -91,7 +91,7 @@ class CustomerDB
 		return $id;
 	}
 
-
+	/*
 	public function deleteCustomer($id) {
 		$query = $conn->prepare($this->$deleteCustomer_SQL);
 		$query->bind_param(':id', $customer->getID());
@@ -105,5 +105,6 @@ class CustomerDB
 			return 1; 
 		}
 	}
+	*/
 }
 ?>
