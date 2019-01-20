@@ -140,7 +140,7 @@ function projects_create_hirachy_element() {
 
         if (name.length) {
             var element = "<!-- Element start--><li id='project_hirachy_element_" + name + "' class='ui-state-default'><div>" + name + "</div><ul class='sortable'></ul></li><!-- Element end-->";
-        var project_hirachy = $('#projects .project_hirachy > .content ul');
+        var project_hirachy = $('#projects .project_hirachy > .content > ul');
         project_hirachy.append(element);
 
         // create element
