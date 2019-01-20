@@ -156,7 +156,7 @@ function projects_create_hirachy_element() {
         var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
         project_hirachy.append(element);
 
-            hirachy.sortable({
+            hirachy = $(".project_hirachy .content .sortable").sortable({
                 connectWith: ".connectedSortable",
                 items: "li",
                 toleranceElement: "> div"
