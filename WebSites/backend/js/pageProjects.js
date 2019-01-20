@@ -4,7 +4,7 @@ function page_projects() {
     section.html(projects_createLayout());                                       // Populate section layout.
     section.on('click', '.project', projects_click_project());                   // Create new eventhandler
     section.on('click', '.addNew', projects_newProject());                       // Create new eventhandler
-    section.on('click', '.project_new_element .button', projects_create_hirachy_element());  // Create new eventhandler
+    section.on('click', '.project_new_element .addNew', projects_create_hirachy_element());  // Create new eventhandler
 
     
     projects_populate_projectList();
