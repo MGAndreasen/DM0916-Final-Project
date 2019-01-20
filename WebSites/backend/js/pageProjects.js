@@ -156,7 +156,11 @@ function projects_create_hirachy_element() {
         var project_hirachy = $('#projects .project_hirachy > .content > .sortable');
         project_hirachy.append(element);
 
-            hirachy.sortable('refresh');
+            hirachy.sortable({
+                connectWith: ".connectedSortable",
+                items: "li",
+                toleranceElement: "> div"
+            }).disableSelection();
         // create element
         // append to root list
         // done
