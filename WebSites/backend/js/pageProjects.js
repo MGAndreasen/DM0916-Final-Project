@@ -12,8 +12,8 @@ function page_projects() {
 
     $("#sortable1, #sortable2").sortable({
         connectWith: ".connectedSortable"
-    }).disableSelection();
-
+    });
+    // .disableSelection()
     //toleranceElement: '> div'
     projects_populate_projectList();
 
