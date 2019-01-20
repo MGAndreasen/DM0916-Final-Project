@@ -168,6 +168,7 @@ function projects_refresh_sortable() {
         dropOnEmpty: true,
         forceHelperSize: true,
         forcePlaceholderSize: true,
+        grid: [20, 10],
         hightlight: ".highlightClass"
     }).disableSelection();
 }
