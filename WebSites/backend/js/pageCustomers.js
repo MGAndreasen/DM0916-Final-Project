@@ -5,7 +5,7 @@ function page_customers() {
     //section.on('click', '.addNew', projects_newProject());              // Create new eventhandler
 
     customers_createLayout();
-    customer_populate_customerList();                                   // Populate section layout.
+    customers_populate_customerList();                                   // Populate section layout.
 }
 
 function customers_createLayout() {
@@ -27,8 +27,8 @@ function customers_createLayout() {
         + "</div>";
 }
 
-function customer_populate_customerList() {
-    var section = $('#customers > .customer_list > .content');
+function customers_populate_customerList() {
+    var section = $('#customers  .customer_list > .content');
     var parms = [];
     var restData = myPost('customer', 'getCustomers', parms);
 
