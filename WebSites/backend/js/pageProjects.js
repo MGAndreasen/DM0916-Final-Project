@@ -3,7 +3,7 @@ function page_projects() {
     section.off();                                                               // unbind eventhandlers.
     section.html(projects_createLayout());                                       // Populate section layout.
     section.on('click', '.project', projects_click_project());                   // Create new eventhandler
-    section.on('click', '.addNew', projects_newProject());                       // Create new eventhandler
+    section.on('click', '.project_list .addNew', projects_newProject());                       // Create new eventhandler
     section.on('click', '.project_new_element .addNew', projects_create_hirachy_element());  // Create new eventhandler
 
     
