@@ -43,8 +43,8 @@ $(document).ready(function () {
 
 //-- SITE Funcs
 function handlePagechange() {
-    if ($('#pages .active').length) {
-        var pageName = $('#pages .active').attr('id');
+    if ($('#pages > .active').length) {
+        var pageName = $('#pages > .active').attr('id');
         if ($('#' + pageName).length) {
             window['page_' + pageName]();
         }
