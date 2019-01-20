@@ -111,7 +111,7 @@ i {
     align-content: space-around;
     align-items: stretch;
 }
-
+/* Left */
 #projects div.project_list, #customers div.customer_list {
     margin: 10px;
     flex-basis: 300px;
@@ -126,7 +126,8 @@ i {
     overflow-x: hidden;
 }
 
-#projects div.project_hirachy, #projects div.project_new_element, #customers div.customer_data {
+/* Middle or Auto*/
+#projects div.project_hirachy, #customers div.customer_data {
     margin: 10px;
     flex-basis: auto;
     box-sizing: border-box;
@@ -139,7 +140,7 @@ i {
     overflow-x: hidden;
 }
 
-    #projects div.project_hirachy > .title, #projects .title, #customers div.customer_data > .title {
+    #pages div.title {
         border-bottom: 1px solid #999;
         height: 30px;
         padding-top: 10px;
