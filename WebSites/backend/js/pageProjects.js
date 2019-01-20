@@ -32,6 +32,15 @@ function projects_createLayout() {
         + "          <input class='enabled' type='text' placeholder='enabled'/>"
         + "        </div>"
         + "      </div>"
+        + "    </div>"
+        + "    <div class='project_upload'>"
+        + "      <div class='title'>Upload</div>"
+        + "        <div class='content'>"
+        + "          <div class='dropArea'>Drag'n'Drop</br>Images files here</br>too Upload em!</div>"
+        + "          <div class='progress'>0 / 0</div>"
+        + "        </div>"
+        + "      </div>"
+        + "    </div>"
         + "  </div>"
         + "</div>";
 }
