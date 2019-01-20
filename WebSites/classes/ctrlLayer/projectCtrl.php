@@ -81,7 +81,11 @@ class ProjectCtrl {
 	}
 
 	public function createStructureElement($project_id, $parent_id, $image_size, $filter_size, $validation_size, $name) {
-		errorMsg('projectCtrl','createStructureElement','Not implementet. got: '.$project_id.' - '.$parent_id.' - '.$name);
+		$result = $this->mDB->createStructureElement($project_id, $parent_id, $image_size, $filter_size, $validation_size, $name);
+
+		if(!empty($result))	{
+			$this->data['result']['projectStructures'] = $result;
+		}
 	}
 
 	public function getModelToBuild(int $project_id, int $parent_id) {

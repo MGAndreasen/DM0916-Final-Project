@@ -11,6 +11,8 @@ class ProjectDB
 	private $updateProject_SQL	= 'UPDATE project SET image_size = ?, customer_id = ?, enabled = ?, name = ? WHERE id = ?';
 	private $createProject_SQL	= 'INSERT INTO project VALUE(null, ?, ?, ?, ?)';
 	private $removeProject_SQL	= 'DELETE FROM project WHERE id = ?';
+	private $createStructureElement_SQL = 'INSERT INTO project_structure VALUE(null, ?, ?, ?, ?, ?, ?)';
+	private $getStructureElement_SQL = 'SELECT * FROM project_structure WHERE id = ?)';
 
 	private $modelStructure_SQL	= 'SELECT * FROM project_structure WHERE project_id = ? AND parent_id = ?';
 	 
@@ -145,6 +147,41 @@ class ProjectDB
 
 		return $resultArr;
 
+	}
+
+	public function createStructureElement($project_id, $parent_id, $image_size, $filter_size, $validation_size, $name) {
+		//errorMsg('projectDB','createStructureElement','Not implementet. got: '.$project_id.' - '.$parent_id.' - '.$name);
+		global $conn;
+		$conn->begin_transaction();
+
+		$query = $conn->prepare($this->createStructureElement_SQL);
+		$query->bind_param('iiiiis', $project_id, $parent_id, $image_size, $filter_size, $validation_size, $name);
+		$query->execute();
+		$result = $query->get_result();
+
+		$id = $conn->insert_id;
+
+		$conn->commit();
+		$resultArr = getStructureElement($id);
+		return $resultArr;
+	}
+
+	public function getStructureElement($id) {
+		global $conn;
+		$resultArr = [];
+		$query = $conn->prepare($this->getStructureElement_SQL);
+		$query->bind_param('i', $id);
+		$query->execute();
+		$result = $query->get_result();
+		
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+			$structure = new ProjectStructure($row['id'], $row['parent_id'], $row['image_size'], $row['filter_size'], $row['validation_size'], $row['name']);
+
+			array_push($resultArr, $structure);
+		}
+		else { errorMsg('projectDB','getStructureElement','couldnt find any project_structure with that ID'); }
+		return $resultArr;
 	}
 
 	public function getModelToBuild(int $project_id, int $parent_id) {
