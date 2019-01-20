@@ -14,34 +14,40 @@ function page_projects() {
 function projects_createLayout() {
     return ""
         + "<div class='container'>"
+
         + "  <div class='project_list'>"
         + "    <div class='title'>Projects</div>"
         + "    <div class='content'></div>"
         + "    <div class='new'><i class='fas fa-project-diagram'></i ><input type='text' placeholder='New Project Name'/><i class='fas fa-plus-circle addNew'></i></div>"
         + "  </div>"
+
         + "  <div class='project_hirachy'>"
         + "    <div class='title'>Hirachy</div>"
         + "    <div class='content'></div>"
         + "  </div>"
+
         + "  <div class='project_panel'>"
+
         + "    <div class='project_data'>"
+
         + "      <div class='title'>Data</div>"
-        + "        <div class='content'>"
-        + "          <input class='name' type='text' placeholder='name'/>"
-        + "          <input class='size' type='text' placeholder='size'/>"
-        + "          <input class='enabled' type='text' placeholder='enabled'/>"
-        + "        </div>"
+        + "      <div class='content'>"
+        + "        <input class='name' type='text' placeholder='name'/>"
+        + "        <input class='size' type='text' placeholder='size'/>"
+        + "        <input class='enabled' type='text' placeholder='enabled'/>"
         + "      </div>"
         + "    </div>"
+
         + "    <div class='project_upload'>"
         + "      <div class='title'>Upload</div>"
-        + "        <div class='content'>"
-        + "          <div class='dropArea'>Drag'n'Drop</br>Images files here</br>too Upload em!</div>"
-        + "          <div class='progress'>0 / 0</div>"
-        + "        </div>"
+        + "      <div class='content'>"
+        + "        <div class='dropArea'>Drag'n'Drop</br>Images files here</br>too Upload em!</div>"
+        + "        <div class='progress'>0 / 0</div>"
         + "      </div>"
         + "    </div>"
+
         + "  </div>"
+
         + "</div>";
 }
 
