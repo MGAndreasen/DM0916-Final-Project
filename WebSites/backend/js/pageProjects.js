@@ -32,7 +32,7 @@ function projects_createLayout() {
 
         + "  <div class='project_hirachy'>"
         + "    <div class='title'>Hirachy</div>"
-        + "    <div class='content'><ul></ul></div>"
+        + "    <div class='content'><ul class='sortable connected'></ul></div>"
         + "  </div>"
 
         + "  <div class='project_panel'>"
