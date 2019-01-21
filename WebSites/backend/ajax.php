@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {		// Check HTTP REQUEST_METHOD
 					}
 					if(method_exists($theClass, $func)) {
 						try{ call_user_func_array(array($theCtrl, $func), $parms); }
-						catch(e){ errorMsg('Ajax.php','call_user_func_array','Ctrl: '.$theClass.'</br>Func: '.$func.'Error: '.$e); }
+						catch(Exception $e){ errorMsg('Ajax.php','call_user_func_array','Ctrl: '.$theClass.'</br>Func: '.$func.'Error: '.$e->getMessage()); }
 					} else { errorMsg('Ajax.php', $func, 'Did not find methode: '.$func.' on class: '. $theClass); }
 				} else { errorMsg('Ajax.php', $func, 'Did not find class: '.$theClass); }
 			} else { errorMsg($ctrl, $func, 'Controller fil findes ikke.'); }
