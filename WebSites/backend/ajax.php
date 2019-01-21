@@ -41,8 +41,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {		// Check HTTP REQUEST_METHOD
 if(empty($data['errors'])) { $data['status'] = "OK"; } // Hvis ingen fejl, send OK status med tilbage
 echo json_encode($data, JSON_PRETTY_PRINT); // output data array as Json
 ?>
-
-
-
-
-
