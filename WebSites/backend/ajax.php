@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_ALL);
-set_error_handler("error_handler");
-set_exception_handler("error_handler");
-register_shutdown_function("error_handler");
+//error_reporting(E_ALL);
+//set_error_handler("error_handler");
+//set_exception_handler("error_handler");
+//register_shutdown_function("error_handler");
 header('Content-Type: text/json; charset=utf-8');	// Set HTTP header
 ini_set("default_charset", "UTF-8");				// Sets default_charset
 mb_internal_encoding("UTF-8");						// Set php multibyte encoding charaterset UTF8
@@ -51,7 +51,7 @@ function errorMsg($ctrl, $func , $msg) {
 	if(!isset($data['errors'])) { $data['errors'] = array(); }
 	array_push($data['errors'], array( 'ERRCTRL' => $ctrl, 'ERRFUNC' => $func, 'ERRMSG' => $msg	));
 }
-
+/*
 function error_handler() {
 	global $data;
     $e = error_get_last();
@@ -66,4 +66,5 @@ function error_handler() {
     echo json_encode($data, JSON_PRETTY_PRINT); // output data array as Json
     exit;
 }
+*/
 ?>
