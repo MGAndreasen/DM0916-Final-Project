@@ -1,7 +1,7 @@
 <?php
 function createRandomString($length=128, $from="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 {
-	global data;
+	global $data;
 	$theString = "";
 
 	if($length > 0 && strlen($from) > 0)
