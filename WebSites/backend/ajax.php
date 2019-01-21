@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+set_error_handler("error_handler");
+set_exception_handler("error_handler");
+register_shutdown_function("error_handler");
 header('Content-Type: text/json; charset=utf-8');	// Set HTTP header
 ini_set("default_charset", "UTF-8");				// Sets default_charset
 mb_internal_encoding("UTF-8");						// Set php multibyte encoding charaterset UTF8
@@ -41,4 +45,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {		// Check HTTP REQUEST_METHOD
 } else { errorMsg(null, null, 'Request var ikke en HTTP POST.'); }
 if(empty($data['errors'])) { $data['status'] = "OK"; } // Hvis ingen fejl, send OK status med tilbage
 echo json_encode($data, JSON_PRETTY_PRINT); // output data array as Json
+
+/* FUNC */
+function errorMsg($ctrl, $func , $msg) {
+	global $data;
+	if(!isset($data['errors'])) { $data['errors'] = array(); }
+	array_push($data['errors'], array( 'ERRCTRL' => $ctrl, 'ERRFUNC' => $func, 'ERRMSG' => $msg	));
+}
+
+function error_handler() {
+    $e = error_get_last();
+    if($e === null) { $e = func_get_args(); }
+    if(empty($e)) { return; }
+    if($e[0] instanceof Exception) {
+        call_user_func_array(__FUNCTION__, array($e[0]->getCode(),$e[0]->getMessage(),$e[0]->getFile(),$e[0]->getLine(),$e[0]));
+        return;
+    }
+    $e = array_combine(array('number', 'message', 'file', 'line', 'context'), array_pad($e, 5, null));
+	errorMsg('Ajax.php','error_handler',$e);
+    echo json_encode($data, JSON_PRETTY_PRINT); // output data array as Json
+    exit;
+}
 ?>

@@ -1,12 +1,7 @@
 <?php
-function errorMsg($ctrl, $func , $msg) {
-	global $data;
-	if(!isset($data['errors'])) { $data['errors'] = array(); }
-	array_push($data['errors'], array( 'ERRCTRL' => $ctrl, 'ERRFUNC' => $func, 'ERRMSG' => $msg	));
-}
-
 function createRandomString($length=128, $from="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 {
+	global data;
 	$theString = "";
 
 	if($length > 0 && strlen($from) > 0)
