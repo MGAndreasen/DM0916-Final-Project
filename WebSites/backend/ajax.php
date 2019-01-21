@@ -53,6 +53,7 @@ function errorMsg($ctrl, $func , $msg) {
 }
 
 function error_handler() {
+	global $data;
     $e = error_get_last();
     if($e === null) { $e = func_get_args(); }
     if(empty($e)) { return; }
